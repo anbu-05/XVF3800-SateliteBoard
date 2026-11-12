@@ -13,7 +13,8 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Prototype, not yet a product.** Thin distributor stock is fine; bulk ordering is deferred to production. Do not flag low stock as a blocker.
 - **Designed from datasheets, not copied from Seeed** (2026-11-09). XMOS's own XK-VOICE-SQ66 reference board is now the reference for mic wiring and pin roles (2026-11-10).
 - Status 2026-11-12: **rev 1 schematic regenerated with no ball-grid parts** (TQFN-16 amp, 4 × SOT-23-5 switches), including the user's 02:28 KiCad edits (Espressif ESP32 footprint, 1.0 mm JTAG pads). Nine A4 sheets, ERC 0/0, netlist, tidy and floating checks pass; BOM 59 lines / 189 parts, LCSC on every line. No purchase and no vendor contact.
-- Status 2026-11-12 (night): **schematic tidy of the user's KiCad edits done in place, then the second PCB tidy** (every part on the board, none parked). ERC 0/0, DRC no new errors, schematic parity clean. No routing yet. Awaiting the user's look in KiCad.
+- Status 2026-11-12 (night): **schematic tidied in place, second PCB tidy done** (no parts parked). ERC 0/0, no new DRC errors, parity clean. Not routed.
+- **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, branch `main`. `.gitignore` leaves out KiCad backups, the audio clips and `incoming/` (XMOS licence).
 
 ## Diagrams (`docs/diagrams/`, updated 2026-11-10)
 
