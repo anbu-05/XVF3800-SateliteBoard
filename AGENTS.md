@@ -100,7 +100,7 @@ The first pass (`place_tidy.py`, 74 mm board, 4 layers, edge rules) is archived;
   - MK501's corner is the template, in the mic's own frame: 1 µF, ferrite and 10 µF in a line inward on the mic axis, CLK and DATA 100R either side. The other three corners are 90° turns of it, which fixed the C503/C504 swap.
 - **LED ring:** bottom side, radius **27.0 mm**, ≥ 0.47 mm from the USB-C outlines. Each 100 nF sits beside its LED on the inner side, GND pad by the LED's GND (all fitted inward).
 - **Groups** (IC as anchor, 0.15 mm courtyard gaps, 0/90° within a group, each cap on the pin its `use` field names):
-  - XVF3800 (bottom): one cap row per side, each cap on its own pin, 1.65 mm from the chip for via fan-out (`tools/xvf_caps_out.py`, user 2026-11-12; clock buffer and crystal moved out with them). Bulk 10 µF behind a same-rail cap. PLL ferrite behind C319. Crystal with Rd/Rf between it and the chip. Flash with C401/R401 on their pads. Clock buffer with C501/R501.
+  - XVF3800 (bottom): one cap row per side, each cap on its own pin, 1.65 mm out for via fan-out (`tools/xvf_caps_out.py`). Bulk 10 µF behind a same-rail cap. PLL ferrite behind C319. Crystal with Rd/Rf between it and the chip. Flash with C401/R401 on their pads. Clock buffer with C501/R501.
   - USB-C: the J101 group is tidied, and the J102 group is the same group turned 180° about the board centre.
   - TPS2121: 4 × 2 divider array above, control row below, output caps on the right.
   - Regulators below the ESP32. U202's group is U201's turned 180° (FB networks face each other), the LDO is to the left, and the block is centred on x.
