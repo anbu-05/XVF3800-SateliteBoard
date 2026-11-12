@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MindSpeak Voice Satellite: Rev 1 Design Report</title>
+<style>
+  /* A4 print layout, rendered with WeasyPrint */
+  @page {
+    size: A4;
+    margin: 16mm 17mm 16mm 17mm;
+    @bottom-right { content: "Page " counter(page) " of " counter(pages); font-size: 8pt; color: #777; }
+    @bottom-left  { content: "MindSpeak voice satellite · rev 1 design report"; font-size: 8pt; color: #777; }
+  }
+  body { font-family: "Inter", "DejaVu Sans", sans-serif; font-size: 9.6pt; line-height: 1.42; color: #1d2330; }
+  h1 { font-size: 19pt; margin: 0 0 2pt 0; color: #14315c; }
+  .sub { color: #555; margin: 0 0 10pt 0; font-size: 9.5pt; }
+  h2 { break-after: avoid; font-size: 12.5pt; color: #14315c; border-bottom: 1.2pt solid #c9d4e6; padding-bottom: 2pt; margin: 14pt 0 5pt 0; }
+  p { margin: 0 0 6pt 0; }
+  ul { margin: 0 0 6pt 0; padding-left: 14pt; }
+  li { margin-bottom: 2pt; }
+  figure { margin: 6pt 0 8pt 0; text-align: center; break-inside: avoid; }
+  figure img { max-width: 100%; max-height: 92mm; }
+  figcaption { font-size: 8.4pt; color: #555; margin-top: 3pt; text-align: left; }
+  table { width: 100%; break-inside: avoid; border-collapse: collapse; font-size: 8.8pt; margin: 4pt 0 8pt 0; }
+  th { background: #e9eef7; text-align: left; padding: 3pt 5pt; }
+  td { border-top: 0.6pt solid #d6dbe4; padding: 3pt 5pt; vertical-align: top; }
+  td:first-child { font-weight: 600; width: 22%; }
+  table.cost td:first-child { width: 34%; }
+  table.cost th, table.cost td:nth-child(2), table.cost td:nth-child(3) { white-space: nowrap; }
+  .box { background: #f4f6fa; border-left: 3pt solid #14315c; padding: 5pt 8pt; margin: 6pt 0 8pt 0; }
+  .was { color: #8a3b12; font-weight: 600; }
+  .avoid { break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>MindSpeak Voice Satellite: Rev 1 Design Report</h1>
+<p class="sub">Decisions and schematic status · 10 November 2026 · Status: schematic complete, awaiting review; no PCB layout or orders yet</p>
+
+<h2>1. What the board is</h2>
+<p>The voice satellite is a small USB board that listens to a room and plays sound back. It is the "ears and mouth" of a voice assistant: the board picks up speech cleanly, and a host computer does the thinking.</p>
+<ul>
+  <li><b>Listening:</b> four microphones feed an <b>XMOS XVF3800</b> voice processor. It removes echo and noise, works out which direction someone is speaking from, and sends clean audio to the host over USB.</li>
+  <li><b>Speaking:</b> a small amplifier drives a 3–5 W speaker.</li>
+  <li><b>Helper:</b> an <b>ESP32-S3</b> microcontroller handles everything the voice chip's stock firmware does not. That covers the LED ring, buttons, a second USB port, a header for a host and reprogramming the voice chip.</li>
+</ul>
+<p>Rev 1 is a <b>prototype</b> for testing the design, not a product. A version with a Raspberry Pi CM5 on board is planned for rev 2.</p>
+
+<figure>
+  <img src="fig/01_block_diagram.svg" alt="Block diagram">
+  <figcaption><b>Figure 1.</b> Block diagram. The XVF3800 sits in the centre with its own USB-C, memory and clock on the left. The mics, speaker amplifier and buttons are on the right, power is at the top, and the ESP32-S3 helper with its own USB-C, LED ring and expansion headers is at the bottom.</figcaption>
+</figure>
+
+<h2>2. Key decisions and why</h2>
+<table>
+  <tr><th>Area</th><th>Decision</th><th>Why</th></tr>
+  <tr><td>Design basis</td><td>Designed from the manufacturers' datasheets. XMOS's own reference board (XK-VOICE-SQ66) is the guide for mic wiring and pin use.</td><td>Copying a third-party board (Seeed ReSpeaker) would bring over its unknowns and licence issues. The XMOS board is the vendor's reference.</td></tr>
+  <tr><td>Voice firmware</td><td>The XVF3800 runs XMOS's <b>stock USB firmware, unmodified</b> (square-mic build).</td><td>The firmware source needs an XMOS account and a silicon purchase. Keeping it stock keeps the voice processing proven, and anything extra goes on the ESP32.</td></tr>
+  <tr><td>Helper chip</td><td>ESP32-S3-WROOM-1U-N16R8 module with an external antenna connector.</td><td>Adds Wi-Fi/Bluetooth and reuses support circuits from the team's existing controller board. The 16 MB version was cheaper than the 8 MB one.</td></tr>
+  <tr><td>Sound out</td><td>One MAX98357A digital amplifier driving the speaker directly. No audio codec and no headphone jack.</td><td>The amplifier needs no setup software, so it works with the stock firmware. A speaker is the goal; XMOS's board only drives headphones.</td></tr>
+  <tr><td>Microphones</td><td>4 × Infineon IM69D129 digital mics on the corners of a 66 mm square, on the underside, in XMOS's order.</td><td>The stock "square" firmware expects exactly this layout.</td></tr>
+  <tr><td>Power input</td><td>Either USB-C port can power the board. A TPS2121 switches between them automatically and prefers the main port.</td><td>The board keeps running whichever cable is plugged in.</td></tr>
+  <tr><td>Regulators</td><td>Two efficient switching (buck) regulators make 0.9 V and 3.3 V, and a small linear regulator makes 1.8 V from 3.3 V.</td><td>An all-linear design would waste about 1.2 W as heat.</td></tr>
+  <tr><td>Reset</td><td>A dedicated reset chip (TPS3808) holds the voice chip in reset until 3.3 V is stable.</td><td>The chip's built-in reset does not watch the 3.3 V supply, and its datasheet requires 3.3 V to be valid first.</td></tr>
+  <tr><td>Programming</td><td>Two routes into the voice chip's memory: XMOS's XTAG4 debugger, or the ESP32 writing the memory directly.</td><td>A board can be updated without special XMOS hardware, and the debugger remains available for fault-finding.</td></tr>
+  <tr><td>Manufacturing</td><td>JLCPCB builds and assembles the whole board. Small passive parts are 0402 size, from JLC's "Basic" stock first.</td><td>No hand soldering, and lower assembly fees. Fine-pitch chip packages are therefore acceptable.</td></tr>
+</table>
+
+<div class="box avoid">
+<b>How the design changed along the way</b>
+<ul>
+  <li><span class="was">Copy Seeed → design from datasheets.</span> The first plan copied the Seeed ReSpeaker XVF3800 board. On 9 Nov this changed to an original design. On 10 Nov XMOS's own reference board became the main point of comparison, which corrected several pin roles and the mic clock wiring.</li>
+  <li><span class="was">Two audio paths → one amplifier.</span> Rev 1 first carried both a simple amplifier and Seeed's codec-plus-amplifier route, with links to pick one. Because the firmware stays stock, the codec route was dropped on 9 Nov. The XMOS comparison on 10 Nov confirmed that choice.</li>
+  <li><span class="was">Linear regulators → buck regulators.</span> The first power plan used linear regulators from 5 V. It was rejected on 9 Nov because of the heat.</li>
+  <li><span class="was">RP2350A → ESP32-S3.</span> A Raspberry Pi RP2350A was the helper until 10 Nov, when the ESP32-S3 module replaced it. An option for the ESP32 to boot the voice chip directly was removed at the same time; it now only writes the chip's flash memory.</li>
+</ul>
+</div>
+
+<h2>3. Power</h2>
+<p>All power comes from 5 V USB. The board does not use USB Power Delivery. A 5 V / 3 A supply is needed for full speaker volume with the LEDs on.</p>
+<ul>
+  <li><b>Load:</b> about 0.7 A typical and 2.7 A at peak. The peak is set by the speaker, the LED ring and the ESP32's Wi-Fi bursts, and it stays under the input switch's ≈3.2 A limit.</li>
+  <li><b>Switched loads:</b> the speaker amplifier and the LED ring each have their own switch, so they can be turned off.</li>
+  <li><b>Start-up:</b> both bucks start together, and the reset chip releases the voice processor only once 3.3 V is good.</li>
+  <li><b>Weak USB ports:</b> on a PC port alone, the ESP32 keeps the LEDs dim and limits Wi-Fi bursts.</li>
+</ul>
+<figure>
+  <img src="fig/02_power_tree.svg" alt="Power tree">
+  <figcaption><b>Figure 2.</b> Power tree and start-up order. Two USB-C inputs feed the TPS2121 priority switch, which makes the 5 V rail. 5 V feeds the 0.9 V and 3.3 V bucks, the amplifier and LED-ring switches, and the user LED. The 3.3 V rail feeds the ESP32-S3 and the 1.8 V regulator, and the TPS3808 holds the voice chip in reset until 3.3 V is valid.</figcaption>
+</figure>
+
+<h2>4. Microphones</h2>
+<p>The quality of the voice processing depends on where the mics are. The stock firmware assumes four mics on the corners of a 66 mm square, numbered anticlockwise.</p>
+<ul>
+  <li><b>Layout:</b> the board follows that layout and XMOS's mic order exactly.</li>
+  <li><b>Clock:</b> one clock line is buffered once and then split, with a small resistor into each mic, as on XMOS's board. This keeps the clock clean at all four corners.</li>
+  <li><b>Data:</b> each mic sends its data back to the voice chip through its own resistor.</li>
+</ul>
+<figure>
+  <img src="fig/06_mic_wiring.svg" alt="Mic wiring and placement">
+  <figcaption><b>Figure 3.</b> Mic wiring and placement. XVF3800 pin 43 drives the SN74LVC1G125 clock buffer, then a shared 100 Ω resistor, then a separate 100 Ω into each mic's clock. Each mic's data returns through its own 100 Ω. The four mics sit on the corners of the 66 mm square, numbered 0–3 anticlockwise seen from the top.</figcaption>
+</figure>
+
+<h2>5. Loading the voice firmware</h2>
+<p>The XVF3800 starts up from its own flash memory chip. That memory can be filled in two ways:</p>
+<ul>
+  <li><b>Path A, XMOS XTAG4 debugger:</b> plugs into the 1.8 V debug header. This is the standard XMOS route, and the only one that also allows live debugging.</li>
+  <li><b>Path B, ESP32:</b> fitting a jumper lets the ESP32 hold the voice chip in reset, connect to the flash through four small analogue switches, write the image and read it back, then disconnect and release the reset.
+    With the jumper removed, the switches stay off and the ESP32 cannot touch the flash.</li>
+</ul>
+<figure>
+  <img src="fig/08_programming_paths.svg" alt="Programming paths">
+  <figcaption><b>Figure 4.</b> The two ways to load XVF3800 firmware. Path A goes from the XTAG4 on the JTAG header through the XVF3800 to the flash. Path B, enabled by jumper JP701, has the ESP32-S3 hold the XVF3800 in reset through Q701 and write the flash over SPI through four TS5A3166 switches.</figcaption>
+</figure>
+
+<h2>6. Schematic status</h2>
+<p>The rev 1 schematic is drawn in KiCad 10 on nine A4 sheets: overview · USB and power input · regulators · XVF3800 voice chip · its memory, buttons and LEDs · audio (mics, amplifier, speaker) · ESP32-S3 · ESP32 switches and headers · LED ring.</p>
+<ul>
+  <li><b>Electrical rules check:</b> 0 errors and 0 warnings.</li>
+  <li><b>Connections:</b> the netlist KiCad exports matches the intended connections.</li>
+  <li><b>Parts:</b> every assembled part has an LCSC (JLCPCB) part number, and every part's symbol and footprint was checked pin by pin against its datasheet.</li>
+</ul>
+<h2>7. Cost and delivery (JLCPCB quote, 10 Nov 2026)</h2>
+<p>JLCPCB quotes the bare boards and the components separately. No MindSpeak layout exists yet, so the board quote uses the team's <b>controller board</b> (4 layers, 88.9 × 88.9 mm) as a reference PCB. A bare board's price depends on its size, layer count and options, not on the circuit. The components are priced from the real MindSpeak BOM.</p>
+<p>These figures are <b>more accurate than an estimate built from the major chips alone</b>. Fees not yet checked may move them up or down, but the final price should stay close to these numbers.</p>
+<ul>
+  <li><b>Board options:</b> 5 boards (JLC's minimum), 1.6 mm FR-4, 1 oz outer copper, assembled on both sides, edge rails added by JLC.</li>
+  <li><b>Via filling:</b> filled and capped vias were chosen because the tiny chip packages need vias inside their pads. That adds $21.05 to the board price.</li>
+</ul>
+
+<table class="cost">
+  <tr><th>Item</th><th>2 boards</th><th>5 boards</th></tr>
+  <tr><td>Components (JLC BOM tool)*</td><td>$90.54</td><td>$212.71</td></tr>
+  <tr><td>Bare PCBs, 5 made</td><td>$29.05</td><td>$29.05</td></tr>
+  <tr><td>Fastest build (2–3 days)</td><td>+ $66.20</td><td>+ $66.20</td></tr>
+  <tr><td>Shipping, cheapest: UPS Saver</td><td>$9.76</td><td>$9.76</td></tr>
+  <tr><td>Shipping, fastest: DHL Express</td><td>$25.31</td><td>$25.31</td></tr>
+</table>
+<p style="font-size:8.4pt;color:#555">* The BOM has 60 lines, but JLC shows only 54–55 selected. That's because several lines use the same part: for example, the six buttons are listed separately because each has its own label. JLC merges them into one order line. All parts are included.</p>
+
+<table class="cost">
+  <tr><th>Option</th><th>2 boards</th><th>5 boards</th><th>Delivery</th></tr>
+  <tr><td>Cheapest total</td><td><b>$129.35</b></td><td><b>$251.52</b></td><td>3-day build + 5–7 business days by UPS: about <b>8–10 business days</b></td></tr>
+  <tr><td>Quickest delivery</td><td><b>$211.10</b></td><td><b>$333.27</b></td><td>2–3 day build + 2–5 business days by DHL: about <b>4–8 business days</b></td></tr>
+</table>
+
+<p><b>Not included in these totals:</b></p>
+<ul>
+  <li><b>Assembly fees:</b> SMT assembly, feeder loading and setup still show "–" on the quote and appear only at the next checkout step.</li>
+  <li><b>Customs duty:</b> the last time a PCB was imported, customs came to as much as ₹9,000 (about $100).</li>
+  <li><b>Coupons:</b> $20 and $30 coupons are offered but not applied.</li>
+</ul>
+<p>The build times are as shown on the quote, and JLC may add assembly days on top. The quote screenshots are saved in <code>docs/report/jlc_quote_2026-11-10/</code>.</p>
+
+<h2>8. Open questions and next steps</h2>
+<p>Questions still to settle:</p>
+<ul>
+  <li><b>Programming path B:</b> the extra loading that the ESP32's switches add to the voice chip's memory lines has to be confirmed at boot speed. The fallback is a removable link.</li>
+  <li><b>Firmware behaviour:</b> two details are unconfirmed, whether the stock firmware ever drives its I²C pins as a master, and whether its LED outputs are active-high.</li>
+  <li><b>Over-voltage cut-off:</b> it is set at 5.57 V, which a charger sitting at the 5.5 V USB limit could trip.</li>
+  <li><b>Manufacturability:</b> the smallest chip packages still need checking against JLCPCB's manufacturing rules.</li>
+  <li><b>Layout:</b> the ESP32's Wi-Fi antenna and cable must sit away from the mics.</li>
+</ul>
+<p><b>Next steps:</b> (1) review the schematic; (2) decide whether later edits are made by hand in KiCad; (3) lay out the PCB on 4 layers, placing the mic square and the ESP32 first; (4) recheck stock just before ordering.</p>
+
+</body>
+</html>

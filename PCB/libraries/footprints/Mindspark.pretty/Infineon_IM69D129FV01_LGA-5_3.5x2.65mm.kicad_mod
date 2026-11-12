@@ -1,0 +1,217 @@
+(footprint "Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Infineon IM69D129FV01 PDM MEMS microphone, 3.5x2.65 mm LGA-5, bottom port; land pattern from datasheet v1.0 Figure 14")
+	(tags "MEMS microphone PDM Infineon bottom port")
+	(property "Reference" "REF**"
+		(at 0 -2.4 0)
+		(layer "F.SilkS")
+		(uuid "9796daee-2f93-489a-aeac-0e301a47b660")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(at 0 2.4 0)
+		(layer "F.Fab")
+		(uuid "3f97b8e8-3aab-414e-92e7-56aec06c4748")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3502d7a9-1ef1-4a22-9bca-ea8c40ef41b9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "29d67c4a-e66b-45e0-9937-abd91e6f4711")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_rect
+		(start -1.86 -1.435)
+		(end 1.86 1.435)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "783317b2-a380-4d50-a0f7-5f57eb73ca6b")
+	)
+	(fp_circle
+		(center -2.15 1.2)
+		(end -2.05 1.2)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "bd4363fd-1c02-4a91-89d5-16a65035bc66")
+	)
+	(fp_rect
+		(start -2 -1.575)
+		(end 2 1.575)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "83af0a0c-fb27-413d-a099-94b7dcdcbdb6")
+	)
+	(fp_rect
+		(start -1.75 -1.325)
+		(end 1.75 1.325)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "06520fcf-ef59-4473-af90-85d4f0081cb5")
+	)
+	(pad "" smd custom
+		(at 0.3675 -0.5932)
+		(size 0.2 0.2)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_arc
+				(start -0.3121 0.3913)
+				(mid -0.000014 0.000009)
+				(end 0.4949 -0.0746)
+				(width 0.29)
+			)
+		)
+		(uuid "5d780631-d4e4-4d18-9d5f-40c69b9e08c0")
+	)
+	(pad "" smd custom
+		(at 0.3675 0.5932)
+		(size 0.2 0.2)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_arc
+				(start 0.4949 0.0746)
+				(mid -0.000015 -0.000008)
+				(end -0.3121 -0.3913)
+				(width 0.29)
+			)
+		)
+		(uuid "5720894e-62c1-4fdd-bd7b-fa7c0cab1240")
+	)
+	(pad "" np_thru_hole circle
+		(at 0.71 0)
+		(size 0.6 0.6)
+		(drill 0.6)
+		(layers "*.Cu" "*.Mask")
+		(uuid "d9042644-8cfe-4638-99f6-67f52179f568")
+	)
+	(pad "" smd custom
+		(at 1.395 0)
+		(size 0.2 0.2)
+		(layers "F.Paste")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_arc
+				(start -0.1828 -0.4659)
+				(mid 0 0)
+				(end -0.1828 0.4659)
+				(width 0.29)
+			)
+		)
+		(uuid "fd7ea5b6-c1fe-4ff7-898d-548e30cce1ca")
+	)
+	(pad "1" smd rect
+		(at -1.364 0.419)
+		(size 0.54 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_paste_margin -0.035)
+		(uuid "eeb0e07b-c4f4-491e-b387-67299501efc3")
+	)
+	(pad "2" smd rect
+		(at -0.542 0.419)
+		(size 0.54 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_paste_margin -0.035)
+		(uuid "a66a9cd2-f549-4281-b57a-b80813cd0de3")
+	)
+	(pad "3" smd custom
+		(at 1.3875 0)
+		(size 0.36 0.36)
+		(layers "F.Cu" "F.Mask")
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_circle
+				(center -0.6775 0)
+				(end 0 0)
+				(width 0.37)
+				(fill no)
+			)
+		)
+		(uuid "e107e613-5391-4d03-8478-2e9acfb918ac")
+	)
+	(pad "4" smd rect
+		(at -0.542 -0.419)
+		(size 0.54 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_paste_margin -0.035)
+		(uuid "6939a72a-ea30-47ab-838a-7bd76f53b508")
+	)
+	(pad "5" smd rect
+		(at -1.364 -0.419)
+		(size 0.54 0.75)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_paste_margin -0.035)
+		(uuid "84d86338-f493-4921-942a-5542a5a7bcf6")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Sensor_Audio.3dshapes/InvenSense_ICS-43434-6_3.5x2.65mm.step"
+		(offset
+			(xyz 0 0 0.01)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 -90)
+		)
+	)
+)

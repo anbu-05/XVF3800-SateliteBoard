@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Mindspark")(type "KiCad")(uri "${KIPRJMOD}/../libraries/footprints/Mindspark.pretty")(options "")(descr "Mindspark rev 1 custom footprints (XVF3800 5-paddle QFN-60, IM69D129 mic)"))
+)

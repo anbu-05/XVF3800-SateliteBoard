@@ -1,0 +1,326 @@
+[
+  {
+    "function": "Voice processor",
+    "mpn": "XVF3800-QF60B-C",
+    "lcsc": "C20491135",
+    "symbol": "Mindspark:XVF3800-QF60B-C",
+    "footprint": "Mindspark:XMOS_QFN-60-5EP_7x7mm_P0.4mm",
+    "symbol_source": "EasyEDA, pins renamed/typed",
+    "footprint_source": "EasyEDA, checked vs XU316 sec.15, paddle paste -15%"
+  },
+  {
+    "function": "I2S amp (audio path 1)",
+    "mpn": "MAX98357AETE+T",
+    "lcsc": "C910544",
+    "symbol": "Mindspark:MAX98357AETE+T",
+    "footprint": "Mindspark:TQFN-16-1EP_3x3mm_P0.5mm_EP1.23x1.23mm",
+    "symbol_source": "stock Audio:MAX98357A (TQFN-16 numbers, checked vs ADI p.15); EP 17 renamed GND and hidden in the GND stack (2026-11-12, replaces WLP-9 MAX98357AEWL+T)",
+    "footprint_source": "stock copper, fits ADI T1633-4 (21-0136); stock EP1.6 STEP attached (same 3x3x0.75 body)"
+  },
+  {
+    "function": "PDM mic x4",
+    "mpn": "IM69D129FV01XTMA1",
+    "lcsc": "C43314439",
+    "symbol": "Mindspark:IM69D129FV01XTMA1",
+    "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+    "symbol_source": "EasyEDA, checked",
+    "footprint_source": "drawn from Infineon Fig.14; 3D = stock InvenSense ICS-43434 MEMS mic model (same 3.5x2.65x0.98 body), rot -90"
+  },
+  {
+    "function": "Amp + LED load switch x2",
+    "mpn": "TPS22918DBVR",
+    "lcsc": "C131941",
+    "symbol": "Mindspark:TPS22918DBVR",
+    "footprint": "Mindspark:SOT-23-6",
+    "symbol_source": "EasyEDA, checked",
+    "footprint_source": "stock"
+  },
+  {
+    "function": "WS2812 data buffer x2 (ring + user LED)",
+    "mpn": "SN74AHCT1G125DBVR",
+    "lcsc": "C7484",
+    "symbol": "Mindspark:SN74AHCT1G125DBVR",
+    "footprint": "Mindspark:SOT-23-5",
+    "symbol_source": "stock 74xGxx:74AHCT1G125, flattened",
+    "footprint_source": "stock (stock footprint field blank)"
+  },
+  {
+    "function": "0.9 V and 3.3 V bucks x2",
+    "mpn": "TLV62569DBVR",
+    "lcsc": "C141836",
+    "symbol": "Mindspark:TLV62569DBVR",
+    "footprint": "Mindspark:SOT-23-5",
+    "symbol_source": "stock, flattened, LCSC added",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "1.8 V LDO",
+    "mpn": "TLV75518PDBVR",
+    "lcsc": "C2877863",
+    "symbol": "Mindspark:TLV75518PDBVR",
+    "footprint": "Mindspark:SOT-23-5",
+    "symbol_source": "stock, flattened, LCSC added",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "VBUS TVS",
+    "mpn": "SMF5.0A",
+    "lcsc": "C193402",
+    "symbol": "Mindspark:SMF5.0A",
+    "footprint": "Mindspark:D_SMF",
+    "symbol_source": "stock Device:D_Zener graphic (unidirectional; stock D_TVS is bidirectional)",
+    "footprint_source": "stock copy, pad 1 = cathode"
+  },
+  {
+    "function": "RGB LED x13 (12 ring + 1 ESP32 user LED)",
+    "mpn": "WS2812B-2020",
+    "lcsc": "C52917434",
+    "symbol": "Mindspark:WS2812B-2020",
+    "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+    "symbol_source": "stock copy with LCSC field",
+    "footprint_source": "stock copper; STEP from EasyEDA C965555 (C52917434 has none), bbox-aligned"
+  },
+  {
+    "function": "24 MHz crystal",
+    "mpn": "X322524MOB4SI",
+    "lcsc": "C70590",
+    "symbol": "Mindspark:X322524MOB4SI",
+    "footprint": "Mindspark:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+    "symbol_source": "stock Crystal_GND24",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "Top-pressed buttons x3 (XVF reset, ESP32 EN, BOOT)",
+    "mpn": "TS-1187A-B-A-B",
+    "lcsc": "C318884",
+    "symbol": "Mindspark:TS-1187A-B-A-B",
+    "footprint": "Mindspark:SW_Push_1P1T_XKB_TS-1187A",
+    "symbol_source": "stock SW_Push copy with LCSC field",
+    "footprint_source": "stock copper; EasyEDA STEP, bbox-aligned"
+  },
+  {
+    "function": "Side-pressed buttons x3 (mute, action, user), board edge",
+    "mpn": "TS24CA",
+    "lcsc": "C393942",
+    "symbol": "Mindspark:TS24CA",
+    "footprint": "Mindspark:SW_SHOUHAN_TS24CA_SideActuated",
+    "symbol_source": "stock SW_Push copy with LCSC field",
+    "footprint_source": "EasyEDA, checked against SHOU HAN drawing (datasheets/TS24CA_C393942.pdf p.1); STEP at zero offset, not aligned"
+  },
+  {
+    "function": "USB-C receptacle",
+    "mpn": "TYPE-C-31-M-12",
+    "lcsc": "C165948",
+    "symbol": "Mindspark:TYPE-C-31-M-12",
+    "footprint": "Mindspark:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+    "symbol_source": "stock USB_C_Receptacle_USB2.0_16P copy with LCSC field",
+    "footprint_source": "stock copper (identical to PDB's); PDB STEP and its verified placement"
+  },
+  {
+    "function": "PLL ferrite",
+    "mpn": "BLM15AG601SN1D",
+    "lcsc": "C76884",
+    "symbol": "Mindspark:BLM15AG601SN1D",
+    "footprint": "Mindspark:L_0402_1005Metric",
+    "symbol_source": "stock FerriteBead_Small",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "Speaker connector",
+    "mpn": "S2B-PH-SM4-TB(LF)(SN)",
+    "lcsc": "C295747",
+    "symbol": "Mindspark:S2B-PH-SM4-TB",
+    "footprint": "Mindspark:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+    "symbol_source": "stock Conn_01x02_MountingPin copy",
+    "footprint_source": "stock geometry; STEP from PDB library (offset 0,-4.3,0 rot -90,0,0)"
+  },
+  {
+    "function": "Speaker lead housing (off-board)",
+    "mpn": "PHR-2",
+    "lcsc": "C157955",
+    "symbol": "-",
+    "footprint": "-",
+    "symbol_source": "not on PCB",
+    "footprint_source": "not on PCB"
+  },
+  {
+    "function": "Crimps for speaker (x2) and JTAG (x7) leads (off-board)",
+    "mpn": "SPH-002T-P0.5S",
+    "lcsc": "C111515",
+    "symbol": "-",
+    "footprint": "-",
+    "symbol_source": "not on PCB",
+    "footprint_source": "not on PCB"
+  },
+  {
+    "function": "0.9 V buck inductor",
+    "mpn": "SRP4020TA-2R2M",
+    "lcsc": "C719179",
+    "symbol": "Mindspark:SRP4020TA-2R2M",
+    "footprint": "Mindspark:L_Bourns_SRP4020TA",
+    "symbol_source": "stock Device:L copy",
+    "footprint_source": "EasyEDA, matches Bourns recommended layout; EasyEDA STEP"
+  },
+  {
+    "function": "XVF3800 JTAG header (xSYS2 JTAG-only signals)",
+    "mpn": "S7B-PH-SM4-TB(LF)(SN)",
+    "lcsc": "C265453",
+    "symbol": "Mindspark:S7B-PH-SM4-TB",
+    "footprint": "Mindspark:JST_PH_S7B-PH-SM4-TB_1x07-1MP_P2.00mm_Horizontal",
+    "symbol_source": "stock Conn_01x07_MountingPin copy",
+    "footprint_source": "stock copper; EasyEDA STEP, rot -180, bbox-aligned"
+  },
+  {
+    "function": "JTAG cable housing (off-board)",
+    "mpn": "PHR-7",
+    "lcsc": "C157951",
+    "symbol": "-",
+    "footprint": "-",
+    "symbol_source": "not on PCB",
+    "footprint_source": "not on PCB"
+  },
+  {
+    "function": "Speaker solder pads x2 (parallel to JST)",
+    "mpn": "test pad",
+    "lcsc": "-",
+    "symbol": "Mindspark:TestPoint",
+    "footprint": "Mindspark:TestPoint_THTPad_2.0x2.0mm_Drill1.0mm",
+    "symbol_source": "stock",
+    "footprint_source": "stock (no model: bare pad)"
+  },
+  {
+    "function": "Power mux (main USB-C wins)",
+    "mpn": "TPS2121RUXR",
+    "lcsc": "C485916",
+    "symbol": "Mindspark:TPS2121RUXR",
+    "footprint": "Mindspark:TI_RUX0012A_VQFN-HR-12_2x2.5mm",
+    "symbol_source": "TI/Ultra Librarian (incoming/ti_tps2121), hidden via pins removed, pin types set",
+    "footprint_source": "TI/Ultra Librarian copper = TI land pattern = EasyEDA C485916 (rotated); in-pad vias removed, per-pad 0.05 NSMD mask"
+  },
+  {
+    "function": "Reset supervisor",
+    "mpn": "TPS3808G33DBVR",
+    "lcsc": "C43698",
+    "symbol": "Mindspark:TPS3808G33DBVR",
+    "footprint": "Mindspark:SOT-23-6",
+    "symbol_source": "stock TPS3808DBV, RESET typed open-collector",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "USB ESD x2",
+    "mpn": "TPD4E05U06DQAR",
+    "lcsc": "C138714",
+    "symbol": "Mindspark:TPD4E05U06DQAR",
+    "footprint": "Mindspark:USON-10_2.5x1.0mm_P0.5mm",
+    "symbol_source": "stock TPD4E05U06DQA, flattened",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "Helper MCU (Wi-Fi/BLE, IPEX antenna)",
+    "mpn": "ESP32-S3-WROOM-1U-N16R8",
+    "lcsc": "C3013946",
+    "symbol": "Mindspark:ESP32-S3-WROOM-1U-N16R8",
+    "footprint": "Mindspark:ESP32-S3-WROOM-1U",
+    "symbol_source": "stock RF_Module:ESP32-S3-WROOM-1 (same 41 pins as the 1U, checked against Espressif's pin table)",
+    "footprint_source": "Espressif's KiCad library (github.com/espressif/kicad-libraries), chosen by the user 2026-11-12: same 41 pads as stock, copper unchanged, Espressif STEP; raw files in incoming/espressif/"
+  },
+  {
+    "function": "MIC_CLK fan-out buffer",
+    "mpn": "SN74LVC1G125DBVR",
+    "lcsc": "C23654",
+    "symbol": "Mindspark:SN74LVC1G125DBVR",
+    "footprint": "Mindspark:SOT-23-5",
+    "symbol_source": "stock 74xGxx:74LVC1G125 (TI pin table)",
+    "footprint_source": "stock SOT-23-5"
+  },
+  {
+    "function": "QSPI flash (XVF3800 boot image)",
+    "mpn": "W25Q32JVUUIQ",
+    "lcsc": "C2999380",
+    "symbol": "Mindspark:W25Q32JVUUIQ",
+    "footprint": "Mindspark:Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
+    "symbol_source": "stock W25Q32JVZP (same pinout), footprint changed",
+    "footprint_source": "stock copy, checked vs Winbond UU drawing (b 0.3, e 0.8, centre pads 0.2x0.8)"
+  },
+  {
+    "function": "XVF flash switches x4",
+    "mpn": "TS5A3166DBVR",
+    "lcsc": "C353035",
+    "symbol": "Mindspark:TS5A3166DBVR",
+    "footprint": "Mindspark:SOT-23-5",
+    "symbol_source": "stock Analog_Switch:TS5A3166DBVR, pins named NO/COM/IN, checked vs TI SCDS188D DBV column (2026-11-12, replaces DSBGA TS5A3166YZPR)",
+    "footprint_source": "stock SOT-23-5"
+  },
+  {
+    "function": "RST_N pull-down from ESP32 (CJ 2N7002)",
+    "mpn": "2N7002",
+    "lcsc": "C8545",
+    "symbol": "Mindspark:2N7002",
+    "footprint": "Mindspark:SOT-23",
+    "symbol_source": "stock, flattened",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "USB-C (ESP32 port)",
+    "mpn": "TYPE-C-31-M-12",
+    "lcsc": "C165948",
+    "symbol": "Mindspark:TYPE-C-31-M-12",
+    "footprint": "Mindspark:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+    "symbol_source": "stock USB_C_Receptacle_USB2.0_16P",
+    "footprint_source": "stock + PDB-verified STEP"
+  },
+  {
+    "function": "XVF3800 status LED (red pin 56, green pin 58; blue unused)",
+    "mpn": "TJ-S1615CY6TGLCCSRGB-A5",
+    "lcsc": "C601684",
+    "symbol": "Mindspark:TJ-S1615CY6TGLCCSRGB-A5",
+    "footprint": "Mindspark:LED_RGB_TOGIALED_1615_1.6x1.5mm",
+    "symbol_source": "EasyEDA, pins checked vs TOGIALED datasheet p.2 (1 K, 2 B, 3 G, 4 R)",
+    "footprint_source": "drawn from the datasheet's recommended pad layout (EasyEDA pads did not match); no 3D model"
+  },
+  {
+    "function": "Mute LED (red, driven by ESP32 GPIO41)",
+    "mpn": "KT-0603R",
+    "lcsc": "C2286",
+    "symbol": "Mindspark:LED",
+    "footprint": "Mindspark:LED_0603_1608Metric",
+    "symbol_source": "stock generic, LCSC on the placed instance",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "Power LED (green)",
+    "mpn": "KT-0603G",
+    "lcsc": "C12624",
+    "symbol": "Mindspark:LED",
+    "footprint": "Mindspark:LED_0603_1608Metric",
+    "symbol_source": "stock generic, LCSC on the placed instance",
+    "footprint_source": "stock copy"
+  },
+  {
+    "function": "GPIO header 2x12 (ESP32 GPIO + UART0 + XVF I/O), J701",
+    "mpn": "PZ254-2-12-S",
+    "lcsc": "C3294470",
+    "symbol": "Mindspark:Conn_02x12_Odd_Even",
+    "footprint": "Mindspark:PinHeader_2x12_P2.54mm_Vertical_SMD_HCTL_PZ254",
+    "symbol_source": "stock Connector_Generic:Conn_02x12_Odd_Even",
+    "footprint_source": "stock PinHeader_2x12_P2.54mm_Vertical_SMD with pads changed to the HCTL datasheet layout (1.02 x 3.12 mm at +/-2.69 mm; EasyEDA C3294470 had +/-2.80 mm)"
+  },
+  {
+    "function": "PROG slide switch SW701 (replaces the jumper)",
+    "mpn": "MSK12C02",
+    "lcsc": "C431540",
+    "symbol": "Mindspark:MSK12C02",
+    "footprint": "Mindspark:SW_SHOUHAN_MSK12C02_SideActuated",
+    "symbol_source": "stock SW_SPDT copy with LCSC field (pin 2 = common)",
+    "footprint_source": "EasyEDA, checked against SHOU HAN drawing (datasheets/MSK12C02_C431540.pdf p.1); STEP at zero offset, not aligned"
+  },
+  {
+    "function": "Jumper shunts x2 for J701 13-14 / 15-16 I2C link (loose, not assembled)",
+    "mpn": "2.54Short Circuit Cap Closed",
+    "lcsc": "C100114",
+    "symbol": "Mindspark:Jumper_2_Open",
+    "footprint": "-",
+    "symbol_source": "stock generic, LCSC on the placed instance",
+    "footprint_source": "stock copy"
+  }
+]

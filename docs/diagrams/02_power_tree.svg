@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="800" viewBox="0 0 1040 800" role="img"><title>MindSpeak rev 1 power tree and start-up order</title><desc>Two USB-C inputs (main and ESP32 port) feed a TPS2121 priority mux that makes the 5 V rail. 5 V feeds a 0.9 V buck, a 3.3 V buck, two load switches and the user RGB LED. The 3.3 V buck feeds the ESP32-S3 module and the 1.8 V LDO. A TPS3808 supervisor watching 3.3 V holds RST_N low until 3.3 V is valid.</desc>
+<style>
+  .bg { fill: #ffffff; }
+  text { font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', Arial, sans-serif; fill: #1f2328; }
+  .t  { font-size: 14px; font-weight: 600; }
+  .s  { font-size: 11.5px; fill: #3d444d; }
+  .xs { font-size: 10px; fill: #57606a; }
+  .h1 { font-size: 20px; font-weight: 700; }
+  .h2 { font-size: 13px; font-weight: 600; fill: #57606a; letter-spacing: 0.04em; }
+  .wire { stroke: #57606a; stroke-width: 1.4; fill: none; }
+  .wire.dash { stroke-dasharray: 5 4; }
+  .wire.pwr { stroke: #0f766e; stroke-width: 2; }
+  .wire.sig { stroke: #1d4ed8; }
+  .wire.aud { stroke: #c2410c; }
+  .wire.mcu { stroke: #7e22ce; }
+  .wire.prg { stroke: #be185d; }
+  .lbl { font-size: 10.5px; fill: #3d444d; }
+  .box { stroke-width: 1.2; }
+  .k-pwr  { fill: #e6f4f1; stroke: #0f766e; }
+  .k-xvf  { fill: #e8efff; stroke: #1d4ed8; }
+  .k-mcu  { fill: #f3e8ff; stroke: #7e22ce; }
+  .k-aud  { fill: #fff1e8; stroke: #c2410c; }
+  .k-mic  { fill: #e9f7e6; stroke: #2f7d1f; }
+  .k-ui   { fill: #fff7db; stroke: #a16207; }
+  .k-prg  { fill: #fde8f1; stroke: #be185d; }
+  .k-gry  { fill: #f2f3f5; stroke: #6e7781; }
+  .k-dnp  { fill: #ffffff; stroke: #6e7781; stroke-dasharray: 4 3; }
+  .note   { fill: #fffbea; stroke: #d4a72c; stroke-width: 1; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#57606a"/></marker></defs><rect class="bg" x="0" y="0" width="1040" height="800"/><text class="h1" x="30" y="28" text-anchor="start" dominant-baseline="central">MindSpeak rev 1: power tree</text>
+<text class="s" x="30" y="52" text-anchor="start" dominant-baseline="central">Updated 2026-11-10: ESP32-S3 helper replaces the RP2350A, so the 1.1 V rail is gone and the 3.3 V load grows.</text>
+<rect class="box k-gry" x="30" y="90" width="190" height="70" rx="8"/>
+<text class="t" x="125.0" y="110.0" text-anchor="middle" dominant-baseline="central">USB-C main</text>
+<text class="s" x="125.0" y="128.0" text-anchor="middle" dominant-baseline="central">TYPE-C-31-M-12</text>
+<text class="s" x="125.0" y="143.0" text-anchor="middle" dominant-baseline="central">SMF5.0A TVS, Rd 5.1 kΩ</text>
+<rect class="box k-gry" x="30" y="190" width="190" height="70" rx="8"/>
+<text class="t" x="125.0" y="210.0" text-anchor="middle" dominant-baseline="central">USB-C ESP32</text>
+<text class="s" x="125.0" y="228.0" text-anchor="middle" dominant-baseline="central">TYPE-C-31-M-12</text>
+<text class="s" x="125.0" y="243.0" text-anchor="middle" dominant-baseline="central">SMF5.0A TVS, Rd 5.1 kΩ</text>
+<rect class="box k-pwr" x="260" y="120" width="170" height="110" rx="8"/>
+<text class="t" x="345.0" y="145.0" text-anchor="middle" dominant-baseline="central">Power mux</text>
+<text class="s" x="345.0" y="163.0" text-anchor="middle" dominant-baseline="central">TI TPS2121</text>
+<text class="s" x="345.0" y="178.0" text-anchor="middle" dominant-baseline="central">IN1 = main (priority)</text>
+<text class="s" x="345.0" y="193.0" text-anchor="middle" dominant-baseline="central">IN2 = ESP32 port</text>
+<text class="s" x="345.0" y="208.0" text-anchor="middle" dominant-baseline="central">ST → ESP32 GPIO18</text>
+<path class="wire pwr" d="M220 125 L240 125 L240 150 L258 150" marker-end="url(#ah)"/>
+<text class="lbl" x="240" y="112" text-anchor="middle" dominant-baseline="central">VBUS_MAIN</text>
+<path class="wire pwr" d="M220 225 L240 225 L240 200 L258 200" marker-end="url(#ah)"/>
+<text class="lbl" x="240" y="238" text-anchor="middle" dominant-baseline="central">VBUS_ESP</text>
+<path class="wire pwr" d="M430 175 L460 175"/>
+<path class="wire pwr" d="M460 110 L460 745"/>
+<text class="t" x="460" y="760" text-anchor="middle" dominant-baseline="central">5 V rail</text>
+<text class="xs" x="460" y="777" text-anchor="middle" dominant-baseline="central">≈0.6 A typ, 2.4 A peak</text>
+<rect class="box k-pwr" x="490" y="85" width="220" height="70" rx="8"/>
+<text class="t" x="600.0" y="112.5" text-anchor="middle" dominant-baseline="central">0.9 V buck</text>
+<text class="s" x="600.0" y="130.5" text-anchor="middle" dominant-baseline="central">TI TLV62569 + SRP4020TA-2R2M</text>
+<rect class="box k-xvf" x="750" y="85" width="270" height="70" rx="8"/>
+<text class="t" x="885.0" y="105.0" text-anchor="middle" dominant-baseline="central">VDD 0.9 V</text>
+<text class="s" x="885.0" y="123.0" text-anchor="middle" dominant-baseline="central">XVF core: 4,12,19,27,34,42,49,57,61–64</text>
+<text class="s" x="885.0" y="138.0" text-anchor="middle" dominant-baseline="central">PLL_AVDD 22 via ferrite + 1 µF</text>
+<path class="wire pwr" d="M710 120.0 L748 120.0" marker-end="url(#ah)"/>
+<path class="wire pwr" d="M460 120.0 L488 120.0" marker-end="url(#ah)"/>
+<rect class="box k-pwr" x="490" y="180" width="220" height="100" rx="8"/>
+<text class="t" x="600.0" y="215.0" text-anchor="middle" dominant-baseline="central">3.3 V buck</text>
+<text class="s" x="600.0" y="233.0" text-anchor="middle" dominant-baseline="central">TI TLV62569 + SRP4020TA-2R2M</text>
+<text class="s" x="600.0" y="248.0" text-anchor="middle" dominant-baseline="central">≈0.25 A typ, ≈0.6 A peak</text>
+<rect class="box k-xvf" x="750" y="180" width="270" height="100" rx="8"/>
+<text class="t" x="885.0" y="200.0" text-anchor="middle" dominant-baseline="central">3.3 V</text>
+<text class="s" x="885.0" y="218.0" text-anchor="middle" dominant-baseline="central">XVF VDDIOL/R/T 8,38,52 · USB_VDD33 30</text>
+<text class="s" x="885.0" y="233.0" text-anchor="middle" dominant-baseline="central">ESP32-S3 module (Wi-Fi TX ≈0.36 A peak)</text>
+<text class="s" x="885.0" y="248.0" text-anchor="middle" dominant-baseline="central">W25Q32 · 4 flash switches · mic clock buffer</text>
+<text class="s" x="885.0" y="263.0" text-anchor="middle" dominant-baseline="central">mics via ferrite · J701 pins 2, 24</text>
+<path class="wire pwr" d="M710 230.0 L748 230.0" marker-end="url(#ah)"/>
+<path class="wire pwr" d="M460 230.0 L488 230.0" marker-end="url(#ah)"/>
+<rect class="box k-pwr" x="490" y="310" width="220" height="70" rx="8"/>
+<text class="t" x="600.0" y="337.5" text-anchor="middle" dominant-baseline="central">1.8 V LDO</text>
+<text class="s" x="600.0" y="355.5" text-anchor="middle" dominant-baseline="central">TI TLV75518P, fed from 3.3 V</text>
+<rect class="box k-xvf" x="750" y="310" width="270" height="70" rx="8"/>
+<text class="t" x="885.0" y="330.0" text-anchor="middle" dominant-baseline="central">1.8 V</text>
+<text class="s" x="885.0" y="348.0" text-anchor="middle" dominant-baseline="central">XVF VDDIOB18 17,26 · USB_VDD18 31</text>
+<text class="s" x="885.0" y="363.0" text-anchor="middle" dominant-baseline="central">RST_N pull-up 10 kΩ · J701 pin 3</text>
+<path class="wire pwr" d="M710 345.0 L748 345.0" marker-end="url(#ah)"/>
+<rect class="box k-prg" x="490" y="420" width="220" height="70" rx="8"/>
+<text class="t" x="600.0" y="440.0" text-anchor="middle" dominant-baseline="central">Reset supervisor</text>
+<text class="s" x="600.0" y="458.0" text-anchor="middle" dominant-baseline="central">TI TPS3808G33, senses 3.3 V</text>
+<text class="s" x="600.0" y="473.0" text-anchor="middle" dominant-baseline="central">open drain, trip 3.07 V, 20 ms</text>
+<rect class="box k-prg" x="750" y="420" width="270" height="70" rx="8"/>
+<text class="t" x="885.0" y="440.0" text-anchor="middle" dominant-baseline="central">RST_N (pin 21)</text>
+<text class="s" x="885.0" y="458.0" text-anchor="middle" dominant-baseline="central">wired-OR: TPS3808 · reset button (MR)</text>
+<text class="s" x="885.0" y="473.0" text-anchor="middle" dominant-baseline="central">ESP32 2N7002 Q701 (0 Ω link) · XTAG</text>
+<path class="wire pwr" d="M710 455.0 L748 455.0" marker-end="url(#ah)"/>
+<rect class="box k-aud" x="490" y="530" width="220" height="70" rx="8"/>
+<text class="t" x="600.0" y="550.0" text-anchor="middle" dominant-baseline="central">Amp load switch</text>
+<text class="s" x="600.0" y="568.0" text-anchor="middle" dominant-baseline="central">TI TPS22918, soft start</text>
+<text class="s" x="600.0" y="583.0" text-anchor="middle" dominant-baseline="central">EN ← XVF pin 40</text>
+<rect class="box k-aud" x="750" y="530" width="270" height="70" rx="8"/>
+<text class="t" x="885.0" y="550.0" text-anchor="middle" dominant-baseline="central">MAX98357A</text>
+<text class="s" x="885.0" y="568.0" text-anchor="middle" dominant-baseline="central">own bulk capacitor</text>
+<text class="s" x="885.0" y="583.0" text-anchor="middle" dominant-baseline="central">4 Ω speaker, ≈1.4 A peak</text>
+<path class="wire pwr" d="M710 565.0 L748 565.0" marker-end="url(#ah)"/>
+<path class="wire pwr" d="M460 565.0 L488 565.0" marker-end="url(#ah)"/>
+<rect class="box k-ui" x="490" y="625" width="220" height="70" rx="8"/>
+<text class="t" x="600.0" y="645.0" text-anchor="middle" dominant-baseline="central">LED load switch</text>
+<text class="s" x="600.0" y="663.0" text-anchor="middle" dominant-baseline="central">TI TPS22918</text>
+<text class="s" x="600.0" y="678.0" text-anchor="middle" dominant-baseline="central">EN ← ESP32 GPIO47</text>
+<rect class="box k-ui" x="750" y="625" width="270" height="70" rx="8"/>
+<text class="t" x="885.0" y="645.0" text-anchor="middle" dominant-baseline="central">WS2812B ring ×12</text>
+<text class="s" x="885.0" y="663.0" text-anchor="middle" dominant-baseline="central">data via SN74AHCT1G125 on 5 V</text>
+<text class="s" x="885.0" y="678.0" text-anchor="middle" dominant-baseline="central">≈0.6 A full white</text>
+<path class="wire pwr" d="M710 660.0 L748 660.0" marker-end="url(#ah)"/>
+<path class="wire pwr" d="M460 660.0 L488 660.0" marker-end="url(#ah)"/>
+<rect class="box k-ui" x="750" y="715" width="270" height="55" rx="8"/>
+<text class="t" x="885.0" y="727.5" text-anchor="middle" dominant-baseline="central">Always-on 5 V</text>
+<text class="s" x="885.0" y="745.5" text-anchor="middle" dominant-baseline="central">user RGB LED + its SN74AHCT1G125</text>
+<text class="s" x="885.0" y="760.5" text-anchor="middle" dominant-baseline="central">J701 pins 1, 23 (low current)</text>
+<path class="wire pwr" d="M460 742 L748 742" marker-end="url(#ah)"/>
+<path class="wire pwr" d="M600 280 L600 308" marker-end="url(#ah)"/>
+<text class="lbl" x="625" y="294" text-anchor="middle" dominant-baseline="central">3.3 V</text>
+<path class="wire dash" d="M560 280 L560 295 L475 295 L475 455 L488 455" marker-end="url(#ah)"/>
+<rect class="note" x="30" y="300" width="415" height="137" rx="6"/>
+<text class="t" x="40" y="314" text-anchor="start" dominant-baseline="central">Start-up order</text>
+<text class="s" x="40" y="332" text-anchor="start" dominant-baseline="central">1. A cable is plugged in; the TPS2121 passes 5 V (main port wins).</text>
+<text class="s" x="40" y="347" text-anchor="start" dominant-baseline="central">2. The 0.9 V and 3.3 V bucks soft-start from 5 V together.</text>
+<text class="s" x="40" y="362" text-anchor="start" dominant-baseline="central">3. The 1.8 V LDO follows 3.3 V, so it can never come up first.</text>
+<text class="s" x="40" y="377" text-anchor="start" dominant-baseline="central">4. TPS3808 holds RST_N low until 3.3 V &gt; 3.07 V, then 20 ms more.</text>
+<text class="s" x="40" y="392" text-anchor="start" dominant-baseline="central">5. XVF3800 boots from its QSPI flash (boot pins all low).</text>
+<text class="s" x="40" y="407" text-anchor="start" dominant-baseline="central">6. After boot: host enables the amp (pin 40);</text>
+<text class="s" x="40" y="422" text-anchor="start" dominant-baseline="central">    ESP32 switches on the LED ring (GPIO47).</text>
+<rect class="note" x="30" y="470" width="415" height="122" rx="6"/>
+<text class="t" x="40" y="484" text-anchor="start" dominant-baseline="central">Budget notes</text>
+<text class="s" x="40" y="502" text-anchor="start" dominant-baseline="central">Main USB-C should be a 5 V / 3 A supply for full volume + LEDs.</text>
+<text class="s" x="40" y="517" text-anchor="start" dominant-baseline="central">On the ESP32 port alone (PC port, 0.5–0.9 A) the ESP32 reads</text>
+<text class="s" x="40" y="532" text-anchor="start" dominant-baseline="central">TPS2121 ST and keeps the LED ring dim; the amp may brown out.</text>
+<text class="s" x="40" y="547" text-anchor="start" dominant-baseline="central">Bucks: TLV62569 is 2 A; 0.9 V core worst case is 1 A,</text>
+<text class="s" x="40" y="562" text-anchor="start" dominant-baseline="central">3.3 V peak ≈0.6 A with ESP32 Wi-Fi transmitting.</text>
+<text class="s" x="40" y="577" text-anchor="start" dominant-baseline="central">J701 exposes +5V, +3V3, +1V8 for low-current use only.</text></svg>

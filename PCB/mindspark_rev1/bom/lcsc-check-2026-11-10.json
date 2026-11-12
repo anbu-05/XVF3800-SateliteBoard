@@ -1,0 +1,1118 @@
+[
+ {
+  "ref": "C101,C103,C202,C206,C309,C314,C318,C509,C610",
+  "value": "10uF",
+  "qty": 9,
+  "lcsc": "C19702",
+  "mpn": "CL10A106KP8NNNC",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 459520,
+  "price": [
+   20,
+   0.0234
+  ],
+  "jlc": "base",
+  "jlc_stock": 10041644,
+  "footprint": "C_0603_1608Metric",
+  "voltage": "10V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "C102,C104,C105,C107,C301-C308,C310-C313,C315-C317,C322,C401,C508,C601-C609,C611-C613,C617,C701-C704,C801-C812,C816",
+  "value": "100nF",
+  "qty": 52,
+  "lcsc": "C1525",
+  "mpn": "CL05B104KO5NNNC",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 2069200,
+  "price": [
+   100,
+   0.0032
+  ],
+  "jlc": "base",
+  "jlc_stock": 33566087,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "16V",
+  "spec": "X7R"
+ },
+ {
+  "ref": "C106,C203,C204,C207,C815",
+  "value": "22uF",
+  "qty": 5,
+  "lcsc": "C45783",
+  "mpn": "CL21A226MAQNNNE",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 40,
+  "price": [
+   20,
+   0.1687
+  ],
+  "jlc": "base",
+  "jlc_stock": 3476859,
+  "footprint": "C_0805_2012Metric",
+  "voltage": "25V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "C201,C320,C321",
+  "value": "22pF",
+  "qty": 3,
+  "lcsc": "C1555",
+  "mpn": "0402CG220J500NT",
+  "brand": "FH",
+  "lcsc_stock": 320900,
+  "price": [
+   100,
+   0.002
+  ],
+  "jlc": "base",
+  "jlc_stock": 1650749,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "50V",
+  "spec": "C0G"
+ },
+ {
+  "ref": "C205,C618,C619",
+  "value": "15pF",
+  "qty": 3,
+  "lcsc": "C1548",
+  "mpn": "0402CG150J500NT",
+  "brand": "FH",
+  "lcsc_stock": 486500,
+  "price": [
+   100,
+   0.0026
+  ],
+  "jlc": "base",
+  "jlc_stock": 1179434,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "50V",
+  "spec": "C0G"
+ },
+ {
+  "ref": "C208,C209,C319,C502-C505,C507,C814",
+  "value": "1uF",
+  "qty": 9,
+  "lcsc": "C52923",
+  "mpn": "CL05A105KA5NQNC",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 2692500,
+  "price": [
+   100,
+   0.0059
+  ],
+  "jlc": "base",
+  "jlc_stock": 11427635,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "25V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "C501",
+  "value": "10uF",
+  "qty": 1,
+  "lcsc": "C19702",
+  "mpn": "CL10A106KP8NNNC",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 459520,
+  "price": [
+   20,
+   0.0234
+  ],
+  "jlc": "base",
+  "jlc_stock": 10041644,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "10V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "C506,C813",
+  "value": "1nF",
+  "qty": 2,
+  "lcsc": "C1523",
+  "mpn": "0402B102K500NT",
+  "brand": "FH",
+  "lcsc_stock": 0,
+  "price": [
+   100,
+   0.0038
+  ],
+  "jlc": "base",
+  "jlc_stock": 2232319,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "50V",
+  "spec": "X7R"
+ },
+ {
+  "ref": "C510",
+  "value": "47uF",
+  "qty": 1,
+  "lcsc": "C96123",
+  "mpn": "CL31A476MPHNNNE",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 40455,
+  "price": [
+   5,
+   0.1676
+  ],
+  "jlc": "base",
+  "jlc_stock": 443834,
+  "footprint": "C_1206_3216Metric",
+  "voltage": "10V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "C614-C616",
+  "value": "4.7uF",
+  "qty": 3,
+  "lcsc": "C23733",
+  "mpn": "CL05A475MP5NRNC",
+  "brand": "Samsung Electro-Mechanics",
+  "lcsc_stock": 0,
+  "price": [
+   50,
+   0.0119
+  ],
+  "jlc": "base",
+  "jlc_stock": 919195,
+  "footprint": "C_0402_1005Metric",
+  "voltage": "10V",
+  "spec": "X5R"
+ },
+ {
+  "ref": "D101,D102",
+  "value": "SMF5.0A",
+  "qty": 2,
+  "lcsc": "C193402",
+  "mpn": "SMF5.0A",
+  "brand": "MDD(Microdiode Semiconductor)",
+  "lcsc_stock": 469600,
+  "price": [
+   20,
+   0.0285
+  ],
+  "jlc": "expand",
+  "jlc_stock": 469612,
+  "footprint": "D_SMF",
+  "voltage": "",
+  "spec": "TVS 5 V"
+ },
+ {
+  "ref": "D201",
+  "value": "GREEN",
+  "qty": 1,
+  "lcsc": "C12624",
+  "mpn": "KT-0603G",
+  "brand": "Hubei KENTO Elec",
+  "lcsc_stock": 318050,
+  "price": [
+   50,
+   0.012
+  ],
+  "jlc": "expand",
+  "jlc_stock": 330825,
+  "footprint": "LED_0603_1608Metric",
+  "voltage": "",
+  "spec": "0603 green"
+ },
+ {
+  "ref": "D401",
+  "value": "RED",
+  "qty": 1,
+  "lcsc": "C2286",
+  "mpn": "KT-0603R",
+  "brand": "Hubei KENTO Elec",
+  "lcsc_stock": 3923800,
+  "price": [
+   100,
+   0.0077
+  ],
+  "jlc": "base",
+  "jlc_stock": 6491087,
+  "footprint": "LED_0603_1608Metric",
+  "voltage": "",
+  "spec": "0603 red"
+ },
+ {
+  "ref": "D402",
+  "value": "RGB",
+  "qty": 1,
+  "lcsc": "C601684",
+  "mpn": "TJ-S1615CY6TGLCCSRGB-A5",
+  "brand": "TOGIALED",
+  "lcsc_stock": 8890,
+  "price": [
+   5,
+   0.0963
+  ],
+  "jlc": "expand",
+  "jlc_stock": 10435,
+  "footprint": "LED_RGB_TOGIALED_1615_1.6x1.5mm",
+  "voltage": "",
+  "spec": "RGB, common cathode"
+ },
+ {
+  "ref": "D801-D812",
+  "value": "WS2812B-2020",
+  "qty": 12,
+  "lcsc": "C52917434",
+  "mpn": "WS2812B-2020-V6",
+  "brand": "Worldsemi",
+  "lcsc_stock": 860095,
+  "price": [
+   5,
+   0.0923
+  ],
+  "jlc": "expand",
+  "jlc_stock": 894261,
+  "footprint": "LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+  "voltage": "",
+  "spec": "WS2812B-2020"
+ },
+ {
+  "ref": "FB301,FB501",
+  "value": "600R@100MHz",
+  "qty": 2,
+  "lcsc": "C76884",
+  "mpn": "BLM15AG601SN1D",
+  "brand": "muRata",
+  "lcsc_stock": 747300,
+  "price": [
+   100,
+   0.0088
+  ],
+  "jlc": "expand",
+  "jlc_stock": 785217,
+  "footprint": "L_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "J101,J102",
+  "value": "TYPE-C-31-M-12",
+  "qty": 2,
+  "lcsc": "C165948",
+  "mpn": "TYPE-C-31-M-12",
+  "brand": "Korean Hroparts Elec",
+  "lcsc_stock": 276205,
+  "price": [
+   5,
+   0.1887
+  ],
+  "jlc": "expand",
+  "jlc_stock": 296561,
+  "footprint": "USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+  "voltage": "",
+  "spec": "USB 2.0, 16-pin"
+ },
+ {
+  "ref": "J301",
+  "value": "S7B-PH-SM4-TB(LF)(SN)",
+  "qty": 1,
+  "lcsc": "C265453",
+  "mpn": "S7B-PH-SM4-TB(LF)(SN)",
+  "brand": "JST",
+  "lcsc_stock": 3935,
+  "price": [
+   1,
+   0.445
+  ],
+  "jlc": "expand",
+  "jlc_stock": 3935,
+  "footprint": "JST_PH_S7B-PH-SM4-TB_1x07-1MP_P2.00mm_Horizontal",
+  "voltage": "",
+  "spec": "JST PH 7-pin"
+ },
+ {
+  "ref": "J501",
+  "value": "S2B-PH-SM4-TB(LF)(SN)",
+  "qty": 1,
+  "lcsc": "C295747",
+  "mpn": "S2B-PH-SM4-TB(LF)(SN)",
+  "brand": "JST",
+  "lcsc_stock": 3220,
+  "price": [
+   5,
+   0.2283
+  ],
+  "jlc": "expand",
+  "jlc_stock": 3224,
+  "footprint": "JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+  "voltage": "",
+  "spec": "JST PH 2-pin, 2 A"
+ },
+ {
+  "ref": "J701",
+  "value": "HOST",
+  "qty": 1,
+  "lcsc": "C37208",
+  "mpn": "2.54-1x6P",
+  "brand": "BOOMELE(Boom Precision Elec)",
+  "lcsc_stock": 206140,
+  "price": [
+   10,
+   0.0421
+  ],
+  "jlc": "expand",
+  "jlc_stock": 222827,
+  "footprint": "PinHeader_1x06_P2.54mm_Vertical",
+  "voltage": "",
+  "spec": "2.54 mm 1x6"
+ },
+ {
+  "ref": "J702",
+  "value": "GPIO",
+  "qty": 1,
+  "lcsc": "C57369",
+  "mpn": "2.54-1*10P",
+  "brand": "BOOMELE(Boom Precision Elec)",
+  "lcsc_stock": 13580,
+  "price": [
+   10,
+   0.0718
+  ],
+  "jlc": "expand",
+  "jlc_stock": 15729,
+  "footprint": "PinHeader_1x10_P2.54mm_Vertical",
+  "voltage": "",
+  "spec": "2.54 mm 1x10"
+ },
+ {
+  "ref": "J703",
+  "value": "SWD",
+  "qty": 1,
+  "lcsc": "C49257",
+  "mpn": "2.54-1*3P",
+  "brand": "BOOMELE(Boom Precision Elec)",
+  "lcsc_stock": 226740,
+  "price": [
+   20,
+   0.0292
+  ],
+  "jlc": "expand",
+  "jlc_stock": 262253,
+  "footprint": "PinHeader_1x03_P2.54mm_Vertical",
+  "voltage": "",
+  "spec": "2.54 mm 1x3"
+ },
+ {
+  "ref": "JP701",
+  "value": "PROG",
+  "qty": 1,
+  "lcsc": "C32713268",
+  "mpn": "HX PZ2.54-1x2P ZZ",
+  "brand": "hanxia",
+  "lcsc_stock": 176435,
+  "price": [
+   5,
+   0.0157
+  ],
+  "jlc": "expand",
+  "jlc_stock": 184282,
+  "footprint": "PinHeader_1x02_P2.54mm_Vertical",
+  "voltage": "",
+  "spec": "2.54 mm jumper"
+ },
+ {
+  "ref": "L201,L202",
+  "value": "2.2uH",
+  "qty": 2,
+  "lcsc": "C719179",
+  "mpn": "SRP4020TA-2R2M",
+  "brand": "BOURNS",
+  "lcsc_stock": 598,
+  "price": [
+   1,
+   0.6015
+  ],
+  "jlc": "expand",
+  "jlc_stock": 598,
+  "footprint": "L_Bourns_SRP4020TA",
+  "voltage": "",
+  "spec": "2.2 uH 6 A Isat"
+ },
+ {
+  "ref": "L601",
+  "value": "3.3uH",
+  "qty": 1,
+  "lcsc": "C42411119",
+  "mpn": "AOTA-B201610S3R3-101-T",
+  "brand": "ABRACON",
+  "lcsc_stock": 30,
+  "price": [
+   5,
+   0.3398
+  ],
+  "jlc": "expand",
+  "jlc_stock": 1394,
+  "footprint": "L_Abracon_AOTA-B201610",
+  "voltage": "",
+  "spec": "3.3 uH, dot = pin 1"
+ },
+ {
+  "ref": "MK501-MK504",
+  "value": "IM69D129FV01XTMA1",
+  "qty": 4,
+  "lcsc": "C43314439",
+  "mpn": "IM69D129FV01XTMA1",
+  "brand": "Infineon",
+  "lcsc_stock": 45,
+  "price": [
+   1,
+   2.9204
+  ],
+  "jlc": "expand",
+  "jlc_stock": 51,
+  "footprint": "Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+  "voltage": "",
+  "spec": "PDM mic"
+ },
+ {
+  "ref": "Q701",
+  "value": "2N7002",
+  "qty": 1,
+  "lcsc": "C8545",
+  "mpn": "2N7002",
+  "brand": "JSCJ",
+  "lcsc_stock": 5325150,
+  "price": [
+   50,
+   0.0169
+  ],
+  "jlc": "base",
+  "jlc_stock": 5912171,
+  "footprint": "SOT-23",
+  "voltage": "",
+  "spec": "N-MOSFET 60 V"
+ },
+ {
+  "ref": "R101-R104",
+  "value": "5.1k",
+  "qty": 4,
+  "lcsc": "C25905",
+  "mpn": "0402WGF5101TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 1359600,
+  "price": [
+   100,
+   0.0023
+  ],
+  "jlc": "base",
+  "jlc_stock": 4424874,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R105,R107,R204",
+  "value": "22k",
+  "qty": 3,
+  "lcsc": "C25768",
+  "mpn": "0402WGF2202TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 320600,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 1024225,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R106,R110,R112",
+  "value": "12k",
+  "qty": 3,
+  "lcsc": "C25752",
+  "mpn": "0402WGF1202TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 191300,
+  "price": [
+   100,
+   0.0018
+  ],
+  "jlc": "base",
+  "jlc_stock": 673862,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R108,R114,R304,R403,R404,R602",
+  "value": "10k",
+  "qty": 6,
+  "lcsc": "C25744",
+  "mpn": "0402WGF1002TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 787300,
+  "price": [
+   100,
+   0.0028
+  ],
+  "jlc": "base",
+  "jlc_stock": 22339594,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R109,R111,R201",
+  "value": "51k",
+  "qty": 3,
+  "lcsc": "C25794",
+  "mpn": "0402WGF5102TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 267000,
+  "price": [
+   100,
+   0.0019
+  ],
+  "jlc": "base",
+  "jlc_stock": 1016848,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R113",
+  "value": "33k",
+  "qty": 1,
+  "lcsc": "C25779",
+  "mpn": "0402WGF3302TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 1551900,
+  "price": [
+   100,
+   0.002
+  ],
+  "jlc": "base",
+  "jlc_stock": 2235775,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R202,R203,R501",
+  "value": "100k",
+  "qty": 3,
+  "lcsc": "C25741",
+  "mpn": "0402WGF1003TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 1428300,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 8605434,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R205",
+  "value": "2.2k",
+  "qty": 1,
+  "lcsc": "C25879",
+  "mpn": "0402WGF2201TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 1498100,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 3323666,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R301,R601,R704,R705,R802",
+  "value": "33R",
+  "qty": 5,
+  "lcsc": "C25105",
+  "mpn": "0402WGF330JTCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 654300,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 3781818,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R302",
+  "value": "680R",
+  "qty": 1,
+  "lcsc": "C25130",
+  "mpn": "0402WGF6800TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 0,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "expand",
+  "jlc_stock": 180475,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R303,R502",
+  "value": "1M",
+  "qty": 2,
+  "lcsc": "C26083",
+  "mpn": "0402WGF1004TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 846400,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 2697583,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R401,R701,R702,R706,R707,R801",
+  "value": "4.7k",
+  "qty": 6,
+  "lcsc": "C25900",
+  "mpn": "0402WGF4701TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 7666600,
+  "price": [
+   100,
+   0.0017
+  ],
+  "jlc": "base",
+  "jlc_stock": 15538628,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R405,R406,R603,R604,R710",
+  "value": "1k",
+  "qty": 5,
+  "lcsc": "C11702",
+  "mpn": "0402WGF1001TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 21027300,
+  "price": [
+   100,
+   0.0013
+  ],
+  "jlc": "base",
+  "jlc_stock": 33448634,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R407,R408",
+  "value": "330R",
+  "qty": 2,
+  "lcsc": "C25104",
+  "mpn": "0402WGF3300TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 908300,
+  "price": [
+   100,
+   0.0011
+  ],
+  "jlc": "base",
+  "jlc_stock": 1919343,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R703",
+  "value": "0R",
+  "qty": 1,
+  "lcsc": "C17168",
+  "mpn": "0402WGF0000TCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 8397400,
+  "price": [
+   100,
+   0.0012
+  ],
+  "jlc": "base",
+  "jlc_stock": 16796993,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "R708,R709",
+  "value": "27R",
+  "qty": 2,
+  "lcsc": "C25100",
+  "mpn": "0402WGF270JTCE",
+  "brand": "UNI-ROYAL",
+  "lcsc_stock": 577600,
+  "price": [
+   100,
+   0.0013
+  ],
+  "jlc": "expand",
+  "jlc_stock": 692490,
+  "footprint": "R_0402_1005Metric",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "SW301",
+  "value": "RESET",
+  "qty": 1,
+  "lcsc": "C318884",
+  "mpn": "TS-1187A-B-A-B",
+  "brand": "XKB Connection",
+  "lcsc_stock": 653600,
+  "price": [
+   20,
+   0.0208
+  ],
+  "jlc": "base",
+  "jlc_stock": 841610,
+  "footprint": "SW_Push_1P1T_XKB_TS-1187A",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "SW401",
+  "value": "MUTE",
+  "qty": 1,
+  "lcsc": "C318884",
+  "mpn": "TS-1187A-B-A-B",
+  "brand": "XKB Connection",
+  "lcsc_stock": 653600,
+  "price": [
+   20,
+   0.0208
+  ],
+  "jlc": "base",
+  "jlc_stock": 841610,
+  "footprint": "SW_Push_1P1T_XKB_TS-1187A",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "SW402",
+  "value": "ACTION",
+  "qty": 1,
+  "lcsc": "C318884",
+  "mpn": "TS-1187A-B-A-B",
+  "brand": "XKB Connection",
+  "lcsc_stock": 653600,
+  "price": [
+   20,
+   0.0208
+  ],
+  "jlc": "base",
+  "jlc_stock": 841610,
+  "footprint": "SW_Push_1P1T_XKB_TS-1187A",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "SW601",
+  "value": "BOOTSEL",
+  "qty": 1,
+  "lcsc": "C318884",
+  "mpn": "TS-1187A-B-A-B",
+  "brand": "XKB Connection",
+  "lcsc_stock": 653600,
+  "price": [
+   20,
+   0.0208
+  ],
+  "jlc": "base",
+  "jlc_stock": 841610,
+  "footprint": "SW_Push_1P1T_XKB_TS-1187A",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "SW701",
+  "value": "RUN",
+  "qty": 1,
+  "lcsc": "C318884",
+  "mpn": "TS-1187A-B-A-B",
+  "brand": "XKB Connection",
+  "lcsc_stock": 653600,
+  "price": [
+   20,
+   0.0208
+  ],
+  "jlc": "base",
+  "jlc_stock": 841610,
+  "footprint": "SW_Push_1P1T_XKB_TS-1187A",
+  "voltage": "",
+  "spec": ""
+ },
+ {
+  "ref": "U101,U102",
+  "value": "TPD4E05U06DQAR",
+  "qty": 2,
+  "lcsc": "C138714",
+  "mpn": "TPD4E05U06DQAR",
+  "brand": "TI",
+  "lcsc_stock": 4205,
+  "price": [
+   5,
+   0.0842
+  ],
+  "jlc": "expand",
+  "jlc_stock": 15366,
+  "footprint": "USON-10_2.5x1.0mm_P0.5mm",
+  "voltage": "",
+  "spec": "USB ESD, 0.5 pF"
+ },
+ {
+  "ref": "U103",
+  "value": "TPS2121RUXR",
+  "qty": 1,
+  "lcsc": "C485916",
+  "mpn": "TPS2121RUXR",
+  "brand": "TI",
+  "lcsc_stock": 25241,
+  "price": [
+   1,
+   0.9249
+  ],
+  "jlc": "expand",
+  "jlc_stock": 25241,
+  "footprint": "TI_RUX0012A_VQFN-HR-12_2x2.5mm",
+  "voltage": "",
+  "spec": "Power mux 4.5 A"
+ },
+ {
+  "ref": "U201,U202",
+  "value": "TLV62569DBVR",
+  "qty": 2,
+  "lcsc": "C141836",
+  "mpn": "TLV62569DBVR",
+  "brand": "TI",
+  "lcsc_stock": 261885,
+  "price": [
+   5,
+   0.069
+  ],
+  "jlc": "expand",
+  "jlc_stock": 268681,
+  "footprint": "SOT-23-5",
+  "voltage": "",
+  "spec": "2 A buck, 1.5 MHz"
+ },
+ {
+  "ref": "U203",
+  "value": "TLV75518PDBVR",
+  "qty": 1,
+  "lcsc": "C2877863",
+  "mpn": "TLV75518PDBVR",
+  "brand": "TI",
+  "lcsc_stock": 7825,
+  "price": [
+   5,
+   0.2063
+  ],
+  "jlc": "expand",
+  "jlc_stock": 7821,
+  "footprint": "SOT-23-5",
+  "voltage": "",
+  "spec": "500 mA LDO"
+ },
+ {
+  "ref": "U301",
+  "value": "XVF3800-QF60B-C",
+  "qty": 1,
+  "lcsc": "C20491135",
+  "mpn": "XVF3800-QF60B-C",
+  "brand": "XMOS",
+  "lcsc_stock": 21,
+  "price": [
+   1,
+   23.1568
+  ],
+  "jlc": "expand",
+  "jlc_stock": 21,
+  "footprint": "XMOS_QFN-60-5EP_7x7mm_P0.4mm",
+  "voltage": "",
+  "spec": "Voice processor"
+ },
+ {
+  "ref": "U302",
+  "value": "TPS3808G33DBVR",
+  "qty": 1,
+  "lcsc": "C43698",
+  "mpn": "TPS3808G33DBVR",
+  "brand": "TI",
+  "lcsc_stock": 26125,
+  "price": [
+   5,
+   0.3913
+  ],
+  "jlc": "expand",
+  "jlc_stock": 26251,
+  "footprint": "SOT-23-6",
+  "voltage": "",
+  "spec": "Supervisor 3.07 V"
+ },
+ {
+  "ref": "U401,U602",
+  "value": "W25Q32JVUUIQ",
+  "qty": 2,
+  "lcsc": "C2999380",
+  "mpn": "W25Q32JVUUIQ",
+  "brand": "Winbond",
+  "lcsc_stock": 1226,
+  "price": [
+   1,
+   2.6148
+  ],
+  "jlc": "expand",
+  "jlc_stock": 1226,
+  "footprint": "Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
+  "voltage": "",
+  "spec": "32 Mbit QSPI flash"
+ },
+ {
+  "ref": "U501,U801",
+  "value": "TPS22918DBVR",
+  "qty": 2,
+  "lcsc": "C131941",
+  "mpn": "TPS22918DBVR",
+  "brand": "TI",
+  "lcsc_stock": 69470,
+  "price": [
+   5,
+   0.3454
+  ],
+  "jlc": "expand",
+  "jlc_stock": 69473,
+  "footprint": "SOT-23-6",
+  "voltage": "",
+  "spec": "2 A load switch"
+ },
+ {
+  "ref": "U502",
+  "value": "MAX98357AEWL+T",
+  "qty": 1,
+  "lcsc": "C2682619",
+  "mpn": "MAX98357AEWL+T",
+  "brand": "MAXIM",
+  "lcsc_stock": 8482,
+  "price": [
+   1,
+   0.6017
+  ],
+  "jlc": "expand",
+  "jlc_stock": 9798,
+  "footprint": "Maxim_WLP-9_1.595x1.415_Layout3x3_P0.4mm_Ball0.27mm_Pad0.25mm_NSMD",
+  "voltage": "",
+  "spec": "I2S class-D 3.2 W"
+ },
+ {
+  "ref": "U601",
+  "value": "RP2350A",
+  "qty": 1,
+  "lcsc": "C42411118",
+  "mpn": "RP2350A",
+  "brand": "Raspberry Pi",
+  "lcsc_stock": 3084,
+  "price": [
+   1,
+   1.299
+  ],
+  "jlc": "expand",
+  "jlc_stock": 3084,
+  "footprint": "QFN-60-1EP_7x7mm_P0.4mm_EP3.4x3.4mm",
+  "voltage": "",
+  "spec": "MCU"
+ },
+ {
+  "ref": "U701-U704",
+  "value": "TS5A3166YZPR",
+  "qty": 4,
+  "lcsc": "C2651902",
+  "mpn": "TS5A3166YZPR",
+  "brand": "TI",
+  "lcsc_stock": 3054,
+  "price": [
+   1,
+   0.5668
+  ],
+  "jlc": "expand",
+  "jlc_stock": 3054,
+  "footprint": "TI_YZP0005_DSBGA-5_0.9x1.4mm_P0.5mm",
+  "voltage": "",
+  "spec": "SPST 0.9 R"
+ },
+ {
+  "ref": "U802",
+  "value": "SN74AHCT1G125DBVR",
+  "qty": 1,
+  "lcsc": "C7484",
+  "mpn": "SN74AHCT1G125DBVR",
+  "brand": "TI",
+  "lcsc_stock": 4825,
+  "price": [
+   5,
+   0.1009
+  ],
+  "jlc": "expand",
+  "jlc_stock": 36559,
+  "footprint": "SOT-23-5",
+  "voltage": "",
+  "spec": "Buffer, TTL inputs"
+ },
+ {
+  "ref": "Y301",
+  "value": "24MHz",
+  "qty": 1,
+  "lcsc": "C70590",
+  "mpn": "X322524MOB4SI",
+  "brand": "YXC Crystal Oscillators",
+  "lcsc_stock": 112980,
+  "price": [
+   5,
+   0.0956
+  ],
+  "jlc": "expand",
+  "jlc_stock": 154798,
+  "footprint": "Crystal_SMD_3225-4Pin_3.2x2.5mm",
+  "voltage": "",
+  "spec": "12 pF, 50 R ESR"
+ },
+ {
+  "ref": "Y601",
+  "value": "12MHz",
+  "qty": 1,
+  "lcsc": "C20625731",
+  "mpn": "ABM8-272-T3",
+  "brand": "ABRACON",
+  "lcsc_stock": 9275,
+  "price": [
+   5,
+   0.3998
+  ],
+  "jlc": "expand",
+  "jlc_stock": 9276,
+  "footprint": "Crystal_SMD_Abracon_ABM8G-4Pin_3.2x2.5mm",
+  "voltage": "",
+  "spec": "10 pF load"
+ }
+]

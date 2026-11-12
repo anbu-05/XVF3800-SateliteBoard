@@ -1,0 +1,50 @@
+{
+ "floating": [],
+ "labels": [
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USBM_CC1",
+   "reason": "connector to ESD by label: both CC lines carry an Rd to GND; wiring them across needs a crossing"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USBM_CC2",
+   "reason": "as USBM_CC1"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USBE_CC1",
+   "reason": "as USBM_CC1"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USBE_CC2",
+   "reason": "as USBM_CC1"
+  },
+  {
+   "sheet": "xvf3800.kicad_sch",
+   "net": "MCLK_LOOP",
+   "reason": "pin 14 to pin 41 on opposite sides of the XVF3800; a wire would run round the chip past its labelled pins"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USB_MAIN_DM",
+   "reason": "connector to ESD by label: the user's ESD pin map (2026-11-12: CC1 pin 1, D- pin 2, D+ pin 4, CC2 pin 5) puts D- under CC1 on the left and D+ above CC2 on the right, so wires would cross the Rd shunts and CC lines"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USB_MAIN_DP",
+   "reason": "as USB_MAIN_DM"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USB_ESP_DM",
+   "reason": "as USB_MAIN_DM"
+  },
+  {
+   "sheet": "usb_power.kicad_sch",
+   "net": "USB_ESP_DP",
+   "reason": "as USB_MAIN_DM"
+  }
+ ]
+}

@@ -1,0 +1,254 @@
+{
+ "generated": "2026-11-07, extended 2026-11-10",
+ "easyeda2kicad": {
+  "version": "1.0.1",
+  "command": "easyeda2kicad --full --lcsc_id C20491135 C181753 C527406 C131941 C2682619 C43314439 --output incoming/easyeda/easyeda_raw ; then: easyeda2kicad --full --lcsc_id C22355751 --output incoming/easyeda/easyeda_raw ; then: easyeda2kicad --full --lcsc_id C719179 C52917434 C318884 C265453 --output incoming/easyeda/easyeda_raw ; WS2812B model: easyeda2kicad --3d --footprint --lcsc_id C965555 -> incoming/easyeda_models ; 2026-11-10: easyeda2kicad --full --lcsc_id C131941 C2651902 C42411119 --output incoming/easyeda/easyeda_raw ; cross-check only: easyeda2kicad --full --lcsc_id C485916 C2999380 --output incoming/easyeda_check/check ; easyeda2kicad --full --lcsc_id C601684 --output incoming/easyeda/easyeda_raw ; 2026-11-11: easyeda2kicad --full --lcsc_id C393942 C431540 C5383110 --output incoming/easyeda/easyeda_raw (C5383110 for cross-check only; stock 2x12 footprint used) ; 2026-11-11 SMD header: easyeda2kicad --footprint --3d --lcsc_id C3294470 (cross-check only, scratch output; J701 footprint is stock SMD with HCTL pads)",
+  "files": {
+   "incoming/easyeda/easyeda_raw.3dshapes/AUDIO-IN-SMD_PJ-327A_C22355751.step": "a8b711cd0e41da55e5aea8991701853213682324e61685ff60b8c66763c6007a",
+   "incoming/easyeda/easyeda_raw.3dshapes/AUDIO-IN-SMD_PJ-327A_C22355751.wrl": "a01e7a7bda755d4569fd627057b2344839c92d23e7698107c979918ee823eb81",
+   "incoming/easyeda/easyeda_raw.3dshapes/CONN-SMD_PH2.00-WS-7P.step": "a359d0e092d993a4683859b0eac74dcad41281f311d52a26632d5bc70c7e053d",
+   "incoming/easyeda/easyeda_raw.3dshapes/CONN-SMD_PH2.00-WS-7P.wrl": "a2bc39c83650f79a9e06a70bf704cb14c81541e8b8a075f1a82161cd1110ee86",
+   "incoming/easyeda/easyeda_raw.3dshapes/HVQFN-32_L5.0-W5.0-H1.0-P0.50.step": "29094e9b4f477e54c099821fa9bf281fc1209510f988ad042674004f9e09d9cf",
+   "incoming/easyeda/easyeda_raw.3dshapes/HVQFN-32_L5.0-W5.0-H1.0-P0.50.wrl": "984388c09834a3d268ad15c6428ac281427b4822e84e3cba6dcbd79db77cf105",
+   "incoming/easyeda/easyeda_raw.3dshapes/IND-SMD_L4.5-W4.1-H1.2_SRP4020TA.step": "6df61c852dfe0dee12582ada0edc8fb0236ee629708cf9f67d563dbe3c5133a4",
+   "incoming/easyeda/easyeda_raw.3dshapes/IND-SMD_L4.5-W4.1-H1.2_SRP4020TA.wrl": "cb835ce37282833c23ba63dfacafc95ad8ec2f7b8cb191bf6bf19ae909df1b33",
+   "incoming/easyeda/easyeda_raw.3dshapes/QFN-60_L7.0-W7.0-P0.40-TL-EP_XU316-1024.step": "5549bce3ea749c7bb2106f73e88a57030485263e737041d32c8d902078641c73",
+   "incoming/easyeda/easyeda_raw.3dshapes/QFN-60_L7.0-W7.0-P0.40-TL-EP_XU316-1024.wrl": "8c694becdb557109276f1f844331e1e1231b0331c2e12acfba218e4cfe4c3133",
+   "incoming/easyeda/easyeda_raw.3dshapes/RHLGA-5L_L3.5-W2.7-P0.82-MP23ABS1TR.step": "36518d37883cf2bb2e9a9da0fd291a28f4401d74172adcfbe6dc29445ef1f80f",
+   "incoming/easyeda/easyeda_raw.3dshapes/RHLGA-5L_L3.5-W2.7-P0.82-MP23ABS1TR.wrl": "bd8a1705661b29c6154682d6e8373a8f1f392fdd4914ed58909f60f2e518a7b3",
+   "incoming/easyeda/easyeda_raw.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.step": "f24d05dd87ac04518fdaed88a57d135441fe22452089387784c4deda2bc09d61",
+   "incoming/easyeda/easyeda_raw.3dshapes/SOT-23-6_L2.9-W1.6-H1.5-LS2.8-P0.95.wrl": "7023139da8e0528b1cd05db53344f9f563fe34c447e10fb4db9b06fdddb0aa4b",
+   "incoming/easyeda/easyeda_raw.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.step": "2b1a5886304dd712e477739b62a80c5f568d59d1771f5a236c6ebefee5b2f5b1",
+   "incoming/easyeda/easyeda_raw.3dshapes/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.wrl": "13e20049f53e02cf9f1f562663a79da851fd1d7df3139be1fdf219862bcd8f91",
+   "incoming/easyeda/easyeda_raw.3dshapes/WLP-9_L1.4-W1.3-P0.40-R3-C3-BR.step": "f3967590f001efd4d06615c4037fa9f5781a900c4b937876274b731643d86c1c",
+   "incoming/easyeda/easyeda_raw.3dshapes/WLP-9_L1.4-W1.3-P0.40-R3-C3-BR.wrl": "ffd1b267d8f8e0c38634df9f1a8eeca3e9bdf57d5a299fb66fa27391a309d90a",
+   "incoming/easyeda/easyeda_raw.3dshapes/WQFN-24_L5.0-W4.0-H0.8-P0.50.step": "7d08e9bc1012a03a4194ce478151d682c562a6c7aef39796859eb1966aab8bd5",
+   "incoming/easyeda/easyeda_raw.3dshapes/WQFN-24_L5.0-W4.0-H0.8-P0.50.wrl": "e8c1afb965cfee59f3240ae681dfbd46ffa286595e371f7deb93686f333992db",
+   "incoming/easyeda/easyeda_raw.kicad_sym": "b54bd8ba1bfe0eb4d413a4f05b4a42b51376b99edfc2868dc43cf8603dbc3962",
+   "incoming/easyeda/easyeda_raw.pretty/AUDIO-IN-SMD_PJ-327A_C22355751.kicad_mod": "73f89f1420d6000e9576f6462b597d0ca2413ab624e70634204612f4ff457e8d",
+   "incoming/easyeda/easyeda_raw.pretty/CONN-SMD_S7B-PH-SM4-TB-LF-SN.kicad_mod": "a74a11529936c6f3e2b5c673d414c5006da18f74755f27733254599bb7d18486",
+   "incoming/easyeda/easyeda_raw.pretty/HVQFN-32_L5.0-W5.0-P0.50-TL-EP.kicad_mod": "23d862c5b84f46d17747d15a5b332f6823b9a47fd7beaa886e84b8e8f0e39d23",
+   "incoming/easyeda/easyeda_raw.pretty/IND-SMD_L4.5-W4.1_SRP4020TA.kicad_mod": "8547a33e8226164b3612ff0726c8341f5bd2ebf3630d15542bf19704e44a232d",
+   "incoming/easyeda/easyeda_raw.pretty/LED-SMD_4P-L2.2-W2.0-P1.00_WS2815C-2020-4P.kicad_mod": "4e1f5cd5bb7be544821a5d15e04a771ebde058425918e64bebeae28ce8ef9a2d",
+   "incoming/easyeda/easyeda_raw.pretty/QFN-60_L7.0-W7.0-P0.40-TL-EP_XU316-1024.kicad_mod": "415b4e2c8293147e38090fb53ecef26add31ba921f7705f8e7e8105085fbbf24",
+   "incoming/easyeda/easyeda_raw.pretty/RHLGA-5L_L3.5-W2.7-P0.82-MP23ABS1TR.kicad_mod": "e294a16b563ad78d285949223b552fb28d90a213ac3d325ed0ef8aa01bd73126",
+   "incoming/easyeda/easyeda_raw.pretty/SOT-23-6_L2.9-W1.6-P0.95-LS2.8-BR.kicad_mod": "3fb2c9daf4686c73fc9f91320f99c3c8de75ee1ced748c5793d318134a9a2eca",
+   "incoming/easyeda/easyeda_raw.pretty/SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H1.5.kicad_mod": "f7238a71b736aa7add66a830875630381e7da07cbe8b9d15e15c094db6a40ca9",
+   "incoming/easyeda/easyeda_raw.pretty/WLP-9_L1.4-W1.3-P0.40-R3-C3-BR.kicad_mod": "b1f6e9dd5855db6c21d59cf106b32ad33be8ca8094b949d231d95a84a27a1802",
+   "incoming/easyeda/easyeda_raw.pretty/WQFN-24_L5.0-W4.0-P0.50-BL-EP.kicad_mod": "aa38d7dea700434be0abef778099347ea27461cf845ac6ec89188413e4094cb7",
+   "incoming/easyeda_models/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.step": "a6b334fa1b0d4d962406dce20369aaa2c3040f74ee2173be509a82120daf37a4",
+   "incoming/easyeda_models/LED-SMD_4P-L2.0-W2.0-H0.8-TL_WS2812B-2020.wrl": "92d43f24248cc64d495fb90067e02598848dd8a66d8544ab4cb874a1cb6e104b",
+   "incoming/easyeda_models/LED-SMD_4P-L2.0-W2.0-TL_WS2812B-2020.kicad_mod": "b943cc0a8fbefc6294d9fd43b7b965cd4345fe5befc8262a3a712a207417c286",
+   "incoming/easyeda/easyeda_raw.3dshapes/DSBGA-5_L1.4-W0.9-H0.5-P0.50-TL.step": "2a3da4dcdb0ac5926d0777e149bd95035e34b5950865784b573227af383d58a9",
+   "incoming/easyeda/easyeda_raw.3dshapes/DSBGA-5_L1.4-W0.9-H0.5-P0.50-TL.wrl": "882dd3235966214a02e0cd686ef624db545f12441bfc09283443aaac732bcfb9",
+   "incoming/easyeda/easyeda_raw.3dshapes/IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T.step": "e8bd318382f9369070a83fc01047deeabf4d1de054a6bbfcbd925afc1cdfa91e",
+   "incoming/easyeda/easyeda_raw.3dshapes/IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T.wrl": "c939d8270d229e2fd4d40b24ab6c93e9b35ea2e620cb8c946f2e5ce1787b6a61",
+   "incoming/easyeda/easyeda_raw.pretty/DSBGA-5_L1.4-W0.9-P0.50-TL.kicad_mod": "10dafe97508a9867df8088c1fdfb843a01129976196ca5d962d92c0fd3b4d796",
+   "incoming/easyeda/easyeda_raw.pretty/IND-SMD_L2.0-W1.6_AOTA-B201610S3R3-101-T.kicad_mod": "1d4ff68ed0b8b7eedfa2829f26e67b1ed99ca928dbfc6fde60d3ad5059b0cbb4",
+   "incoming/easyeda_check/check.3dshapes/USON-8_L4.0-W3.0-H0.6-P0.80-BL_GD25Q32CNIGR.step": "0e87ba39aa1acd04f043097a4e148d7558cf195860f64cd60892f970de5a07a2",
+   "incoming/easyeda_check/check.3dshapes/USON-8_L4.0-W3.0-H0.6-P0.80-BL_GD25Q32CNIGR.wrl": "ec40921c2ca44f43b2a3a8d189fc61a8c666634dedfe1653411b778a617329ff",
+   "incoming/easyeda_check/check.3dshapes/VQFN-HR-12_L2.5-W2.0-H1.0-P0.50-BL.step": "30dbc85fb39f923a47172ddcbf71edf12f9d11a6085291065eb2f5cb4e93d36b",
+   "incoming/easyeda_check/check.3dshapes/VQFN-HR-12_L2.5-W2.0-H1.0-P0.50-BL.wrl": "bb48815282adb0be3cd653881c166f012244c053ee72f831e63af2840d2fa915",
+   "incoming/easyeda_check/check.kicad_sym": "abce2e1e9e972a536ccf56b0b999fec5bff0baa623389975782d766153c2d387",
+   "incoming/easyeda_check/check.pretty/USON-8_L4.0-W3.0-P0.80-BL_WINBOND_UU.kicad_mod": "2ba236a5ec9381aed890088f020985b535ebbe97fd2dc0ceea2dca683088ca51",
+   "incoming/easyeda_check/check.pretty/VQFN-HR-12_L2.5-W2.0-P0.50-BL.kicad_mod": "5afcd0e0fa0bc1df13991f5ec6db45b48fb4fdda1c8e842ca472adcd7cdc3cce",
+   "incoming/easyeda/easyeda_raw.3dshapes/LED-ARRAY-SMD_4P-L1.6-W1.5-H0.6-BL-FD.step": "b88a65c6b7f0d2224d5767ce135b07eafa3018a4962419866d11f6d7b2058673",
+   "incoming/easyeda/easyeda_raw.3dshapes/LED-ARRAY-SMD_4P-L1.6-W1.5-H0.6-BL-FD.wrl": "72b3331214079e749ed71ce4c7869775429ad2a14bcc2c34334721941662799c",
+   "incoming/easyeda/easyeda_raw.pretty/LED-ARRAY-SMD_4P-L1.6-W1.5-BL-FD.kicad_mod": "62198e9c621262cf17287edd348e60951a2d4591df7f4de5975e997d461b5db2",
+   "incoming/easyeda/easyeda_raw.pretty/SW-SMD_2P-TS24CA.kicad_mod": "91b3462e80a9794ac20d3e4ea54a34499f0800db63e44d16cbaa97840b35a6ae",
+   "incoming/easyeda/easyeda_raw.pretty/SW-TH_MSK12C02.kicad_mod": "7b1832a5d2e2c975d592949c869f92bce35673926aa31a1335cfa5460e48965f",
+   "incoming/easyeda/easyeda_raw.pretty/HDR-TH_24P-P2.54-V-M-R2-C12-S2.54.kicad_mod": "fe446a7004e5680d13ca1c348525c37907ed0a08bc87550d1e27c2e74876df9d",
+   "incoming/easyeda/easyeda_raw.3dshapes/SW-SMD_2P-TS24CA.step": "6fe1ce9207a43d0495f5636970341f40e3779c98fd53f99a2534d119b6755823",
+   "incoming/easyeda/easyeda_raw.3dshapes/SW-SMD_3P-L6.6-W2.7-LS7.8-P1.50.step": "05b22e1e8ef01866ddfb2339a6768d839a7a4555372ad2b0435533b77ad01d04"
+  }
+ },
+ "datasheets": {
+  "datasheets/TLV320AIC3104.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tlv320aic3104.pdf",
+   "rev": "SLAS510G Feb 2021",
+   "sha256": "17ce38b2b2b35e44fedaad6c44fcb9c2133722dccfd5ef80e9ec2e3b8f281e9a",
+   "note": "part dropped 2026-11-09; kept for reference"
+  },
+  "datasheets/LM48511.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/lm48511.pdf",
+   "rev": "SNAS416K Nov 2019",
+   "sha256": "47fbd38c5dc884f17c37256a81665e919b2309e63bf2d9d5198e1da452143373",
+   "note": "part dropped 2026-11-09; kept for reference"
+  },
+  "datasheets/TPS22918.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tps22918.pdf",
+   "sha256": "1b28eb58003d28b18bf919a15734056f296a499bebee2bd493a1e4358c4dfb1c"
+  },
+  "datasheets/IM69D129F.pdf": {
+   "url": "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf",
+   "rev": "v1.0 2025-02-21",
+   "sha256": "3ba080cf66ccf46bd6f21e90837ab54a7db247b542e150b0ca89e499fd24bb70"
+  },
+  "datasheets/XU316-1024-QF60B.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/e0bab2936fdf2954518a1900c0748604.pdf?productCode=C6036851",
+   "rev": "XMOS XU316-1024-QF60B datasheet, section 15",
+   "sha256": "9134440f4f8ff4bfb8cf54048d3b868cd9b870137cac66efe68fa6e8af3091a5"
+  },
+  "datasheets/SOFNG_PJ-327A.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/303b9cb93cc7b6f12aaefe68fac9aed7.pdf?productCode=C22355751",
+   "sha256": "cf9a59050430434beb494dba45f63ddacf1baea84c7c0cdb6faeb53229b15454",
+   "note": "part dropped 2026-11-09; kept for reference"
+  },
+  "datasheets/JST_PH.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/2474e9261ed7c5f86b55d373e724589d.pdf?productCode=C295747",
+   "sha256": "19ec5596816894cd526c3f2e0dd6752e9ea68bd5ff4886ab93bc2966da4677ca"
+  },
+  "datasheets/TLV62569.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tlv62569.pdf",
+   "rev": "SLVSDG1C Oct 2017",
+   "sha256": "1ba6f55dfe678d06d563acd6632f1f950a497d812270806021097b55cd81d3c4"
+  },
+  "datasheets/Bourns_SRP4020TA.pdf": {
+   "url": "https://www.bourns.com/docs/Product-Datasheets/SRP4020TA.pdf",
+   "sha256": "601b2bd60f01531d3dd98df00eab15635fa971ebc03cf7ae4ccb5679faf03485"
+  },
+  "datasheets/TPS2121.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tps2121.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "b2f5950f596dc2c4ca33e4ebac27fd35e4dcc68ea63e173466123e1118e91a06"
+  },
+  "datasheets/TPS3808.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tps3808.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed"
+  },
+  "datasheets/TLV755P.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tlv755p.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "1b17d775c7d3c119452c6561fb36e2913298a55f1ba3047267a2f9d8a1d5ecde"
+  },
+  "datasheets/TPD4E05U06.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "c167cf1e72a5473a4d2c59b6a3c0251498701da05b7785919b9ceaae3b3e02c6"
+  },
+  "datasheets/TS5A3166.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/ts5a3166.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "1f2ead12bd7ceb7135bd017cb7554008d71ae2dcfdddb6eb6e2189fbdbd7a2ad"
+  },
+  "datasheets/SN74AHCT1G125.pdf": {
+   "url": "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "564b239f73ff629f960832fa7e1c64f6a651eea28f64115ecefcdb7af22ca416"
+  },
+  "datasheets/RP2350.pdf": {
+   "url": "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "a638d6780da919162660691bfa02c6dcf7c2a0b6e9f18e2d7519c80b664a2e39"
+  },
+  "datasheets/hardware-design-with-rp2350.pdf": {
+   "url": "https://datasheets.raspberrypi.com/rp2350/hardware-design-with-rp2350.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "cef88bc7d87e67b4262ee15f2b94b03566667143f4e8daf6931828bef6408059"
+  },
+  "datasheets/W25Q32JV_C2999380.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/a0a57990083dbaa836cd5aa8d7b11749.pdf?productCode=C2999380",
+   "downloaded": "2026-11-10",
+   "sha256": "d4213ea0965d6464c420ad34741dca79439ba69db8412440c3cdbd0051e19c45"
+  },
+  "datasheets/ABM8-272-T3_C20625731.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/d5520a242c89eeaef42f6496027f72da.pdf?productCode=C20625731",
+   "downloaded": "2026-11-10",
+   "sha256": "f4b5787cbc51e7f6366333491ec09884ad406dd348fe540040f0fc043ab5457f"
+  },
+  "datasheets/AOTA-B201610_C42411119.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/0ca6a1bbc70fd13a89f7695ff7dd8558.pdf?productCode=C42411119",
+   "downloaded": "2026-11-10",
+   "sha256": "b15dcb32224c50ddf5c7643358bdef49177b451d72933d7fbb02f3756aca7827"
+  },
+  "datasheets/SMF5.0A_C193402.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/82c461b905225ff344e885083d94bbf3.pdf?productCode=C193402",
+   "downloaded": "2026-11-10",
+   "sha256": "a25eff3c49c148330430af495f4120020aac2273a4b9bd6d1baad6ee5560d049"
+  },
+  "datasheets/BLM15AG601SN1D_C76884.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/f85b01b3a1a015a5ec4a9f03876e0063.pdf?productCode=C76884",
+   "downloaded": "2026-11-10",
+   "sha256": "72584e2b0fad42b4fd0fc45b175151fa42acab38f373431d3f726f55317918aa"
+  },
+  "datasheets/WS2812B-2020_C52917434.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/a29e59ba4bc7e47e236b4d50b6c26345.pdf?productCode=C52917434",
+   "downloaded": "2026-11-10",
+   "sha256": "f40ae448755a808d090d780ac7a71b265d1541f22347a15bdb7d2c68da88da49"
+  },
+  "datasheets/X322524MOB4SI_C70590.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/a84bd8d530dd46e4b0f6d0ee59d8a89c.pdf?productCode=C70590",
+   "downloaded": "2026-11-10",
+   "sha256": "7bc18549e407d8e381075b0f5fc696e48cf0fa060aeee67971925f43cfdfbb8b"
+  },
+  "datasheets/TYPE-C-31-M-12_C165948.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/9e56b777c022540fcce7c7f67825f55e.pdf?productCode=C165948",
+   "downloaded": "2026-11-10",
+   "sha256": "6ae33d50ac47820114661138dc4e4659f40fdc5d4f485b46685dfec338da1a9e"
+  },
+  "datasheets/TJ-S1615CY6TGLCCSRGB_C601684.pdf": {
+   "url": "https://datasheet.lcsc.com/datasheet/pdf/198eec568aeccd0b3eef7daeae78a0a4.pdf?productCode=C601684",
+   "downloaded": "2026-11-10",
+   "sha256": "ce5c653acefad04a53e1c0048a0b3f02883fc47fba45edad2341f3e579819ad5"
+  },
+  "datasheets/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf": {
+   "url": "https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf",
+   "downloaded": "2026-11-10",
+   "sha256": "27d71971da07c280c6068d08c74720d1a25b8f20cf8494dc1765bdd28d40d435",
+   "note": "module pin table checked against the stock ESP32-S3-WROOM-1 symbol (41 pins)"
+  },
+  "datasheets/MSK12C02_C431540.pdf": {
+   "url": "https://www.lcsc.com/datasheet/C431540.pdf",
+   "rev": "LCSC copy, fetched 2026-11-11",
+   "sha256": "a596d32b2510ac6a6a7460bde16a5a9d76866e5e10f33f2d6220de37880602b5",
+   "note": "SHOU HAN MSK12C02 drawing, land pattern p.1"
+  },
+  "datasheets/TS24CA_C393942.pdf": {
+   "url": "https://www.lcsc.com/datasheet/C393942.pdf",
+   "rev": "LCSC copy, fetched 2026-11-11",
+   "sha256": "0b582c32c241bbd532971681b454591230a2d4441b20a0662d5293846652dcf9",
+   "note": "SHOU HAN TS24CA drawing, mounting reference p.1"
+  },
+  "datasheets/PZ254-2-12-S_C3294470.pdf": {
+   "url": "https://www.lcsc.com/datasheet/C3294470.pdf",
+   "rev": "LCSC copy, fetched 2026-11-11",
+   "sha256": "8edd942f30aee0bd75a4b02824b6d96ae15627ec31422c0bd4aef0a26b7ac924",
+   "note": "HCTL PZ254-2-N-S SMD 2-row header drawing, recommended PCB layout (one page)"
+  }
+ },
+ "checked_online_not_saved": {
+  "XVF3800 pin table": "https://www.xmos.com/documentation/XM-014888-PC/html/modules/fwk_xvf/doc/datasheet/04_device_pinout.html (docs v3.2.1)",
+  "MAX98357A TQFN pin table p.15 and T1633-4 outline p.35-37": "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf (blocks curl; read in browser 2026-11-12)"
+ },
+ "copied_models": {
+  "3dmodels/JST_S2B-PH-SM4-TB.step": {
+   "from": "/home/anbu/Z/projects/PDB/libraries/3dmodels/JST_S2B-PH-SM4-TB.step",
+   "sha256": "24f5eca8c16334c234574fdcb3ced9afd8f1d0533ffe5a5eb91c274ae90674d1"
+  },
+  "3dmodels/HRO_TYPE-C-31-M-12.step": {
+   "from": "/home/anbu/Z/projects/PDB/libraries/3dmodels/HRO_TYPE-C-31-M-12.step",
+   "sha256": "272b7208e6c8beb3f21766a3a1c444a005e1706a99f6e2ab6c035c4f558c2d9d"
+  }
+ },
+ "stock_models_used": {
+  "mic": "${KICAD10_3DMODEL_DIR}/Sensor_Audio.3dshapes/InvenSense_ICS-43434-6_3.5x2.65mm.step (stand-in; Infineon CAD needs myInfineon login)"
+ },
+ "ti_ultra_librarian": {
+  "source": "TI product page TPS2121 CAD (Ultra Librarian), downloaded by the user to ~/Downloads/TPS2121RUXR.zip on 2026-11-09, copied 2026-11-10",
+  "files": {
+   "incoming/ti_tps2121/IC_TPS2121RUXR.kicad_mod": "191b5b7ff2815d13c193feefdd7c9aed7e9b8da00931662b45dadf6286c08172",
+   "incoming/ti_tps2121/TPS2121RUXR.kicad_sym": "ed501b9b683022ede4202927d47ae60472dbf84136d3f732676624bb0e6ce4bb",
+   "incoming/ti_tps2121/TPS2121RUXR.step": "145f3fa597c25296601431b518a02a0d0171709df3072df253f250b9e6e35c4e",
+   "incoming/ti_tps2121/TPS2121RUXR.zip": "b3814c1ce067eda67c58e3b8e19805b544533983e1d73c906ea57b00c8d5b45f",
+   "incoming/ti_tps2121/how-to-import.htm": "24e9a101a0ca11ff7db51062503d7e4ccdb70678f037eea9b38e7e61a762634f"
+  },
+  "cross_check": "pads equal TI SLVSEA3F p.39 land pattern and EasyEDA C485916 (90 deg rotation)"
+ },
+ "espressif": {
+  "source": "github.com/espressif/kicad-libraries via KiCad plugin manager (~/.local/share/kicad/10.0/3rdparty), copied 2026-11-12",
+  "incoming/espressif/ESP32-S3-WROOM-1U.kicad_mod": "c4e002263baab84c47dbabf8df70e12990f2aadd077000a7f93969faa64a54b4",
+  "incoming/espressif/ESP32-S3-WROOM-1U.STEP": "7be82bdafece2891b297546eb0643ff254e3d8161074ebdc972e0d78e79a4bdb",
+  "licence": "not checked"
+ }
+}

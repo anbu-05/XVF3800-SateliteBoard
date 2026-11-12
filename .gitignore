@@ -1,0 +1,19 @@
+# KiCad backups (version control replaces them)
+PCB/mindspark_rev1/mindspark_rev1-backups/
+
+# ReSpeaker bench-test audio clips
+respeaker-tests/*.wav
+
+# XMOS XK-VOICE-SQ66 design files (XMOS licence: not for redistribution)
+incoming/
+
+# KiCad lock, autosave and per-user files
+*.lck
+_autosave-*
+*-bak
+fp-info-cache
+*.kicad_prl
+
+# Python
+__pycache__/
+*.pyc

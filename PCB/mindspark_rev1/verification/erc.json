@@ -1,0 +1,77 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-12T22:48:42",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01",
+            "violations": []
+        },
+        {
+            "path": "/usb_power/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/031051cc-504b-5b5c-aa1c-56c116beb080",
+            "violations": []
+        },
+        {
+            "path": "/regulators/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b",
+            "violations": []
+        },
+        {
+            "path": "/xvf3800/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093",
+            "violations": []
+        },
+        {
+            "path": "/xvf3800_periph/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/1506f4ea-c525-5200-b0f1-da532c70c9fb",
+            "violations": []
+        },
+        {
+            "path": "/audio/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/3f22dfb6-6fd6-54c4-9781-a982d7ddf190",
+            "violations": []
+        },
+        {
+            "path": "/esp32/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0",
+            "violations": []
+        },
+        {
+            "path": "/esp32_io/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/cf525f19-95da-5350-b107-43084f64972d",
+            "violations": []
+        },
+        {
+            "path": "/led_ring/",
+            "uuid_path": "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/4438b50c-ef83-5f6e-b244-90a3cf59e022",
+            "violations": []
+        }
+    ],
+    "source": "mindspark_rev1.kicad_sch"
+}

@@ -1,0 +1,112 @@
+(footprint "LED_RGB_TOGIALED_1615_1.6x1.5mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "TOGIALED TJ-S1615CY6TGLCCSRGB-A5 RGB LED, 1.6x1.5 mm, pad layout from datasheet p.2")
+	(tags "LED RGB 1615 common cathode")
+	(property "Reference" "REF**"
+		(at 0 -1.8 0)
+		(layer "F.SilkS")
+		(uuid "21765917-a032-4fcc-8cce-3a43f292bf82")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Value" "LED_RGB_TOGIALED_1615_1.6x1.5mm"
+		(at 0 1.8 0)
+		(layer "F.Fab")
+		(uuid "3904df54-da31-4080-a37e-5e0825c15041")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "946664a8-c66e-4aee-af9f-af4163d9fa2e")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "90fb96b7-1fb8-44c2-a657-e87502a26d0a")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_circle
+		(center 1.6 -1.05)
+		(end 1.7 -1.05)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "5793a3e4-43dc-496e-b487-0dc624a737a8")
+	)
+	(fp_rect
+		(start -1.55 -1.05)
+		(end 1.55 1.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "51c33014-b59c-41f5-a801-2ef2963fb79d")
+	)
+	(fp_rect
+		(start -0.8 -0.75)
+		(end 0.8 0.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e78655cc-fdb0-4bf6-9f32-2bab6274d790")
+	)
+	(pad "1" smd rect
+		(at 0.875 -0.55)
+		(size 0.85 0.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "23c39cfb-08bc-4ce3-9626-542ef561d7b3")
+	)
+	(pad "2" smd rect
+		(at -0.875 -0.55)
+		(size 0.85 0.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "a7ede7fb-9f9d-4ab7-a414-31a775800c21")
+	)
+	(pad "3" smd rect
+		(at -0.875 0.55)
+		(size 0.85 0.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "1fc3dc41-9382-45c9-addc-56fc051998d0")
+	)
+	(pad "4" smd rect
+		(at 0.875 0.55)
+		(size 0.85 0.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "56269814-dce9-4cf2-ab1d-973a6f214701")
+	)
+	(embedded_fonts no)
+)

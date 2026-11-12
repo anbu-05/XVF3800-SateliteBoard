@@ -1,0 +1,8392 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "d7620336-f4cd-5dd9-a899-c99e3a775d7e")
+	(paper "A4")
+	(title_block
+		(title "Mindspark rev 1: ESP32-S3 helper MCU")
+		(date "2026-11-10")
+		(rev "1")
+		(company "Mindspark")
+		(comment 1 "ESP32-S3-WROOM-1U (IPEX): supply, EN/BOOT, USB, user button and user LED")
+	)
+	(lib_symbols
+		(symbol "Mindspark:+3V3"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+3V3\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:+5V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:ESP32-S3-WROOM-1U-N16R8"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -12.7 26.67 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "ESP32-S3-WROOM-1U-N16R8"
+				(at 12.7 26.67 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Mindspark:ESP32-S3-WROOM-1U"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "ESP32-S3 module, 16 MB flash, 8 MB octal PSRAM (GPIO35-37 used), IPEX antenna connector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Espressif"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C3013946"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "ESP32-S3-WROOM-1U-N16R8"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "RF Radio BT ESP ESP32-S3 Espressif IPEX U.FL"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "ESP32?S3?WROOM?1*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "ESP32-S3-WROOM-1U-N16R8_0_0"
+				(rectangle
+					(start -12.7 25.4)
+					(end 12.7 -25.4)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(text "PSRAM"
+					(at 5.08 2.54 900)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(symbol "ESP32-S3-WROOM-1U-N16R8_0_1"
+				(polyline
+					(pts
+						(xy 7.62 -1.27)
+						(xy 6.35 -1.27)
+						(xy 6.35 6.35)
+						(xy 7.62 6.35)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "ESP32-S3-WROOM-1U-N16R8_1_1"
+				(pin power_in line
+					(at 0 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 27.94 270)
+					(length 2.54)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 22.86 0)
+					(length 2.54)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 7.62 0)
+					(length 2.54)
+					(name "IO4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 5.08 0)
+					(length 2.54)
+					(name "IO5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 2.54 0)
+					(length 2.54)
+					(name "IO6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 0 0)
+					(length 2.54)
+					(name "IO7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -20.32 0)
+					(length 2.54)
+					(name "IO15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -22.86 0)
+					(length 2.54)
+					(name "IO16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 17.78 180)
+					(length 2.54)
+					(name "IO17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 15.24 180)
+					(length 2.54)
+					(name "IO18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -2.54 0)
+					(length 2.54)
+					(name "IO8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 12.7 180)
+					(length 2.54)
+					(name "USB_D-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "IO19" bidirectional line)
+				)
+				(pin bidirectional line
+					(at 15.24 10.16 180)
+					(length 2.54)
+					(name "USB_D+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(alternate "IO20" bidirectional line)
+				)
+				(pin bidirectional line
+					(at -15.24 10.16 0)
+					(length 2.54)
+					(name "IO3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -17.78 180)
+					(length 2.54)
+					(name "IO46"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -5.08 0)
+					(length 2.54)
+					(name "IO9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -7.62 0)
+					(length 2.54)
+					(name "IO10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -10.16 0)
+					(length 2.54)
+					(name "IO11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -12.7 0)
+					(length 2.54)
+					(name "IO12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -15.24 0)
+					(length 2.54)
+					(name "IO13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -17.78 0)
+					(length 2.54)
+					(name "IO14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 7.62 180)
+					(length 2.54)
+					(name "IO21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -20.32 180)
+					(length 2.54)
+					(name "IO47"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -22.86 180)
+					(length 2.54)
+					(name "IO48"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -15.24 180)
+					(length 2.54)
+					(name "IO45"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 17.78 0)
+					(length 2.54)
+					(name "IO0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 5.08 180)
+					(length 2.54)
+					(name "IO35"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 2.54 180)
+					(length 2.54)
+					(name "IO36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 0 180)
+					(length 2.54)
+					(name "IO37"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -2.54 180)
+					(length 2.54)
+					(name "IO38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "31"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -5.08 180)
+					(length 2.54)
+					(name "IO39"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -7.62 180)
+					(length 2.54)
+					(name "IO40"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "33"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -10.16 180)
+					(length 2.54)
+					(name "IO41"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "34"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -12.7 180)
+					(length 2.54)
+					(name "IO42"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "35"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 20.32 180)
+					(length 2.54)
+					(name "RXD0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 22.86 180)
+					(length 2.54)
+					(name "TXD0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "37"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 12.7 0)
+					(length 2.54)
+					(name "IO2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 15.24 0)
+					(length 2.54)
+					(name "IO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "39"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -27.94 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "40"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -27.94 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "41"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:SN74AHCT1G125DBVR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -10.16 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SN74AHCT1G125DBVR"
+				(at 2.54 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Mindspark:SOT-23-5"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Single bus buffer, 3-state, TTL-level inputs (3.3 V logic to 5 V WS2812 data)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Texas Instruments"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C7484"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "SN74AHCT1G125DBVR"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Single Gate Buff Tri-State LVC CMOS"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOT* SG-*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SN74AHCT1G125DBVR_0_1"
+				(polyline
+					(pts
+						(xy -7.62 6.35)
+						(xy -7.62 -6.35)
+						(xy 5.08 0)
+						(xy -7.62 6.35)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SN74AHCT1G125DBVR_1_1"
+				(pin input inverted
+					(at 0 10.16 270)
+					(length 7.62)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -15.24 0 0)
+					(length 7.62)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 -10.16 90)
+					(length 5.08)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin tri_state line
+					(at 12.7 0 180)
+					(length 7.62)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 10.16 270)
+					(length 5.08)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:TS-1187A-B-A-B"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TS-1187A-B-A-B"
+				(at 0 -1.524 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Mindspark:SW_Push_1P1T_XKB_TS-1187A"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C318884.pdf"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "5.1 x 5.1 mm SMD tact switch, 1.5 mm actuator, top-pressed (XVF reset, ESP32 EN, BOOT)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "XKB Connection"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C318884"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "TS-1187A-B-A-B"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TS-1187A-B-A-B_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27)
+						(xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27)
+						(xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:TS24CA"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "TS24CA"
+				(at 0 -1.524 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Mindspark:SW_SHOUHAN_TS24CA_SideActuated"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C393942.pdf"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "4.7 x 1.9 mm SMD tact switch, side-pressed (right angle), 160 gf (mute, action, user)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "SHOU HAN"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C393942"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "TS24CA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TS24CA_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27)
+						(xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27)
+						(xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Mindspark:WS2812B-2020"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 5.08 5.715 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right bottom)
+				)
+			)
+			(property "Value" "WS2812B-2020-V6"
+				(at 1.27 -5.715 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+				(at 1.27 -7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+				(at 2.54 -9.525 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "Worldsemi"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C52917434"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "WS2812B-2020-V6"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "RGB LED NeoPixel Nano addressable"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "LED*WS2812*-2020_PLCC4*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "WS2812B-2020_0_0"
+				(text "RGB"
+					(at 2.286 -4.191 0)
+					(effects
+						(font
+							(size 0.762 0.762)
+						)
+					)
+				)
+			)
+			(symbol "WS2812B-2020_0_1"
+				(polyline
+					(pts
+						(xy 1.27 -2.54)
+						(xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -3.556)
+						(xy 1.778 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -1.524)
+						(xy 1.27 -2.54)
+						(xy 1.27 -2.032)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 -2.54)
+						(xy 1.27 -3.556)
+						(xy 1.27 -3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.683 -1.016)
+						(xy 3.683 -3.556)
+						(xy 3.683 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.699 -1.524)
+						(xy 2.667 -1.524)
+						(xy 3.683 -3.556)
+						(xy 4.699 -1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.699 -3.556)
+						(xy 2.667 -3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 5.08 5.08)
+					(end -5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "WS2812B-2020_1_1"
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(rectangle
+		(start 14.54 14.54)
+		(end 87.0184 106.4588)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "62a9baa4-0b14-5c9d-ab00-cc4775ab26f6")
+	)
+	(rectangle
+		(start 92.0984 84.3508)
+		(end 211.7929 140.8345)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "9c5796af-14b8-522e-b1d9-a36d38c3cfd9")
+	)
+	(rectangle
+		(start 92.0984 14.54)
+		(end 168.8473 79.2708)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "a49ff6e5-c094-58a7-925a-3a9e97951c15")
+	)
+	(rectangle
+		(start 227.7821 14.54)
+		(end 264.494 79.27)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "c0474a63-9fc8-5d46-816d-04632a206e94")
+	)
+	(rectangle
+		(start 173.9273 14.54)
+		(end 222.7021 45.2942)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "fa3e0e1e-c04b-54c7-bd37-19f39945fc0a")
+	)
+	(text "GPIO: 0 BOOT, 1/2/4-9 2x12 header, 10-13 SPI2 to the XVF flash (CS, MOSI=DI, CLK, MISO=DO), 14 PROG switch sense, 15/16 XVF LED_R/G taps, 17 XVF\nINT_N, 18 mux ST, 19/20 USB, 21 XVF reset (Q701), 38/39 I2C SDA/SCL, 40 user LED, 41 mute LED, 42 user button, 43/44 UART0 TX/RX (J701 21/22), 47 ring\nenable, 48 ring data.\nNot connected: strapping pins 3, 45, 46 and PSRAM pins 35-37 (N16R8 = octal PSRAM). Antenna: IPEX connector on the module, antenna off board."
+		(exclude_from_sim no)
+		(at 14.54 143.3745 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "10460b07-2aa8-5a63-9ca4-c43d37f9ae1c")
+	)
+	(text "USB series resistors"
+		(exclude_from_sim no)
+		(at 175.1973 15.81 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "2d457490-92c1-52ee-8f6b-c00c17866122")
+	)
+	(text "User button"
+		(exclude_from_sim no)
+		(at 229.0521 15.81 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "41202045-2afa-5430-9d88-4077c33cbf06")
+	)
+	(text "User RGB LED (D601), own 5 V buffer"
+		(exclude_from_sim no)
+		(at 93.3684 85.6208 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "445e88d4-92e3-5255-a8df-b32e320014f8")
+	)
+	(text "ESP32-S3-WROOM-1U-N16R8 (U601)"
+		(exclude_from_sim no)
+		(at 15.81 15.81 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "9fd4a488-3114-54bc-b453-62e21ccb644b")
+	)
+	(text "Supply, EN and BOOT"
+		(exclude_from_sim no)
+		(at 93.3684 15.81 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "dc7420a7-1d61-58f5-9f37-e1c1d0e1e826")
+	)
+	(junction
+		(at 193.04 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1a448984-7e29-5a27-bb7b-eab41c1a5eca")
+	)
+	(junction
+		(at 102.87 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "49c032e2-d88c-5f5c-b4c6-1357b431bb6f")
+	)
+	(junction
+		(at 102.87 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5276ddb7-abba-5123-9ea8-1a08345f1759")
+	)
+	(junction
+		(at 151.13 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "740b77f3-c0b1-51d7-8e59-e6488c7bc8de")
+	)
+	(junction
+		(at 130.81 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8fa46532-aa37-5bb9-9170-a80bdf196a7f")
+	)
+	(junction
+		(at 245.11 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c0cd11ac-c5c0-5135-8f1b-ddb573c4881b")
+	)
+	(junction
+		(at 130.81 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c38fd5e2-f66f-5b38-929e-f6c4866f016d")
+	)
+	(junction
+		(at 193.04 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee7681bc-06e6-5fb9-bbf0-478687b26504")
+	)
+	(no_connect
+		(at 64.77 60.96)
+		(uuid "191c5107-d202-5dd3-9722-4abb27399057")
+	)
+	(no_connect
+		(at 34.29 50.8)
+		(uuid "408b21fe-bbb4-5add-861e-d9e48bffa3da")
+	)
+	(no_connect
+		(at 64.77 76.2)
+		(uuid "7fc426a0-3bd0-58d1-9e93-2a697b0cc31f")
+	)
+	(no_connect
+		(at 182.88 113.03)
+		(uuid "85351eb3-c420-51f8-a052-8de2a158b377")
+	)
+	(no_connect
+		(at 64.77 78.74)
+		(uuid "881c4384-9b67-585c-8f1d-2e269aa1ddf7")
+	)
+	(no_connect
+		(at 64.77 55.88)
+		(uuid "cc868e0b-6c20-5281-bbc5-12722478065b")
+	)
+	(no_connect
+		(at 64.77 58.42)
+		(uuid "ee4e2c63-c3e7-5ec6-a763-a7e6be40dc55")
+	)
+	(wire
+		(pts
+			(xy 175.26 105.41)
+			(xy 175.26 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00ccc360-8e3f-5609-9adf-e38ed1c28cd2")
+	)
+	(wire
+		(pts
+			(xy 130.81 41.91)
+			(xy 123.19 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0208d397-fdc5-52cd-96f6-a4c9d619fb33")
+	)
+	(wire
+		(pts
+			(xy 142.24 113.03)
+			(xy 144.78 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04b3dba1-a845-593d-954f-d437bb670f48")
+	)
+	(wire
+		(pts
+			(xy 64.77 71.12)
+			(xy 67.31 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05cdfe30-517b-53a8-a39a-012426e650e1")
+	)
+	(wire
+		(pts
+			(xy 34.29 55.88)
+			(xy 31.75 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "086d6dc0-fbc2-5c2e-89e6-0ea7a040e051")
+	)
+	(wire
+		(pts
+			(xy 64.77 53.34)
+			(xy 67.31 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b19e2c4-df05-5cef-a3a3-2803830910f1")
+	)
+	(wire
+		(pts
+			(xy 64.77 45.72)
+			(xy 67.31 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12476a50-6c75-534d-9c37-1a21d5c2ce5d")
+	)
+	(wire
+		(pts
+			(xy 34.29 66.04)
+			(xy 31.75 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14aa773c-a64e-5fbd-bbf3-e7398ae8aba3")
+	)
+	(wire
+		(pts
+			(xy 34.29 45.72)
+			(xy 31.75 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15414294-4376-56d9-8f7b-dcba77a750a9")
+	)
+	(wire
+		(pts
+			(xy 194.31 33.02)
+			(xy 191.77 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15a58633-cb0c-5808-ad6c-8dee81ca13c1")
+	)
+	(wire
+		(pts
+			(xy 34.29 38.1)
+			(xy 31.75 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "190a19dc-b4d7-5218-b147-3eb7cf144075")
+	)
+	(wire
+		(pts
+			(xy 34.29 71.12)
+			(xy 31.75 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bb5d3ca-7146-505b-b785-d1ddfdc786e3")
+	)
+	(wire
+		(pts
+			(xy 193.04 106.68)
+			(xy 201.93 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bf729d8-1f43-529e-8f3a-807274153ea4")
+	)
+	(wire
+		(pts
+			(xy 64.77 38.1)
+			(xy 67.31 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fbd6530-ea78-56b4-905d-41c54a739b06")
+	)
+	(wire
+		(pts
+			(xy 201.93 116.84)
+			(xy 201.93 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fced0ec-6be7-5433-9645-b7d44b804101")
+	)
+	(wire
+		(pts
+			(xy 34.29 68.58)
+			(xy 31.75 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25023367-3723-58c1-b6f3-f315a901a139")
+	)
+	(wire
+		(pts
+			(xy 245.11 39.37)
+			(xy 245.11 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2661088b-1363-5b2f-a20b-7dc899b83dfc")
+	)
+	(wire
+		(pts
+			(xy 64.77 83.82)
+			(xy 67.31 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26ddb762-b6ff-5eb3-8ab8-0f8926369be4")
+	)
+	(wire
+		(pts
+			(xy 64.77 48.26)
+			(xy 67.31 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d2cb4fd-f710-5963-a0df-c407556c51a5")
+	)
+	(wire
+		(pts
+			(xy 34.29 76.2)
+			(xy 31.75 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306899f0-3468-5f75-a5d4-e9d3b6a1e4bc")
+	)
+	(wire
+		(pts
+			(xy 111.76 58.42)
+			(xy 111.76 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "32aac1d8-e5f1-5e56-8475-33e075dc1659")
+	)
+	(wire
+		(pts
+			(xy 130.81 39.37)
+			(xy 130.81 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37116da3-1dd0-532c-bff5-75b41bcb6af8")
+	)
+	(wire
+		(pts
+			(xy 193.04 119.38)
+			(xy 201.93 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38a8d5da-80f6-5a7a-bed6-2f10710fe679")
+	)
+	(wire
+		(pts
+			(xy 34.29 43.18)
+			(xy 31.75 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b704d7a-e1ea-5e51-a9d2-1a9d2dee5454")
+	)
+	(wire
+		(pts
+			(xy 34.29 58.42)
+			(xy 31.75 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ef49f77-e3e7-5296-9d55-0c2c77d697f3")
+	)
+	(wire
+		(pts
+			(xy 34.29 81.28)
+			(xy 31.75 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fcdfde7-0201-5f28-8ef0-b86c610d4c32")
+	)
+	(wire
+		(pts
+			(xy 34.29 63.5)
+			(xy 31.75 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44627a7f-d33b-5619-98a8-98a7fc45fe88")
+	)
+	(wire
+		(pts
+			(xy 34.29 83.82)
+			(xy 31.75 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "474f3a0a-f24f-5a5d-b0d8-4ab9ddd4b17b")
+	)
+	(wire
+		(pts
+			(xy 193.04 116.84)
+			(xy 193.04 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ab99f9a-62ac-5af7-b10f-1c73a686e405")
+	)
+	(wire
+		(pts
+			(xy 49.53 33.02)
+			(xy 49.53 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b23dded-bf89-5da2-98b6-afe027af1f75")
+	)
+	(wire
+		(pts
+			(xy 201.93 33.02)
+			(xy 204.47 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5971269d-7478-5028-abdb-8b4d73c76325")
+	)
+	(wire
+		(pts
+			(xy 34.29 60.96)
+			(xy 31.75 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d74d227-ac69-5984-ae0e-509ce1e44d09")
+	)
+	(wire
+		(pts
+			(xy 34.29 53.34)
+			(xy 31.75 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ebc6532-2f55-538f-bcf3-c4e17a72d984")
+	)
+	(wire
+		(pts
+			(xy 102.87 60.96)
+			(xy 111.76 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60ba4600-6442-5a3e-942c-7338e2c9bac1")
+	)
+	(wire
+		(pts
+			(xy 124.46 123.19)
+			(xy 124.46 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "614cb2ff-118c-56bf-9f2d-f02707e527b4")
+	)
+	(wire
+		(pts
+			(xy 34.29 78.74)
+			(xy 31.75 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61652203-f24c-53aa-9291-16288d8bfaaa")
+	)
+	(wire
+		(pts
+			(xy 151.13 31.75)
+			(xy 151.13 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6262a5de-130f-5012-aef3-d867ae179172")
+	)
+	(wire
+		(pts
+			(xy 123.19 52.07)
+			(xy 123.19 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6772ac6b-3bbc-5fb2-9055-02fef39df385")
+	)
+	(wire
+		(pts
+			(xy 151.13 41.91)
+			(xy 153.67 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68fe46be-4ffd-53f8-b499-321422fe8733")
+	)
+	(wire
+		(pts
+			(xy 194.31 25.4)
+			(xy 191.77 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a4cde8f-1276-577b-aa4f-c92841624345")
+	)
+	(wire
+		(pts
+			(xy 151.13 64.77)
+			(xy 151.13 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e1453dd-9b29-5462-98aa-67b93b62d408")
+	)
+	(wire
+		(pts
+			(xy 64.77 73.66)
+			(xy 67.31 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7038f35e-1766-5110-971c-baa54b899dce")
+	)
+	(wire
+		(pts
+			(xy 245.11 29.21)
+			(xy 245.11 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73219c59-1c9f-581e-952a-2933a4127fa0")
+	)
+	(wire
+		(pts
+			(xy 151.13 44.45)
+			(xy 151.13 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7959d61d-36ac-5801-ba86-32f44022fa65")
+	)
+	(wire
+		(pts
+			(xy 152.4 113.03)
+			(xy 167.64 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79b60ae2-aa4c-5d8c-8102-ad87817974b6")
+	)
+	(wire
+		(pts
+			(xy 201.93 109.22)
+			(xy 201.93 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b0385bb-7c3f-528b-99e2-22097fecf43b")
+	)
+	(wire
+		(pts
+			(xy 245.11 63.5)
+			(xy 245.11 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bc5802b-79bc-405e-9cf5-857ec3a9fc98")
+	)
+	(wire
+		(pts
+			(xy 245.11 36.83)
+			(xy 245.11 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ee99440-5049-5ef1-bd38-82e52b3081d6")
+	)
+	(wire
+		(pts
+			(xy 64.77 63.5)
+			(xy 67.31 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80523191-843b-531b-b00b-e174f763f5ff")
+	)
+	(wire
+		(pts
+			(xy 245.11 52.07)
+			(xy 245.11 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89d0ba3c-6bb2-58b6-891e-8857547d6850")
+	)
+	(wire
+		(pts
+			(xy 64.77 43.18)
+			(xy 67.31 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c31609c-fee8-5b35-aa58-410d39451011")
+	)
+	(wire
+		(pts
+			(xy 130.81 41.91)
+			(xy 130.81 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91963310-5109-5ad4-8c63-99afcc7d81e7")
+	)
+	(wire
+		(pts
+			(xy 175.26 120.65)
+			(xy 175.26 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b64bb69-659c-5ee6-b025-2b4cf31655cd")
+	)
+	(wire
+		(pts
+			(xy 102.87 48.26)
+			(xy 111.76 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ade30f3d-e196-5814-991a-5a1f8d9af538")
+	)
+	(wire
+		(pts
+			(xy 34.29 73.66)
+			(xy 31.75 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af9656ea-9e87-5308-883d-7e245f2c5e1c")
+	)
+	(wire
+		(pts
+			(xy 130.81 39.37)
+			(xy 133.35 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b044ac9e-d388-5451-8939-5cfc72a7cd48")
+	)
+	(wire
+		(pts
+			(xy 114.3 113.03)
+			(xy 111.76 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b092f573-2415-504a-823b-88e14aeaaf56")
+	)
+	(wire
+		(pts
+			(xy 245.11 39.37)
+			(xy 247.65 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bb45c13b-6993-5fc9-9373-c01f5ef778cb")
+	)
+	(wire
+		(pts
+			(xy 49.53 88.9)
+			(xy 49.53 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0757f11-f258-522c-bcfa-b9ea28e4a398")
+	)
+	(wire
+		(pts
+			(xy 64.77 81.28)
+			(xy 67.31 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7daf2e8-bb56-5909-84e1-0769067a1eec")
+	)
+	(wire
+		(pts
+			(xy 130.81 54.61)
+			(xy 130.81 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7faf711-5071-505c-9530-0feb58355784")
+	)
+	(wire
+		(pts
+			(xy 201.93 25.4)
+			(xy 204.47 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb030de2-b704-5375-92ae-6ed76c3bed31")
+	)
+	(wire
+		(pts
+			(xy 64.77 40.64)
+			(xy 67.31 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc7dd727-2e1a-54ff-ab99-39f8af518400")
+	)
+	(wire
+		(pts
+			(xy 64.77 50.8)
+			(xy 67.31 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccebb1a2-0dc1-5a98-9e1c-eeae0f025a63")
+	)
+	(wire
+		(pts
+			(xy 111.76 50.8)
+			(xy 111.76 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdc8b86f-23f2-5488-aa57-b06592f9377d")
+	)
+	(wire
+		(pts
+			(xy 64.77 68.58)
+			(xy 67.31 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfdea7a8-0233-5640-8d0c-81fe02153c53")
+	)
+	(wire
+		(pts
+			(xy 102.87 50.8)
+			(xy 102.87 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4c61c90-3bb1-5e1e-91d0-1bf31c7e0968")
+	)
+	(wire
+		(pts
+			(xy 130.81 29.21)
+			(xy 130.81 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfc6b0db-97bd-5c61-86af-f4793dc26d5c")
+	)
+	(wire
+		(pts
+			(xy 124.46 102.87)
+			(xy 124.46 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3c622c8-bb93-59b6-b178-908455e3d244")
+	)
+	(wire
+		(pts
+			(xy 102.87 58.42)
+			(xy 102.87 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4ef238c-b339-5bc1-be3e-e53096ed9be7")
+	)
+	(wire
+		(pts
+			(xy 193.04 109.22)
+			(xy 193.04 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e87b19ca-fbdd-5e30-8cb3-7c0f0fcd3b3b")
+	)
+	(wire
+		(pts
+			(xy 151.13 54.61)
+			(xy 151.13 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e976ebf3-cbca-55cb-b305-b1c458fca572")
+	)
+	(wire
+		(pts
+			(xy 34.29 48.26)
+			(xy 31.75 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9f647a7-0c1b-585f-a261-b739fff75a0d")
+	)
+	(wire
+		(pts
+			(xy 64.77 66.04)
+			(xy 67.31 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb3542a4-9901-584f-8a72-9c887c96c4cb")
+	)
+	(wire
+		(pts
+			(xy 130.81 44.45)
+			(xy 130.81 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f35793f3-fa3d-5f91-b7e4-a317158017b9")
+	)
+	(wire
+		(pts
+			(xy 151.13 41.91)
+			(xy 151.13 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f83952bc-0361-50e6-adf4-f78d4a081288")
+	)
+	(wire
+		(pts
+			(xy 130.81 64.77)
+			(xy 130.81 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f91aa774-82c7-5ace-8635-4d842cffc7c8")
+	)
+	(wire
+		(pts
+			(xy 129.54 102.87)
+			(xy 129.54 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb5c0964-0df6-59b4-9b8a-11a6ea4f1070")
+	)
+	(wire
+		(pts
+			(xy 123.19 41.91)
+			(xy 123.19 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff49c2a3-412e-5f90-b12f-aed57ed449f2")
+	)
+	(label "ESP_EN"
+		(at 31.75 38.1 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "29588765-8e58-5570-8252-0dec0277cc51")
+	)
+	(label "ESP_USB_DP"
+		(at 191.77 25.4 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "684707cb-4477-5dca-8205-1213d89dac47")
+	)
+	(label "BTN_USER_N"
+		(at 247.65 39.37 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "6ae9ddc7-9012-5854-9ef3-42a0b212816b")
+	)
+	(label "ESP_BOOT"
+		(at 31.75 43.18 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "70614fdf-8776-52bb-bb5f-1ef2be4e1078")
+	)
+	(label "ESP_EN"
+		(at 133.35 39.37 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "73d78c79-1204-580f-9e1a-0dabc88bad28")
+	)
+	(label "USER_LED_DATA"
+		(at 67.31 68.58 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "744fff62-0d77-5b27-9140-11915484fb31")
+	)
+	(label "BTN_USER_N"
+		(at 67.31 73.66 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "753afd13-ee7a-5c25-86f1-923670d473af")
+	)
+	(label "ESP_USB_DM"
+		(at 67.31 48.26 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "88565f91-63ce-5096-a520-320b743f2071")
+	)
+	(label "USER_LED_DATA"
+		(at 111.76 113.03 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "935a8ce3-0a3e-5fb6-99d1-1e57946ac070")
+	)
+	(label "ESP_USB_DP"
+		(at 67.31 50.8 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ce13865f-4084-5c6a-95b2-8f382b3008a7")
+	)
+	(label "ESP_USB_DM"
+		(at 191.77 33.02 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right bottom)
+		)
+		(uuid "d0a08f44-9348-5652-81b7-873100cfc7c9")
+	)
+	(label "ESP_BOOT"
+		(at 153.67 41.91 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left bottom)
+		)
+		(uuid "ebe4f0db-d28e-5023-a5fe-00b94e1cafd2")
+	)
+	(hierarchical_label "LED_EN"
+		(shape output)
+		(at 67.31 81.28 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "19f6af8d-b2ac-578c-8bcc-e9e2c430426c")
+	)
+	(hierarchical_label "LED_DATA"
+		(shape output)
+		(at 67.31 83.82 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "1d7cb664-5e55-5ea3-8b72-43db46f5b61b")
+	)
+	(hierarchical_label "ESP_I2C_SCL"
+		(shape bidirectional)
+		(at 67.31 66.04 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "21901f86-c998-5b73-a06c-12cce0532bba")
+	)
+	(hierarchical_label "XVF_GPO_G"
+		(shape input)
+		(at 31.75 83.82 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "2e767935-ad8b-54e6-a2d0-c3b5956db2fa")
+	)
+	(hierarchical_label "ESP_GPIO4"
+		(shape bidirectional)
+		(at 31.75 53.34 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "3fdea453-f898-58ba-b056-d3e83b7106a8")
+	)
+	(hierarchical_label "PRG_DI"
+		(shape output)
+		(at 31.75 71.12 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "4206d022-985a-55cd-b2cb-579e2730dfb0")
+	)
+	(hierarchical_label "USB_ESP_DM"
+		(shape bidirectional)
+		(at 204.47 33.02 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "575c4442-87ef-5bcf-938f-ade7d5aa798c")
+	)
+	(hierarchical_label "ESP_UART_TX"
+		(shape output)
+		(at 67.31 38.1 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "5c7b6192-48f7-5ede-ad54-79b3a87e75c5")
+	)
+	(hierarchical_label "ESP_GPIO7"
+		(shape bidirectional)
+		(at 31.75 60.96 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "5d3cf01d-d11c-5d02-961c-36283ffa2ded")
+	)
+	(hierarchical_label "ESP_MUTE_LED"
+		(shape output)
+		(at 67.31 71.12 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "6269ccbc-1232-5094-a832-7e283ee58581")
+	)
+	(hierarchical_label "PRG_CS_N"
+		(shape output)
+		(at 31.75 68.58 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "72126246-1da2-59e2-806a-2f97b16e0454")
+	)
+	(hierarchical_label "PRG_RST"
+		(shape output)
+		(at 67.31 53.34 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "76205c82-f2e6-5ee9-b11e-4b62670d942a")
+	)
+	(hierarchical_label "XVF_INT_N"
+		(shape input)
+		(at 67.31 43.18 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "77a542d4-99e3-5191-b137-5e73b16fc4aa")
+	)
+	(hierarchical_label "XVF_GPO_R"
+		(shape input)
+		(at 31.75 81.28 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "78d097d6-7a6f-50eb-af15-4605e660fd1f")
+	)
+	(hierarchical_label "PRG_CLK"
+		(shape output)
+		(at 31.75 73.66 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "82d2ebe3-fe2f-5814-8dbe-1eae383626a4")
+	)
+	(hierarchical_label "ESP_GPIO1"
+		(shape bidirectional)
+		(at 31.75 45.72 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "84694d3c-43da-5443-93e0-980176c51eb3")
+	)
+	(hierarchical_label "ESP_I2C_SDA"
+		(shape bidirectional)
+		(at 67.31 63.5 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "8821f27c-30b6-5d54-8f3f-e16e0de971b9")
+	)
+	(hierarchical_label "ESP_GPIO5"
+		(shape bidirectional)
+		(at 31.75 55.88 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "8e07d7e3-3a1a-591a-931d-0fe3f3050608")
+	)
+	(hierarchical_label "MUX_ST"
+		(shape input)
+		(at 67.31 45.72 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "a49b2d28-da51-5db4-9041-5905e0492cf7")
+	)
+	(hierarchical_label "PRG_DO"
+		(shape input)
+		(at 31.75 76.2 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "a9376b90-2484-5ad4-ac4c-97d4ac400808")
+	)
+	(hierarchical_label "USB_ESP_DP"
+		(shape bidirectional)
+		(at 204.47 25.4 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "bf1a47ce-9ec5-55b0-9144-1857086661bd")
+	)
+	(hierarchical_label "ESP_GPIO9"
+		(shape bidirectional)
+		(at 31.75 66.04 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "bf7fdde3-91e3-52cc-9678-9afc81344e10")
+	)
+	(hierarchical_label "ESP_GPIO6"
+		(shape bidirectional)
+		(at 31.75 58.42 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "c60b03aa-5ff6-59bd-81d6-6ede669b38b7")
+	)
+	(hierarchical_label "ESP_UART_RX"
+		(shape input)
+		(at 67.31 40.64 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "f201920d-7d6b-5853-8859-692fbb5f2e5a")
+	)
+	(hierarchical_label "ESP_GPIO8"
+		(shape bidirectional)
+		(at 31.75 63.5 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "f47c759b-f9ca-51b4-ae39-679269ef5006")
+	)
+	(hierarchical_label "ESP_GPIO2"
+		(shape bidirectional)
+		(at 31.75 48.26 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "fbb9fc18-5f7d-58f7-8729-2aa7b49e3a33")
+	)
+	(hierarchical_label "PRG_EN"
+		(shape input)
+		(at 31.75 78.74 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "fe5a8310-4ed5-5291-8585-c5396fb67ff7")
+	)
+	(symbol
+		(lib_id "Mindspark:TS24CA")
+		(at 245.11 46.99 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0fa9584a-39fc-5236-992b-49c2ab63c322")
+		(property "Reference" "SW603"
+			(at 241.51 46.22 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "USER"
+			(at 241.51 47.72 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Mindspark:SW_SHOUHAN_TS24CA_SideActuated"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C393942.pdf"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "4.7 x 1.9 mm SMD tact switch, side-pressed (right angle), 160 gf (mute, action, user)"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C393942"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "TS24CA"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "SHOU HAN"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "side-pressed"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "User button (ESP32 GPIO42, active low), board edge"
+			(at 245.11 46.99 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "36bd75f0-9cbc-5f05-abce-18c12331eca2")
+		)
+		(pin "2"
+			(uuid "230470ca-10ee-5bb3-9948-bfb7ca56f622")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "SW603")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+5V")
+		(at 124.46 100.33 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "180d083a-3864-5a78-853d-4df7992e980e")
+		(property "Reference" "#PWR6014"
+			(at 124.46 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 124.46 96.774 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c610a491-62f7-5849-8e48-ee3cd00a756d")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:SN74AHCT1G125DBVR")
+		(at 129.54 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "1c85d58e-6f4f-5fdd-8eb2-cfa1fd05965c")
+		(property "Reference" "U602"
+			(at 114.3 93.43 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SN74AHCT1G125DBVR"
+			(at 114.3 130.93 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:SOT-23-5"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct1g125.pdf"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Single bus buffer, 3-state, TTL-level inputs (3.3 V logic to 5 V WS2812 data)"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C7484"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "SN74AHCT1G125DBVR"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "Buffer, TTL inputs"
+			(at 114.3 132.43 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify left)
+			)
+		)
+		(property "use" "User LED data level shift"
+			(at 129.54 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6cf467ea-f34e-5c38-b269-400f4b0ceeea")
+		)
+		(pin "2"
+			(uuid "bd3bdbda-1b00-55a6-8494-03cace921d11")
+		)
+		(pin "3"
+			(uuid "604db798-c89c-5796-b074-6dc39e5c50c9")
+		)
+		(pin "4"
+			(uuid "488b6bb3-0dd5-5c8a-8165-6d4728063562")
+		)
+		(pin "5"
+			(uuid "f6f3cfa5-780e-5bb7-83a8-6cc0f2213b1d")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "U602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 151.13 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "20012800-cc4b-5802-84ed-ee7d516348f5")
+		(property "Reference" "R604"
+			(at 153.43 61.47 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 153.43 62.97 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "BOOT button series resistor"
+			(at 151.13 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a5df405f-da18-5a9c-ba47-08bbe34115e9")
+		)
+		(pin "2"
+			(uuid "b24f9758-6e87-5b4b-aec7-fe35d0bb6e4a")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R604")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 49.53 30.48 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "213fe0cd-3cb1-5974-bb58-cbecf6fa1ce9")
+		(property "Reference" "#PWR6002"
+			(at 49.53 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 49.53 26.924 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 30.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1b8315e1-4a48-5105-a886-d74ee421230f")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 193.04 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "22bd1ec5-31d9-5c69-9414-77b42d3516ed")
+		(property "Reference" "#PWR6018"
+			(at 193.04 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 193.04 123.19 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 193.04 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 193.04 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e832a151-5d89-5624-9b03-7e93f6209197")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 102.87 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "255e3033-2de6-5def-8990-c810fd34df3e")
+		(property "Reference" "C601"
+			(at 102.87 42.46 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "22uF"
+			(at 102.87 66.76 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0805_2012Metric"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C45783"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL21A226MAQNNNE"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X5R"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "25V"
+			(at 102.87 68.16 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "use" "Module bulk (controller board / Espressif)"
+			(at 102.87 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "570d5a47-b917-52c7-9996-370ec498b761")
+		)
+		(pin "2"
+			(uuid "34a3d1b5-7dfd-5565-8fb6-7653643bfb2c")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "C601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:TS-1187A-B-A-B")
+		(at 151.13 49.53 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "2f9bb06b-a039-5e5a-a199-552fdb4a638d")
+		(property "Reference" "SW602"
+			(at 154.73 48.77 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BOOT"
+			(at 154.73 50.27 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:SW_Push_1P1T_XKB_TS-1187A"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C318884.pdf"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "5.1 x 5.1 mm SMD tact switch, 1.5 mm actuator, top-pressed (XVF reset, ESP32 EN, BOOT)"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "ESP32 BOOT (GPIO0) button"
+			(at 151.13 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "79fd05a7-d4c7-5c46-ad8a-2ebd0ba9efb7")
+		)
+		(pin "2"
+			(uuid "7501f9fa-a8b4-54d8-85a0-7ad10e64588d")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "SW602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 130.81 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "3043ea53-0e8b-54aa-976e-fb4a2ee1497f")
+		(property "Reference" "#PWR6008"
+			(at 130.81 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 130.81 71.12 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "22e638ea-486a-51d5-be4b-6fcd0f0185de")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6008")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 245.11 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "317ff358-1fcd-5658-a638-2c281740ada1")
+		(property "Reference" "#PWR6011"
+			(at 245.11 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 245.11 71.12 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 245.11 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a5f9eaba-7f77-5fc6-8b9c-57eec5dd9fa3")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 201.93 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "33567604-38cf-5821-bf9d-727fe73a667b")
+		(property "Reference" "C605"
+			(at 201.93 100.88 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 201.93 125.18 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0402_1005Metric"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X7R"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "16V"
+			(at 201.93 126.58 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "use" "User LED bypass"
+			(at 201.93 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0adb98e5-7506-56e0-bc92-bd1b59ffb1db")
+		)
+		(pin "2"
+			(uuid "082fabec-1a58-51d0-a450-fe385ca24542")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "C605")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 193.04 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3c4be65c-a446-59af-8374-824a5f8e346a")
+		(property "Reference" "C604"
+			(at 193.04 100.88 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 193.04 125.18 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0402_1005Metric"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X7R"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "16V"
+			(at 193.04 126.58 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "use" "Buffer bypass"
+			(at 193.04 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f6e9bec4-218e-5684-b2ec-3cf43847daf3")
+		)
+		(pin "2"
+			(uuid "a7f3885e-5b92-5516-8429-f417ee18f8c6")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "C604")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 245.11 33.02 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3dcbbbbe-ae0d-5537-9611-3a657a992f4c")
+		(property "Reference" "R607"
+			(at 247.41 32.02 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 247.41 33.52 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "user button pull-up"
+			(at 245.11 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e41b4afa-b5c6-51fe-bdab-159698297504")
+		)
+		(pin "2"
+			(uuid "3c78a67b-58ad-591c-9137-ebc2f01989ea")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R607")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 123.19 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "49cb0ff1-2b47-5def-b82d-e9aa760cc7a5")
+		(property "Reference" "#PWR6006"
+			(at 123.19 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 58.42 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 123.19 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1712f2df-d487-5007-a6eb-76ee3644561d")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6006")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 198.12 25.4 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "4c2aba21-2423-5025-b528-5d642ee4b24b")
+		(property "Reference" "R605"
+			(at 198.12 22.784 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 198.12 28.016 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25100"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF270JTCE"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 198.12 29.616 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "USB D+ series (Espressif: 22-33 R)"
+			(at 198.12 25.4 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1d5d9e69-f10e-510c-8a5c-c53ed33a94da")
+		)
+		(pin "2"
+			(uuid "a2b0b4e1-2017-5f0e-b5ea-07dfe05a82ca")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R605")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 175.26 123.19 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "5d482680-6ff3-5986-bff6-a167bb3f559d")
+		(property "Reference" "#PWR6015"
+			(at 175.26 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 175.26 127 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 175.26 123.19 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ae49c9e6-743c-5028-909f-6de3da2caa19")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 102.87 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "6ef0c24c-48db-591c-b916-b1681ce88ff4")
+		(property "Reference" "#PWR6003"
+			(at 102.87 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 102.87 44.704 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9243e316-bbf6-54e4-8b11-92947f5ca31e")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 123.19 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72638dd9-4efb-5875-885e-63bb417c9541")
+		(property "Reference" "C603"
+			(at 120.41 47.51 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1uF"
+			(at 120.41 49.01 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0402_1005Metric"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C52923"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL05A105KA5NQNC"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X5R"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "25V"
+			(at 120.41 50.41 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify right)
+			)
+		)
+		(property "use" "EN delay, 10k x 1 uF"
+			(at 123.19 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d6603fc2-553b-550c-bbaa-5741fcfbf79c")
+		)
+		(pin "2"
+			(uuid "74fddaa1-c573-5d3d-8315-7b29b75dd8db")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "C603")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 245.11 26.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "76f6993d-1383-55be-ac4d-388a9271f778")
+		(property "Reference" "#PWR6010"
+			(at 245.11 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 245.11 23.114 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 245.11 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 245.11 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ddcf323a-e7f1-5771-b4a8-c10701572baa")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 130.81 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "781b4cfb-e42b-5f86-ab08-b81fe32643f4")
+		(property "Reference" "R603"
+			(at 133.11 61.47 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 133.11 62.97 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "EN button series resistor"
+			(at 130.81 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8914e6fd-f371-50d2-9b04-67cd0171da1a")
+		)
+		(pin "2"
+			(uuid "61adce97-319a-5cfb-9de5-a619630f5bd7")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R603")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 124.46 125.73 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "7f85ba28-7d2a-5c95-bcfc-30db4c2e4c73")
+		(property "Reference" "#PWR6013"
+			(at 124.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 124.46 129.54 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 124.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 124.46 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "daef26d9-37d6-5945-817c-79c16237b3a6")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 151.13 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "87e8b46e-2f5a-53a3-877f-46eefdbc90a8")
+		(property "Reference" "#PWR6009"
+			(at 151.13 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 151.13 71.12 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "436bb30b-8225-5a2f-b377-3f38ae536c5c")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 151.13 35.56 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "91bf00a3-fb30-5d77-8876-835b58edca5e")
+		(property "Reference" "R602"
+			(at 152.93 34.79 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 152.93 36.29 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "GPIO0 pull-up (Espressif)"
+			(at 151.13 35.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ab3745bb-7d88-5708-9fdc-474d436a7356")
+		)
+		(pin "2"
+			(uuid "4a9ff8b0-067e-5213-8035-cb20984539a5")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 198.12 33.02 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a5356bf7-7f34-5b61-bb38-aed7ee701e43")
+		(property "Reference" "R606"
+			(at 198.12 30.404 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "27R"
+			(at 198.12 35.636 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25100"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF270JTCE"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 198.12 37.236 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "USB D- series (Espressif: 22-33 R)"
+			(at 198.12 33.02 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ec46aac-e480-5b91-a491-bbbadaa43bbb")
+		)
+		(pin "2"
+			(uuid "690bf6b0-9143-5439-9568-8f237a743e76")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R606")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:ESP32-S3-WROOM-1U-N16R8")
+		(at 49.53 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "afa7d60a-f6b6-57bf-abe1-d917bae58538")
+		(property "Reference" "U601"
+			(at 34.29 23.58 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ESP32-S3-WROOM-1U-N16R8"
+			(at 34.29 96.64 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:ESP32-S3-WROOM-1U"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "ESP32-S3 module, 16 MB flash, 8 MB octal PSRAM (GPIO35-37 used), IPEX antenna connector"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C3013946"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "ESP32-S3-WROOM-1U-N16R8"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Espressif"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "Wi-Fi/BLE module, IPEX"
+			(at 34.29 98.14 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify left)
+			)
+		)
+		(property "use" "Helper MCU (own firmware)"
+			(at 49.53 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ca6a50c-2168-5e63-9ac5-2613f5e08771")
+		)
+		(pin "2"
+			(uuid "b4a66802-3703-5f08-80cb-646dc58c2845")
+		)
+		(pin "3"
+			(uuid "17dbb202-3736-5019-9a5d-72fb339c313a")
+		)
+		(pin "4"
+			(uuid "a1ff38f5-84c5-5e3f-a767-6a1d4cdf265a")
+		)
+		(pin "5"
+			(uuid "361c7283-9379-543e-8448-66032ccba88a")
+		)
+		(pin "6"
+			(uuid "e44aaa22-db51-553e-a27d-f1730cc02d78")
+		)
+		(pin "7"
+			(uuid "bf14eb96-ddb7-542a-a055-8f144d473cb3")
+		)
+		(pin "8"
+			(uuid "1ea29ec3-d497-5d15-bc05-146060640de8")
+		)
+		(pin "9"
+			(uuid "8438edad-d2d8-5920-b24d-1c414c772b45")
+		)
+		(pin "10"
+			(uuid "9f40382b-b141-5abe-953d-3c3d3d78417e")
+		)
+		(pin "11"
+			(uuid "fb83dfd3-aa8d-5c77-920c-910238b926f1")
+		)
+		(pin "12"
+			(uuid "3cff89c5-35d5-58b0-90fa-2eb6a5456691")
+		)
+		(pin "13"
+			(uuid "ff872fdf-5da9-52d1-be9e-12c227196338")
+		)
+		(pin "14"
+			(uuid "cc453787-8d87-56f4-86ae-32c713e58861")
+		)
+		(pin "15"
+			(uuid "714be0a5-2326-5fea-bc3e-3ee3066fcacc")
+		)
+		(pin "16"
+			(uuid "1f1eca83-9c48-5bc2-ac60-c586fb2f4cfe")
+		)
+		(pin "17"
+			(uuid "ffc2bb76-7e45-5a9b-a321-503be5665a95")
+		)
+		(pin "18"
+			(uuid "b2c992fe-cd66-5263-afac-118f8545c601")
+		)
+		(pin "19"
+			(uuid "f629c63c-4885-549e-b6b0-f5e312712a75")
+		)
+		(pin "20"
+			(uuid "56d2ced6-4b47-52bd-9491-264e076cb6e0")
+		)
+		(pin "21"
+			(uuid "8c319280-b68f-52b5-9c43-3c5c1bb0d9c3")
+		)
+		(pin "22"
+			(uuid "5de6576c-4429-575c-84dc-36eab437d286")
+		)
+		(pin "23"
+			(uuid "9f63b989-aa47-5002-bc18-4afb201efe99")
+		)
+		(pin "24"
+			(uuid "3ecc92a1-78ad-5227-b8cb-68d7ff1db10f")
+		)
+		(pin "25"
+			(uuid "c1b89b68-ec56-50aa-9933-dc25cdc0b593")
+		)
+		(pin "26"
+			(uuid "7372c976-7b41-5c53-a00b-edead30571fa")
+		)
+		(pin "27"
+			(uuid "4193c0f5-4fda-54f4-820c-6a798e93e6fa")
+		)
+		(pin "28"
+			(uuid "5c6719d2-12b0-553b-9474-6c08aacd310a")
+		)
+		(pin "29"
+			(uuid "7aff0841-8628-56c0-a8f4-5f4016ee6f2c")
+		)
+		(pin "30"
+			(uuid "bde549c9-cdf5-568d-8334-f940b74439b4")
+		)
+		(pin "31"
+			(uuid "eef22f25-89ce-5f6e-b20d-0ff4f21e421c")
+		)
+		(pin "32"
+			(uuid "1ebf6a89-afde-5c37-8969-a8c4b554685f")
+		)
+		(pin "33"
+			(uuid "aa377601-2604-5d4a-86ff-7882488eacd6")
+		)
+		(pin "34"
+			(uuid "00301399-58bc-566a-9d2a-669f617158f2")
+		)
+		(pin "35"
+			(uuid "5d67c550-2377-5b81-890e-57b0d5dfb83d")
+		)
+		(pin "36"
+			(uuid "ca261d3a-66e1-5897-8166-2e2242679a95")
+		)
+		(pin "37"
+			(uuid "ce6e2d92-034e-5067-b77f-be391ca48a70")
+		)
+		(pin "38"
+			(uuid "a89a157b-1bae-5c07-bd84-46dc13143e49")
+		)
+		(pin "39"
+			(uuid "c7914350-54ad-5bae-a63b-76e9c16beb91")
+		)
+		(pin "40"
+			(uuid "3951a1be-6ee6-5a83-99e9-279c45330b49")
+		)
+		(pin "41"
+			(uuid "6aa01762-315e-5b0d-aa70-c5c56d53dacc")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "U601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 102.87 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "bb283b7d-f7c3-5dc6-ada9-7be65aecad0d")
+		(property "Reference" "#PWR6004"
+			(at 102.87 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 102.87 64.77 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.87 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.87 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 102.87 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "58817a14-5e5d-5bdb-a070-e0f483a21b08")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 130.81 26.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "bb289721-dd68-5d5d-8a4e-afe1cb1a25ee")
+		(property "Reference" "#PWR6005"
+			(at 130.81 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 130.81 23.114 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5377a039-2af8-53c5-87d7-a329845c784c")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 49.53 91.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "c66b3b27-2add-53ec-bc3c-ff3f77b2fd4c")
+		(property "Reference" "#PWR6001"
+			(at 49.53 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 95.25 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b89ffdbc-3950-5827-9c09-a36c7d728e59")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 111.76 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c88e8331-15da-5d1f-9a55-92f17c7b483c")
+		(property "Reference" "C602"
+			(at 111.76 42.46 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 111.76 66.76 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0402_1005Metric"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X7R"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "16V"
+			(at 111.76 68.16 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+			)
+		)
+		(property "use" "Module bypass"
+			(at 111.76 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "47e6c553-874c-57ab-927a-88a9a3851152")
+		)
+		(pin "2"
+			(uuid "68595fdf-fcc7-58b6-98ba-22b242dcb70d")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "C602")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:WS2812B-2020")
+		(at 175.26 113.03 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "caa76f87-5740-5942-8942-cfd84691e9cb")
+		(property "Reference" "D601"
+			(at 167.64 95.97 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 167.64 128.39 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C52917434"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "WS2812B-2020-V6"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Worldsemi"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "WS2812B-2020"
+			(at 167.64 129.89 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify left)
+			)
+		)
+		(property "use" "User RGB LED (ESP32 GPIO40)"
+			(at 175.26 113.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "21d385e9-3dda-5434-a449-e992dc027e3f")
+		)
+		(pin "2"
+			(uuid "bc8b955d-8dac-5219-bbf2-d5472edbf387")
+		)
+		(pin "3"
+			(uuid "bbdce178-1137-5977-9809-938fc8629ace")
+		)
+		(pin "4"
+			(uuid "5eefa84c-79b8-51c6-b536-bd3a955650f4")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "D601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+5V")
+		(at 175.26 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "cee417ff-9b81-5f89-8699-3c190b4dcf21")
+		(property "Reference" "#PWR6016"
+			(at 175.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 175.26 99.314 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 175.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 175.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 175.26 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "669cbcef-8661-5ffe-a8c8-90050bd1f011")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 151.13 29.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "d6e49791-1052-59bf-a1b6-fff268c2351f")
+		(property "Reference" "#PWR6007"
+			(at 151.13 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 151.13 25.654 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5867b3f3-3982-5662-b10f-15d3ec0c86a1")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 130.81 33.02 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "d7ae5e79-346d-5265-acaf-f8d5a4a890f5")
+		(property "Reference" "R601"
+			(at 132.61 32.25 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 132.61 33.75 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1002TCE"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "EN pull-up (Espressif RC delay)"
+			(at 130.81 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ac9f4a43-b7bc-5ca6-86d5-b4d153d5696f")
+		)
+		(pin "2"
+			(uuid "ce60a291-3818-5eb1-b089-07d59f308b43")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:GND")
+		(at 129.54 100.33 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "daac2ccb-6944-5d2e-af6f-ec2e13194e95")
+		(property "Reference" "#PWR6012"
+			(at 129.54 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 129.54 96.52 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 100.33 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "728da9bc-8c07-5bc3-b67a-48f77d233f4b")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 148.59 113.03 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ec66ae02-3373-50a9-91e6-2c348acb5437")
+		(property "Reference" "R608"
+			(at 148.59 110.83 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "33R"
+			(at 148.59 115.23 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25105"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF330JTCE"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "Data line series resistor"
+			(at 148.59 113.03 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f24c3498-eab7-593f-b358-287945355441")
+		)
+		(pin "2"
+			(uuid "5d234cf3-31ef-55d0-b6e6-48053ae35d64")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R608")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:TS-1187A-B-A-B")
+		(at 130.81 49.53 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ed26a182-01b4-5411-b1cf-8ad28a7a51ae")
+		(property "Reference" "SW601"
+			(at 134.41 48.77 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "EN"
+			(at 134.41 50.27 90)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:SW_Push_1P1T_XKB_TS-1187A"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C318884.pdf"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "5.1 x 5.1 mm SMD tact switch, 1.5 mm actuator, top-pressed (XVF reset, ESP32 EN, BOOT)"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C318884"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "TS-1187A-B-A-B"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "XKB Connection"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "ESP32 reset (EN) button"
+			(at 130.81 49.53 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8979f1b3-d57a-5de3-97d6-bb8eb1c8db75")
+		)
+		(pin "2"
+			(uuid "66368149-1520-50c1-8d0b-fba5e9a639c2")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "SW601")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 245.11 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "eeb209b9-cb39-4e6f-a2d3-00d695ea75a6")
+		(property "Reference" "R609"
+			(at 247.41 60.2 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 247.41 61.7 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF1001TCE"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "BOOT button series resistor"
+			(at 245.11 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d59802cd-39c9-4c2b-b313-5d083b3ca01b")
+		)
+		(pin "2"
+			(uuid "1506dfc0-a708-4927-b251-0d8d5b720573")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "R609")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+5V")
+		(at 193.04 106.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "f7e25712-c22c-5a30-8127-037c2f1d1a0c")
+		(property "Reference" "#PWR6017"
+			(at 193.04 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 193.04 103.124 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 193.04 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 193.04 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "817e66aa-6307-51f4-b551-102cb746cf13")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/d62abca9-fbb0-5d5f-95ee-434106bc6cf0"
+					(reference "#PWR6017")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

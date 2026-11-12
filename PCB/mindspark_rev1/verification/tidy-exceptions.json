@@ -1,0 +1,50 @@
+{
+ "usb_power": [
+  "J101 CC1/CC2: connector to ESD by label (two adjacent lines each with an Rd to GND cannot be wired across without a crossing)",
+  "J101 CC1: lead runs past the CC2 label to its Rd node (staggered Rd pair)",
+  "J102 CC1/CC2: connector to ESD by label (two adjacent lines each with an Rd to GND cannot be wired across without a crossing)",
+  "J102 CC1: lead runs past the CC2 label to its Rd node (staggered Rd pair)"
+ ],
+ "regulators": [],
+ "xvf3800": [
+  "MCLK_LOOP: labelled between pins 14 and 41 (opposite sides of U301)",
+  "R302 pin 2: 600 mil lead to the XOUT node (spans Rd)",
+  "U301 pin 12: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 17: +1V8 symbol sideways (adjacent pin lead)",
+  "U301 pin 19: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 22: PLL_AVDD symbol sideways (adjacent pin lead)",
+  "U301 pin 26: +1V8 symbol sideways (adjacent pin lead)",
+  "U301 pin 27: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 30: +3V3 symbol sideways (adjacent pin lead)",
+  "U301 pin 31: +1V8 symbol sideways (adjacent pin lead)",
+  "U301 pin 34: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 38: +3V3 symbol sideways (adjacent pin lead)",
+  "U301 pin 42: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 49: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 4: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 52: +3V3 symbol sideways (adjacent pin lead)",
+  "U301 pin 57: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 61: +0V9 symbol sideways (adjacent pin lead)",
+  "U301 pin 65: GND symbol sideways (adjacent pin lead)",
+  "U301 pin 8: +3V3 symbol sideways (adjacent pin lead)"
+ ],
+ "xvf3800_periph": [],
+ "audio": [
+  "+5V_AMP: rail symbol faces (-1, 0) to clear a neighbouring label",
+  "MK501 pin 2: GND symbol sideways (adjacent pin lead)",
+  "MK502 pin 2: GND symbol sideways (adjacent pin lead)",
+  "MK503 pin 2: GND symbol sideways (adjacent pin lead)",
+  "MK504 pin 2: GND symbol sideways (adjacent pin lead)"
+ ],
+ "esp32": [
+  "ESP_EN / ESP_BOOT: labelled between the button circuits and the module's dense pins"
+ ],
+ "esp32_io": [
+  "J701 pin 20: GND symbol sideways (adjacent pin lead)",
+  "J701 pin 23: +5V symbol sideways (adjacent pin lead)",
+  "J701 pin 24: +3V3 symbol sideways (adjacent pin lead)",
+  "J701 pin 3: +1V8 symbol sideways (adjacent pin lead)",
+  "J701 pin 4: GND symbol sideways (adjacent pin lead)"
+ ],
+ "led_ring": []
+}

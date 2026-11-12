@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1150" height="970" viewBox="0 0 1150 970" role="img"><title>ESP32-S3 helper module block</title><desc>The ESP32-S3-WROOM-1U-N16R8 module in the middle with its GPIO numbers on the wires. Left: its own USB-C, BOOT and EN buttons, SPI2 to the XVF3800 flash through four switches, the PROG slide switch, the XVF3800 reset transistor, the XVF3800 LED and interrupt taps and the power-mux status. Right: the WS2812 ring, user RGB LED, mute LED, user button, I2C, UART0 and the 2x12 GPIO header.</desc>
+<style>
+  .bg { fill: #ffffff; }
+  text { font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', Arial, sans-serif; fill: #1f2328; }
+  .t  { font-size: 14px; font-weight: 600; }
+  .s  { font-size: 11.5px; fill: #3d444d; }
+  .xs { font-size: 10px; fill: #57606a; }
+  .h1 { font-size: 20px; font-weight: 700; }
+  .h2 { font-size: 13px; font-weight: 600; fill: #57606a; letter-spacing: 0.04em; }
+  .wire { stroke: #57606a; stroke-width: 1.4; fill: none; }
+  .wire.dash { stroke-dasharray: 5 4; }
+  .wire.pwr { stroke: #0f766e; stroke-width: 2; }
+  .wire.sig { stroke: #1d4ed8; }
+  .wire.aud { stroke: #c2410c; }
+  .wire.mcu { stroke: #7e22ce; }
+  .wire.prg { stroke: #be185d; }
+  .lbl { font-size: 10.5px; fill: #3d444d; }
+  .box { stroke-width: 1.2; }
+  .k-pwr  { fill: #e6f4f1; stroke: #0f766e; }
+  .k-xvf  { fill: #e8efff; stroke: #1d4ed8; }
+  .k-mcu  { fill: #f3e8ff; stroke: #7e22ce; }
+  .k-aud  { fill: #fff1e8; stroke: #c2410c; }
+  .k-mic  { fill: #e9f7e6; stroke: #2f7d1f; }
+  .k-ui   { fill: #fff7db; stroke: #a16207; }
+  .k-prg  { fill: #fde8f1; stroke: #be185d; }
+  .k-gry  { fill: #f2f3f5; stroke: #6e7781; }
+  .k-dnp  { fill: #ffffff; stroke: #6e7781; stroke-dasharray: 4 3; }
+  .note   { fill: #fffbea; stroke: #d4a72c; stroke-width: 1; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#57606a"/></marker></defs><rect class="bg" x="0" y="0" width="1150" height="970"/><text class="h1" x="30" y="28" text-anchor="start" dominant-baseline="central">MindSpeak rev 1: ESP32-S3 helper module</text>
+<text class="s" x="30" y="52" text-anchor="start" dominant-baseline="central">Own firmware. The XVF3800 stays on stock firmware. Numbers on the wires are ESP32 GPIOs. Updated 2026-11-11.</text>
+<rect class="box k-mcu" x="430" y="85" width="260" height="595" rx="8"/>
+<text class="t" x="560.0" y="345.0" text-anchor="middle" dominant-baseline="central">ESP32-S3-WROOM-1U</text>
+<text class="s" x="560.0" y="363.0" text-anchor="middle" dominant-baseline="central">N16R8: 16 MB flash, 8 MB PSRAM</text>
+<text class="s" x="560.0" y="378.0" text-anchor="middle" dominant-baseline="central">LCSC C3013946</text>
+<text class="s" x="560.0" y="393.0" text-anchor="middle" dominant-baseline="central">IPEX connector,</text>
+<text class="s" x="560.0" y="408.0" text-anchor="middle" dominant-baseline="central">antenna off-board</text>
+<text class="s" x="560.0" y="423.0" text-anchor="middle" dominant-baseline="central">3.3 V, Wi-Fi TX ≈0.36 A peak</text>
+<rect class="box k-gry" x="30" y="85" width="300" height="70" rx="8"/>
+<text class="t" x="180.0" y="105.0" text-anchor="middle" dominant-baseline="central">USB-C (ESP32 port)</text>
+<text class="s" x="180.0" y="123.0" text-anchor="middle" dominant-baseline="central">27 Ω series on D+/D−, TPD4E05U06 ESD</text>
+<text class="s" x="180.0" y="138.0" text-anchor="middle" dominant-baseline="central">VBUS_ESP → TPS2121 IN2</text>
+<path class="wire sig" d="M330 120.0 L428 120.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="111.0" text-anchor="middle" dominant-baseline="central">19 D− · 20 D+</text>
+<rect class="box k-ui" x="30" y="175" width="300" height="70" rx="8"/>
+<text class="t" x="180.0" y="195.0" text-anchor="middle" dominant-baseline="central">BOOT + EN (reset) buttons, top</text>
+<text class="s" x="180.0" y="213.0" text-anchor="middle" dominant-baseline="central">GPIO0: 10 kΩ pull-up, button → 1 kΩ → GND</text>
+<text class="s" x="180.0" y="228.0" text-anchor="middle" dominant-baseline="central">EN: 10 kΩ pull-up + 1 µF, same button</text>
+<path class="wire mcu" d="M330 210.0 L428 210.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="201.0" text-anchor="middle" dominant-baseline="central">0 · EN</text>
+<rect class="box k-prg" x="30" y="265" width="300" height="85" rx="8"/>
+<text class="t" x="180.0" y="285.0" text-anchor="middle" dominant-baseline="central">XVF flash, path B (SPI2)</text>
+<text class="s" x="180.0" y="303.0" text-anchor="middle" dominant-baseline="central">via 4 × TS5A3166 to the W25Q32</text>
+<text class="s" x="180.0" y="318.0" text-anchor="middle" dominant-baseline="central">10 CS_N · 11 MOSI → DI</text>
+<text class="s" x="180.0" y="333.0" text-anchor="middle" dominant-baseline="central">12 CLK · 13 MISO ← DO</text>
+<path class="wire prg" d="M330 307.5 L428 307.5" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="298.5" text-anchor="middle" dominant-baseline="central">10–13</text>
+<rect class="box k-prg" x="30" y="370" width="300" height="60" rx="8"/>
+<text class="t" x="180.0" y="392.5" text-anchor="middle" dominant-baseline="central">PROG slide switch SW701</text>
+<text class="s" x="180.0" y="410.5" text-anchor="middle" dominant-baseline="central">side-actuated; PRG_EN high = switches on</text>
+<path class="wire prg" d="M330 400.0 L428 400.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="391.0" text-anchor="middle" dominant-baseline="central">14</text>
+<rect class="box k-prg" x="30" y="450" width="300" height="60" rx="8"/>
+<text class="t" x="180.0" y="472.5" text-anchor="middle" dominant-baseline="central">XVF reset</text>
+<text class="s" x="180.0" y="490.5" text-anchor="middle" dominant-baseline="central">PRG_RST → 2N7002 Q701 → XVF RST_N</text>
+<path class="wire prg" d="M330 480.0 L428 480.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="471.0" text-anchor="middle" dominant-baseline="central">21</text>
+<rect class="box k-xvf" x="30" y="530" width="300" height="70" rx="8"/>
+<text class="t" x="180.0" y="550.0" text-anchor="middle" dominant-baseline="central">XVF3800 taps (inputs)</text>
+<text class="s" x="180.0" y="568.0" text-anchor="middle" dominant-baseline="central">15 ← LED_R (pin 56) · 16 ← LED_G (pin 58)</text>
+<text class="s" x="180.0" y="583.0" text-anchor="middle" dominant-baseline="central">17 ← INT_N (pin 55)</text>
+<path class="wire sig" d="M330 565.0 L428 565.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="556.0" text-anchor="middle" dominant-baseline="central">15 · 16 · 17</text>
+<rect class="box k-pwr" x="30" y="620" width="300" height="60" rx="8"/>
+<text class="t" x="180.0" y="642.5" text-anchor="middle" dominant-baseline="central">Power-mux status</text>
+<text class="s" x="180.0" y="660.5" text-anchor="middle" dominant-baseline="central">TPS2121 ST</text>
+<path class="wire pwr" d="M330 650.0 L428 650.0" marker-end="url(#ah)"/>
+<text class="lbl" x="379" y="641.0" text-anchor="middle" dominant-baseline="central">18</text>
+<rect class="box k-ui" x="810" y="85" width="310" height="85" rx="8"/>
+<text class="t" x="965.0" y="105.0" text-anchor="middle" dominant-baseline="central">WS2812B ring</text>
+<text class="s" x="965.0" y="123.0" text-anchor="middle" dominant-baseline="central">12 × WS2812B-2020 on switched 5 V</text>
+<text class="s" x="965.0" y="138.0" text-anchor="middle" dominant-baseline="central">47 → TPS22918 EN</text>
+<text class="s" x="965.0" y="153.0" text-anchor="middle" dominant-baseline="central">48 → SN74AHCT1G125 → data (RMT)</text>
+<path class="wire mcu" d="M692 127.5 L808 127.5" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="118.5" text-anchor="middle" dominant-baseline="central">47 · 48</text>
+<rect class="box k-ui" x="810" y="190" width="310" height="70" rx="8"/>
+<text class="t" x="965.0" y="210.0" text-anchor="middle" dominant-baseline="central">User RGB LED</text>
+<text class="s" x="965.0" y="228.0" text-anchor="middle" dominant-baseline="central">WS2812B-2020 + own SN74AHCT1G125</text>
+<text class="s" x="965.0" y="243.0" text-anchor="middle" dominant-baseline="central">always-on +5V, not chained to the ring</text>
+<path class="wire mcu" d="M692 225.0 L808 225.0" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="216.0" text-anchor="middle" dominant-baseline="central">40</text>
+<rect class="box k-ui" x="810" y="280" width="310" height="55" rx="8"/>
+<text class="t" x="965.0" y="300.0" text-anchor="middle" dominant-baseline="central">Mute LED</text>
+<text class="s" x="965.0" y="318.0" text-anchor="middle" dominant-baseline="central">red, via 1 kΩ (was XVF pin 54)</text>
+<path class="wire mcu" d="M692 307.5 L808 307.5" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="298.5" text-anchor="middle" dominant-baseline="central">41</text>
+<rect class="box k-ui" x="810" y="355" width="310" height="55" rx="8"/>
+<text class="t" x="965.0" y="375.0" text-anchor="middle" dominant-baseline="central">User button (side, TS24CA)</text>
+<text class="s" x="965.0" y="393.0" text-anchor="middle" dominant-baseline="central">10 kΩ pull-up, active low</text>
+<path class="wire mcu" d="M692 382.5 L808 382.5" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="373.5" text-anchor="middle" dominant-baseline="central">42</text>
+<rect class="box k-gry" x="810" y="430" width="310" height="70" rx="8"/>
+<text class="t" x="965.0" y="450.0" text-anchor="middle" dominant-baseline="central">I²C</text>
+<text class="s" x="965.0" y="468.0" text-anchor="middle" dominant-baseline="central">4.7 kΩ pull-ups</text>
+<text class="s" x="965.0" y="483.0" text-anchor="middle" dominant-baseline="central">→ J701 pins 13 / 15</text>
+<path class="wire sig" d="M692 465.0 L808 465.0" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="456.0" text-anchor="middle" dominant-baseline="central">38 SDA · 39 SCL</text>
+<rect class="box k-gry" x="810" y="520" width="310" height="70" rx="8"/>
+<text class="t" x="965.0" y="540.0" text-anchor="middle" dominant-baseline="central">UART0</text>
+<text class="s" x="965.0" y="558.0" text-anchor="middle" dominant-baseline="central">boot log + console</text>
+<text class="s" x="965.0" y="573.0" text-anchor="middle" dominant-baseline="central">on header pins 21 / 22</text>
+<path class="wire sig" d="M692 555.0 L808 555.0" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="546.0" text-anchor="middle" dominant-baseline="central">43 TX · 44 RX</text>
+<rect class="box k-gry" x="810" y="610" width="310" height="70" rx="8"/>
+<text class="t" x="965.0" y="630.0" text-anchor="middle" dominant-baseline="central">2×12 header J701</text>
+<text class="s" x="965.0" y="648.0" text-anchor="middle" dominant-baseline="central">GPIO 1, 2, 4, 5, 6, 7, 8, 9</text>
+<text class="s" x="965.0" y="663.0" text-anchor="middle" dominant-baseline="central">on header pins 5–12</text>
+<path class="wire sig" d="M692 645.0 L808 645.0" marker-end="url(#ah)"/>
+<text class="lbl" x="750" y="636.0" text-anchor="middle" dominant-baseline="central">8 GPIO</text>
+<rect class="note" x="30" y="705" width="560" height="237" rx="6"/>
+<text class="t" x="40" y="721" text-anchor="start" dominant-baseline="central">J701 pinout (2×12, 2.54 mm, SMD)</text>
+<text class="lbl" x="50" y="747" text-anchor="start" dominant-baseline="central"> 1</text>
+<text class="s" x="74" y="747" text-anchor="start" dominant-baseline="central">+5V</text>
+<text class="lbl" x="290" y="747" text-anchor="start" dominant-baseline="central"> 2</text>
+<text class="s" x="314" y="747" text-anchor="start" dominant-baseline="central">+3V3</text>
+<text class="lbl" x="50" y="763" text-anchor="start" dominant-baseline="central"> 3</text>
+<text class="s" x="74" y="763" text-anchor="start" dominant-baseline="central">+1V8</text>
+<text class="lbl" x="290" y="763" text-anchor="start" dominant-baseline="central"> 4</text>
+<text class="s" x="314" y="763" text-anchor="start" dominant-baseline="central">GND</text>
+<text class="lbl" x="50" y="779" text-anchor="start" dominant-baseline="central"> 5</text>
+<text class="s" x="74" y="779" text-anchor="start" dominant-baseline="central">GPIO1</text>
+<text class="lbl" x="290" y="779" text-anchor="start" dominant-baseline="central"> 6</text>
+<text class="s" x="314" y="779" text-anchor="start" dominant-baseline="central">GPIO2</text>
+<text class="lbl" x="50" y="795" text-anchor="start" dominant-baseline="central"> 7</text>
+<text class="s" x="74" y="795" text-anchor="start" dominant-baseline="central">GPIO4</text>
+<text class="lbl" x="290" y="795" text-anchor="start" dominant-baseline="central"> 8</text>
+<text class="s" x="314" y="795" text-anchor="start" dominant-baseline="central">GPIO5</text>
+<text class="lbl" x="50" y="811" text-anchor="start" dominant-baseline="central"> 9</text>
+<text class="s" x="74" y="811" text-anchor="start" dominant-baseline="central">GPIO6</text>
+<text class="lbl" x="290" y="811" text-anchor="start" dominant-baseline="central">10</text>
+<text class="s" x="314" y="811" text-anchor="start" dominant-baseline="central">GPIO7</text>
+<text class="lbl" x="50" y="827" text-anchor="start" dominant-baseline="central">11</text>
+<text class="s" x="74" y="827" text-anchor="start" dominant-baseline="central">GPIO8</text>
+<text class="lbl" x="290" y="827" text-anchor="start" dominant-baseline="central">12</text>
+<text class="s" x="314" y="827" text-anchor="start" dominant-baseline="central">GPIO9</text>
+<text class="lbl" x="50" y="843" text-anchor="start" dominant-baseline="central">13</text>
+<text class="s" x="74" y="843" text-anchor="start" dominant-baseline="central">ESP I²C SDA</text>
+<text class="lbl" x="290" y="843" text-anchor="start" dominant-baseline="central">14</text>
+<text class="s" x="314" y="843" text-anchor="start" dominant-baseline="central">XVF I²C SDA</text>
+<text class="lbl" x="50" y="859" text-anchor="start" dominant-baseline="central">15</text>
+<text class="s" x="74" y="859" text-anchor="start" dominant-baseline="central">ESP I²C SCL</text>
+<text class="lbl" x="290" y="859" text-anchor="start" dominant-baseline="central">16</text>
+<text class="s" x="314" y="859" text-anchor="start" dominant-baseline="central">XVF I²C SCL</text>
+<text class="lbl" x="50" y="875" text-anchor="start" dominant-baseline="central">17</text>
+<text class="s" x="74" y="875" text-anchor="start" dominant-baseline="central">XVF INT_N</text>
+<text class="lbl" x="290" y="875" text-anchor="start" dominant-baseline="central">18</text>
+<text class="s" x="314" y="875" text-anchor="start" dominant-baseline="central">XVF I2S_DATA1</text>
+<text class="lbl" x="50" y="891" text-anchor="start" dominant-baseline="central">19</text>
+<text class="s" x="74" y="891" text-anchor="start" dominant-baseline="central">XVF I2S_DATA2</text>
+<text class="lbl" x="290" y="891" text-anchor="start" dominant-baseline="central">20</text>
+<text class="s" x="314" y="891" text-anchor="start" dominant-baseline="central">GND</text>
+<text class="lbl" x="50" y="907" text-anchor="start" dominant-baseline="central">21</text>
+<text class="s" x="74" y="907" text-anchor="start" dominant-baseline="central">ESP UART TX (43)</text>
+<text class="lbl" x="290" y="907" text-anchor="start" dominant-baseline="central">22</text>
+<text class="s" x="314" y="907" text-anchor="start" dominant-baseline="central">ESP UART RX (44)</text>
+<text class="lbl" x="50" y="923" text-anchor="start" dominant-baseline="central">23</text>
+<text class="s" x="74" y="923" text-anchor="start" dominant-baseline="central">+5V</text>
+<text class="lbl" x="290" y="923" text-anchor="start" dominant-baseline="central">24</text>
+<text class="s" x="314" y="923" text-anchor="start" dominant-baseline="central">+3V3</text>
+<text class="xs" x="440" y="843" text-anchor="start" dominant-baseline="central">shunts on 13–14 and</text>
+<text class="xs" x="440" y="859" text-anchor="start" dominant-baseline="central">15–16 join the ESP32</text>
+<text class="xs" x="440" y="875" text-anchor="start" dominant-baseline="central">and XVF I²C buses</text>
+<rect class="note" x="810" y="705" width="310" height="62" rx="6"/>
+<text class="t" x="820" y="719" text-anchor="start" dominant-baseline="central">Not connected</text>
+<text class="s" x="820" y="737" text-anchor="start" dominant-baseline="central">Strapping pins GPIO3, 45, 46</text>
+<text class="s" x="820" y="752" text-anchor="start" dominant-baseline="central">PSRAM pins GPIO35–37</text>
+<rect class="note" x="810" y="795" width="310" height="62" rx="6"/>
+<text class="t" x="820" y="809" text-anchor="start" dominant-baseline="central">Header power</text>
+<text class="s" x="820" y="827" text-anchor="start" dominant-baseline="central">+5V, +3V3 and +1V8 on J701 are</text>
+<text class="s" x="820" y="842" text-anchor="start" dominant-baseline="central">for low-current use only.</text></svg>

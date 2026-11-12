@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="905" viewBox="0 0 1120 905" role="img"><title>IM69D129F mic wiring and placement</title><desc>Each of the four mics has five pads. XVF3800 pin 43 drives an SN74LVC1G125 clock buffer, then a 100 ohm resistor, then a separate 100 ohm into each mic&#x27;s CLK. Each mic&#x27;s DATA goes through its own 100 ohm to its XVF3800 data pin. The mics sit on the corners of a 66 mm square on the bottom side, numbered 0 to 3 anticlockwise seen from the top, as on the XMOS XK-VOICE-SQ66 board.</desc>
+<style>
+  .bg { fill: #ffffff; }
+  text { font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', Arial, sans-serif; fill: #1f2328; }
+  .t  { font-size: 14px; font-weight: 600; }
+  .s  { font-size: 11.5px; fill: #3d444d; }
+  .xs { font-size: 10px; fill: #57606a; }
+  .h1 { font-size: 20px; font-weight: 700; }
+  .h2 { font-size: 13px; font-weight: 600; fill: #57606a; letter-spacing: 0.04em; }
+  .wire { stroke: #57606a; stroke-width: 1.4; fill: none; }
+  .wire.dash { stroke-dasharray: 5 4; }
+  .wire.pwr { stroke: #0f766e; stroke-width: 2; }
+  .wire.sig { stroke: #1d4ed8; }
+  .wire.aud { stroke: #c2410c; }
+  .wire.mcu { stroke: #7e22ce; }
+  .wire.prg { stroke: #be185d; }
+  .lbl { font-size: 10.5px; fill: #3d444d; }
+  .box { stroke-width: 1.2; }
+  .k-pwr  { fill: #e6f4f1; stroke: #0f766e; }
+  .k-xvf  { fill: #e8efff; stroke: #1d4ed8; }
+  .k-mcu  { fill: #f3e8ff; stroke: #7e22ce; }
+  .k-aud  { fill: #fff1e8; stroke: #c2410c; }
+  .k-mic  { fill: #e9f7e6; stroke: #2f7d1f; }
+  .k-ui   { fill: #fff7db; stroke: #a16207; }
+  .k-prg  { fill: #fde8f1; stroke: #be185d; }
+  .k-gry  { fill: #f2f3f5; stroke: #6e7781; }
+  .k-dnp  { fill: #ffffff; stroke: #6e7781; stroke-dasharray: 4 3; }
+  .note   { fill: #fffbea; stroke: #d4a72c; stroke-width: 1; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#57606a"/></marker></defs><rect class="bg" x="0" y="0" width="1120" height="905"/><text class="h1" x="30" y="28" text-anchor="start" dominant-baseline="central">MindSpeak rev 1: mic wiring and placement</text>
+<text class="s" x="30" y="52" text-anchor="start" dominant-baseline="central">Infineon IM69D129FV01XTMA1, bottom-port PDM. Clock buffer, series resistors and placement copied from XMOS XK-VOICE-SQ66. Updated 2026-11-10.</text>
+<rect class="box k-mic" x="40" y="90" width="230" height="290" rx="8"/>
+<text class="t" x="155" y="108" text-anchor="middle" dominant-baseline="central">Pads (same on each mic)</text>
+<text class="t" x="60" y="145" text-anchor="start" dominant-baseline="central">1  DATA</text>
+<path class="wire sig" d="M270 145 L470 145"/>
+<text class="s" x="480" y="145" text-anchor="start" dominant-baseline="central">own 100 Ω series → XVF pin 46 / 50 / 48 / 51</text>
+<text class="xs" x="480" y="161" text-anchor="start" dominant-baseline="central">one XVF data pin per mic</text>
+<text class="t" x="60" y="195" text-anchor="start" dominant-baseline="central">2  SELECT</text>
+<path class="wire " d="M270 195 L470 195"/>
+<text class="s" x="480" y="195" text-anchor="start" dominant-baseline="central">GND</text>
+<text class="xs" x="480" y="211" text-anchor="start" dominant-baseline="central">data on falling edge (to verify)</text>
+<text class="t" x="60" y="245" text-anchor="start" dominant-baseline="central">3  GND</text>
+<path class="wire " d="M270 245 L470 245"/>
+<text class="s" x="480" y="245" text-anchor="start" dominant-baseline="central">GND</text>
+<text class="t" x="60" y="295" text-anchor="start" dominant-baseline="central">4  CLK</text>
+<path class="wire sig" d="M270 295 L470 295"/>
+<text class="s" x="480" y="295" text-anchor="start" dominant-baseline="central">own 100 Ω from the clock buffer (below)</text>
+<text class="xs" x="480" y="311" text-anchor="start" dominant-baseline="central">3.072 MHz</text>
+<text class="t" x="60" y="345" text-anchor="start" dominant-baseline="central">5  VDD</text>
+<path class="wire pwr" d="M270 345 L470 345"/>
+<text class="s" x="480" y="345" text-anchor="start" dominant-baseline="central">3.3 V mic rail</text>
+<text class="xs" x="480" y="361" text-anchor="start" dominant-baseline="central">1 µF (+100 nF) at each mic</text>
+<rect class="note" x="800" y="95" width="270" height="92" rx="6"/>
+<text class="t" x="810" y="109" text-anchor="start" dominant-baseline="central">To verify</text>
+<text class="s" x="810" y="127" text-anchor="start" dominant-baseline="central">XMOS wants one mic per data pin,</text>
+<text class="s" x="810" y="142" text-anchor="start" dominant-baseline="central">single data rate. Which clock edge</text>
+<text class="s" x="810" y="157" text-anchor="start" dominant-baseline="central">XMOS samples decides SELECT;</text>
+<text class="s" x="810" y="172" text-anchor="start" dominant-baseline="central">GND is assumed. Check before layout.</text>
+<rect class="box k-pwr" x="800" y="245" width="270" height="75" rx="8"/>
+<text class="t" x="935.0" y="260.0" text-anchor="middle" dominant-baseline="central">Mic supply</text>
+<text class="s" x="935.0" y="278.0" text-anchor="middle" dominant-baseline="central">3.3 V buck → BLM15AG601 ferrite</text>
+<text class="s" x="935.0" y="293.0" text-anchor="middle" dominant-baseline="central">→ mic rail; keeps buck</text>
+<text class="s" x="935.0" y="308.0" text-anchor="middle" dominant-baseline="central">ripple off the mics</text>
+<text class="h2" x="40" y="410" text-anchor="start" dominant-baseline="central">Clock and data path</text>
+<rect class="box k-xvf" x="40" y="465" width="140" height="60" rx="8"/>
+<text class="t" x="110.0" y="487.5" text-anchor="middle" dominant-baseline="central">XVF3800</text>
+<text class="s" x="110.0" y="505.5" text-anchor="middle" dominant-baseline="central">pin 43 MIC_CLK</text>
+<rect class="box k-gry" x="225" y="465" width="170" height="60" rx="8"/>
+<text class="t" x="310.0" y="487.5" text-anchor="middle" dominant-baseline="central">SN74LVC1G125</text>
+<text class="s" x="310.0" y="505.5" text-anchor="middle" dominant-baseline="central">OE tied low, on +3V3</text>
+<path class="wire sig" d="M180 495 L223 495" marker-end="url(#ah)"/>
+<rect class="box k-gry" x="435" y="480" width="60" height="30" rx="8"/>
+<text class="lbl" x="465" y="495" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M395 495 L433 495"/>
+<path class="wire sig" d="M495 495 L540 495"/>
+<path class="wire sig" d="M540 440 L540 560"/>
+<path class="wire sig" d="M540 440 L575 440"/>
+<rect class="box k-gry" x="575" y="427" width="60" height="26" rx="8"/>
+<text class="lbl" x="605" y="440" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M635 440 L673 440" marker-end="url(#ah)"/>
+<rect class="box k-mic" x="675" y="425" width="150" height="30" rx="8"/>
+<text class="s" x="750" y="440" text-anchor="middle" dominant-baseline="central">mic 0: CLK · DATA</text>
+<path class="wire sig" d="M825 440 L860 440"/>
+<rect class="box k-gry" x="860" y="427" width="60" height="26" rx="8"/>
+<text class="lbl" x="890" y="440" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M920 440 L958 440" marker-end="url(#ah)"/>
+<text class="s" x="965" y="440" text-anchor="start" dominant-baseline="central">XVF pin 46 (DATA0)</text>
+<path class="wire sig" d="M540 480 L575 480"/>
+<rect class="box k-gry" x="575" y="467" width="60" height="26" rx="8"/>
+<text class="lbl" x="605" y="480" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M635 480 L673 480" marker-end="url(#ah)"/>
+<rect class="box k-mic" x="675" y="465" width="150" height="30" rx="8"/>
+<text class="s" x="750" y="480" text-anchor="middle" dominant-baseline="central">mic 1: CLK · DATA</text>
+<path class="wire sig" d="M825 480 L860 480"/>
+<rect class="box k-gry" x="860" y="467" width="60" height="26" rx="8"/>
+<text class="lbl" x="890" y="480" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M920 480 L958 480" marker-end="url(#ah)"/>
+<text class="s" x="965" y="480" text-anchor="start" dominant-baseline="central">XVF pin 50 (DATA1)</text>
+<path class="wire sig" d="M540 520 L575 520"/>
+<rect class="box k-gry" x="575" y="507" width="60" height="26" rx="8"/>
+<text class="lbl" x="605" y="520" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M635 520 L673 520" marker-end="url(#ah)"/>
+<rect class="box k-mic" x="675" y="505" width="150" height="30" rx="8"/>
+<text class="s" x="750" y="520" text-anchor="middle" dominant-baseline="central">mic 2: CLK · DATA</text>
+<path class="wire sig" d="M825 520 L860 520"/>
+<rect class="box k-gry" x="860" y="507" width="60" height="26" rx="8"/>
+<text class="lbl" x="890" y="520" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M920 520 L958 520" marker-end="url(#ah)"/>
+<text class="s" x="965" y="520" text-anchor="start" dominant-baseline="central">XVF pin 48 (DATA2)</text>
+<path class="wire sig" d="M540 560 L575 560"/>
+<rect class="box k-gry" x="575" y="547" width="60" height="26" rx="8"/>
+<text class="lbl" x="605" y="560" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M635 560 L673 560" marker-end="url(#ah)"/>
+<rect class="box k-mic" x="675" y="545" width="150" height="30" rx="8"/>
+<text class="s" x="750" y="560" text-anchor="middle" dominant-baseline="central">mic 3: CLK · DATA</text>
+<path class="wire sig" d="M825 560 L860 560"/>
+<rect class="box k-gry" x="860" y="547" width="60" height="26" rx="8"/>
+<text class="lbl" x="890" y="560" text-anchor="middle" dominant-baseline="central">100 Ω</text>
+<path class="wire sig" d="M920 560 L958 560" marker-end="url(#ah)"/>
+<text class="s" x="965" y="560" text-anchor="start" dominant-baseline="central">XVF pin 51 (DATA3)</text>
+<text class="h2" x="40" y="615" text-anchor="start" dominant-baseline="central">Placement: 66 × 66 mm square, all four mics on the bottom side (stock -sqr firmware)</text>
+<rect x="330" y="660" width="200" height="200" fill="none" stroke="#2f7d1f" stroke-width="1.4" stroke-dasharray="6 4"/>
+<text class="lbl" x="430.0" y="648" text-anchor="middle" dominant-baseline="central">66 mm</text>
+<text class="lbl" x="542" y="760.0" text-anchor="start" dominant-baseline="central">66 mm</text>
+<rect class="box k-gry" x="375.0" y="848" width="110" height="24" rx="4"/>
+<text class="lbl" x="430.0" y="860" text-anchor="middle" dominant-baseline="central">main USB-C</text>
+<text class="xs" x="430.0" y="886" text-anchor="middle" dominant-baseline="central">USB side</text>
+<circle cx="330" cy="660" r="11" class="box k-mic"/>
+<text class="lbl" x="330" y="660" text-anchor="middle" dominant-baseline="central">0</text>
+<text class="s" x="312" y="652" text-anchor="end" dominant-baseline="central">mic 0 · DATA0, pin 46</text>
+<text class="xs" x="312" y="668" text-anchor="end" dominant-baseline="central">far left (XMOS MIC1)</text>
+<circle cx="330" cy="860" r="11" class="box k-mic"/>
+<text class="lbl" x="330" y="860" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="s" x="312" y="852" text-anchor="end" dominant-baseline="central">mic 1 · DATA1, pin 50</text>
+<text class="xs" x="312" y="868" text-anchor="end" dominant-baseline="central">USB side left (XMOS MIC4)</text>
+<circle cx="530" cy="860" r="11" class="box k-mic"/>
+<text class="lbl" x="530" y="860" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="s" x="548" y="852" text-anchor="start" dominant-baseline="central">mic 2 · DATA2, pin 48</text>
+<text class="xs" x="548" y="868" text-anchor="start" dominant-baseline="central">USB side right (XMOS MIC5)</text>
+<circle cx="530" cy="660" r="11" class="box k-mic"/>
+<text class="lbl" x="530" y="660" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="s" x="548" y="652" text-anchor="start" dominant-baseline="central">mic 3 · DATA3, pin 51</text>
+<text class="xs" x="548" y="668" text-anchor="start" dominant-baseline="central">far right (XMOS MIC3)</text>
+<path class="wire dash" d="M355 690 L355 830" marker-end="url(#ah)"/>
+<path class="wire dash" d="M360 835 L500 835" marker-end="url(#ah)"/>
+<path class="wire dash" d="M505 830 L505 690" marker-end="url(#ah)"/>
+<text class="s" x="430.0" y="752.0" text-anchor="middle" dominant-baseline="central">top view</text>
+<text class="xs" x="430.0" y="768.0" text-anchor="middle" dominant-baseline="central">0 → 1 → 2 → 3 anticlockwise</text></svg>

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Mindspark")(type "KiCad")(uri "${KIPRJMOD}/../libraries/symbols/Mindspark.kicad_sym")(options "")(descr "Mindspark rev 1 parts: easyeda2kicad imports checked against datasheets, plus stock symbols with fixed footprints"))
+)

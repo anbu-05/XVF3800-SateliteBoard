@@ -1,0 +1,4207 @@
+{
+ "sheets": {
+  "usb_power": {
+   "index": 1,
+   "paper": "A4",
+   "pins": {
+    "J101": {
+     "A1": "GND",
+     "A12": "GND",
+     "B1": "GND",
+     "B12": "GND",
+     "A4": "VBUS_MAIN",
+     "A9": "VBUS_MAIN",
+     "B4": "VBUS_MAIN",
+     "B9": "VBUS_MAIN",
+     "A5": "usb_power:USBM_CC1",
+     "A6": "USB_MAIN_DP",
+     "A7": "USB_MAIN_DM",
+     "A8": null,
+     "B5": "usb_power:USBM_CC2",
+     "B6": "USB_MAIN_DP",
+     "B7": "USB_MAIN_DM",
+     "B8": null,
+     "SH": "GND"
+    },
+    "U101": {
+     "1": "USB_MAIN_DM",
+     "2": "USB_MAIN_DP",
+     "3": "GND",
+     "8": "GND",
+     "4": "usb_power:USBM_CC1",
+     "5": "usb_power:USBM_CC2",
+     "6": null,
+     "7": null,
+     "9": null,
+     "10": null
+    },
+    "R101": {
+     "1": "usb_power:USBM_CC1",
+     "2": "GND"
+    },
+    "R102": {
+     "1": "usb_power:USBM_CC2",
+     "2": "GND"
+    },
+    "D101": {
+     "1": "VBUS_MAIN",
+     "2": "GND"
+    },
+    "C101": {
+     "1": "VBUS_MAIN",
+     "2": "GND"
+    },
+    "C102": {
+     "1": "VBUS_MAIN",
+     "2": "GND"
+    },
+    "J102": {
+     "A1": "GND",
+     "A12": "GND",
+     "B1": "GND",
+     "B12": "GND",
+     "A4": "VBUS_ESP",
+     "A9": "VBUS_ESP",
+     "B4": "VBUS_ESP",
+     "B9": "VBUS_ESP",
+     "A5": "usb_power:USBE_CC1",
+     "A6": "USB_ESP_DP",
+     "A7": "USB_ESP_DM",
+     "A8": null,
+     "B5": "usb_power:USBE_CC2",
+     "B6": "USB_ESP_DP",
+     "B7": "USB_ESP_DM",
+     "B8": null,
+     "SH": "GND"
+    },
+    "U102": {
+     "1": "USB_ESP_DM",
+     "2": "USB_ESP_DP",
+     "3": "GND",
+     "8": "GND",
+     "4": "usb_power:USBE_CC1",
+     "5": "usb_power:USBE_CC2",
+     "6": null,
+     "7": null,
+     "9": null,
+     "10": null
+    },
+    "R103": {
+     "1": "usb_power:USBE_CC1",
+     "2": "GND"
+    },
+    "R104": {
+     "1": "usb_power:USBE_CC2",
+     "2": "GND"
+    },
+    "D102": {
+     "1": "VBUS_ESP",
+     "2": "GND"
+    },
+    "C103": {
+     "1": "VBUS_ESP",
+     "2": "GND"
+    },
+    "C104": {
+     "1": "VBUS_ESP",
+     "2": "GND"
+    },
+    "U103": {
+     "1": "+5V",
+     "8": "+5V",
+     "2": "VBUS_ESP",
+     "3": "usb_power:MUX_CP2",
+     "4": "usb_power:MUX_OV2",
+     "5": "usb_power:MUX_OV1",
+     "6": "usb_power:MUX_PR1",
+     "7": "VBUS_MAIN",
+     "9": "MUX_ST",
+     "10": "usb_power:MUX_ILIM",
+     "11": "usb_power:MUX_SS",
+     "12": "GND"
+    },
+    "R105": {
+     "1": "usb_power:MUX_PR1",
+     "2": "VBUS_MAIN"
+    },
+    "R106": {
+     "1": "usb_power:MUX_PR1",
+     "2": "GND"
+    },
+    "R107": {
+     "1": "usb_power:MUX_CP2",
+     "2": "VBUS_ESP"
+    },
+    "R108": {
+     "1": "usb_power:MUX_CP2",
+     "2": "GND"
+    },
+    "R109": {
+     "1": "usb_power:MUX_OV1",
+     "2": "VBUS_MAIN"
+    },
+    "R110": {
+     "1": "usb_power:MUX_OV1",
+     "2": "GND"
+    },
+    "R111": {
+     "1": "usb_power:MUX_OV2",
+     "2": "VBUS_ESP"
+    },
+    "R112": {
+     "1": "usb_power:MUX_OV2",
+     "2": "GND"
+    },
+    "R113": {
+     "1": "usb_power:MUX_ILIM",
+     "2": "GND"
+    },
+    "C105": {
+     "1": "usb_power:MUX_SS",
+     "2": "GND"
+    },
+    "R114": {
+     "1": "MUX_ST",
+     "2": "+3V3"
+    },
+    "C106": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "C107": {
+     "1": "+5V",
+     "2": "GND"
+    }
+   },
+   "parts": [
+    {
+     "ref": "J101",
+     "lib": "TYPE-C-31-M-12",
+     "value": "TYPE-C-31-M-12",
+     "footprint": "Mindspark:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+     "fields": {
+      "spec": "USB 2.0, 16-pin",
+      "use": "USB-C receptacle"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U101",
+     "lib": "TPD4E05U06DQAR",
+     "value": "TPD4E05U06DQAR",
+     "footprint": "Mindspark:USON-10_2.5x1.0mm_P0.5mm",
+     "fields": {
+      "spec": "USB ESD, 0.5 pF",
+      "use": "ESD on D+/D-/CC1/CC2"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R101",
+     "lib": "R",
+     "value": "5.1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rd: UFP pull-down on CC1 (5 V only, no PD)",
+      "LCSC": "C25905",
+      "MPN": "0402WGF5101TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R102",
+     "lib": "R",
+     "value": "5.1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rd on CC2",
+      "LCSC": "C25905",
+      "MPN": "0402WGF5101TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D101",
+     "lib": "SMF5.0A",
+     "value": "SMF5.0A",
+     "footprint": "Mindspark:D_SMF",
+     "fields": {
+      "spec": "TVS 5 V",
+      "use": "VBUS clamp"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C101",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "VBUS bulk (USB limit 10 uF)",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C102",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VBUS bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "J102",
+     "lib": "TYPE-C-31-M-12",
+     "value": "TYPE-C-31-M-12",
+     "footprint": "Mindspark:USB_C_Receptacle_HRO_TYPE-C-31-M-12",
+     "fields": {
+      "spec": "USB 2.0, 16-pin",
+      "use": "USB-C receptacle"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U102",
+     "lib": "TPD4E05U06DQAR",
+     "value": "TPD4E05U06DQAR",
+     "footprint": "Mindspark:USON-10_2.5x1.0mm_P0.5mm",
+     "fields": {
+      "spec": "USB ESD, 0.5 pF",
+      "use": "ESD on D+/D-/CC1/CC2"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R103",
+     "lib": "R",
+     "value": "5.1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rd: UFP pull-down on CC1 (5 V only, no PD)",
+      "LCSC": "C25905",
+      "MPN": "0402WGF5101TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R104",
+     "lib": "R",
+     "value": "5.1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rd on CC2",
+      "LCSC": "C25905",
+      "MPN": "0402WGF5101TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D102",
+     "lib": "SMF5.0A",
+     "value": "SMF5.0A",
+     "footprint": "Mindspark:D_SMF",
+     "fields": {
+      "spec": "TVS 5 V",
+      "use": "VBUS clamp"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C103",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "VBUS bulk (USB limit 10 uF)",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C104",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VBUS bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U103",
+     "lib": "TPS2121RUXR",
+     "value": "TPS2121RUXR",
+     "footprint": "Mindspark:TI_RUX0012A_VQFN-HR-12_2x2.5mm",
+     "fields": {
+      "spec": "Power mux 4.5 A",
+      "use": "USB-C source selection"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R105",
+     "lib": "R",
+     "value": "22k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "PR1 divider top",
+      "LCSC": "C25768",
+      "MPN": "0402WGF2202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R106",
+     "lib": "R",
+     "value": "12k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "PR1 divider bottom: 1.76 V at 5 V",
+      "LCSC": "C25752",
+      "MPN": "0402WGF1202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R107",
+     "lib": "R",
+     "value": "22k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CP2 divider top",
+      "LCSC": "C25768",
+      "MPN": "0402WGF2202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R108",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CP2 divider bottom: 1.56 V at 5 V",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R109",
+     "lib": "R",
+     "value": "51k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "OV1 divider top: 1.06 x (1 + 51/12) = 5.57 V trip",
+      "LCSC": "C25794",
+      "MPN": "0402WGF5102TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R110",
+     "lib": "R",
+     "value": "12k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "OV1 divider bottom",
+      "LCSC": "C25752",
+      "MPN": "0402WGF1202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R111",
+     "lib": "R",
+     "value": "51k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "OV2 divider top: 5.57 V trip",
+      "LCSC": "C25794",
+      "MPN": "0402WGF5102TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R112",
+     "lib": "R",
+     "value": "12k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "OV2 divider bottom",
+      "LCSC": "C25752",
+      "MPN": "0402WGF1202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R113",
+     "lib": "R",
+     "value": "33k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "ILIM: 65.2/33^0.861 = 3.2 A typ, above the 2.4 A peak",
+      "LCSC": "C25779",
+      "MPN": "0402WGF3302TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C105",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Soft start, 780 V/s",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R114",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "ST open-drain pull-up (high = main port)",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C106",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "OUT bulk",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C107",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "OUT bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "USB_MAIN_DP": "bidirectional",
+    "USB_MAIN_DM": "bidirectional",
+    "USB_ESP_DP": "bidirectional",
+    "USB_ESP_DM": "bidirectional",
+    "MUX_ST": "output"
+   }
+  },
+  "regulators": {
+   "index": 2,
+   "paper": "A4",
+   "pins": {
+    "U201": {
+     "1": "+5V",
+     "2": "GND",
+     "3": "regulators:SW_0V9",
+     "4": "+5V",
+     "5": "regulators:FB_0V9"
+    },
+    "L201": {
+     "1": "regulators:SW_0V9",
+     "2": "+0V9"
+    },
+    "R201": {
+     "1": "+0V9",
+     "2": "regulators:FB_0V9"
+    },
+    "R202": {
+     "1": "regulators:FB_0V9",
+     "2": "GND"
+    },
+    "C201": {
+     "1": "+0V9",
+     "2": "regulators:FB_0V9"
+    },
+    "C202": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "C203": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C204": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "U202": {
+     "1": "+5V",
+     "2": "GND",
+     "3": "regulators:SW_3V3",
+     "4": "+5V",
+     "5": "regulators:FB_3V3"
+    },
+    "L202": {
+     "1": "regulators:SW_3V3",
+     "2": "+3V3"
+    },
+    "R203": {
+     "1": "+3V3",
+     "2": "regulators:FB_3V3"
+    },
+    "R204": {
+     "1": "regulators:FB_3V3",
+     "2": "GND"
+    },
+    "C205": {
+     "1": "+3V3",
+     "2": "regulators:FB_3V3"
+    },
+    "C206": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "C207": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "U203": {
+     "1": "+3V3",
+     "2": "GND",
+     "3": "+3V3",
+     "4": null,
+     "5": "+1V8"
+    },
+    "C208": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C209": {
+     "1": "+1V8",
+     "2": "GND"
+    },
+    "D201": {
+     "1": "GND",
+     "2": "regulators:PWR_LED_A"
+    },
+    "R205": {
+     "1": "regulators:PWR_LED_A",
+     "2": "+5V"
+    },
+    "TP201": {
+     "1": "+5V"
+    },
+    "TP202": {
+     "1": "+3V3"
+    },
+    "TP203": {
+     "1": "+1V8"
+    },
+    "TP204": {
+     "1": "+0V9"
+    },
+    "TP205": {
+     "1": "GND"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U201",
+     "lib": "TLV62569DBVR",
+     "value": "TLV62569DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "2 A buck, 1.5 MHz",
+      "use": "0.9 V XVF3800 core, 300 mA typ / 1 A max"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "L201",
+     "lib": "SRP4020TA-2R2M",
+     "value": "2.2uH",
+     "footprint": "Mindspark:L_Bourns_SRP4020TA",
+     "fields": {
+      "spec": "2.2 uH 6 A Isat",
+      "use": "Buck inductor (TI table 4 standard value)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R201",
+     "lib": "R",
+     "value": "51k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "FB divider top",
+      "LCSC": "C25794",
+      "MPN": "0402WGF5102TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R202",
+     "lib": "R",
+     "value": "100k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "FB divider bottom (TI: R2 <= 200k)",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C201",
+     "lib": "C",
+     "value": "22pF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "C0G",
+      "use": "Feed-forward: zero at about 117 kHz, as TI's 200k / 6.8 pF example",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C202",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "Input cap (TI: >= 4.7 uF)",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C203",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Output cap",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C204",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Output cap",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U202",
+     "lib": "TLV62569DBVR",
+     "value": "TLV62569DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "2 A buck, 1.5 MHz",
+      "use": "3.3 V rail: XVF I/O + ESP32 (Wi-Fi peaks about 0.36 A)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "L202",
+     "lib": "SRP4020TA-2R2M",
+     "value": "2.2uH",
+     "footprint": "Mindspark:L_Bourns_SRP4020TA",
+     "fields": {
+      "spec": "2.2 uH 6 A Isat",
+      "use": "Buck inductor (TI table 4 standard value)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R203",
+     "lib": "R",
+     "value": "100k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "FB divider top",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R204",
+     "lib": "R",
+     "value": "22k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "FB divider bottom (TI: R2 <= 200k)",
+      "LCSC": "C25768",
+      "MPN": "0402WGF2202TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C205",
+     "lib": "C",
+     "value": "15pF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "C0G",
+      "use": "Feed-forward: zero at about 117 kHz, as TI's 200k / 6.8 pF example",
+      "LCSC": "C1548",
+      "MPN": "0402CG150J500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C206",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "Input cap (TI: >= 4.7 uF)",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C207",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Output cap",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U203",
+     "lib": "TLV75518PDBVR",
+     "value": "TLV75518PDBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "500 mA LDO",
+      "use": "1.8 V from 3.3 V, about 60 mA"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C208",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "LDO input (TI: >= 1 uF)",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C209",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "LDO output (TI: >= 1 uF)",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D201",
+     "lib": "LED",
+     "value": "GREEN",
+     "footprint": "Mindspark:LED_0603_1608Metric",
+     "fields": {
+      "spec": "0603 green",
+      "use": "Power indicator",
+      "LCSC": "C12624",
+      "MPN": "KT-0603G",
+      "Manufacturer": "Hubei KENTO"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R205",
+     "lib": "R",
+     "value": "2.2k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Power LED, about 1 mA",
+      "LCSC": "C25879",
+      "MPN": "0402WGF2201TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP201",
+     "lib": "TestPoint",
+     "value": "+5V",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Rail test point"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP202",
+     "lib": "TestPoint",
+     "value": "+3V3",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Rail test point"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP203",
+     "lib": "TestPoint",
+     "value": "+1V8",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Rail test point"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP204",
+     "lib": "TestPoint",
+     "value": "+0V9",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Rail test point"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP205",
+     "lib": "TestPoint",
+     "value": "GND",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Rail test point"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {}
+  },
+  "xvf3800": {
+   "index": 3,
+   "paper": "A4",
+   "pins": {
+    "U301": {
+     "1": "XVF_QSPI_D1",
+     "2": "XVF_QSPI_D3",
+     "3": "XVF_QSPI_CS_N",
+     "4": "+0V9",
+     "5": "XVF_QSPI_CLK",
+     "6": "XVF_SPI_CS_N",
+     "7": "XVF_SPI_MOSI",
+     "8": "+3V3",
+     "9": "I2S_DATA0",
+     "10": "I2S_LRCK",
+     "11": "BTN_MUTE_N",
+     "12": "+0V9",
+     "13": "I2S_BCLK",
+     "14": "MCLK_LOOP",
+     "15": "xvf3800:XVF_XOUT",
+     "16": "xvf3800:XVF_XIN",
+     "17": "+1V8",
+     "18": "xvf3800:XVF_TDI",
+     "19": "+0V9",
+     "20": "xvf3800:XVF_TDO",
+     "21": "XVF_RST_N",
+     "22": "PLL_AVDD",
+     "23": "xvf3800:XVF_TMS",
+     "24": "xvf3800:XVF_TCK",
+     "25": null,
+     "26": "+1V8",
+     "27": "+0V9",
+     "28": "USB_MAIN_DM",
+     "29": "USB_MAIN_DP",
+     "30": "+3V3",
+     "31": "+1V8",
+     "32": "BTN_ACTION_N",
+     "33": "XL_DN1",
+     "34": "+0V9",
+     "35": "XL_DN0",
+     "36": "XL_UP0",
+     "37": "XL_UP1",
+     "38": "+3V3",
+     "39": "XVF_I2S_DATA1",
+     "40": "AMP_EN",
+     "41": "MCLK_LOOP",
+     "42": "+0V9",
+     "43": "MIC_CLK",
+     "44": "XVF_I2C_SCL",
+     "45": "XVF_I2C_SDA",
+     "46": "MIC_DATA0",
+     "47": "XVF_SPI_MISO",
+     "48": "MIC_DATA2",
+     "49": "+0V9",
+     "50": "MIC_DATA1",
+     "51": "MIC_DATA3",
+     "52": "+3V3",
+     "53": "XVF_I2S_DATA2",
+     "54": "XVF_SQ_NLIN",
+     "55": "XVF_INT_N",
+     "56": "XVF_GPO_R",
+     "57": "+0V9",
+     "58": "XVF_GPO_G",
+     "59": "XVF_QSPI_D0",
+     "60": "XVF_QSPI_D2",
+     "61": "+0V9",
+     "62": "+0V9",
+     "63": "+0V9",
+     "64": "+0V9",
+     "65": "GND"
+    },
+    "C301": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C302": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C303": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C304": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C305": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C306": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C307": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C308": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C309": {
+     "1": "+0V9",
+     "2": "GND"
+    },
+    "C310": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C311": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C312": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C313": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C314": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C315": {
+     "1": "+1V8",
+     "2": "GND"
+    },
+    "C316": {
+     "1": "+1V8",
+     "2": "GND"
+    },
+    "C317": {
+     "1": "+1V8",
+     "2": "GND"
+    },
+    "C318": {
+     "1": "+1V8",
+     "2": "GND"
+    },
+    "FB301": {
+     "1": "+0V9",
+     "2": "PLL_AVDD"
+    },
+    "C319": {
+     "1": "PLL_AVDD",
+     "2": "GND"
+    },
+    "Y301": {
+     "1": "xvf3800:XVF_XIN",
+     "2": "GND",
+     "4": "GND",
+     "3": "xvf3800:XVF_XTAL_D"
+    },
+    "C320": {
+     "1": "xvf3800:XVF_XIN",
+     "2": "GND"
+    },
+    "C321": {
+     "1": "xvf3800:XVF_XTAL_D",
+     "2": "GND"
+    },
+    "R301": {
+     "1": "xvf3800:XVF_XTAL_D",
+     "2": "xvf3800:XVF_XOUT"
+    },
+    "R302": {
+     "1": "xvf3800:XVF_XIN",
+     "2": "xvf3800:XVF_XOUT"
+    },
+    "U302": {
+     "1": "XVF_RST_N",
+     "2": "GND",
+     "3": "xvf3800:RST_BTN_N",
+     "4": null,
+     "5": "+3V3",
+     "6": "+3V3"
+    },
+    "SW301": {
+     "1": "xvf3800:RST_BTN_N",
+     "2": "GND"
+    },
+    "R303": {
+     "1": "XVF_RST_N",
+     "2": "+1V8"
+    },
+    "C322": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "J301": {
+     "1": "+1V8",
+     "2": "xvf3800:XVF_TMS",
+     "3": "xvf3800:XVF_TCK",
+     "4": "xvf3800:XVF_TDO",
+     "5": "xvf3800:XVF_TDI",
+     "6": "XVF_RST_N",
+     "7": "GND",
+     "MP": null
+    },
+    "TP301": {
+     "1": "+1V8"
+    },
+    "TP302": {
+     "1": "xvf3800:XVF_TMS"
+    },
+    "TP303": {
+     "1": "xvf3800:XVF_TCK"
+    },
+    "TP304": {
+     "1": "xvf3800:XVF_TDO"
+    },
+    "TP305": {
+     "1": "xvf3800:XVF_TDI"
+    },
+    "TP306": {
+     "1": "XVF_RST_N"
+    },
+    "TP307": {
+     "1": "GND"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U301",
+     "lib": "XVF3800-QF60B-C",
+     "value": "XVF3800-QF60B-C",
+     "footprint": "Mindspark:XMOS_QFN-60-5EP_7x7mm_P0.4mm",
+     "fields": {
+      "spec": "Voice processor",
+      "use": "XMOS XVF3800, stock USB firmware"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C301",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C302",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C303",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C304",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C305",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C306",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C307",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C308",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDD pin bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C309",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "VDD bulk",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C310",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDDIOL pin 8",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C311",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDDIOR pin 38",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C312",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDDIOT pin 52",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C313",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "USB_VDD33A pin 30",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C314",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "3.3 V bulk at XVF3800",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C315",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDDIOB18 pin 17",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C316",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "VDDIOB18 pin 26",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C317",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "USB_VDD18A pin 31",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C318",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "1.8 V bulk",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "FB301",
+     "lib": "BLM15AG601SN1D",
+     "value": "600R@100MHz",
+     "footprint": "Mindspark:L_0402_1005Metric",
+     "fields": {
+      "use": "PLL_AVDD filter (XU316: 600 R at 100 MHz + 1 uF)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C319",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "PLL_AVDD cap",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "Y301",
+     "lib": "X322524MOB4SI",
+     "value": "24MHz",
+     "footprint": "Mindspark:Crystal_SMD_3225-4Pin_3.2x2.5mm",
+     "fields": {
+      "spec": "12 pF, 50 R ESR",
+      "use": "XVF3800 system clock"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C320",
+     "lib": "C",
+     "value": "22pF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "C0G",
+      "use": "Crystal load",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C321",
+     "lib": "C",
+     "value": "22pF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "C0G",
+      "use": "Crystal load",
+      "LCSC": "C1555",
+      "MPN": "0402CG220J500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R301",
+     "lib": "R",
+     "value": "680R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rd: drive limit",
+      "LCSC": "C25130",
+      "MPN": "0402WGF6800TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R302",
+     "lib": "R",
+     "value": "1M",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Rf: oscillator bias",
+      "LCSC": "C26083",
+      "MPN": "0402WGF1004TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U302",
+     "lib": "TPS3808G33DBVR",
+     "value": "TPS3808G33DBVR",
+     "footprint": "Mindspark:SOT-23-6",
+     "fields": {
+      "spec": "Supervisor 3.07 V",
+      "use": "Holds XVF3800 in reset until 3.3 V is good"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW301",
+     "lib": "TS-1187A-B-A-B",
+     "value": "RESET",
+     "footprint": "Mindspark:SW_Push_1P1T_XKB_TS-1187A",
+     "fields": {
+      "use": "XVF3800 reset button (TPS3808 MR)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R303",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "RST_N pull-up to the 1.8 V bank",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C322",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "TPS3808 VDD bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "J301",
+     "lib": "S7B-PH-SM4-TB",
+     "value": "S7B-PH-SM4-TB(LF)(SN)",
+     "footprint": "Mindspark:JST_PH_S7B-PH-SM4-TB_1x07-1MP_P2.00mm_Horizontal",
+     "fields": {
+      "spec": "JST PH 7-pin",
+      "use": "XTAG4 JTAG (1.8 V)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP301",
+     "lib": "TestPoint",
+     "value": "JTAG1",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 1"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP302",
+     "lib": "TestPoint",
+     "value": "JTAG2",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 2"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP303",
+     "lib": "TestPoint",
+     "value": "JTAG3",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 3"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP304",
+     "lib": "TestPoint",
+     "value": "JTAG4",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 4"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP305",
+     "lib": "TestPoint",
+     "value": "JTAG5",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 5"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP306",
+     "lib": "TestPoint",
+     "value": "JTAG6",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 6"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP307",
+     "lib": "TestPoint",
+     "value": "JTAG7",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "JTAG parallel pad 7"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "USB_MAIN_DP": "bidirectional",
+    "USB_MAIN_DM": "bidirectional",
+    "XVF_QSPI_CS_N": "bidirectional",
+    "XVF_QSPI_CLK": "bidirectional",
+    "XVF_QSPI_D0": "bidirectional",
+    "XVF_QSPI_D1": "bidirectional",
+    "XVF_QSPI_D2": "bidirectional",
+    "XVF_QSPI_D3": "bidirectional",
+    "I2S_DATA0": "output",
+    "I2S_LRCK": "output",
+    "I2S_BCLK": "output",
+    "MIC_CLK": "output",
+    "MIC_DATA0": "input",
+    "MIC_DATA1": "input",
+    "MIC_DATA2": "input",
+    "MIC_DATA3": "input",
+    "BTN_MUTE_N": "input",
+    "BTN_ACTION_N": "input",
+    "XVF_GPO_R": "output",
+    "XVF_GPO_G": "output",
+    "XVF_INT_N": "output",
+    "XVF_I2C_SCL": "bidirectional",
+    "XVF_I2C_SDA": "bidirectional",
+    "XVF_I2S_DATA1": "bidirectional",
+    "XVF_I2S_DATA2": "bidirectional",
+    "AMP_EN": "output",
+    "XVF_RST_N": "bidirectional",
+    "XVF_SPI_CS_N": "bidirectional",
+    "XVF_SPI_MOSI": "bidirectional",
+    "XVF_SPI_MISO": "bidirectional",
+    "XVF_SQ_NLIN": "bidirectional",
+    "XL_DN1": "bidirectional",
+    "XL_DN0": "bidirectional",
+    "XL_UP0": "bidirectional",
+    "XL_UP1": "bidirectional",
+    "MCLK_LOOP": "bidirectional"
+   }
+  },
+  "xvf3800_periph": {
+   "index": 4,
+   "paper": "A4",
+   "pins": {
+    "U401": {
+     "1": "XVF_QSPI_CS_N",
+     "2": "XVF_QSPI_D1",
+     "3": "XVF_QSPI_D2",
+     "4": "GND",
+     "5": "XVF_QSPI_D0",
+     "6": "XVF_QSPI_CLK",
+     "7": "XVF_QSPI_D3",
+     "8": "+3V3",
+     "9": null
+    },
+    "R401": {
+     "1": "XVF_QSPI_CS_N",
+     "2": "+3V3"
+    },
+    "C401": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "R402": {
+     "1": "+3V3",
+     "2": "BTN_MUTE_N"
+    },
+    "SW401": {
+     "1": "BTN_MUTE_N",
+     "2": "GND"
+    },
+    "R403": {
+     "1": "+3V3",
+     "2": "BTN_ACTION_N"
+    },
+    "SW402": {
+     "1": "BTN_ACTION_N",
+     "2": "GND"
+    },
+    "D401": {
+     "1": "GND",
+     "2": "xvf3800_periph:LED_MUTE_A"
+    },
+    "R404": {
+     "1": "xvf3800_periph:LED_MUTE_A",
+     "2": "ESP_MUTE_LED"
+    },
+    "D402": {
+     "1": "GND",
+     "2": null,
+     "3": "xvf3800_periph:LED_RGB_G",
+     "4": "xvf3800_periph:LED_RGB_R"
+    },
+    "R405": {
+     "1": "xvf3800_periph:LED_RGB_R",
+     "2": "XVF_GPO_R"
+    },
+    "R406": {
+     "1": "xvf3800_periph:LED_RGB_G",
+     "2": "XVF_GPO_G"
+    },
+    "TP401": {
+     "1": "XVF_SPI_CS_N"
+    },
+    "TP402": {
+     "1": "XVF_SPI_MOSI"
+    },
+    "TP403": {
+     "1": "XVF_SPI_MISO"
+    },
+    "TP404": {
+     "1": "XVF_SQ_NLIN"
+    },
+    "TP405": {
+     "1": "XL_DN1"
+    },
+    "TP406": {
+     "1": "XL_DN0"
+    },
+    "TP407": {
+     "1": "XL_UP0"
+    },
+    "TP408": {
+     "1": "XL_UP1"
+    },
+    "TP409": {
+     "1": "I2S_DATA0"
+    },
+    "TP410": {
+     "1": "I2S_LRCK"
+    },
+    "TP411": {
+     "1": "I2S_BCLK"
+    },
+    "TP412": {
+     "1": "MCLK_LOOP"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U401",
+     "lib": "W25Q32JVUUIQ",
+     "value": "W25Q32JVUUIQ",
+     "footprint": "Mindspark:Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
+     "fields": {
+      "spec": "32 Mbit QSPI flash",
+      "use": "XVF3800 boot image"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R401",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "QSPI_CS_N pull-up (XVF3800)",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C401",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Flash bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R402",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "mute button pull-up",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW401",
+     "lib": "TS24CA",
+     "value": "MUTE",
+     "footprint": "Mindspark:SW_SHOUHAN_TS24CA_SideActuated",
+     "fields": {
+      "spec": "side-pressed",
+      "use": "mute button (XVF3800), board edge"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R403",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "action button pull-up",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW402",
+     "lib": "TS24CA",
+     "value": "ACTION",
+     "footprint": "Mindspark:SW_SHOUHAN_TS24CA_SideActuated",
+     "fields": {
+      "spec": "side-pressed",
+      "use": "action button (XVF3800), board edge"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D401",
+     "lib": "LED",
+     "value": "RED",
+     "footprint": "Mindspark:LED_0603_1608Metric",
+     "fields": {
+      "spec": "0603 red",
+      "use": "Mute indicator",
+      "LCSC": "C2286",
+      "MPN": "KT-0603R",
+      "Manufacturer": "Hubei KENTO"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R404",
+     "lib": "R",
+     "value": "1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Mute LED from ESP32 GPIO41, about 1.3 mA",
+      "LCSC": "C11702",
+      "MPN": "0402WGF1001TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D402",
+     "lib": "TJ-S1615CY6TGLCCSRGB-A5",
+     "value": "RGB",
+     "footprint": "Mindspark:LED_RGB_TOGIALED_1615_1.6x1.5mm",
+     "fields": {
+      "spec": "RGB, common cathode",
+      "use": "XVF3800 status, red pin 56, green pin 58; blue unused"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R405",
+     "lib": "R",
+     "value": "1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "RGB status LED series resistor",
+      "LCSC": "C11702",
+      "MPN": "0402WGF1001TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R406",
+     "lib": "R",
+     "value": "330R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "RGB status LED series resistor",
+      "LCSC": "C25104",
+      "MPN": "0402WGF3300TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP401",
+     "lib": "TestPoint",
+     "value": "SPI_CS_N",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP402",
+     "lib": "TestPoint",
+     "value": "SPI_MOSI",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP403",
+     "lib": "TestPoint",
+     "value": "SPI_MISO",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP404",
+     "lib": "TestPoint",
+     "value": "SQ_nLIN",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP405",
+     "lib": "TestPoint",
+     "value": "XL_DN1",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP406",
+     "lib": "TestPoint",
+     "value": "XL_DN0",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "Spare XVF3800 pin pad"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP407",
+     "lib": "TestPoint",
+     "value": "XL_UP0",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP408",
+     "lib": "TestPoint",
+     "value": "XL_UP1",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP409",
+     "lib": "TestPoint",
+     "value": "I2S_DAT0",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP410",
+     "lib": "TestPoint",
+     "value": "I2S_LRCK",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP411",
+     "lib": "TestPoint",
+     "value": "I2S_BCLK",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP412",
+     "lib": "TestPoint",
+     "value": "MCLK",
+     "footprint": "Mindspark:TestPoint_Pad_1.0x1.0mm",
+     "fields": {
+      "use": "XVF3800 pad / I2S tap"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "XVF_QSPI_CS_N": "bidirectional",
+    "XVF_QSPI_CLK": "bidirectional",
+    "XVF_QSPI_D0": "bidirectional",
+    "XVF_QSPI_D1": "bidirectional",
+    "XVF_QSPI_D2": "bidirectional",
+    "XVF_QSPI_D3": "bidirectional",
+    "BTN_MUTE_N": "output",
+    "BTN_ACTION_N": "output",
+    "ESP_MUTE_LED": "input",
+    "XVF_GPO_R": "input",
+    "XVF_GPO_G": "input",
+    "I2S_DATA0": "input",
+    "I2S_LRCK": "input",
+    "I2S_BCLK": "input",
+    "XVF_SPI_CS_N": "bidirectional",
+    "XVF_SPI_MOSI": "bidirectional",
+    "XVF_SPI_MISO": "bidirectional",
+    "XVF_SQ_NLIN": "bidirectional",
+    "XL_DN1": "bidirectional",
+    "XL_DN0": "bidirectional",
+    "XL_UP0": "bidirectional",
+    "XL_UP1": "bidirectional",
+    "MCLK_LOOP": "bidirectional"
+   }
+  },
+  "audio": {
+   "index": 5,
+   "paper": "A4",
+   "pins": {
+    "U501": {
+     "1": "GND",
+     "2": "MIC_CLK",
+     "3": "GND",
+     "4": "audio:MIC_CLK_Y",
+     "5": "+3V3"
+    },
+    "R501": {
+     "1": "audio:MIC_CLK_Y",
+     "2": "audio:MIC_CLK_BUF"
+    },
+    "MK501": {
+     "1": "audio:MIC0_DAT",
+     "2": "GND",
+     "3": "GND",
+     "4": "audio:MIC0_CLK",
+     "5": "+3V3_MIC"
+    },
+    "MK502": {
+     "1": "audio:MIC1_DAT",
+     "2": "GND",
+     "3": "GND",
+     "4": "audio:MIC1_CLK",
+     "5": "+3V3_MIC"
+    },
+    "MK503": {
+     "1": "audio:MIC2_DAT",
+     "2": "GND",
+     "3": "GND",
+     "4": "audio:MIC2_CLK",
+     "5": "+3V3_MIC"
+    },
+    "MK504": {
+     "1": "audio:MIC3_DAT",
+     "2": "GND",
+     "3": "GND",
+     "4": "audio:MIC3_CLK",
+     "5": "+3V3_MIC"
+    },
+    "R502": {
+     "1": "audio:MIC0_CLK",
+     "2": "audio:MIC_CLK_BUF"
+    },
+    "R503": {
+     "1": "audio:MIC1_CLK",
+     "2": "audio:MIC_CLK_BUF"
+    },
+    "R504": {
+     "1": "audio:MIC2_CLK",
+     "2": "audio:MIC_CLK_BUF"
+    },
+    "R505": {
+     "1": "audio:MIC3_CLK",
+     "2": "audio:MIC_CLK_BUF"
+    },
+    "R506": {
+     "1": "audio:MIC0_DAT",
+     "2": "MIC_DATA0"
+    },
+    "R507": {
+     "1": "audio:MIC1_DAT",
+     "2": "MIC_DATA1"
+    },
+    "R508": {
+     "1": "audio:MIC2_DAT",
+     "2": "MIC_DATA2"
+    },
+    "R509": {
+     "1": "audio:MIC3_DAT",
+     "2": "MIC_DATA3"
+    },
+    "C501": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C502": {
+     "1": "+3V3_MIC",
+     "2": "GND"
+    },
+    "C503": {
+     "1": "+3V3_MIC",
+     "2": "GND"
+    },
+    "C504": {
+     "1": "+3V3_MIC",
+     "2": "GND"
+    },
+    "C505": {
+     "1": "+3V3_MIC",
+     "2": "GND"
+    },
+    "FB501": {
+     "1": "+3V3",
+     "2": "+3V3_MIC"
+    },
+    "C506": {
+     "1": "+3V3_MIC",
+     "2": "GND"
+    },
+    "U502": {
+     "1": "+5V",
+     "2": "GND",
+     "3": "AMP_EN",
+     "4": "audio:AMP_CT",
+     "5": "+5V_AMP",
+     "6": "+5V_AMP"
+    },
+    "R510": {
+     "1": "AMP_EN",
+     "2": "GND"
+    },
+    "C507": {
+     "1": "audio:AMP_CT",
+     "2": "GND"
+    },
+    "C508": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "U503": {
+     "1": "I2S_DATA0",
+     "2": null,
+     "3": "GND",
+     "11": "GND",
+     "15": "GND",
+     "17": "GND",
+     "4": "audio:AMP_SD",
+     "5": null,
+     "6": null,
+     "7": "+5V_AMP",
+     "8": "+5V_AMP",
+     "9": "audio:SPK_P",
+     "10": "audio:SPK_N",
+     "12": null,
+     "13": null,
+     "14": "I2S_LRCK",
+     "16": "I2S_BCLK"
+    },
+    "R511": {
+     "1": "audio:AMP_SD",
+     "2": "+5V_AMP"
+    },
+    "C509": {
+     "1": "+5V_AMP",
+     "2": "GND"
+    },
+    "C510": {
+     "1": "+5V_AMP",
+     "2": "GND"
+    },
+    "C511": {
+     "1": "+5V_AMP",
+     "2": "GND"
+    },
+    "J501": {
+     "1": "audio:SPK_P",
+     "2": "audio:SPK_N",
+     "MP": null
+    },
+    "TP501": {
+     "1": "audio:SPK_P"
+    },
+    "TP502": {
+     "1": "audio:SPK_N"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U501",
+     "lib": "SN74LVC1G125DBVR",
+     "value": "SN74LVC1G125DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "Buffer, 3-state",
+      "use": "MIC_CLK fan-out buffer, OE tied low (always on)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R501",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Buffer output series (XMOS R12)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "MK501",
+     "lib": "IM69D129FV01XTMA1",
+     "value": "IM69D129FV01XTMA1",
+     "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+     "fields": {
+      "spec": "PDM mic",
+      "use": "MIC_DATA0, far-left (XMOS MIC1) corner"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "MK502",
+     "lib": "IM69D129FV01XTMA1",
+     "value": "IM69D129FV01XTMA1",
+     "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+     "fields": {
+      "spec": "PDM mic",
+      "use": "MIC_DATA1, USB-side left (XMOS MIC4) corner"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "MK503",
+     "lib": "IM69D129FV01XTMA1",
+     "value": "IM69D129FV01XTMA1",
+     "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+     "fields": {
+      "spec": "PDM mic",
+      "use": "MIC_DATA2, USB-side right (XMOS MIC5) corner"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "MK504",
+     "lib": "IM69D129FV01XTMA1",
+     "value": "IM69D129FV01XTMA1",
+     "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
+     "fields": {
+      "spec": "PDM mic",
+      "use": "MIC_DATA3, far-right (XMOS MIC3) corner"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R502",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CLK series at mic 0 (XMOS R11/R13/R15/R17)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R503",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CLK series at mic 1 (XMOS R11/R13/R15/R17)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R504",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CLK series at mic 2 (XMOS R11/R13/R15/R17)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R505",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "CLK series at mic 3 (XMOS R11/R13/R15/R17)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R506",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "DATA series at mic 0 (XMOS R10/R14/R16/R18)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R507",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "DATA series at mic 1 (XMOS R10/R14/R16/R18)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R508",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "DATA series at mic 2 (XMOS R10/R14/R16/R18)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R509",
+     "lib": "R",
+     "value": "100R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "DATA series at mic 3 (XMOS R10/R14/R16/R18)",
+      "LCSC": "C25076",
+      "MPN": "0402WGF1000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C501",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Buffer bypass, U501",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C502",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Mic 0 bypass, MK501",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C503",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Mic 1 bypass, MK502",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C504",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Mic 2 bypass, MK503",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C505",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Mic 3 bypass, MK504",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "FB501",
+     "lib": "BLM15AG601SN1D",
+     "value": "600R@100MHz",
+     "footprint": "Mindspark:L_0402_1005Metric",
+     "fields": {
+      "use": "Mic supply filter"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C506",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "Mic supply bulk",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U502",
+     "lib": "TPS22918DBVR",
+     "value": "TPS22918DBVR",
+     "footprint": "Mindspark:SOT-23-6",
+     "fields": {
+      "spec": "2 A load switch",
+      "use": "Amp supply switch, QOD to VOUT"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R510",
+     "lib": "R",
+     "value": "100k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Keeps the amp off while the XVF3800 is in reset",
+      "LCSC": "C25741",
+      "MPN": "0402WGF1003TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C507",
+     "lib": "C",
+     "value": "1nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "X7R",
+      "use": "CT: about 2.5 ms rise at 5 V",
+      "LCSC": "C1523",
+      "MPN": "0402B102K500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C508",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Load switch input",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U503",
+     "lib": "MAX98357AETE+T",
+     "value": "MAX98357AETE+T",
+     "footprint": "Mindspark:TQFN-16-1EP_3x3mm_P0.5mm_EP1.23x1.23mm",
+     "fields": {
+      "spec": "I2S class-D 3.2 W",
+      "use": "Speaker amp, GAIN_SLOT open = 9 dB"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R511",
+     "lib": "R",
+     "value": "1M",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "SD_MODE: R_LARGE = 222.2 x 5 - 100 = 1011k -> (L+R)/2",
+      "LCSC": "C26083",
+      "MPN": "0402WGF1004TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C509",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Amp VDD bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C510",
+     "lib": "C",
+     "value": "10uF",
+     "footprint": "Mindspark:C_0603_1608Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "Amp VDD (ADI: 10 uF + 0.1 uF)",
+      "LCSC": "C19702",
+      "MPN": "CL10A106KP8NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C511",
+     "lib": "C",
+     "value": "47uF",
+     "footprint": "Mindspark:C_1206_3216Metric",
+     "fields": {
+      "voltage": "10V",
+      "spec": "X5R",
+      "use": "Amp bulk for 1.4 A peaks",
+      "LCSC": "C96123",
+      "MPN": "CL31A476MPHNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "J501",
+     "lib": "S2B-PH-SM4-TB",
+     "value": "S2B-PH-SM4-TB(LF)(SN)",
+     "footprint": "Mindspark:JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal",
+     "fields": {
+      "spec": "JST PH 2-pin, 2 A",
+      "use": "4 R 5 W speaker"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP501",
+     "lib": "TestPoint",
+     "value": "SPK+",
+     "footprint": "Mindspark:TestPoint_THTPad_2.0x2.0mm_Drill1.0mm",
+     "fields": {
+      "use": "Speaker solder pad +"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "TP502",
+     "lib": "TestPoint",
+     "value": "SPK-",
+     "footprint": "Mindspark:TestPoint_THTPad_2.0x2.0mm_Drill1.0mm",
+     "fields": {
+      "use": "Speaker solder pad -"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "I2S_DATA0": "input",
+    "I2S_LRCK": "input",
+    "I2S_BCLK": "input",
+    "MIC_CLK": "input",
+    "MIC_DATA0": "output",
+    "MIC_DATA1": "output",
+    "MIC_DATA2": "output",
+    "MIC_DATA3": "output",
+    "AMP_EN": "input"
+   }
+  },
+  "esp32": {
+   "index": 6,
+   "paper": "A4",
+   "pins": {
+    "U601": {
+     "1": "GND",
+     "40": "GND",
+     "41": "GND",
+     "2": "+3V3",
+     "3": "esp32:ESP_EN",
+     "4": "ESP_GPIO4",
+     "5": "ESP_GPIO5",
+     "6": "ESP_GPIO6",
+     "7": "ESP_GPIO7",
+     "8": "XVF_GPO_R",
+     "9": "XVF_GPO_G",
+     "10": "XVF_INT_N",
+     "11": "MUX_ST",
+     "12": "ESP_GPIO8",
+     "13": "esp32:ESP_USB_DM",
+     "14": "esp32:ESP_USB_DP",
+     "15": null,
+     "16": null,
+     "17": "ESP_GPIO9",
+     "18": "PRG_CS_N",
+     "19": "PRG_DI",
+     "20": "PRG_CLK",
+     "21": "PRG_DO",
+     "22": "PRG_EN",
+     "23": "PRG_RST",
+     "24": "LED_EN",
+     "25": "LED_DATA",
+     "26": null,
+     "27": "esp32:ESP_BOOT",
+     "28": null,
+     "29": null,
+     "30": null,
+     "31": "ESP_I2C_SDA",
+     "32": "ESP_I2C_SCL",
+     "33": "esp32:USER_LED_DATA",
+     "34": "ESP_MUTE_LED",
+     "35": "esp32:BTN_USER_N",
+     "36": "ESP_UART_RX",
+     "37": "ESP_UART_TX",
+     "38": "ESP_GPIO2",
+     "39": "ESP_GPIO1"
+    },
+    "C601": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C602": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "R601": {
+     "1": "esp32:ESP_EN",
+     "2": "+3V3"
+    },
+    "C603": {
+     "1": "esp32:ESP_EN",
+     "2": "GND"
+    },
+    "R602": {
+     "1": "esp32:ESP_BOOT",
+     "2": "+3V3"
+    },
+    "SW601": {
+     "1": "esp32:ESP_EN",
+     "2": "esp32:ESP_EN_R"
+    },
+    "R603": {
+     "1": "esp32:ESP_EN_R",
+     "2": "GND"
+    },
+    "SW602": {
+     "1": "esp32:ESP_BOOT",
+     "2": "esp32:ESP_BOOT_R"
+    },
+    "R604": {
+     "1": "esp32:ESP_BOOT_R",
+     "2": "GND"
+    },
+    "R605": {
+     "1": "esp32:ESP_USB_DP",
+     "2": "USB_ESP_DP"
+    },
+    "R606": {
+     "1": "esp32:ESP_USB_DM",
+     "2": "USB_ESP_DM"
+    },
+    "R607": {
+     "1": "+3V3",
+     "2": "esp32:BTN_USER_N"
+    },
+    "SW603": {
+     "1": "esp32:BTN_USER_N",
+     "2": "GND"
+    },
+    "U602": {
+     "1": "GND",
+     "2": "esp32:USER_LED_DATA",
+     "3": "GND",
+     "4": "esp32:USER_LED_5V",
+     "5": "+5V"
+    },
+    "R608": {
+     "1": "esp32:USER_LED_5V",
+     "2": "esp32:USER_LED_DIN"
+    },
+    "D601": {
+     "1": null,
+     "2": "GND",
+     "3": "esp32:USER_LED_DIN",
+     "4": "+5V"
+    },
+    "C604": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "C605": {
+     "1": "+5V",
+     "2": "GND"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U601",
+     "lib": "ESP32-S3-WROOM-1U-N16R8",
+     "value": "ESP32-S3-WROOM-1U-N16R8",
+     "footprint": "Mindspark:ESP32-S3-WROOM-1U",
+     "fields": {
+      "spec": "Wi-Fi/BLE module, IPEX",
+      "use": "Helper MCU (own firmware)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C601",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Module bulk (controller board / Espressif)",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C602",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Module bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R601",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "EN pull-up (Espressif RC delay)",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C603",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "EN delay, 10k x 1 uF",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R602",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "GPIO0 pull-up (Espressif)",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW601",
+     "lib": "TS-1187A-B-A-B",
+     "value": "EN",
+     "footprint": "Mindspark:SW_Push_1P1T_XKB_TS-1187A",
+     "fields": {
+      "use": "ESP32 reset (EN) button"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R603",
+     "lib": "R",
+     "value": "1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "EN button series resistor",
+      "LCSC": "C11702",
+      "MPN": "0402WGF1001TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW602",
+     "lib": "TS-1187A-B-A-B",
+     "value": "BOOT",
+     "footprint": "Mindspark:SW_Push_1P1T_XKB_TS-1187A",
+     "fields": {
+      "use": "ESP32 BOOT (GPIO0) button"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R604",
+     "lib": "R",
+     "value": "1k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "BOOT button series resistor",
+      "LCSC": "C11702",
+      "MPN": "0402WGF1001TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R605",
+     "lib": "R",
+     "value": "27R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "USB D+ series (Espressif: 22-33 R)",
+      "LCSC": "C25100",
+      "MPN": "0402WGF270JTCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R606",
+     "lib": "R",
+     "value": "27R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "USB D- series (Espressif: 22-33 R)",
+      "LCSC": "C25100",
+      "MPN": "0402WGF270JTCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R607",
+     "lib": "R",
+     "value": "10k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "user button pull-up",
+      "LCSC": "C25744",
+      "MPN": "0402WGF1002TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW603",
+     "lib": "TS24CA",
+     "value": "USER",
+     "footprint": "Mindspark:SW_SHOUHAN_TS24CA_SideActuated",
+     "fields": {
+      "spec": "side-pressed",
+      "use": "User button (ESP32 GPIO42, active low), board edge"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U602",
+     "lib": "SN74AHCT1G125DBVR",
+     "value": "SN74AHCT1G125DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "Buffer, TTL inputs",
+      "use": "User LED data level shift"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R608",
+     "lib": "R",
+     "value": "33R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Data line series resistor",
+      "LCSC": "C25105",
+      "MPN": "0402WGF330JTCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D601",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "User RGB LED (ESP32 GPIO40)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C604",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Buffer bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C605",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "User LED bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "USB_ESP_DP": "bidirectional",
+    "USB_ESP_DM": "bidirectional",
+    "MUX_ST": "input",
+    "XVF_GPO_R": "input",
+    "XVF_GPO_G": "input",
+    "XVF_INT_N": "input",
+    "LED_DATA": "output",
+    "LED_EN": "output",
+    "ESP_MUTE_LED": "output",
+    "ESP_UART_TX": "output",
+    "ESP_UART_RX": "input",
+    "ESP_I2C_SDA": "bidirectional",
+    "ESP_I2C_SCL": "bidirectional",
+    "PRG_CS_N": "output",
+    "PRG_CLK": "output",
+    "PRG_DI": "output",
+    "PRG_DO": "input",
+    "PRG_RST": "output",
+    "PRG_EN": "input",
+    "ESP_GPIO1": "bidirectional",
+    "ESP_GPIO2": "bidirectional",
+    "ESP_GPIO4": "bidirectional",
+    "ESP_GPIO5": "bidirectional",
+    "ESP_GPIO6": "bidirectional",
+    "ESP_GPIO7": "bidirectional",
+    "ESP_GPIO8": "bidirectional",
+    "ESP_GPIO9": "bidirectional"
+   }
+  },
+  "esp32_io": {
+   "index": 7,
+   "paper": "A4",
+   "pins": {
+    "U701": {
+     "1": "PRG_CS_N",
+     "2": "XVF_QSPI_CS_N",
+     "3": "GND",
+     "4": "PRG_EN",
+     "5": "+3V3"
+    },
+    "U702": {
+     "1": "PRG_CLK",
+     "2": "XVF_QSPI_CLK",
+     "3": "GND",
+     "4": "PRG_EN",
+     "5": "+3V3"
+    },
+    "U703": {
+     "1": "PRG_DI",
+     "2": "XVF_QSPI_D0",
+     "3": "GND",
+     "4": "PRG_EN",
+     "5": "+3V3"
+    },
+    "U704": {
+     "1": "PRG_DO",
+     "2": "XVF_QSPI_D1",
+     "3": "GND",
+     "4": "PRG_EN",
+     "5": "+3V3"
+    },
+    "C701": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C702": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C703": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "C704": {
+     "1": "+3V3",
+     "2": "GND"
+    },
+    "SW701": {
+     "1": "+3V3",
+     "2": "PRG_EN",
+     "3": "GND"
+    },
+    "R701": {
+     "1": "PRG_EN",
+     "2": "GND"
+    },
+    "Q701": {
+     "1": "PRG_RST",
+     "2": "GND",
+     "3": "esp32_io:XVF_RST_Q"
+    },
+    "R702": {
+     "1": "PRG_RST",
+     "2": "GND"
+    },
+    "R703": {
+     "1": "esp32_io:XVF_RST_Q",
+     "2": "XVF_RST_N"
+    },
+    "R704": {
+     "1": "+3V3",
+     "2": "ESP_I2C_SDA"
+    },
+    "R705": {
+     "1": "+3V3",
+     "2": "ESP_I2C_SCL"
+    },
+    "J701": {
+     "1": "+5V",
+     "2": "+3V3",
+     "3": "+1V8",
+     "4": "GND",
+     "5": "ESP_GPIO1",
+     "6": "ESP_GPIO2",
+     "7": "ESP_GPIO4",
+     "8": "ESP_GPIO5",
+     "9": "ESP_GPIO6",
+     "10": "ESP_GPIO7",
+     "11": "ESP_GPIO8",
+     "12": "ESP_GPIO9",
+     "13": "ESP_I2C_SDA",
+     "14": "XVF_I2C_SDA",
+     "15": "ESP_I2C_SCL",
+     "16": "XVF_I2C_SCL",
+     "17": "XVF_INT_N",
+     "18": "XVF_I2S_DATA1",
+     "19": "XVF_I2S_DATA2",
+     "20": "GND",
+     "21": "ESP_UART_TX",
+     "22": "ESP_UART_RX",
+     "23": "+5V",
+     "24": "+3V3"
+    }
+   },
+   "parts": [
+    {
+     "ref": "U701",
+     "lib": "TS5A3166DBVR",
+     "value": "TS5A3166DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "SPST 0.9 R",
+      "use": "XVF flash line CS_N <-> ESP32"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U702",
+     "lib": "TS5A3166DBVR",
+     "value": "TS5A3166DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "SPST 0.9 R",
+      "use": "XVF flash line CLK <-> ESP32"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U703",
+     "lib": "TS5A3166DBVR",
+     "value": "TS5A3166DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "SPST 0.9 R",
+      "use": "XVF flash line D0 <-> ESP32"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U704",
+     "lib": "TS5A3166DBVR",
+     "value": "TS5A3166DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "SPST 0.9 R",
+      "use": "XVF flash line D1 <-> ESP32"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C701",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Switch bypass, U701",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C702",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Switch bypass, U702",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C703",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Switch bypass, U703",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C704",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Switch bypass, U704",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "SW701",
+     "lib": "MSK12C02",
+     "value": "PROG",
+     "footprint": "Mindspark:SW_SHOUHAN_MSK12C02_SideActuated",
+     "fields": {
+      "spec": "SPDT side slide",
+      "use": "1-2 = PROG (ESP32 may write the XVF flash), 2-3 = RUN"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R701",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Switches off by default",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "Q701",
+     "lib": "2N7002",
+     "value": "2N7002",
+     "footprint": "Mindspark:SOT-23",
+     "fields": {
+      "spec": "N-MOSFET 60 V",
+      "use": "ESP32 pulls XVF3800 RST_N low",
+      "LCSC": "C8545",
+      "MPN": "2N7002",
+      "Manufacturer": "CJ (Changjiang)"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R702",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Gate pull-down (off while the ESP32 boots)",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R703",
+     "lib": "R",
+     "value": "0R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Link: remove to isolate the ESP32 from RST_N",
+      "LCSC": "C17168",
+      "MPN": "0402WGF0000TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R704",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "ESP32 I2C SDA pull-up",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R705",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "ESP32 I2C SCL pull-up",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "J701",
+     "lib": "Conn_02x12_Odd_Even",
+     "value": "GPIO",
+     "footprint": "Mindspark:PinHeader_2x12_P2.54mm_Vertical_SMD_HCTL_PZ254",
+     "fields": {
+      "spec": "2.54 mm 2x12 SMD",
+      "use": "ESP32 GPIO + UART0 + XVF3800 I/O breakout",
+      "LCSC": "C3294470",
+      "MPN": "PZ254-2-12-S",
+      "Manufacturer": "HCTL"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "XVF_QSPI_CS_N": "bidirectional",
+    "XVF_QSPI_CLK": "bidirectional",
+    "XVF_QSPI_D0": "bidirectional",
+    "XVF_QSPI_D1": "bidirectional",
+    "PRG_CS_N": "input",
+    "PRG_CLK": "input",
+    "PRG_DI": "input",
+    "PRG_DO": "output",
+    "PRG_RST": "input",
+    "XVF_RST_N": "bidirectional",
+    "PRG_EN": "output",
+    "ESP_UART_TX": "input",
+    "ESP_UART_RX": "output",
+    "ESP_I2C_SDA": "bidirectional",
+    "ESP_I2C_SCL": "bidirectional",
+    "ESP_GPIO1": "bidirectional",
+    "ESP_GPIO2": "bidirectional",
+    "ESP_GPIO4": "bidirectional",
+    "ESP_GPIO5": "bidirectional",
+    "ESP_GPIO6": "bidirectional",
+    "ESP_GPIO7": "bidirectional",
+    "ESP_GPIO8": "bidirectional",
+    "ESP_GPIO9": "bidirectional",
+    "XVF_I2C_SCL": "bidirectional",
+    "XVF_I2C_SDA": "bidirectional",
+    "XVF_INT_N": "input",
+    "XVF_I2S_DATA1": "bidirectional",
+    "XVF_I2S_DATA2": "bidirectional"
+   }
+  },
+  "led_ring": {
+   "index": 8,
+   "paper": "A4",
+   "pins": {
+    "D801": {
+     "1": "led_ring:LED_D1",
+     "2": "GND",
+     "3": "led_ring:LED_D0",
+     "4": "+5V_LED"
+    },
+    "D802": {
+     "1": "led_ring:LED_D2",
+     "2": "GND",
+     "3": "led_ring:LED_D1",
+     "4": "+5V_LED"
+    },
+    "D803": {
+     "1": "led_ring:LED_D3",
+     "2": "GND",
+     "3": "led_ring:LED_D2",
+     "4": "+5V_LED"
+    },
+    "D804": {
+     "1": "led_ring:LED_D4",
+     "2": "GND",
+     "3": "led_ring:LED_D3",
+     "4": "+5V_LED"
+    },
+    "D805": {
+     "1": "led_ring:LED_D5",
+     "2": "GND",
+     "3": "led_ring:LED_D4",
+     "4": "+5V_LED"
+    },
+    "D806": {
+     "1": "led_ring:LED_D6",
+     "2": "GND",
+     "3": "led_ring:LED_D5",
+     "4": "+5V_LED"
+    },
+    "D807": {
+     "1": "led_ring:LED_D7",
+     "2": "GND",
+     "3": "led_ring:LED_D6",
+     "4": "+5V_LED"
+    },
+    "D808": {
+     "1": "led_ring:LED_D8",
+     "2": "GND",
+     "3": "led_ring:LED_D7",
+     "4": "+5V_LED"
+    },
+    "D809": {
+     "1": "led_ring:LED_D9",
+     "2": "GND",
+     "3": "led_ring:LED_D8",
+     "4": "+5V_LED"
+    },
+    "D810": {
+     "1": "led_ring:LED_D10",
+     "2": "GND",
+     "3": "led_ring:LED_D9",
+     "4": "+5V_LED"
+    },
+    "D811": {
+     "1": "led_ring:LED_D11",
+     "2": "GND",
+     "3": "led_ring:LED_D10",
+     "4": "+5V_LED"
+    },
+    "D812": {
+     "1": null,
+     "2": "GND",
+     "3": "led_ring:LED_D11",
+     "4": "+5V_LED"
+    },
+    "C801": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C802": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C803": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C804": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C805": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C806": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C807": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C808": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C809": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C810": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C811": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "C812": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "U801": {
+     "1": "+5V",
+     "2": "GND",
+     "3": "LED_EN",
+     "4": "led_ring:LED_CT",
+     "5": "+5V_LED",
+     "6": "+5V_LED"
+    },
+    "R801": {
+     "1": "LED_EN",
+     "2": "GND"
+    },
+    "C813": {
+     "1": "led_ring:LED_CT",
+     "2": "GND"
+    },
+    "C814": {
+     "1": "+5V",
+     "2": "GND"
+    },
+    "C815": {
+     "1": "+5V_LED",
+     "2": "GND"
+    },
+    "U802": {
+     "1": "GND",
+     "2": "LED_DATA",
+     "3": "GND",
+     "4": "led_ring:LED_DATA_5V",
+     "5": "+5V_LED"
+    },
+    "R802": {
+     "1": "led_ring:LED_DATA_5V",
+     "2": "led_ring:LED_D0"
+    },
+    "C816": {
+     "1": "+5V_LED",
+     "2": "GND"
+    }
+   },
+   "parts": [
+    {
+     "ref": "D801",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 1"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D802",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 2"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D803",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 3"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D804",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 4"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D805",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 5"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D806",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 6"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D807",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 7"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D808",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 8"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D809",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 9"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D810",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 10"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D811",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 11"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "D812",
+     "lib": "WS2812B-2020",
+     "value": "WS2812B-2020",
+     "footprint": "Mindspark:LED_WS2812B-2020_PLCC4_2.0x2.0mm",
+     "fields": {
+      "spec": "WS2812B-2020",
+      "use": "Ring LED 12"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C801",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 1 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C802",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 2 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C803",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 3 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C804",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 4 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C805",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 5 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C806",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 6 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C807",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 7 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C808",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 8 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C809",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 9 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C810",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 10 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C811",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 11 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C812",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "LED 12 bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U801",
+     "lib": "TPS22918DBVR",
+     "value": "TPS22918DBVR",
+     "footprint": "Mindspark:SOT-23-6",
+     "fields": {
+      "spec": "2 A load switch",
+      "use": "LED ring supply, EN from ESP32 GPIO47"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R801",
+     "lib": "R",
+     "value": "4.7k",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Off by default",
+      "LCSC": "C25900",
+      "MPN": "0402WGF4701TCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C813",
+     "lib": "C",
+     "value": "1nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "50V",
+      "spec": "X7R",
+      "use": "CT: about 2.5 ms rise",
+      "LCSC": "C1523",
+      "MPN": "0402B102K500NT",
+      "Manufacturer": "FH"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C814",
+     "lib": "C",
+     "value": "1uF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Switch input",
+      "LCSC": "C52923",
+      "MPN": "CL05A105KA5NQNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C815",
+     "lib": "C",
+     "value": "22uF",
+     "footprint": "Mindspark:C_0805_2012Metric",
+     "fields": {
+      "voltage": "25V",
+      "spec": "X5R",
+      "use": "Ring bulk",
+      "LCSC": "C45783",
+      "MPN": "CL21A226MAQNNNE",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "U802",
+     "lib": "SN74AHCT1G125DBVR",
+     "value": "SN74AHCT1G125DBVR",
+     "footprint": "Mindspark:SOT-23-5",
+     "fields": {
+      "spec": "Buffer, TTL inputs",
+      "use": "WS2812 data level shift"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "R802",
+     "lib": "R",
+     "value": "33R",
+     "footprint": "Mindspark:R_0402_1005Metric",
+     "fields": {
+      "tolerance": "1%",
+      "power": "62.5mW",
+      "use": "Data line series resistor",
+      "LCSC": "C25105",
+      "MPN": "0402WGF330JTCE",
+      "Manufacturer": "UNI-ROYAL"
+     },
+     "dnp": false
+    },
+    {
+     "ref": "C816",
+     "lib": "C",
+     "value": "100nF",
+     "footprint": "Mindspark:C_0402_1005Metric",
+     "fields": {
+      "voltage": "16V",
+      "spec": "X7R",
+      "use": "Buffer bypass",
+      "LCSC": "C1525",
+      "MPN": "CL05B104KO5NNNC",
+      "Manufacturer": "Samsung"
+     },
+     "dnp": false
+    }
+   ],
+   "ports": {
+    "LED_EN": "input",
+    "LED_DATA": "input"
+   }
+  }
+ },
+ "root": {
+  "pins": {}
+ }
+}

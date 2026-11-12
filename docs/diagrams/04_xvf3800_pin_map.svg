@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="940" viewBox="0 0 980 940" role="img"><title>XVF3800 pin map by function</title><desc>Top view of the 60-pin QFN with every pin coloured by function and labelled with its signal and its use on the MindSpeak rev 1 board.</desc>
+<style>
+  .bg { fill: #ffffff; }
+  text { font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', Arial, sans-serif; fill: #1f2328; }
+  .t  { font-size: 14px; font-weight: 600; }
+  .s  { font-size: 11.5px; fill: #3d444d; }
+  .xs { font-size: 10px; fill: #57606a; }
+  .h1 { font-size: 20px; font-weight: 700; }
+  .h2 { font-size: 13px; font-weight: 600; fill: #57606a; letter-spacing: 0.04em; }
+  .wire { stroke: #57606a; stroke-width: 1.4; fill: none; }
+  .wire.dash { stroke-dasharray: 5 4; }
+  .wire.pwr { stroke: #0f766e; stroke-width: 2; }
+  .wire.sig { stroke: #1d4ed8; }
+  .wire.aud { stroke: #c2410c; }
+  .wire.mcu { stroke: #7e22ce; }
+  .wire.prg { stroke: #be185d; }
+  .lbl { font-size: 10.5px; fill: #3d444d; }
+  .box { stroke-width: 1.2; }
+  .k-pwr  { fill: #e6f4f1; stroke: #0f766e; }
+  .k-xvf  { fill: #e8efff; stroke: #1d4ed8; }
+  .k-mcu  { fill: #f3e8ff; stroke: #7e22ce; }
+  .k-aud  { fill: #fff1e8; stroke: #c2410c; }
+  .k-mic  { fill: #e9f7e6; stroke: #2f7d1f; }
+  .k-ui   { fill: #fff7db; stroke: #a16207; }
+  .k-prg  { fill: #fde8f1; stroke: #be185d; }
+  .k-gry  { fill: #f2f3f5; stroke: #6e7781; }
+  .k-dnp  { fill: #ffffff; stroke: #6e7781; stroke-dasharray: 4 3; }
+  .note   { fill: #fffbea; stroke: #d4a72c; stroke-width: 1; }
+</style>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#57606a"/></marker></defs><rect class="bg" x="0" y="0" width="980" height="940"/><style>
+ .k-clk { fill:#fff1c2; stroke:#a16207; } .k-fl { fill:#efe3ff; stroke:#7e22ce; }
+ .k-usb { fill:#dbe7ff; stroke:#1d4ed8; } .k-gpio { fill:#e8f5c8; stroke:#4d7c0f; }
+ .k-dbg { fill:#e5e7eb; stroke:#374151; } .k-esp { fill:#fde8f1; stroke:#be185d; }
+ .k-hdr { fill:#d9f2f7; stroke:#0e7490; } .k-pad { fill:#ffffff; stroke:#6e7781; }
+ .pn { font-size: 9.5px; font-weight: 600; } .pl { font-size: 10.5px; fill:#1f2328; }
+</style>
+<text class="h1" x="30" y="28" text-anchor="start" dominant-baseline="central">XVF3800 pin map (top view)</text>
+<text class="s" x="30" y="52" text-anchor="start" dominant-baseline="central">Signal name (official XMOS pinout), then its use on MindSpeak rev 1. Updated 2026-11-11.</text>
+<rect class="box k-xvf" x="340" y="300" width="320" height="320" rx="6"/>
+<text class="t" x="500.0" y="440.0" text-anchor="middle" dominant-baseline="central">XVF3800, top view</text>
+<text class="s" x="500.0" y="462.0" text-anchor="middle" dominant-baseline="central">centre paddles: VDD 61–64,</text>
+<text class="s" x="500.0" y="478.0" text-anchor="middle" dominant-baseline="central">GND 65</text>
+<circle cx="354" cy="314" r="4" fill="none" stroke="#1d4ed8"/>
+<rect class="box k-fl" x="319" y="311.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="320.0" text-anchor="middle" dominant-baseline="central">1</text>
+<text class="pl" x="314" y="320.0" text-anchor="end" dominant-baseline="central">QSPI_D1 *</text>
+<rect class="box k-clk" x="351.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="360.0" y="632" text-anchor="middle" dominant-baseline="central">16</text>
+<text class="pl" x="360.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 360.0 646)">XIN</text>
+<rect class="box k-pwr" x="663" y="591.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="600.0" text-anchor="middle" dominant-baseline="central">31</text>
+<text class="pl" x="686" y="600.0" text-anchor="start" dominant-baseline="central">USB_VDD18</text>
+<rect class="box k-mic" x="631.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="640.0" y="288" text-anchor="middle" dominant-baseline="central">46</text>
+<text class="pl" x="640.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 640.0 274)">MIC_DATA0</text>
+<rect class="box k-fl" x="319" y="331.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="340.0" text-anchor="middle" dominant-baseline="central">2</text>
+<text class="pl" x="314" y="340.0" text-anchor="end" dominant-baseline="central">QSPI_D3</text>
+<rect class="box k-pwr" x="371.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="380.0" y="632" text-anchor="middle" dominant-baseline="central">17</text>
+<text class="pl" x="380.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 380.0 646)">VDDIOB18 1.8 V</text>
+<rect class="box k-gpio" x="663" y="571.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="580.0" text-anchor="middle" dominant-baseline="central">32</text>
+<text class="pl" x="686" y="580.0" text-anchor="start" dominant-baseline="central">BUTTON_1 action</text>
+<rect class="box k-pad" x="611.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="620.0" y="288" text-anchor="middle" dominant-baseline="central">47</text>
+<text class="pl" x="620.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 620.0 274)">SPI_MISO → pad</text>
+<rect class="box k-fl" x="319" y="351.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="360.0" text-anchor="middle" dominant-baseline="central">3</text>
+<text class="pl" x="314" y="360.0" text-anchor="end" dominant-baseline="central">QSPI_CS_N *</text>
+<rect class="box k-dbg" x="391.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="400.0" y="632" text-anchor="middle" dominant-baseline="central">18</text>
+<text class="pl" x="400.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 400.0 646)">TDI</text>
+<rect class="box k-pad" x="663" y="551.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="560.0" text-anchor="middle" dominant-baseline="central">33</text>
+<text class="pl" x="686" y="560.0" text-anchor="start" dominant-baseline="central">XLINK → pad</text>
+<rect class="box k-mic" x="591.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="600.0" y="288" text-anchor="middle" dominant-baseline="central">48</text>
+<text class="pl" x="600.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 600.0 274)">MIC_DATA2</text>
+<rect class="box k-pwr" x="319" y="371.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="380.0" text-anchor="middle" dominant-baseline="central">4</text>
+<text class="pl" x="314" y="380.0" text-anchor="end" dominant-baseline="central">VDD</text>
+<rect class="box k-pwr" x="411.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="420.0" y="632" text-anchor="middle" dominant-baseline="central">19</text>
+<text class="pl" x="420.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 420.0 646)">VDD</text>
+<rect class="box k-pwr" x="663" y="531.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="540.0" text-anchor="middle" dominant-baseline="central">34</text>
+<text class="pl" x="686" y="540.0" text-anchor="start" dominant-baseline="central">VDD</text>
+<rect class="box k-pwr" x="571.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="580.0" y="288" text-anchor="middle" dominant-baseline="central">49</text>
+<text class="pl" x="580.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 580.0 274)">VDD</text>
+<rect class="box k-fl" x="319" y="391.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="400.0" text-anchor="middle" dominant-baseline="central">5</text>
+<text class="pl" x="314" y="400.0" text-anchor="end" dominant-baseline="central">QSPI_CLK *</text>
+<rect class="box k-dbg" x="431.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="440.0" y="632" text-anchor="middle" dominant-baseline="central">20</text>
+<text class="pl" x="440.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 440.0 646)">TDO</text>
+<rect class="box k-pad" x="663" y="511.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="520.0" text-anchor="middle" dominant-baseline="central">35</text>
+<text class="pl" x="686" y="520.0" text-anchor="start" dominant-baseline="central">XLINK → pad</text>
+<rect class="box k-mic" x="551.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="560.0" y="288" text-anchor="middle" dominant-baseline="central">50</text>
+<text class="pl" x="560.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 560.0 274)">MIC_DATA1</text>
+<rect class="box k-pad" x="319" y="411.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="420.0" text-anchor="middle" dominant-baseline="central">6</text>
+<text class="pl" x="314" y="420.0" text-anchor="end" dominant-baseline="central">SPI_CS_N → pad</text>
+<rect class="box k-dbg" x="451.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="460.0" y="632" text-anchor="middle" dominant-baseline="central">21</text>
+<text class="pl" x="460.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 460.0 646)">RST_N</text>
+<rect class="box k-pad" x="663" y="491.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="500.0" text-anchor="middle" dominant-baseline="central">36</text>
+<text class="pl" x="686" y="500.0" text-anchor="start" dominant-baseline="central">XLINK → pad</text>
+<rect class="box k-mic" x="531.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="540.0" y="288" text-anchor="middle" dominant-baseline="central">51</text>
+<text class="pl" x="540.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 540.0 274)">MIC_DATA3</text>
+<rect class="box k-pad" x="319" y="431.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="440.0" text-anchor="middle" dominant-baseline="central">7</text>
+<text class="pl" x="314" y="440.0" text-anchor="end" dominant-baseline="central">SPI_MOSI → pad</text>
+<rect class="box k-pwr" x="471.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="480.0" y="632" text-anchor="middle" dominant-baseline="central">22</text>
+<text class="pl" x="480.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 480.0 646)">PLL_AVDD</text>
+<rect class="box k-pad" x="663" y="471.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="480.0" text-anchor="middle" dominant-baseline="central">37</text>
+<text class="pl" x="686" y="480.0" text-anchor="start" dominant-baseline="central">XLINK → pad</text>
+<rect class="box k-pwr" x="511.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="520.0" y="288" text-anchor="middle" dominant-baseline="central">52</text>
+<text class="pl" x="520.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 520.0 274)">VDDIOT 3.3 V</text>
+<rect class="box k-pwr" x="319" y="451.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="460.0" text-anchor="middle" dominant-baseline="central">8</text>
+<text class="pl" x="314" y="460.0" text-anchor="end" dominant-baseline="central">VDDIOL 3.3 V</text>
+<rect class="box k-dbg" x="491.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="500.0" y="632" text-anchor="middle" dominant-baseline="central">23</text>
+<text class="pl" x="500.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 500.0 646)">TMS</text>
+<rect class="box k-pwr" x="663" y="451.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="460.0" text-anchor="middle" dominant-baseline="central">38</text>
+<text class="pl" x="686" y="460.0" text-anchor="start" dominant-baseline="central">VDDIOR 3.3 V</text>
+<rect class="box k-hdr" x="491.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="500.0" y="288" text-anchor="middle" dominant-baseline="central">53</text>
+<text class="pl" x="500.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 500.0 274)">I2S_DATA2 → J701</text>
+<rect class="box k-aud" x="319" y="471.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="480.0" text-anchor="middle" dominant-baseline="central">9</text>
+<text class="pl" x="314" y="480.0" text-anchor="end" dominant-baseline="central">I2S_DATA0 → amp, TP</text>
+<rect class="box k-dbg" x="511.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="520.0" y="632" text-anchor="middle" dominant-baseline="central">24</text>
+<text class="pl" x="520.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 520.0 646)">TCK</text>
+<rect class="box k-hdr" x="663" y="431.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="440.0" text-anchor="middle" dominant-baseline="central">39</text>
+<text class="pl" x="686" y="440.0" text-anchor="start" dominant-baseline="central">I2S_DATA1 → J701</text>
+<rect class="box k-pad" x="471.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="480.0" y="288" text-anchor="middle" dominant-baseline="central">54</text>
+<text class="pl" x="480.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 480.0 274)">SQ_nLIN → pad</text>
+<rect class="box k-aud" x="319" y="491.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="500.0" text-anchor="middle" dominant-baseline="central">10</text>
+<text class="pl" x="314" y="500.0" text-anchor="end" dominant-baseline="central">I2S_LRCK → amp, TP</text>
+<rect class="box k-dnp" x="531.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="540.0" y="632" text-anchor="middle" dominant-baseline="central">25</text>
+<text class="pl" x="540.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 540.0 646)">NC</text>
+<rect class="box k-gpio" x="663" y="411.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="420.0" text-anchor="middle" dominant-baseline="central">40</text>
+<text class="pl" x="686" y="420.0" text-anchor="start" dominant-baseline="central">GPO → amp EN</text>
+<rect class="box k-esp" x="451.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="460.0" y="288" text-anchor="middle" dominant-baseline="central">55</text>
+<text class="pl" x="460.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 460.0 274)">INT_N → ESP32, J701</text>
+<rect class="box k-gpio" x="319" y="511.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="520.0" text-anchor="middle" dominant-baseline="central">11</text>
+<text class="pl" x="314" y="520.0" text-anchor="end" dominant-baseline="central">BUTTON_0 mute</text>
+<rect class="box k-pwr" x="551.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="560.0" y="632" text-anchor="middle" dominant-baseline="central">26</text>
+<text class="pl" x="560.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 560.0 646)">VDDIOB18 1.8 V</text>
+<rect class="box k-clk" x="663" y="391.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="400.0" text-anchor="middle" dominant-baseline="central">41</text>
+<text class="pl" x="686" y="400.0" text-anchor="start" dominant-baseline="central">MCLK in ← 14</text>
+<rect class="box k-gpio" x="431.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="440.0" y="288" text-anchor="middle" dominant-baseline="central">56</text>
+<text class="pl" x="440.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 440.0 274)">LED_R → RGB, ESP32</text>
+<rect class="box k-pwr" x="319" y="531.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="540.0" text-anchor="middle" dominant-baseline="central">12</text>
+<text class="pl" x="314" y="540.0" text-anchor="end" dominant-baseline="central">VDD</text>
+<rect class="box k-pwr" x="571.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="580.0" y="632" text-anchor="middle" dominant-baseline="central">27</text>
+<text class="pl" x="580.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 580.0 646)">VDD</text>
+<rect class="box k-pwr" x="663" y="371.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="380.0" text-anchor="middle" dominant-baseline="central">42</text>
+<text class="pl" x="686" y="380.0" text-anchor="start" dominant-baseline="central">VDD</text>
+<rect class="box k-pwr" x="411.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="420.0" y="288" text-anchor="middle" dominant-baseline="central">57</text>
+<text class="pl" x="420.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 420.0 274)">VDD</text>
+<rect class="box k-aud" x="319" y="551.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="560.0" text-anchor="middle" dominant-baseline="central">13</text>
+<text class="pl" x="314" y="560.0" text-anchor="end" dominant-baseline="central">I2S_BCLK → amp, TP</text>
+<rect class="box k-usb" x="591.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="600.0" y="632" text-anchor="middle" dominant-baseline="central">28</text>
+<text class="pl" x="600.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 600.0 646)">USB_DM</text>
+<rect class="box k-mic" x="663" y="351.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="360.0" text-anchor="middle" dominant-baseline="central">43</text>
+<text class="pl" x="686" y="360.0" text-anchor="start" dominant-baseline="central">MIC_CLK → buffer</text>
+<rect class="box k-gpio" x="391.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="400.0" y="288" text-anchor="middle" dominant-baseline="central">58</text>
+<text class="pl" x="400.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 400.0 274)">LED_G → RGB, ESP32</text>
+<rect class="box k-clk" x="319" y="571.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="580.0" text-anchor="middle" dominant-baseline="central">14</text>
+<text class="pl" x="314" y="580.0" text-anchor="end" dominant-baseline="central">MCLK out → 41, TP</text>
+<rect class="box k-usb" x="611.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="620.0" y="632" text-anchor="middle" dominant-baseline="central">29</text>
+<text class="pl" x="620.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 620.0 646)">USB_DP</text>
+<rect class="box k-hdr" x="663" y="331.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="340.0" text-anchor="middle" dominant-baseline="central">44</text>
+<text class="pl" x="686" y="340.0" text-anchor="start" dominant-baseline="central">I2C_SCL → J701</text>
+<rect class="box k-fl" x="371.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="380.0" y="288" text-anchor="middle" dominant-baseline="central">59</text>
+<text class="pl" x="380.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 380.0 274)">QSPI_D0 *</text>
+<rect class="box k-clk" x="319" y="591.0" width="18" height="18" rx="2"/>
+<text class="pn" x="328" y="600.0" text-anchor="middle" dominant-baseline="central">15</text>
+<text class="pl" x="314" y="600.0" text-anchor="end" dominant-baseline="central">XOUT</text>
+<rect class="box k-pwr" x="631.0" y="623" width="18" height="18" rx="2"/>
+<text class="pn" x="640.0" y="632" text-anchor="middle" dominant-baseline="central">30</text>
+<text class="pl" x="640.0" y="646" text-anchor="end" dominant-baseline="central" transform="rotate(-90 640.0 646)">USB_VDD33</text>
+<rect class="box k-hdr" x="663" y="311.0" width="18" height="18" rx="2"/>
+<text class="pn" x="672" y="320.0" text-anchor="middle" dominant-baseline="central">45</text>
+<text class="pl" x="686" y="320.0" text-anchor="start" dominant-baseline="central">I2C_SDA → J701</text>
+<rect class="box k-fl" x="351.0" y="279" width="18" height="18" rx="2"/>
+<text class="pn" x="360.0" y="288" text-anchor="middle" dominant-baseline="central">60</text>
+<text class="pl" x="360.0" y="274" text-anchor="start" dominant-baseline="central" transform="rotate(-90 360.0 274)">QSPI_D2</text>
+<rect class="box k-pwr" x="40" y="794" width="14" height="12" rx="3"/>
+<text class="xs" x="60" y="800" text-anchor="start" dominant-baseline="central">Power</text>
+<rect class="box k-clk" x="225" y="794" width="14" height="12" rx="3"/>
+<text class="xs" x="245" y="800" text-anchor="start" dominant-baseline="central">Clock / MCLK loop</text>
+<rect class="box k-fl" x="410" y="794" width="14" height="12" rx="3"/>
+<text class="xs" x="430" y="800" text-anchor="start" dominant-baseline="central">Boot flash (QSPI)</text>
+<rect class="box k-usb" x="595" y="794" width="14" height="12" rx="3"/>
+<text class="xs" x="615" y="800" text-anchor="start" dominant-baseline="central">USB data</text>
+<rect class="box k-mic" x="780" y="794" width="14" height="12" rx="3"/>
+<text class="xs" x="800" y="800" text-anchor="start" dominant-baseline="central">Microphones</text>
+<rect class="box k-aud" x="40" y="814" width="14" height="12" rx="3"/>
+<text class="xs" x="60" y="820" text-anchor="start" dominant-baseline="central">Audio out (I²S)</text>
+<rect class="box k-gpio" x="225" y="814" width="14" height="12" rx="3"/>
+<text class="xs" x="245" y="820" text-anchor="start" dominant-baseline="central">GPI / GPO</text>
+<rect class="box k-dbg" x="410" y="814" width="14" height="12" rx="3"/>
+<text class="xs" x="430" y="820" text-anchor="start" dominant-baseline="central">Reset + JTAG</text>
+<rect class="box k-esp" x="595" y="814" width="14" height="12" rx="3"/>
+<text class="xs" x="615" y="820" text-anchor="start" dominant-baseline="central">To ESP32-S3</text>
+<rect class="box k-hdr" x="780" y="814" width="14" height="12" rx="3"/>
+<text class="xs" x="800" y="820" text-anchor="start" dominant-baseline="central">2×12 header J701</text>
+<rect class="box k-pad" x="40" y="834" width="14" height="12" rx="3"/>
+<text class="xs" x="60" y="840" text-anchor="start" dominant-baseline="central">Solder pad only</text>
+<rect class="box k-dnp" x="225" y="834" width="14" height="12" rx="3"/>
+<text class="xs" x="245" y="840" text-anchor="start" dominant-baseline="central">NC</text>
+<text class="s" x="40" y="875" text-anchor="start" dominant-baseline="central">* also driven by the ESP32 (SPI2) through the four TS5A3166 switches when the PROG switch SW701 is on.</text>
+<text class="s" x="40" y="893" text-anchor="start" dominant-baseline="central">Pins 59, 60, 1 are boot straps (internal pull-downs → QSPI boot). No SPI-slave boot. TP = test pad.</text>
+<text class="s" x="40" y="911" text-anchor="start" dominant-baseline="central">Pin 43 drives an SN74LVC1G125 buffer, then 100 Ω per mic. Pins 56/58 = status LED red/green (also read by ESP32 GPIO15/16); blue unused.</text></svg>
