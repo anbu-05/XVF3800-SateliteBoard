@@ -27,10 +27,9 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
   - Libraries are registered **in the project only**, as `${KIPRJMOD}/../libraries/...`.
   - `verification/`: design manifest, netlist, ERC, tidy record and tidy exceptions; placement renders `placement-2026-11-12-top.png` / `-bot.png` (bottom mirrored).
   - `tools/place_tidy2.py` applies the placement below (`--out` writes a trial copy). KiCad's `pcbnew` Python segfaults here, so the board is edited as S-expressions via `tools/sexpr.py`. Board backups: `mindspark_rev1-backups/*.pre-tidy2-2026-11-12` (user's 22:37 save, with their trial tracks) and older `pre-*` files.
-  - `bom/`: BOM CSV, JLC stock JSON, `sourcing-2026-11-10-esp32.md` (every line linked) `sourcing-2026-11-11.md` (side buttons, PROG switch, 2×12 SMD header) and `sourcing-2026-11-12.md` (TQFN amp, SOT-23-5 switches). The RP2350-era `sourcing-2026-11-10.md` is kept for reference.
+  - `bom/`: BOM CSV, JLC stock JSON, `sourcing-2026-11-10-esp32.md` (every line linked) `sourcing-2026-11-11.md` (side buttons, PROG switch, 2×12 SMD header) and `sourcing-2026-11-12.md` (TQFN amp, SOT-23-5 switches).
 - `PCB/libraries/`: the `Mindspark` library, built by `tools/build_libraries.py`; details in `PCB/libraries/README.md`. Part → symbol → footprint → LCSC map: `parts-map.json`.
   - The project uses only this library (symbols, footprints and power symbols).
-  - Dropped parts have been removed (RP2350A, AOTA inductor, ABM8 crystal, 1×3 and 1×10 headers, +1V1).
 - `incoming/xk_voice_sq66/`: XMOS XK-VOICE-SQ66 design files (schematic PDF, Altium, gerbers, BOM, placement). XMOS design-file licence: use for PCBs that carry XMOS parts.
 - easyeda2kicad 1.0.1 lives in `~/.local/venvs/easyeda2kicad` (linked in `~/.local/bin`).
 - **Library sources (decided 2026-11-10): KiCad 10 built-in first, then easyeda2kicad, then vendor CAD only where it matters.** Built-in parts are copied into Mindspark with the LCSC number added, and every part was checked pin by pin.
@@ -87,7 +86,8 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 
 The first pass (`place_tidy.py`, 74 mm board, 4 layers, edge rules) is archived; the second pass works on the user's own rough placement (22:37 save) and is the one to rerun or adapt. Don't rerun `place_tidy.py`: it predates the user's moves.
 
-- **Board:** 74 × 74 mm, centre (146.558, 98.679), 4 layers (In1 GND, In2 power), JLC 0.3 mm copper-to-edge.
+- **Board:** 74 × 74 mm, centre (146.558, 98.679), 4 layers (In1 GND, In2 power), 0.3 mm copper-to-edge (JLC allows 0.2; kept as margin).
+- **Design rules (2026-11-13, [JLC](https://jlcpcb.com/capabilities/pcb-capabilities) multilayer):** minimums track/clearance 0.1, via 0.45/0.2 (smallest free), holes 0.2. Default class 0.15/0.15; Power class (5 V rails, VBUS, SPK) 0.4 with 0.6/0.3 vias. USB pair 0.2/0.25 not impedance-sized yet.
 - **Edges:**
   - USB-C origin 3.015 mm inside the left and right edges.
   - JST origin 5.67 mm inside the top edge. J501 is at x 135.0 (user's choice); TP501 (SPK+, right) and TP502 are symmetric about it, 4.13 mm off its axis, just under its courtyard.
@@ -116,7 +116,7 @@ The first pass (`place_tidy.py`, 74 mm board, 4 layers, edge rules) is archived;
 
 - **Rev 1 = XVF3800 breakout + ESP32-S3 helper.** XVF3800, 4 mics, MAX98357A speaker amp, power, two USB-C, UI, WS2812 ring. CM5 is rev 2.
 - **XVF3800 stays on stock XMOS USB firmware; no modification** (2026-11-09). The square build (`application_xvf3800_ua-io48-sqr.xe`) sets the mic geometry. Anything extra goes on the ESP32.
-- **Audio out: MAX98357A only** (2026-11-09, reconfirmed 2026-11-10 after the XK-VOICE-SQ66 comparison). Package **MAX98357AETE+T, TQFN-16** ([C910544](https://www.lcsc.com/product-detail/C910544.html), 2026-11-12; replaces the WLP-9 AEWL+T). No codec, no TLV320DAC3101, no 3.5 mm jack. XMOS's board has no speaker amp (its DAC3101 only drives a headphone jack).
+- **Audio out: MAX98357A only** (2026-11-09, reconfirmed 2026-11-10 after the XK-VOICE-SQ66 comparison). Package **MAX98357AETE+T, TQFN-16** ([C910544](https://www.lcsc.com/product-detail/C910544.html), 2026-11-12; replaces the WLP-9 AEWL+T). No codec, no TLV320DAC3101, no 3.5 mm jack.
 - **Helper MCU: ESP32-S3-WROOM-1U-N16R8** (2026-11-10, replaces the RP2350A; [C3013946](https://www.lcsc.com/product-detail/C3013946.html)). IPEX antenna connector; the antenna is off board and not our concern yet. N16R8 instead of N8R8 because it was cheaper (one step up). Support circuits from the controller board, except the reset/boot buttons and USB wiring, which keep this board's style (approved list, 2026-11-10).
 - **Host link: USB on the ESP32's own USB-C**, plus the ESP32 reading XVF LED_R/LED_G/INT_N. The 1×6 host header was dropped (2026-11-11); UART0 and I²C are on the 2×12 header.
 - **XVF3800 pin roles follow XMOS's pinout** (2026-11-10): 54 is SQ_nLIN (geometry select, pad only), 55 is INT_N (to the ESP32 and the header). The status LED is red 56 / green 58, blue unused. The mute LED is driven by the ESP32.
