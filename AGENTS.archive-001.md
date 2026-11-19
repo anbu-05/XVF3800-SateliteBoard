@@ -475,3 +475,34 @@ Stock XMOS USB firmware `application_xvf3800_ua-io48-sqr.xe`; source release nee
 
 Every line (2N7002, mic clock buffer, header/shunts, PROG switch, 0402 resistors, capacitors) with LCSC link, JLC stock and price: `PCB/mindspark_rev1/bom/sourcing-2026-11-10-esp32.md`, `-11-11.md` and `-11-12.md`. The full table is in `AGENTS.archive-001.md`. Passives are JLC Basic, with one step up where the price was the same (100 nF 16 V X7R, 1 µF 25 V, 22 µF 25 V). Parts cost ≈ $53 per board at JLC single-piece prices (XVF3800 $23, ESP32 module $5); the 2026-11-12 package swap changed it by about −$0.17.
 
+
+
+## Archived 2026-11-18 (from AGENTS.md)
+
+### PCB placement: checks 2026-11-12
+
+- **Checks 2026-11-12:**
+  - No overlaps, pads included.
+  - DRC: same errors as before, all inside footprints (mic pad clearance, switch-peg annulus).
+  - Schematic parity: clean.
+  - The user's trial tracks were removed (they're in the `pre-tidy2` backup).
+
+### Reference documents: rev 2 and ReSpeaker lines
+
+- **Rev 2 (deferred):** CM5 eMMC carrier, USB switch, USB-C PD 15 V. Plan and CM5 references archived.
+- **ReSpeaker bench test 2026-11-05:** voice capture good; USB drops (kernel `-71`) with a 5 W speaker unresolved. Clips in `respeaker-tests/`.
+
+### Power, schematic and reference lines
+
+- **Deviations from the sheet plan:** XVF3800 chip on sheet 3, its peripherals and spare-pin pads on sheet 4 (A4 fit).
+- Step-up checks: TPS2116 (2.5 A) is too close to the peak, so TPS2121. TLV62585 (3 A) costs more, so TLV62569 stays.
+- **XK-VOICE-SQ66** (XMOS reference board JGB0084 1V1 C): files in `incoming/xk_voice_sq66/` (schematic `JGB0084-SCHEMATIC-1V1-C.PDF`; mic positions in `JGB0084-PCBA-1V1-C/BOM/JGB0084-XY-1V1-C.xls`). It uses a 6-mic board with a 74LVC257 linear/square mux, TLV320DAC3101 + headphone jack, LDOs for 1.8/3.3 V, an RC reset and a 20-pin FTSH debug header.
+
+## Archived 2026-11-18, second entry (from AGENTS.md)
+
+- **JLC quote 2026-11-10:** bare PCB $29.05 for 5 (controller board as reference), components $90.54 for 2 / $212.71 for 5; details and screenshots in the archive and `docs/report/jlc_quote_2026-11-10/`.
+- **Renders:** `verification/placement-2026-11-12-{top,bot}.png` (KiCad) and `-plan-{top,bot}.png` (`tools/view_placement.py`: pads coloured by net, refs).
+
+## Archived 2026-11-18, third entry (from AGENTS.md)
+
+- **Symbol compaction** (tidy Step 0, Mindspark library only): IM69D129, TPS22918, MAX98357A, TS5A3166 and TPS2121 were redrawn (TPS2121 so its dividers wire straight to their pins); the XVF3800 body was widened. Pins and types are unchanged. PLL_AVDD is a power symbol.
