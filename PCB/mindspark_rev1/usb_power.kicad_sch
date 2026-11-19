@@ -3459,20 +3459,12 @@
 		(uuid "074996fa-839c-5546-a7a6-9c3b75d685dc")
 	)
 	(no_connect
-		(at 95.25 40.64)
-		(uuid "11b56491-7426-59e6-b15c-22daebdf7084")
-	)
-	(no_connect
 		(at 181.61 55.88)
 		(uuid "2eedea91-80ae-525f-85d5-fde009158e1d")
 	)
 	(no_connect
 		(at 95.25 25.4)
 		(uuid "3c22d138-0347-5fea-b15f-cf6cbeb3a8e6")
-	)
-	(no_connect
-		(at 120.65 25.4)
-		(uuid "5db4288f-777a-5aa9-a033-3807381e3c4c")
 	)
 	(no_connect
 		(at 254 25.4)
@@ -4715,7 +4707,7 @@
 		)
 		(uuid "0963937e-74eb-53d9-9892-fadfb59bd5da")
 	)
-	(hierarchical_label "USB_MAIN_DP"
+	(hierarchical_label "USB_MAIN_DM"
 		(shape bidirectional)
 		(at 124.46 30.48 0)
 		(effects
@@ -4770,7 +4762,7 @@
 		)
 		(uuid "c8081847-c323-5a98-a94b-828ffbab9b61")
 	)
-	(hierarchical_label "USB_MAIN_DM"
+	(hierarchical_label "USB_MAIN_DP"
 		(shape bidirectional)
 		(at 91.44 35.56 180)
 		(effects
@@ -12066,5 +12058,39 @@
 				)
 			)
 		)
+	)
+	(junction
+		(at 120.65 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d95298d-18af-40a3-9f19-7a6291aad4f9")
+	)
+	(wire
+		(pts
+			(xy 120.65 25.4)
+			(xy 120.65 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "807b67e1-3dd1-460b-bb68-b26caf9699c4")
+	)
+	(junction
+		(at 95.25 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f6d2d061-3de9-46c3-b5ca-325da4d78c4d")
+	)
+	(wire
+		(pts
+			(xy 95.25 40.64)
+			(xy 95.25 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3eb35f1a-e60d-4a0f-b34b-bb83f6e13749")
 	)
 )

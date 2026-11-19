@@ -18,6 +18,9 @@ Rebuilds all tracks, vias and zones from scratch:
     its count gets the rest just outside on a stub. GND everywhere goes to In1.
   Power traces (rails without a plane, and pads whose via was skipped) are routed by
     tools/jog_router.py: 0/45/90 degree runs with jogs.
+  Fixed signal routes are laid first, before any power copper, so a rerun keeps them and the
+    power router avoids them: since 2026-11-19 the XVF3800 main USB pair
+    (tools/usb_main_route_2026_11_19.py).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 (those caps sit over the wrong plane for a via), FB301's +0V9 side, C313/C314 (+3V3 over the
@@ -203,12 +206,33 @@ for k, (ang, kind, c) in enumerate(junctions):
     a2 = a2 + 360 if a2 <= ang else a2
     arc(pt, on_ring((ang + a2) / 2), on_ring(a2), RING_W, "B.Cu", "+5V_LED")
 
+# ================================================================ fixed signal routes (laid first)
+# The XVF3800 main USB pair (tools/usb_main_route_2026_11_19.py). This script rebuilds every
+# track, so the pair is laid here, before any power copper, and the power router avoids it.
+import usb_main_route_2026_11_19 as usb_main  # noqa: E402
+
+for net, layer, pts in usb_main.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, usb_main.W, layer, net, connect=False)
+for pt, net in usb_main.VIAS:
+    via(pt, net, usb_main.VIA, connect=False)
+# U101's GND pads 8 and 3 sit between D- and D+ (flow-through): a small via just west of pad 8, between
+# the two lines where they are 0.75 mm apart (0.15 mm each side), linked to pads 8 and 3
+via((173.2, 98.68), "GND", VIA_SMALL)
+seg((173.2, 98.68), (173.825, 98.68), 0.25, "F.Cu", "GND")
+seg((173.825, 98.68), (174.595, 98.68), 0.25, "F.Cu", "GND")
+
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
-VIA_1V8 = (157.6, 99.3)                                  # +1V8 band -> F.Cu channel east of the module
+# +1V8 band -> F.Cu east of the module, for J701: south of the USB pair, since F.Cu cannot cross
+# the pair (2026-11-19; was one via at 157.6, 99.3). J301 and R303 find +1V8 north of the pair.
+VIA_1V8_S = (158.4, 103.6)
 HOP1, HOP2 = (133.6, 87.9), (129.0, 87.9)                # +1V8 to R303: under the +5V trunk on B.Cu
-for pt, net in ((VIA_5V_A, "+5V"), (VIA_5V_B, "+5V"), (VIA_1V8, "+1V8"), (HOP1, "+1V8"), (HOP2, "+1V8")):
+VIA_0V9_CB = (150.3, 102.25)                             # +0V9 island edge south of pin 30, for C324 (CB)
+for pt, net in ((VIA_5V_A, "+5V"), (VIA_5V_B, "+5V"), (VIA_1V8_S, "+1V8"),
+                (HOP1, "+1V8"), (HOP2, "+1V8")):
     via(pt, net)
+via(VIA_0V9_CB, "+0V9", VIA_SMALL)
 seg(VIA_5V_A, VIA_5V_B, 1.0, "F.Cu", "+5V")                 # the trunk's two vias side by side
 
 # ================================================================ TPS2121 (U103) power-pin flanges
@@ -448,6 +472,13 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("+1V8", "B.Cu", 0.15, ("C315", 1), 0.15, ("U301", 17)),
     ("+1V8", "B.Cu", 0.15, ("C316", 1), 0.15, ("U301", 26)),
     ("+1V8", "B.Cu", 0.15, ("C317", 1), 0.15, ("U301", 31)),
+    # USB stitching caps' +0V9 side (2026-11-19): C304 to pin 27, CA (C323) to C304, CB (C324)
+    # to its via at the +0V9 island edge
+    ("+0V9", "B.Cu", 0.25, ("C304", 1), 0.15, ("U301", 27)),
+    ("+0V9", "B.Cu", 0.25, ("C323", 1), 0.15, ("C304", 1)),
+    ("+0V9", "B.Cu", 0.25, ("C324", 1), 0.15, ("@", VIA_0V9_CB)),
+    # C318 (+1V8 bulk) moved just north of the +1V8 band: linked to C315 below it
+    ("+1V8", "B.Cu", 0.3, ("C318", 1), 0.15, ("C315", 1)),
     # amp supply
     ("+5V_AMP", "F.Cu", 0.8, ("C511", 1), 0.2, ("U502", 6)),
     ("+5V_AMP", "F.Cu", 0.6, ("C510", 1), 0.2, None),
