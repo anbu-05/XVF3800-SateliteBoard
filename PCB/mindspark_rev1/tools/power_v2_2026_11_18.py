@@ -20,7 +20,7 @@ Rebuilds all tracks, vias and zones from scratch:
     tools/jog_router.py: 0/45/90 degree runs with jogs.
   Fixed signal routes are laid first, before any power copper, so a rerun keeps them and the
     power router avoids them: since 2026-11-19 the XVF3800 main USB pair
-    (tools/usb_main_route_2026_11_19.py).
+    (tools/usb_main_route_2026_11_19.py), since 2026-11-20 the mic routes (tools/mic_route_2026_11_20.py).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 (those caps sit over the wrong plane for a via), FB301's +0V9 side, C313/C314 (+3V3 over the
@@ -221,6 +221,17 @@ for pt, net in usb_main.VIAS:
 via((173.2, 98.68), "GND", VIA_SMALL)
 seg((173.2, 98.68), (173.825, 98.68), 0.25, "F.Cu", "GND")
 seg((173.825, 98.68), (174.595, 98.68), 0.25, "F.Cu", "GND")
+# The mic routes (since 2026-11-20, tools/mic_route_2026_11_20.py, geometry frozen in its JSON):
+# MIC_DATA0-3 and the buffered clock to the four mics, laid before any power copper.
+import mic_route_2026_11_20 as mic  # noqa: E402
+
+if not mic.TRACKS:
+    sys.exit("mic routes missing: run tools/mic_route_2026_11_20.py --generate first")
+for net, layer, pts in mic.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, mic.W, layer, net, connect=False)
+for pt, net in mic.VIAS:
+    via(pt, net, mic.VIA, connect=False)
 
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
@@ -229,8 +240,16 @@ VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the ol
 VIA_1V8_S = (158.4, 103.6)
 HOP1, HOP2 = (133.6, 87.9), (129.0, 87.9)                # +1V8 to R303: under the +5V trunk on B.Cu
 VIA_0V9_CB = (150.3, 102.25)                             # +0V9 island edge south of pin 30, for C324 (CB)
+# +3V3 for the SW mic's ferrite FB503 (2026-11-20): FB503 sits over In2 VBUS_ESP, between the SW mic
+# pair's F.Cu legs, which cut off its old F.Cu feed from the east. Between the legs, east of the
+# VBUS_ESP edge (x 118.9), In2 is +3V3: one via there, a short F.Cu feed to FB503 pad 1.
+VIA_3V3_FB503 = (119.6, 126.0)
+# +3V3 for J701 pin 2 (breakout header, east end; 2026-11-20): it used to join FB504's +3V3 feed,
+# which the SE mic pair's F.Cu legs now cut off. In2 under J701 is +5V / VBUS_ESP; the nearest
+# +3V3 plane is east of the VBUS_ESP strip (x > 170.7): one via there, F.Cu west to the pin.
+VIA_3V3_J701 = (171.3, 133.0)
 for pt, net in ((VIA_5V_A, "+5V"), (VIA_5V_B, "+5V"), (VIA_1V8_S, "+1V8"),
-                (HOP1, "+1V8"), (HOP2, "+1V8")):
+                (HOP1, "+1V8"), (HOP2, "+1V8"), (VIA_3V3_FB503, "+3V3"), (VIA_3V3_J701, "+3V3")):
     via(pt, net)
 via(VIA_0V9_CB, "+0V9", VIA_SMALL)
 seg(VIA_5V_A, VIA_5V_B, 1.0, "F.Cu", "+5V")                 # the trunk's two vias side by side
@@ -520,6 +539,8 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("+1V8", "F.Cu", 0.25, ("R303", 2), 0.2, ("@", HOP2)),
     # buck feedback tops / misc +3V3 pads that sit over another plane
     ("+3V3", "F.Cu", 0.3, ("C205", 1), 0.2, None),
+    ("+3V3", "F.Cu", 0.3, ("FB503", 1), 0.2, ("@", VIA_3V3_FB503)),
+    ("+3V3", "F.Cu", 0.3, ("J701", 2), 0.2, ("@", VIA_3V3_J701)),
     # TPS2121 divider tops (the input pins themselves are on their flanges, see above)
     ("VBUS_MAIN", "F.Cu", 0.25, ("R109", 2), 0.15, None),
     ("VBUS_MAIN", "F.Cu", 0.25, ("R105", 2), 0.15, None),
@@ -663,6 +684,31 @@ def split_t_junctions():
                 break
 
 
+def chamfer_power():
+    """No right angles (user 2026-11-20): every 90 degree bend in the routed copper becomes two 45
+    degree turns (jog_router.chamfer_corners), 0.2 mm from other nets. The fixed signal routes
+    are left alone (the mic routes are chamfered in their own script); pad centres and vias stay."""
+    fixed_nets = {n for n, _, _ in usb_main.TRACKS} | {n for n, _, _ in mic.TRACKS}
+    keep = [n for n in items if n[0] != "segment" or str(child(n, "net")[1]) in fixed_nets]
+    segs = [[str(child(n, "net")[1]), str(child(n, "layer")[1]),
+             (float(child(n, "start")[1]), float(child(n, "start")[2])),
+             (float(child(n, "end")[1]), float(child(n, "end")[2])), float(child(n, "width")[1])]
+            for n in items if n[0] == "segment" and str(child(n, "net")[1]) not in fixed_nets]
+    via_pts = {(round(v[0][0], 4), round(v[0][1], 4)) for v in new_vias}
+    pad_polys = [(x[2], {"F.Cu", "B.Cu"} if x[5] in ("thru_hole", "np_thru_hole") else {P[ref].side})
+                 for ref in P for x in pads_of(ref)]
+
+    def fixed(net, layer, pt):
+        return ((round(pt[0], 4), round(pt[1], 4)) in via_pts
+                or any(layer in lays and _inside(pt[0], pt[1], poly) for poly, lays in pad_polys))
+    n, left = jog_router.chamfer_corners(router, segs, fixed, 0.2)
+    items[:] = keep + [["segment", ["start", f4(a[0]), f4(a[1])], ["end", f4(b[0]), f4(b[1])], ["width", f4(w)],
+                        ["layer", q(lay)], ["net", q(net)], ["uuid", uid()]] for net, lay, a, b, w in segs]
+    left = sorted(set((x[0], x[1], x[2], x[3]) for x in left))
+    report.append(f"chamfered {n} right-angle bends; left as they are: {left or 'none'}")
+
+
+chamfer_power()
 split_t_junctions()
 root.extend(items)
 out = sys.argv[sys.argv.index("--out") + 1] if "--out" in sys.argv else BOARD

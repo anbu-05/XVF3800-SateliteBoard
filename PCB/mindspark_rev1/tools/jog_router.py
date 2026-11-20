@@ -441,3 +441,77 @@ def _merge(pts):
                 continue
         out.append(p)
     return out
+
+
+# ---------------------------------------------------------------------- corner chamfers
+def chamfer_corners(router, segs, fixed, min_clear, sizes=(0.5, 0.4, 0.3, 0.2, 0.1)):
+    """Cut every 90 degree bend into two 45 degree turns (user 2026-11-20: jog routing, no right
+    angles). A bend is a point where exactly two segments of one net meet on one layer at a right
+    angle (also a V of two diagonals). The bend point moves inward: each segment is shortened by
+    c and a diagonal (the narrower of the two widths) joins the new ends, with the largest c from
+    `sizes` that keeps `min_clear` to other nets' copper (router.shapes) and leaves every other
+    end of that net (branches, vias) where it was. A short stub (<= the largest size) that ends on
+    a pad or via may be used up whole: the diagonal then runs straight into that pad or via.
+
+    segs: list of [net, layer, (ax, ay), (bx, by), width], changed in place and extended.
+    fixed(net, layer, pt) -> True where a bend must stay (pad centres, vias).
+    Returns (number chamfered, list of bends left as they are)."""
+    key = lambda n, l, p: (n, l, round(p[0], 4), round(p[1], 4))  # noqa: E731
+    done, left, seen = 0, [], set()
+    while True:
+        ends = {}
+        for k, s in enumerate(segs):
+            for e in (2, 3):
+                ends.setdefault(key(s[0], s[1], s[e]), []).append((k, e))
+        todo = None
+        for kk, v in sorted(ends.items()):
+            if len(v) != 2 or kk in seen:
+                continue
+            (k1, e1), (k2, e2) = v
+            s1, s2 = segs[k1], segs[k2]
+            pv, o1, o2 = s1[e1], s1[5 - e1], s2[5 - e2]
+            L1, L2 = math.dist(pv, o1), math.dist(pv, o2)
+            if L1 < 1e-6 or L2 < 1e-6:
+                continue
+            u1 = ((o1[0] - pv[0]) / L1, (o1[1] - pv[1]) / L1)
+            u2 = ((o2[0] - pv[0]) / L2, (o2[1] - pv[1]) / L2)
+            if abs(u1[0] * u2[0] + u1[1] * u2[1]) <= 0.02:
+                todo = (kk, k1, e1, k2, e2, pv, o1, o2, L1, L2, u1, u2)
+                break
+        if todo is None:
+            break
+        kk, k1, e1, k2, e2, v, o1, o2, L1, L2, u1, u2 = todo
+        seen.add(kk)
+        s1, s2 = segs[k1], segs[k2]
+        net, layer, w = s1[0], s1[1], min(s1[4], s2[4])
+        if fixed(net, layer, v):
+            left.append((net, layer, v, "pad or via"))
+            continue
+        cands = [c for c in sizes if c <= 0.45 * L1 and c <= 0.45 * L2]
+        # a short stub into a pad / via: use it up (both legs cut by the stub's length)
+        for L, o, Lo in ((L1, o1, L2), (L2, o2, L1)):
+            if L <= max(sizes) and L <= 0.45 * Lo + 1e-9 and fixed(net, layer, o):
+                cands.insert(0, L)
+        others = [(k_[2], k_[3]) for k_ in ends if k_[0] == net and k_[1] == layer and k_ != kk]
+        obstacles = router._others(net, layer)
+        ok = None
+        for c in cands:
+            p1 = (v[0] + c * u1[0], v[1] + c * u1[1])
+            p2 = (v[0] + c * u2[0], v[1] + c * u2[1])
+            if any(math.dist(q, p1) > 1e-6 and math.dist(q, p2) > 1e-6 and
+                   (_dist_point_seg(q[0], q[1], v[0], v[1], p1[0], p1[1]) < 0.01 or
+                    _dist_point_seg(q[0], q[1], v[0], v[1], p2[0], p2[1]) < 0.01) for q in others):
+                continue
+            if router._seg_clearance(p1, p2, obstacles, w) >= min_clear - 1e-6:
+                ok = (p1, p2)
+                break
+        if ok is None:
+            left.append((net, layer, v, "no room"))
+            continue
+        p1, p2 = (round(ok[0][0], 4), round(ok[0][1], 4)), (round(ok[1][0], 4), round(ok[1][1], 4))
+        s1[e1], s2[e2] = p1, p2
+        segs.append([net, layer, p1, p2, w])
+        router.add(Shape(net, {layer}, seg=(p1, p2, w)))
+        segs[:] = [s for s in segs if math.dist(s[2], s[3]) > 1e-6]      # used-up stubs
+        done += 1
+    return done, left

@@ -13650,4 +13650,339 @@
 			)
 		)
 	)
+	(symbol
+		(lib_id "Mindspark:C")
+		(at 215.90 135.89 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6ad74b77-8bfb-51fb-b895-736cfe01a4ac")
+		(property "Reference" "C515"
+			(at 218.44 134.62 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 218.44 137.16 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:C_0402_1005Metric"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C1525"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "CL05B104KO5NNNC"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "spec" "X7R"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "voltage" "16V"
+			(at 218.44 139.19 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 0.8 0.8)
+				)
+				(justify left)
+			)
+		)
+		(property "use" "Mic stitching: +3V3/+5V where the SE mic pair crosses planes (In2)"
+			(at 215.90 135.89 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "634a4f63-aac1-4609-83d4-291674cbbdb1")
+		)
+		(pin "2"
+			(uuid "f0f1a408-c267-45a9-b4ae-977f750396b4")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/3f22dfb6-6fd6-54c4-9781-a982d7ddf190"
+					(reference "C515")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 215.90 132.08 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "b37eff47-c527-4291-a1a0-ace6398e8b9b")
+		(property "Reference" "#PWR5046"
+			(at 215.90 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 215.90 128.52 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.90 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.90 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 215.90 132.08 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6e9127e1-6835-4b4b-a5e7-465fa709d1a3")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/3f22dfb6-6fd6-54c4-9781-a982d7ddf190"
+					(reference "#PWR5046")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+5V")
+		(at 215.90 139.70 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "21547c75-aff2-448f-8762-d4be4b3178ad")
+		(property "Reference" "#PWR5047"
+			(at 215.90 139.70 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+5V"
+			(at 215.90 143.20 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 215.90 139.70 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.90 139.70 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 215.90 139.70 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7fbeb7ec-f39e-4b0a-a513-d24fa3f5b6d9")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/3f22dfb6-6fd6-54c4-9781-a982d7ddf190"
+					(reference "#PWR5047")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(rectangle
+		(start 202.07 113.05)
+		(end 269.5 158.32)
+		(stroke
+			(width 0.1524)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "414a66dd-0c40-4bf3-a1bd-50744f546ce5")
+	)
+	(text "Mic stitching cap"
+		(exclude_from_sim no)
+		(at 203.34 114.32 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left top)
+		)
+		(uuid "8cd74ba7-bb39-4d8d-a0b7-42182415ac8c")
+	)
+	(text "The SE mic pair (MK504) runs on\nthe bottom layer over In2 and\ncrosses from the +3V3 plane to\nthe +5V plane. C515 joins the\ntwo planes beside the crossing."
+		(exclude_from_sim no)
+		(at 233.68 127.0 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left top)
+		)
+		(uuid "a0df698a-1966-4c04-9399-1b4bf45bc1dc")
+	)
 )
