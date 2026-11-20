@@ -4,8 +4,10 @@ Rebuilds all tracks, vias and zones from scratch:
 
   Zones (fill priority: higher fills first, lower keeps clearance from it)
     In1  GND          whole board
-    In2  +1V8   (5)   east band x 151.4-160 (C318, C315, C316, LDO output; also under the USB
-                      exit, so the USB pair crosses only one plane edge) + a leg to C317 (pin 31)
+    In2  +1V8   (5)   east band x 151.4-160 (the east cap column, LDO output; also under the USB
+                      exit, so the USB pair crosses only one plane edge) + a leg to C317 (pin 31);
+                      since 2026-11-21 a notch north to C318's new spot by the LDO, and a step west
+                      to x 150.5 (y 100.45-103.3) under the USB pair's lanes beside the pins
     In2  +0V9   (4)   island under the XVF3800, a 1.8 mm neck through the south cap row
                       (between C311 +3V3 and C317 +1V8, over C305), then down to L201/C203/C204
     In2  VBUS_ESP(3), VBUS_MAIN(2), +5V(1), +3V3(0): as in power_planes_2026_11_18.py
@@ -20,11 +22,13 @@ Rebuilds all tracks, vias and zones from scratch:
     tools/jog_router.py: 0/45/90 degree runs with jogs.
   Fixed signal routes are laid first, before any power copper, so a rerun keeps them and the
     power router avoids them: since 2026-11-19 the XVF3800 main USB pair
-    (tools/usb_main_route_2026_11_19.py), since 2026-11-20 the mic routes (tools/mic_route_2026_11_20.py).
+    (tools/usb_main_route_2026_11_19.py), since 2026-11-20 the mic routes (tools/mic_route_2026_11_20.py),
+    since 2026-11-21 the east-side escape (tools/east_escape_2026_11_21.py: east cap column feeds,
+    JTAG fan-out, crystal, QSPI flash, the FB301 / C324 +0V9 jumpers).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
-(those caps sit over the wrong plane for a via), FB301's +0V9 side, C313/C314 (+3V3 over the
-+1V8 band), the power test pads, and the USB stitching cap.
+on the west and south sides (those caps sit over the wrong plane for a via), C314 (+3V3 over the
++1V8 band), the power test pads. The east side's pin feeds are fixed routes since 2026-11-21.
 
 Usage (PCB editor closed):  python3 tools/power_v2_2026_11_18.py [--out FILE]
 """
@@ -100,8 +104,8 @@ ZONES = [  # net, layer, priority, polygon
                                (164.6, 130.5), (164.6, 115.05), (170.7, 115.05), (170.7, 134.9), (114.6, 134.9)]),
     ("+0V9", "In2.Cu", 4, [(142.3, 94.4), (150.9, 94.4), (150.9, 103.0), (148.8, 103.0), (148.8, 113.7),
                            (158.8, 113.7), (158.8, 121.7), (147.0, 121.7), (147.0, 103.0), (142.3, 103.0)]),
-    ("+1V8", "In2.Cu", 5, [(151.4, 93.9), (160.0, 93.9), (160.0, 106.3), (148.9, 106.3), (148.9, 103.3),
-                           (151.4, 103.3)]),
+    ("+1V8", "In2.Cu", 5, [(151.4, 93.9), (157.6, 93.9), (157.6, 92.5), (160.0, 92.5), (160.0, 106.3),
+                           (148.9, 106.3), (148.9, 103.3), (150.5, 103.3), (150.5, 100.45), (151.4, 100.45)]),
 ]
 for net, layer, pri, pts in ZONES:
     z = ["zone", ["net", q(net)], ["layer", q(layer)], ["uuid", uid()], ["name", q(f"{net} {layer}")],
@@ -232,6 +236,18 @@ for net, layer, pts in mic.TRACKS:
         seg(a, b, mic.W, layer, net, connect=False)
 for pt, net in mic.VIAS:
     via(pt, net, mic.VIA, connect=False)
+# The east-side escape (since 2026-11-21, tools/east_escape_2026_11_21.py, geometry frozen in its JSON):
+# east cap column feeds, JTAG fan-out, crystal, QSPI flash, +0V9 jumpers. Vias that land in their
+# own plane count as joined (the +0V9 island via for C324); the rest are signal or jumper vias.
+import east_escape_2026_11_21 as east  # noqa: E402
+
+if not east.TRACKS:
+    sys.exit("east escape missing: run tools/east_escape_2026_11_21.py --generate first")
+for net, layer, w, pts in east.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, w, layer, net, connect=False)
+for pt, net in east.VIAS:
+    via(pt, net, east.VIA)
 
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
@@ -239,7 +255,6 @@ VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the ol
 # the pair (2026-11-19; was one via at 157.6, 99.3). J301 and R303 find +1V8 north of the pair.
 VIA_1V8_S = (158.4, 103.6)
 HOP1, HOP2 = (133.6, 87.9), (129.0, 87.9)                # +1V8 to R303: under the +5V trunk on B.Cu
-VIA_0V9_CB = (150.3, 102.25)                             # +0V9 island edge south of pin 30, for C324 (CB)
 # +3V3 for the SW mic's ferrite FB503 (2026-11-20): FB503 sits over In2 VBUS_ESP, between the SW mic
 # pair's F.Cu legs, which cut off its old F.Cu feed from the east. Between the legs, east of the
 # VBUS_ESP edge (x 118.9), In2 is +3V3: one via there, a short F.Cu feed to FB503 pad 1.
@@ -251,7 +266,6 @@ VIA_3V3_J701 = (171.3, 133.0)
 for pt, net in ((VIA_5V_A, "+5V"), (VIA_5V_B, "+5V"), (VIA_1V8_S, "+1V8"),
                 (HOP1, "+1V8"), (HOP2, "+1V8"), (VIA_3V3_FB503, "+3V3"), (VIA_3V3_J701, "+3V3")):
     via(pt, net)
-via(VIA_0V9_CB, "+0V9", VIA_SMALL)
 seg(VIA_5V_A, VIA_5V_B, 1.0, "F.Cu", "+5V")                 # the trunk's two vias side by side
 
 # ================================================================ TPS2121 (U103) power-pin flanges
@@ -487,17 +501,10 @@ keep = Shape("~module", {"F.Cu"}, poly=P["U601"].courtyard())
 keep.exempt = {"GND"}
 router.add(keep)
 ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
-    # XVF3800 +1V8 pins to their caps (bottom)
-    ("+1V8", "B.Cu", 0.15, ("C315", 1), 0.15, ("U301", 17)),
-    ("+1V8", "B.Cu", 0.15, ("C316", 1), 0.15, ("U301", 26)),
+    # XVF3800 pin 31 (+1V8) to its cap; pins 17-27 are fixed routes since 2026-11-21
     ("+1V8", "B.Cu", 0.15, ("C317", 1), 0.15, ("U301", 31)),
-    # USB stitching caps' +0V9 side (2026-11-19): C304 to pin 27, CA (C323) to C304, CB (C324)
-    # to its via at the +0V9 island edge
-    ("+0V9", "B.Cu", 0.25, ("C304", 1), 0.15, ("U301", 27)),
+    # USB stitching cap CA (C323) +0V9 side to C304 just above it; CB (C324) has its F.Cu jumper
     ("+0V9", "B.Cu", 0.25, ("C323", 1), 0.15, ("C304", 1)),
-    ("+0V9", "B.Cu", 0.25, ("C324", 1), 0.15, ("@", VIA_0V9_CB)),
-    # C318 (+1V8 bulk) moved just north of the +1V8 band: linked to C315 below it
-    ("+1V8", "B.Cu", 0.3, ("C318", 1), 0.15, ("C315", 1)),
     # amp supply
     ("+5V_AMP", "F.Cu", 0.8, ("C511", 1), 0.2, ("U502", 6)),
     ("+5V_AMP", "F.Cu", 0.6, ("C510", 1), 0.2, None),

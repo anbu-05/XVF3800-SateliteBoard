@@ -9,9 +9,11 @@ Geometry (all 0/45/90 degree, ends on pad / via centres):
     (outer layer ~0.21 mm above its plane, Er ~4.4) the edge-coupled microstrip formulas give
     ~92 ohm differential; solder mask takes it a few ohm lower, so close to the 90 ohm target.
     To be confirmed with JLC's impedance calculator before ordering.
-  * B.Cu from the pins (D- north, D+ south) straight east through the gap in the east cap
-    column (C304 / C313), over the In2 +1V8 band, to two 0.45/0.2 vias just outside the
-    ESP32 module, spread to 0.8 mm. Stitching caps C323/C324 (+0V9/+1V8) sit either side where
+  * B.Cu from the pins (D- north, D+ south). Since 2026-11-21 (east column centred on pins
+    17-27, tools/east_escape_2026_11_21.py) the pair turns straight down in nested lanes just
+    outside the pins (pin 30's feed outside it), runs east under the column between C323 and
+    C324, and climbs at 45 degrees back to the same two 0.45/0.2 vias just outside the ESP32
+    module, spread to 0.8 mm. Until then it ran straight east from the pins. Stitching caps C323/C324 (+0V9/+1V8) sit either side where
     the pair leaves the +0V9 island, C325/C326 (+1V8/GND) either side of the vias.
   * F.Cu (over In1 GND) under U702 through the gap above the lowered U703, then 45 degrees up
     across the open area, D- jogs up to U101 pad 7 and D+ runs into pad 9; each line runs
@@ -37,8 +39,10 @@ JV_A7, JV_B7 = (178.3, 98.43), (178.3, 99.43)               # D- jumper vias (x 
 X1 = 164.6                                                   # where the pair starts up, past C703
 TRACKS = [  # net, layer, points
     # bottom layer: pins -> layer-change vias
-    (DM, "B.Cu", [PIN28, (156.6, 100.68), (156.8, 100.48), V_DM]),
-    (DP, "B.Cu", [PIN29, (156.6, 101.08), (156.8, 101.28), V_DP]),
+    (DM, "B.Cu", [PIN28, (151.07, 100.68), (151.37, 100.98), (151.37, 102.105), (151.67, 102.405),
+                  (154.275, 102.405), (156.0, 100.68), (156.6, 100.68), (156.8, 100.48), V_DM]),
+    (DP, "B.Cu", [PIN29, (150.67, 101.08), (150.97, 101.38), (150.97, 102.505), (151.27, 102.805),
+                  (154.441, 102.805), (156.166, 101.08), (156.6, 101.08), (156.8, 101.28), V_DP]),
     # top layer: vias -> under U702 -> up to U101
     (DM, "F.Cu", [V_DM, (158.31, 101.44), (X1, 101.44), (X1 + 2.66, 98.78), (172.3, 98.78), (172.9, 98.18), U101_7]),
     # D+ gets a 0.5 mm bump (45 degree sides) in the open stretch: +0.41 mm, matching D-'s jog
