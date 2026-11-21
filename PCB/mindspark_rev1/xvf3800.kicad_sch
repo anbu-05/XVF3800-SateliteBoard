@@ -6162,7 +6162,7 @@
 		(uuid "69328c4e-f878-57c1-851d-dc698f02804d")
 	)
 	(label "XVF_TMS"
-		(at 53.34 142.24 180)
+		(at 53.34 144.78 180)
 		(effects
 			(font
 				(size 1 1)
@@ -6182,7 +6182,7 @@
 		(uuid "9a1c8efd-84d9-51f6-827b-b2af70ef2734")
 	)
 	(label "XVF_TDI"
-		(at 53.34 149.86 180)
+		(at 53.34 152.4 180)
 		(effects
 			(font
 				(size 1 1)
@@ -6202,7 +6202,7 @@
 		(uuid "bcf38ac5-d82b-5907-97e5-0de62681205e")
 	)
 	(label "XVF_TDO"
-		(at 53.34 147.32 180)
+		(at 53.34 149.86 180)
 		(effects
 			(font
 				(size 1 1)
@@ -6232,7 +6232,7 @@
 		(uuid "d0fb7b8d-c824-5add-b3ed-ddf9b7643761")
 	)
 	(label "XVF_TCK"
-		(at 53.34 144.78 180)
+		(at 53.34 142.24 180)
 		(effects
 			(font
 				(size 1 1)
@@ -6572,7 +6572,7 @@
 	)
 	(hierarchical_label "XVF_RST_N"
 		(shape bidirectional)
-		(at 53.34 152.4 180)
+		(at 53.34 147.32 180)
 		(effects
 			(font
 				(size 1 1)

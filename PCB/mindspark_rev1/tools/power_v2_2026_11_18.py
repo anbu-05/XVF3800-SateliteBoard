@@ -24,7 +24,9 @@ Rebuilds all tracks, vias and zones from scratch:
     power router avoids them: since 2026-11-19 the XVF3800 main USB pair
     (tools/usb_main_route_2026_11_19.py), since 2026-11-20 the mic routes (tools/mic_route_2026_11_20.py),
     since 2026-11-21 the east-side escape (tools/east_escape_2026_11_21.py: east cap column feeds,
-    JTAG fan-out, crystal, QSPI flash, the FB301 / C324 +0V9 jumpers).
+    JTAG fan-out, crystal, QSPI flash, the FB301 / C324 +0V9 jumpers), JTAG on to J301 / R703
+    (tools/jtag_route_2026_11_21.py), and I2S to the amp + the MCLK loop
+    (tools/i2s_mclk_route_2026_11_21.py).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 on the west and south sides (those caps sit over the wrong plane for a via), C314 (+3V3 over the
@@ -248,6 +250,23 @@ for net, layer, w, pts in east.TRACKS:
         seg(a, b, w, layer, net, connect=False)
 for pt, net in east.VIAS:
     via(pt, net, east.VIA)
+# JTAG from those lanes to J301, and RST_N to R703 (since 2026-11-21, tools/jtag_route_2026_11_21.py)
+import jtag_route_2026_11_21 as jtag  # noqa: E402
+
+for net, layer, pts in jtag.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, jtag.W, layer, net, connect=False)
+for pt, net in jtag.VIAS:
+    via(pt, net, jtag.VIA, connect=False)
+# I2S XVF3800 -> U503 amp, the MCLK loop 14 <-> 41, BTN_MUTE_N's via (since 2026-11-21,
+# tools/i2s_mclk_route_2026_11_21.py); the amp's power copper below is routed round them.
+import i2s_mclk_route_2026_11_21 as i2s  # noqa: E402
+
+for net, layer, pts in i2s.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, i2s.W, layer, net, connect=False)
+for pt, net in i2s.VIAS:
+    via(pt, net, i2s.VIA, connect=False)
 
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
@@ -539,9 +558,7 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("+3V3", "B.Cu", 0.4, ("C208", 1), 0.2, ("U203", 1)),
     ("+3V3", "B.Cu", 0.3, ("U203", 3), 0.2, None),
     # +1V8 loads on the top side, from the band via
-    ("+1V8", "F.Cu", 0.3, ("J301", 1), 0.2, None),
     ("+1V8", "F.Cu", 0.3, ("J701", 3), 0.2, None),
-    ("+1V8", "F.Cu", 0.3, ("@", HOP1), 0.2, None),
     ("+1V8", "B.Cu", 0.3, ("@", HOP2), 0.2, ("@", HOP1)),
     ("+1V8", "F.Cu", 0.25, ("R303", 2), 0.2, ("@", HOP2)),
     # buck feedback tops / misc +3V3 pads that sit over another plane
@@ -554,6 +571,26 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("VBUS_ESP", "F.Cu", 0.25, ("R107", 2), 0.15, None),
     ("VBUS_ESP", "F.Cu", 0.25, ("R111", 2), 0.15, None),
 ] + [("+5V_LED", "B.Cu", 0.3, (f"C8{i:02d}", 1), 0.15, (f"D8{i:02d}", 4)) for i in range(1, 13)]
+# +1V8 to J301 pin 1 and on west to HOP1 (user's hand edit 2026-11-21, no U-turn round U802 / Q701):
+# J301 now takes its +1V8 from the LDO output (U203 pin 5) past C318's pad (B.Cu north to a via
+# beside U802, then F.Cu straight up
+# past U802's west side); the HOP1 run starts from C209's in-pad via, straightened. Frozen here
+# instead of routed, so a rerun keeps them.
+V1V8_J301 = (159.1056, 91.3384)
+HAND_1V8 = [
+    ("B.Cu", [(158.5832, 96.0068), (158.825, 95.765), (158.825, 93.4), (158.825, 91.619), V1V8_J301]),  # from U203.5
+    ("F.Cu", [V1V8_J301, (158.809, 91.0418), (158.809, 87.3237), (160.8903, 85.2424), (160.8903, 77.0007),
+              (161.2912, 76.5997), (161.2912, 70.7989), (160.6913, 70.199)]),
+    ("F.Cu", [(157.6832, 96.0068), (158.2082, 95.4818), (158.2082, 94.2082), (157.4, 93.4), (157.4, 88.7),
+              (156.6, 87.9), (151.4, 87.9), (150.0, 86.5), (135.0, 86.5), (133.7, 87.8)]),  # ends on HOP1
+]
+via(V1V8_J301, "+1V8", VIA_SMALL, connect=True)
+for layer, pts in HAND_1V8:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, 0.3, layer, "+1V8")
+connected.setdefault("+1V8", []).extend([pad_shape[("J301", "1")], via_shape[(round(HOP1[0], 3), round(HOP1[1], 3))]])
+report.append("laid +1V8 to J301.1 and HOP1 by hand (user 2026-11-21)")
+
 import jog_router  # noqa: E402
 
 failed = []
