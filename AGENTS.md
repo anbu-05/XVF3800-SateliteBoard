@@ -10,7 +10,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Prototype**: thin stock is fine; don't flag low stock. Designed from datasheets; XMOS XK-VOICE-SQ66 (`incoming/xk_voice_sq66/`, XMOS licence) is the reference for mic wiring and pin roles.
 - **Report:** `docs/report/mindspeak_rev1_report.pdf` (weasyprint in `~/.local/venvs/weasyprint`). **Diagrams:** `docs/diagrams/` 01–08 (block, power tree, XVF connections, XVF pin map, audio, mics, ESP32, programming); sources in `docs/diagrams/src/`.
 - **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Last commit 2026-11-22 b59fc35 (ESP32 USB pair, +5V trunk B.Cu hop), pushed. `PCB/mindspark_rev1-backups/` stays untracked.
-- **Status 2026-11-22:** schematic done (ERC 0/0, BOM 59 lines / 203 parts). All copper rebuilt by `power_v2`. Routed: XVF USB, mics, east escape, JTAG, I2S + MCLK, flash switches, ESP32 USB. DRC: only the old footprint errors; parity clean; 169 unconnected. Latest backup `mindspark_rev1-backups/pre-esp-usb-2026-11-22/`.
+- **Status 2026-11-22:** schematic done (ERC 0/0, BOM 59 lines / 203 parts). All copper rebuilt by `power_v2`. Routed: XVF USB, mics, east escape, JTAG, I2S + MCLK, flash switches, ESP32 USB. Group 1 local hookups done 2026-11-22 (not committed). DRC: only the old footprint errors; parity clean; 97 unconnected. Latest backup `mindspark_rev1-backups/pre-local-hookups-2026-11-22/`.
 
 ## Files and tools (`PCB/mindspark_rev1/`, KiCad 10)
 
@@ -36,15 +36,21 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Power planes** (`power_v2`): In1 solid GND; In2 +3V3 background with +5V arms, +0V9 island under the XVF3800, +1V8 east band, VBUS strips; +5V_LED B.Cu ring r 28.7. **No plane cuts for signals.** Detail in archive-003.
 - **Routing style: jog routing** (user 2026-11-18): 0/45/90° runs with 45° jogs, ends on pad/via centres, no staircases, slivers or right angles. ≥ 2 vias 0.6/0.3 per layer change above 0.5 A. No power traces on F.Cu under the ESP32 module (GND exempt). **power_v2 rebuilds every track**; fixed signal routes come from dated scripts laid first, and new signal routes go in the same way. Detail in archive-003.
 - **Vias in pads** (epoxy-filled, capped): centred on the pad, count by current; a blocked pad gets one small via beside it on a stub. Detail in archives 002/003.
-- **Priorities are scaffolding** (user 2026-11-22): the priority list only orders the work; reopening a route costs nothing. Done: XVF USB, mics, crystal + QSPI, JTAG, I2S + MCLK, flash switches, ESP32 USB. Next: XVF I2S_DATA1/2 → J701, then slow control.
+- **Priorities are scaffolding** (user 2026-11-22): the order only sequences the work; reopening a route costs nothing. Done: XVF USB, mics, crystal + QSPI, JTAG, I2S + MCLK, flash switches, ESP32 USB, group 1 local hookups.
+- **Remaining-net order** (scan 2026-11-22: 169 gaps, 82 nets): 1. local hookups (buck SW/FB, mic resistor→mic and mic supply filters, U103 setting parts, USB CC, speaker out, button/LED locals); 2. XVF3800 escape (power fan-out, then a stub + via out for every signal pin, west side hardest); 3. fixed inter-IC (RST_N + PRG_EN east→west, INT_N/GPO_R/G, AMP_EN, ESP_EN/BOOT, MUX_ST, LED_EN/DATA, east buttons, USER_LED_DATA); 4. LED ring chain D801→D812 (F.Cu hop at each mic diagonal); 5. breakout + test pads; 6. power test pads.
+- **Low-priority routing is winged** (user 2026-11-22): no drawings or pre-agreed plans for groups 1–6; show results per group. XVF decaps may move ≤ ~0.5 mm (stay ≤ ~2 mm from their pin) so fan-out stays on B.Cu, going up to F.Cu only clear of the ESP32. Slow signals run as parallel bundles at 0.3 mm pitch (north to test pads, south to J701, east to edge parts), fanning out near their ends; bundles take F.Cu where they cross In2 island edges; no vias under USB pairs or mic lines.
+- **Group 1 local hookups** (2026-11-22, `tools/local_hookups_2026_11_22.py`, laid by power_v2 after the U103 flanges, before the vias in pads; renders `verification/local-hookups-2026-11-22/`): 68 jog-routed links on F.Cu plus hand-laid pieces: U103 divider mid links down the 0.45 mm column gaps (CP2/OV2/OV1; PR1 round the east), VBUS_MAIN tops R109.2/R105.2 by in-pad vias + B.Cu strap to the pin 7 flange via, U302 MR north round the chip with U302.2's GND via between its pad rows (LED ring under pin 2). `tools/resistor_swaps_2026_11_22.py` swapped R602/R604, R101/R102, R103/R104, R405/R406 to uncross their links.
+- **Group 5 calls** (winged): swap the JTAG (TP302–306) and XL (TP405–408) test-pad rows; put TP411/TP412/TCK pads on their routes (no long clock stubs); UART0 stays the J701 console; IO3 may take GPIO1 (ADC1 kept). Never put the J701 I²C pull-ups on IO45 (VDD_SPI strap) or IO46.
 - **Built routes** (detail word for word in archives 002/003): XVF main USB pair 0.25/0.15 mm (≈92 Ω by formula, **confirm with JLC's calculator**), mic pairs, east escape, JTAG to J301, I2S + MCLK, flash switches (`prog_switch_route_2026_11_22.py`).
 - **ESP32 USB pair** (2026-11-22, `tools/esp_usb_route_2026_11_22.py`, laid by power_v2; renders `verification/esp-usb-route-2026-11-22/`): top layer all the way, 0.25/0.15 mm, D− 50.7 / D+ 52.6 mm (full speed). Starts at J102 B7/B6 (A pins in the wrong order; A↔B by B.Cu jumpers, J101's turned 180°); straight through U102 (NC pins 9/7 tied to D−/D+ by `sch_esp_usb_2026_11_22.py` + `esp_usb_nets_2026_11_22.py`), GND via between the lines east of pin 8; between D102's pads, south at x 122.2/122.6, east below the module, into R606/R605 from below. **+5V trunk hop** (`HOP_5V_*`): 1.8 mm B.Cu strap at x 127.6, 2 + 2 vias, where no mic line runs on B.Cu (user). The user's hand edits for this (PRG_EN, U102 GND) were not needed.
 
 ## To do (agreed, not yet done)
 
-1. **PRG_EN from ESP32 pin 22** to the PRG_EN net (the only unrouted piece of the flash-switch work; no room in the under-module lane, so it goes with slow control).
-2. **Escape and signal-routing pass**: XVF INT_N/GPO_R/GPO_G reach ESP32 pins 8–10 by B.Cu ending in a via in the ESP32 pad; reassign ESP32 GPIOs so north-row J701 signals come from the south row (needs a call on UART0 as console).
-3. Power side for that pass: pin 42 (+0V9) to C306 round the MIC_CLK via, pins 40/42 past the MCLK via; XVF3800 +0V9/+3V3 fan-out on the west and south sides (pins 4/12/34/42/49/57/63/64 +0V9 and 38/52 +3V3 not joined); north caps C301/C302 have no plane under them; C313/C314 +3V3 over the +1V8 band; power test pads (TP201–TP205, TP301, TP307).
+Work the remaining-net order above. Notes per group:
+
+1. Group 2: XVF +0V9 pins 4/12/34/42/49/57/63/64, +3V3 30/38/52, C302 GND; north caps C301/C302 have no plane under them; C313/C314 +3V3 over the +1V8 band.
+2. Group 3: PRG_EN from ESP pin 22 has no room in the under-module lane; INT_N/GPO_R/GPO_G reach ESP pins 8–10 by B.Cu ending in a via in the ESP pad.
+3. Group 5: north-row ESP pins (GPIO1/2, UART, I²C) must get round the module; free pins are only IO3/IO45/IO46 (IO35–37 lost to octal PSRAM).
 
 ## Open questions
 
@@ -57,7 +63,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 
 ## Next steps
 
-1. XVF I2S_DATA1/2 → J701 (hop to F.Cu before the SE mic pair, y 122.6–123.2), then slow control (PRG_EN pin 22, JTAG leftovers RST_N west and TP302–TP306, BTN_MUTE_N from its via to SW401); I2S/MCLK test pads TP409–TP412 with the test-pad pass.
+1. Group 2 (XVF3800 escape), then groups 3–6 in order. Commit group 1 when the user says so.
 2. Reference/label placement last (user's call). Recheck LCSC/JLC stock before ordering.
 
 ## Archive

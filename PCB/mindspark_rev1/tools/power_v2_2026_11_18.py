@@ -30,6 +30,9 @@ Rebuilds all tracks, vias and zones from scratch:
     module (tools/prog_switch_route_2026_11_22.py) and the ESP32 USB pair
     (tools/esp_usb_route_2026_11_22.py; the +5V trunk passes under it on a short B.Cu strap,
     HOP_5V_*).
+  Since 2026-11-22 the group 1 local hookups (tools/local_hookups_2026_11_22.py: buck switch
+    nodes and feedback, mic last links and supply filters, U103 setting parts, USB CC, speaker
+    output, button/LED locals) are laid after the U103 flanges and before the vias in pads.
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 on the west and south sides (those caps sit over the wrong plane for a via), C314 (+3V3 over the
@@ -371,6 +374,55 @@ for pin, net, spots, outline in FLANGES:
 for ref, pin in (("C104", "1"), ("C102", "1")):
     connected.setdefault(pad(ref, pin)[1], []).append(pad_shape[(ref, pin)])
 
+# ================================================================ group 1: local hookups (2026-11-22)
+# Short part-to-neighbour links (tools/local_hookups_2026_11_22.py), routed by the jog router
+# after the fixed routes, explicit vias and U103 flanges, before the vias in pads and the
+# power routes, so they get first pick next to their
+# pads. All on the top layer.
+import jog_router  # noqa: E402
+import local_hookups_2026_11_22 as local  # noqa: E402
+
+
+def pad_k(spec):
+    """(ref, pin) or (ref, pin, k): polygon and Shape of the k-th pad with that number."""
+    ref, pin = spec[0], str(spec[1])
+    k = spec[2] if len(spec) > 2 else 0
+    hits = [(i, x) for i, x in enumerate(pads_of(ref)) if x[0] == pin]
+    i, x = hits[k]
+    return x[2], pad_shape[(ref, pin, i)]
+
+
+for net, layer, w_, pts in local.FIXED_TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, w_, layer, net)
+for pt, net, size in local.FIXED_VIAS:
+    via(pt, net, size, connect=True)
+# pads these hand-laid pieces join (so later routes may start from them)
+for ref, pin in (("R108", 1), ("R110", 1), ("R112", 1), ("R109", 2), ("R105", 2), ("U302", 3), ("U302", 2)):
+    connected.setdefault(pad(ref, pin)[1], []).append(pad_shape[(ref, str(pin))])
+
+local_failed = []
+for net, width, clr, goal, start in local.ROUTES:
+    jog_router.CLEARANCE = clr
+    gpoly, gshape = pad_k(goal)
+    starts = [pad_k(start)[1]] if start else list(connected.get(net, []))
+    w, path = width, None
+    while w >= 0.15 and path is None:
+        path = router.route(net, "F.Cu", w, gpoly, starts)
+        if path is None:
+            w = round(w * 0.7, 2)
+    if path is None:
+        local_failed.append(f"{net} -> {goal}")
+        continue
+    for a, b in zip(path, path[1:]):
+        seg(a, b, w, "F.Cu", net)
+    connected.setdefault(net, [])
+    connected[net] += starts + [gshape]
+    if w < width:
+        report.append(f"local {net} -> {goal}: narrowed to {w}")
+report.append(f"local hookups: {len(local.ROUTES) - len(local_failed)}/{len(local.ROUTES)} routed"
+              + (f"; FAILED {local_failed}" if local_failed else ""))
+
 # ================================================================ vias in pads
 # User's rules (2026-11-19):
 #   * vias sit on the pad centre; when a pad needs several, they form a pattern centred on the
@@ -625,10 +677,9 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("+3V3", "F.Cu", 0.3, ("FB503", 1), 0.2, ("@", VIA_3V3_FB503)),
     ("+3V3", "F.Cu", 0.3, ("J701", 2), 0.2, ("@", VIA_3V3_J701)),
     # TPS2121 divider tops (the input pins themselves are on their flanges, see above)
-    ("VBUS_MAIN", "F.Cu", 0.25, ("R109", 2), 0.15, None),
-    ("VBUS_MAIN", "F.Cu", 0.25, ("R105", 2), 0.15, None),
+    # (VBUS_MAIN tops R109.2 / R105.2: hand-laid with the group 1 local hookups since 2026-11-22)
     ("VBUS_ESP", "F.Cu", 0.25, ("R107", 2), 0.15, None),
-    ("VBUS_ESP", "F.Cu", 0.25, ("R111", 2), 0.15, None),
+    # (R111.2: via in its pad since 2026-11-22; the group 1 mid links box it in)
 ] + [("+5V_LED", "B.Cu", 0.3, (f"C8{i:02d}", 1), 0.15, (f"D8{i:02d}", 4)) for i in range(1, 13)]
 # +1V8 to J301 pin 1 and on west to HOP1 (user's hand edit 2026-11-21, no U-turn round U802 / Q701):
 # J301 now takes its +1V8 from the LDO output (U203 pin 5) past C318's pad (B.Cu north to a via
