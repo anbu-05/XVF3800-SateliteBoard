@@ -9,7 +9,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - USB voice front-end: **XMOS XVF3800** (stock USB firmware, square mic build), 4 × IM69D129 mics, MAX98357A speaker amp, **ESP32-S3-WROOM-1U-N16R8** helper, two USB-C (main = XVF, ESP32), WS2812 ring. CM5 host is rev 2.
 - **Prototype**: thin stock is fine; don't flag low stock. Designed from datasheets; XMOS XK-VOICE-SQ66 (`incoming/xk_voice_sq66/`, XMOS licence) is the reference for mic wiring and pin roles.
 - **Report:** `docs/report/mindspeak_rev1_report.pdf` (weasyprint in `~/.local/venvs/weasyprint`). **Diagrams:** `docs/diagrams/` 01–08 (block, power tree, XVF connections, XVF pin map, audio, mics, ESP32, programming); sources in `docs/diagrams/src/`.
-- **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Last commit 2026-11-22 a278827 (flash switches west, straight USB pair, plane edge, pin shift), pushed. `PCB/mindspark_rev1-backups/` stays untracked.
+- **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Last commit 2026-11-22 b59fc35 (ESP32 USB pair, +5V trunk B.Cu hop), pushed. `PCB/mindspark_rev1-backups/` stays untracked.
 - **Status 2026-11-22:** schematic done (ERC 0/0, BOM 59 lines / 203 parts). All copper rebuilt by `power_v2`. Routed: XVF USB, mics, east escape, JTAG, I2S + MCLK, flash switches, ESP32 USB. DRC: only the old footprint errors; parity clean; 169 unconnected. Latest backup `mindspark_rev1-backups/pre-esp-usb-2026-11-22/`.
 
 ## Files and tools (`PCB/mindspark_rev1/`, KiCad 10)
