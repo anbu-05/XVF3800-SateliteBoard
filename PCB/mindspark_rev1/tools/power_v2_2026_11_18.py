@@ -27,7 +27,9 @@ Rebuilds all tracks, vias and zones from scratch:
     re-laid 2026-11-22 in tools/east_column_2026_11_22.py), JTAG on to J301 / R703
     (tools/jtag_route_2026_11_21.py), I2S to the amp + the MCLK loop
     (tools/i2s_mclk_route_2026_11_21.py), and since 2026-11-22 the flash switches west of the
-    module (tools/prog_switch_route_2026_11_22.py).
+    module (tools/prog_switch_route_2026_11_22.py) and the ESP32 USB pair
+    (tools/esp_usb_route_2026_11_22.py; the +5V trunk passes under it on a short B.Cu strap,
+    HOP_5V_*).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 on the west and south sides (those caps sit over the wrong plane for a via), C314 (+3V3 over the
@@ -278,6 +280,20 @@ if _os.path.exists(_os.path.join(_os.path.dirname(__file__), "prog_switch_route_
             seg(a, b, w, layer, net, connect=False)
     for pt, net in prog.VIAS:
         via(pt, net, prog.VIA, connect=False)
+# ESP32 USB pair J102 -> U102 -> R606/R605 -> ESP32 pins 13/14 (since 2026-11-22,
+# tools/esp_usb_route_2026_11_22.py): top layer all the way, J102 A/B jumpers on the bottom layer.
+import esp_usb_route_2026_11_22 as esp_usb  # noqa: E402
+
+for net, layer, pts in esp_usb.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, esp_usb.W, layer, net, connect=False)
+for pt, net in esp_usb.VIAS:
+    via(pt, net, esp_usb.VIA, connect=False)
+# U102's GND pins 3 and 8 sit between D- and D+ (flow-through, as U101): a small via just east of
+# pin 8, between the lines while they are still 1 mm apart, linked to pins 8 and 3
+via(esp_usb.U102_GND_VIA, "GND", VIA_SMALL)
+for a, b in zip(esp_usb.U102_GND, esp_usb.U102_GND[1:]):
+    seg(a, b, 0.25, "F.Cu", "GND")
 
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
@@ -299,6 +315,21 @@ for pt, net in ((VIA_5V_A, "+5V"), (VIA_5V_B, "+5V"), (VIA_1V8_S, "+1V8"),
                 (HOP1, "+1V8"), (HOP2, "+1V8"), (VIA_3V3_FB503, "+3V3"), (VIA_3V3_J701, "+3V3")):
     via(pt, net)
 seg(VIA_5V_A, VIA_5V_B, 1.0, "F.Cu", "+5V")                 # the trunk's two vias side by side
+# +5V trunk under the ESP32 USB pair (2026-11-22): the pair runs east on the top layer across the
+# whole board, so the trunk drops to the bottom layer for 2.4 mm to pass under it. Two 0.6/0.3 vias
+# each side (side by side, F.Cu bars), a 1.8 mm B.Cu strap. At x 127.6 the bottom layer has no mic
+# lines (user: the trunk must not run where a mic line is on the bottom layer); MIC_DATA2 and the
+# mic clock's bottom-layer diagonals are >= 1 mm east of the strap.
+HOP_5V_N = [(127.0, 109.6), (128.2, 109.6)]                # north of the pair (D- at y 110.65)
+HOP_5V_S = [(127.0, 112.0), (128.2, 112.0)]                # south of the pair (D+ at y 111.05)
+# The trunk feeds the loads north of the pair (amp U502, C508, C604, U602) from the tab in the
+# south, so the hop counts as joined: the first +5V route links the tab to the south vias, and the
+# northern branches then start from the north vias.
+for pt in HOP_5V_N + HOP_5V_S:
+    via(pt, "+5V", connect=True)
+seg(HOP_5V_N[0], HOP_5V_N[1], 1.0, "F.Cu", "+5V")
+seg(HOP_5V_S[0], HOP_5V_S[1], 1.0, "F.Cu", "+5V")
+seg((127.6, 109.6), (127.6, 112.0), 1.8, "B.Cu", "+5V")
 
 # ================================================================ TPS2121 (U103) power-pin flanges
 # (user 2026-11-19) Pins 1/2/7/8 carry 1.5-3 A, but no via fits under them: pins 2/7 sit over the
@@ -559,7 +590,9 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     ("+5V_AMP", "F.Cu", 0.4, ("U502", 5), 0.2, None),
     ("+5V_AMP", "F.Cu", 0.25, ("R511", 2), 0.2, None),
     # +5V trunk and branches
-    ("+5V", "F.Cu", 1.0, ("@", VIA_5V_A), 0.2, None),
+    # (since 2026-11-22: from the trunk tab up to the hop's south vias under the ESP32 USB pair;
+    #  the branches below go on from the hop's north vias)
+    ("+5V", "F.Cu", 1.0, ("@", HOP_5V_S[0]), 0.2, ("@", VIA_5V_A)),
     ("+5V", "F.Cu", 0.5, ("U502", 1), 0.2, None),
     ("+5V", "F.Cu", 0.4, ("C508", 1), 0.2, None),
     ("+5V", "F.Cu", 0.5, ("C604", 1), 0.2, None),
@@ -758,7 +791,8 @@ def chamfer_power():
     """No right angles (user 2026-11-20): every 90 degree bend in the routed copper becomes two 45
     degree turns (jog_router.chamfer_corners), 0.2 mm from other nets. The fixed signal routes
     are left alone (the mic routes are chamfered in their own script); pad centres and vias stay."""
-    fixed_nets = {n for n, _, _ in usb_main.TRACKS} | {n for n, _, _ in mic.TRACKS}
+    fixed_nets = ({n for n, _, _ in usb_main.TRACKS} | {n for n, _, _ in mic.TRACKS}
+                  | {n for n, _, _ in esp_usb.TRACKS})
     keep = [n for n in items if n[0] != "segment" or str(child(n, "net")[1]) in fixed_nets]
     segs = [[str(child(n, "net")[1]), str(child(n, "layer")[1]),
              (float(child(n, "start")[1]), float(child(n, "start")[2])),
