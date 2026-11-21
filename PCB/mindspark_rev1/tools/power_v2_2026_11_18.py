@@ -4,11 +4,11 @@ Rebuilds all tracks, vias and zones from scratch:
 
   Zones (fill priority: higher fills first, lower keeps clearance from it)
     In1  GND          whole board
-    In2  +1V8   (5)   east band x 151.4-160 (the east cap column, LDO output; also under the USB
-                      exit, so the USB pair crosses only one plane edge) + a leg to C317 (pin 31);
-                      since 2026-11-21 a notch north to C318's new spot by the LDO, and a step west
-                      to x 150.5 (y 100.45-103.3) under the USB pair's lanes beside the pins
-    In2  +0V9   (4)   island under the XVF3800, a 1.8 mm neck through the south cap row
+    In2  +1V8   (5)   east band x 149.75-160 (since 2026-11-22 under all the XVF3800's east pins,
+                      the east cap column and the USB exit, so the straight USB pair crosses no plane
+                      edge) + a leg to C317 (pin 31) and a notch north to C318 by the LDO
+    In2  +0V9   (4)   island under the XVF3800, ending at x 149.45 behind the east pins (2026-11-22),
+                      a 1.8 mm neck through the south cap row
                       (between C311 +3V3 and C317 +1V8, over C305), then down to L201/C203/C204
     In2  VBUS_ESP(3), VBUS_MAIN(2), +5V(1), +3V3(0): as in power_planes_2026_11_18.py
   +5V_LED ring on B.Cu (r 28.7, radial stubs) as before.
@@ -23,10 +23,11 @@ Rebuilds all tracks, vias and zones from scratch:
   Fixed signal routes are laid first, before any power copper, so a rerun keeps them and the
     power router avoids them: since 2026-11-19 the XVF3800 main USB pair
     (tools/usb_main_route_2026_11_19.py), since 2026-11-20 the mic routes (tools/mic_route_2026_11_20.py),
-    since 2026-11-21 the east-side escape (tools/east_escape_2026_11_21.py: east cap column feeds,
-    JTAG fan-out, crystal, QSPI flash, the FB301 / C324 +0V9 jumpers), JTAG on to J301 / R703
-    (tools/jtag_route_2026_11_21.py), and I2S to the amp + the MCLK loop
-    (tools/i2s_mclk_route_2026_11_21.py).
+    since 2026-11-21 the east-side escape (crystal, QSPI flash, JTAG fan-out; its cap column feeds
+    re-laid 2026-11-22 in tools/east_column_2026_11_22.py), JTAG on to J301 / R703
+    (tools/jtag_route_2026_11_21.py), I2S to the amp + the MCLK loop
+    (tools/i2s_mclk_route_2026_11_21.py), and since 2026-11-22 the flash switches west of the
+    module (tools/prog_switch_route_2026_11_22.py).
 
 Not done here (left for the signal routing pass): XVF3800 +0V9/+3V3 pin fan-out to their caps
 on the west and south sides (those caps sit over the wrong plane for a via), C314 (+3V3 over the
@@ -104,10 +105,10 @@ ZONES = [  # net, layer, priority, polygon
                                 (173.3, 115.25), (173.3, 112.6), (172.8, 112.6), (172.8, 103.5), (170.8, 103.5)]),
     ("VBUS_ESP", "In2.Cu", 3, [(114.6, 94.8), (122.3, 94.8), (122.3, 103.5), (118.9, 103.5), (118.9, 130.5),
                                (164.6, 130.5), (164.6, 115.05), (170.7, 115.05), (170.7, 134.9), (114.6, 134.9)]),
-    ("+0V9", "In2.Cu", 4, [(142.3, 94.4), (150.9, 94.4), (150.9, 103.0), (148.8, 103.0), (148.8, 113.7),
+    ("+0V9", "In2.Cu", 4, [(142.3, 94.4), (149.45, 94.4), (149.45, 103.0), (148.8, 103.0), (148.8, 113.7),
                            (158.8, 113.7), (158.8, 121.7), (147.0, 121.7), (147.0, 103.0), (142.3, 103.0)]),
-    ("+1V8", "In2.Cu", 5, [(151.4, 93.9), (157.6, 93.9), (157.6, 92.5), (160.0, 92.5), (160.0, 106.3),
-                           (148.9, 106.3), (148.9, 103.3), (150.5, 103.3), (150.5, 100.45), (151.4, 100.45)]),
+    ("+1V8", "In2.Cu", 5, [(149.75, 93.9), (157.6, 93.9), (157.6, 92.5), (160.0, 92.5), (160.0, 106.3),
+                           (148.9, 106.3), (148.9, 103.3), (149.75, 103.3)]),
 ]
 for net, layer, pri, pts in ZONES:
     z = ["zone", ["net", q(net)], ["layer", q(layer)], ["uuid", uid()], ["name", q(f"{net} {layer}")],
@@ -241,7 +242,7 @@ for pt, net in mic.VIAS:
 # The east-side escape (since 2026-11-21, tools/east_escape_2026_11_21.py, geometry frozen in its JSON):
 # east cap column feeds, JTAG fan-out, crystal, QSPI flash, +0V9 jumpers. Vias that land in their
 # own plane count as joined (the +0V9 island via for C324); the rest are signal or jumper vias.
-import east_escape_2026_11_21 as east  # noqa: E402
+import east_column_2026_11_22 as east  # noqa: E402   (east escape with the 2026-11-22 column feeds)
 
 if not east.TRACKS:
     sys.exit("east escape missing: run tools/east_escape_2026_11_21.py --generate first")
@@ -267,13 +268,25 @@ for net, layer, pts in i2s.TRACKS:
         seg(a, b, i2s.W, layer, net, connect=False)
 for pt, net in i2s.VIAS:
     via(pt, net, i2s.VIA, connect=False)
+# Flash switches west of the module (since 2026-11-22, tools/prog_switch_route_2026_11_22.py):
+# flash branch lines, PRG_* lines (bottom-layer hops), the PRG_EN chain.
+import os as _os  # noqa: E402
+if _os.path.exists(_os.path.join(_os.path.dirname(__file__), "prog_switch_route_2026_11_22.json")):
+    import prog_switch_route_2026_11_22 as prog  # noqa: E402
+    for net, layer, w, pts in prog.TRACKS:
+        for a, b in zip(pts, pts[1:]):
+            seg(a, b, w, layer, net, connect=False)
+    for pt, net in prog.VIAS:
+        via(pt, net, prog.VIA, connect=False)
 
 # ================================================================ explicit vias
 VIA_5V_A, VIA_5V_B = (131.2, 116.2), (132.4, 116.2)      # +5V tab beside the old LDO spot -> trunk
 # +1V8 band -> F.Cu east of the module, for J701: south of the USB pair, since F.Cu cannot cross
 # the pair (2026-11-19; was one via at 157.6, 99.3). J301 and R303 find +1V8 north of the pair.
 VIA_1V8_S = (158.4, 103.6)
-HOP1, HOP2 = (133.6, 87.9), (129.0, 87.9)                # +1V8 to R303: under the +5V trunk on B.Cu
+# +1V8 to R303: B.Cu under the +5V trunk, the NW mic lanes and PRG_EN (moved 2026-11-22 for the
+# flash-switch block west of the module)
+HOP1, HOP2 = (134.0, 86.5), (122.4, 88.6)
 # +3V3 for the SW mic's ferrite FB503 (2026-11-20): FB503 sits over In2 VBUS_ESP, between the SW mic
 # pair's F.Cu legs, which cut off its old F.Cu feed from the east. Between the legs, east of the
 # VBUS_ESP edge (x 118.9), In2 is +3V3: one via there, a short F.Cu feed to FB503 pad 1.
@@ -333,8 +346,8 @@ for ref, pin in (("C104", "1"), ("C102", "1")):
 #     pad centre (odd counts: one on the centre, the rest in mirror pairs along the long axis;
 #     even counts: mirror pairs, none on the centre; a grid on big pads);
 #   * the count follows the current the pad carries: 1 A per 0.6/0.3 via, 0.5 A per 0.45/0.2;
-#   * if the centre is blocked (wrong plane, or another net's pad on the other side) the pad
-#     gets no via and is routed instead, as before;
+#   * if the centre is blocked (wrong plane, or another net's copper) the pad gets one small via
+#     just beside it on a short stub (since 2026-11-22), and is routed only if there is no room;
 #   * if the pad is too small for the count it needs, the rest go just outside it on a short
 #     stub of pad width.
 VIA_AMPS = {VIA_BIG: 1.0, VIA_SMALL: 0.5}
@@ -366,7 +379,8 @@ def spot_clear(pt, net, r):
     if not plane_ok(net, pt, r):
         return "wrong plane"
     for sh in router.shapes:
-        if sh.net != net and sh.layers & {"F.Cu", "B.Cu"} and sh.dist(*pt) < r + 0.15:
+        gap = 0.2 if sh.net == "~hole" else 0.15          # hole clearance rule is 0.2 (mic sound ports)
+        if sh.net != net and sh.layers & {"F.Cu", "B.Cu"} and sh.dist(*pt) < r + gap:
             return "other side"
     return None
 
@@ -426,8 +440,9 @@ def beside_spots(c, w, h, size, k, net, layer):
             if (spot_clear(pt, net, r) is None
                     and all(math.dist(pt, v[0]) >= (gap_same(r, v[1]) if v[2] == net else r + v[1] + 0.15)
                             for v in new_vias)
-                    and router._seg_clearance(c, pt, [sh for sh in router.shapes if sh.net != net and layer in sh.layers],
-                                              stub_w) >= 0.15):
+                    and router._seg_clearance(c, pt, [sh for sh in router.shapes if sh.net not in (net, "~hole")
+                                                      and layer in sh.layers], stub_w) >= 0.15
+                    and router._seg_clearance(c, pt, [sh for sh in router.shapes if sh.net == "~hole"], stub_w) >= 0.2):
                 out.append((pt, stub_w))
                 break
             d += 0.1
@@ -475,6 +490,19 @@ for ref, p in P.items():
             why = spot_clear(c if any(math.dist(s_, c) < 1e-6 for s_ in spots) else spots[0], net, r)
             if why and not any(math.dist(c, v[0]) < r + v[1] + 0.1 for v in new_vias):
                 skipped[why] += 1
+                # since 2026-11-22 (user): before routing a long trace, try one small via just
+                # beside the pad on a short stub (e.g. LED-ring GND pads under the NW mic lanes,
+                # the north cap row under the PRG band); GND always finds In1 there
+                alt = beside_spots(c, w, h, VIA_SMALL, max(1, math.ceil(amps / VIA_AMPS[VIA_SMALL] - 1e-9)),
+                                   net, p.side)
+                if alt:
+                    for pt, sw in alt:
+                        via(pt, net, VIA_SMALL)
+                        seg(c, pt, sw, p.side, net)
+                    connected.setdefault(net, []).append(pad_shape[(ref, pin, pk)])
+                    via_report.append((f"{ref}.{pin}", net, round(amps, 2), 0, len(alt), len(alt),
+                                       f"centre blocked ({why}), via beside"))
+                    continue
                 if amps > 0:
                     via_report.append((f"{ref}.{pin}", net, round(amps, 2), 0, 0, 0, f"centre blocked ({why}), routed"))
                 continue
@@ -522,8 +550,6 @@ router.add(keep)
 ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     # XVF3800 pin 31 (+1V8) to its cap; pins 17-27 are fixed routes since 2026-11-21
     ("+1V8", "B.Cu", 0.15, ("C317", 1), 0.15, ("U301", 31)),
-    # USB stitching cap CA (C323) +0V9 side to C304 just above it; CB (C324) has its F.Cu jumper
-    ("+0V9", "B.Cu", 0.25, ("C323", 1), 0.15, ("C304", 1)),
     # amp supply
     ("+5V_AMP", "F.Cu", 0.8, ("C511", 1), 0.2, ("U502", 6)),
     ("+5V_AMP", "F.Cu", 0.6, ("C510", 1), 0.2, None),
@@ -582,7 +608,7 @@ HAND_1V8 = [
     ("F.Cu", [V1V8_J301, (158.809, 91.0418), (158.809, 87.3237), (160.8903, 85.2424), (160.8903, 77.0007),
               (161.2912, 76.5997), (161.2912, 70.7989), (160.6913, 70.199)]),
     ("F.Cu", [(157.6832, 96.0068), (158.2082, 95.4818), (158.2082, 94.2082), (157.4, 93.4), (157.4, 88.7),
-              (156.6, 87.9), (151.4, 87.9), (150.0, 86.5), (135.0, 86.5), (133.7, 87.8)]),  # ends on HOP1
+              (156.6, 87.9), (151.4, 87.9), (150.0, 86.5), HOP1]),  # ends on HOP1
 ]
 via(V1V8_J301, "+1V8", VIA_SMALL, connect=True)
 for layer, pts in HAND_1V8:

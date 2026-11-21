@@ -15195,9 +15195,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "6dd173ef-e02b-5385-bf76-22aff565b1f4")
-		(property "Reference" "C323"
-			(at 101.60 154.94 0)
+		(uuid "ea7bb6ba-4dfa-5d36-b980-b24d4a85f2d6")
+		(property "Reference" "C325"
+			(at 101.6 154.94 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15208,7 +15208,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 101.60 157.48 0)
+			(at 101.6 157.48 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15296,7 +15296,7 @@
 			)
 		)
 		(property "voltage" "16V"
-			(at 101.60 159.51 0)
+			(at 101.6 159.51 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15306,7 +15306,7 @@
 				(justify left)
 			)
 		)
-		(property "use" "USB stitching CA: +0V9/+1V8 north of the main USB pair"
+		(property "use" "USB stitching CC: +1V8/GND north of the USB layer change"
 			(at 99.06 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -15318,22 +15318,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "45138ba0-b548-4884-b40b-793d7cb3cbb2")
+			(uuid "2a53ca91-d1e1-4048-8705-26976cb1837e")
 		)
 		(pin "2"
-			(uuid "ab2e1a8c-f6b8-46b4-acc2-19d9fed7cb38")
+			(uuid "92ec5a8c-22f0-4206-90e9-05f9e20cc518")
 		)
 		(instances
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "C323")
+					(reference "C325")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:+0V9")
+		(lib_id "Mindspark:+1V8")
 		(at 99.06 152.40 0)
 		(unit 1)
 		(body_style 1)
@@ -15342,8 +15342,8 @@
 		(on_board no)
 		(in_pos_files no)
 		(dnp no)
-		(uuid "2934e2d2-47c5-4e88-bea7-8aa5e8432ba5")
-		(property "Reference" "#PWR3039"
+		(uuid "cc5aaefb-0702-4892-8ba9-8b9d404f4915")
+		(property "Reference" "#PWR3043"
 			(at 99.06 152.40 0)
 			(hide yes)
 			(show_name no)
@@ -15354,7 +15354,7 @@
 				)
 			)
 		)
-		(property "Value" "+0V9"
+		(property "Value" "+1V8"
 			(at 99.06 148.84 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -15398,20 +15398,20 @@
 			)
 		)
 		(pin "1"
-			(uuid "e15a254a-bd7e-44c6-82a5-a2ce54eb8317")
+			(uuid "32e447d7-6f55-4a60-8636-ab25aaaa17fb")
 		)
 		(instances
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3039")
+					(reference "#PWR3043")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:+1V8")
-		(at 99.06 160.02 180)
+		(lib_id "Mindspark:GND")
+		(at 99.06 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15419,8 +15419,8 @@
 		(on_board no)
 		(in_pos_files no)
 		(dnp no)
-		(uuid "48c7a3cc-91fa-4981-95d5-4cc46d4a3d6d")
-		(property "Reference" "#PWR3040"
+		(uuid "e0f0a5d2-35af-4765-85c1-8f97ae8f8487")
+		(property "Reference" "#PWR3044"
 			(at 99.06 160.02 0)
 			(hide yes)
 			(show_name no)
@@ -15431,8 +15431,8 @@
 				)
 			)
 		)
-		(property "Value" "+1V8"
-			(at 99.06 163.52 0)
+		(property "Value" "GND"
+			(at 99.06 163.83 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15475,12 +15475,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "3fc11d85-97ec-49ed-9774-398fcd801b48")
+			(uuid "aeed8158-13ad-4cdb-b1d6-c54c39d5ed4b")
 		)
 		(instances
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3040")
+					(reference "#PWR3044")
 					(unit 1)
 				)
 			)
@@ -15496,9 +15496,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "1022b833-aa05-50c5-b836-48cd44a46590")
-		(property "Reference" "C324"
-			(at 114.30 154.94 0)
+		(uuid "44584fe1-9df2-54d4-85c0-3d6fafc4b4a4")
+		(property "Reference" "C326"
+			(at 114.3 154.94 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15509,7 +15509,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 114.30 157.48 0)
+			(at 114.3 157.48 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15597,7 +15597,7 @@
 			)
 		)
 		(property "voltage" "16V"
-			(at 114.30 159.51 0)
+			(at 114.3 159.51 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -15607,7 +15607,7 @@
 				(justify left)
 			)
 		)
-		(property "use" "USB stitching CB: +0V9/+1V8 south of the main USB pair"
+		(property "use" "USB stitching CD: +1V8/GND south of the USB layer change"
 			(at 111.76 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -15619,22 +15619,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "9fa6d201-398b-4b59-9fb9-4a4822a2000a")
+			(uuid "82333d83-c279-4aea-8243-5b493ddb8196")
 		)
 		(pin "2"
-			(uuid "d546c897-20c9-486a-8e7b-b869dcd09432")
+			(uuid "04191a45-e409-4e4a-bda6-4912e2eb28ac")
 		)
 		(instances
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "C324")
+					(reference "C326")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:+0V9")
+		(lib_id "Mindspark:+1V8")
 		(at 111.76 152.40 0)
 		(unit 1)
 		(body_style 1)
@@ -15643,8 +15643,8 @@
 		(on_board no)
 		(in_pos_files no)
 		(dnp no)
-		(uuid "5c3c5668-f56e-4142-89cf-4c4f0a91027a")
-		(property "Reference" "#PWR3041"
+		(uuid "024944ec-0f60-4671-af5c-1a61e5e0328f")
+		(property "Reference" "#PWR3045"
 			(at 111.76 152.40 0)
 			(hide yes)
 			(show_name no)
@@ -15655,7 +15655,7 @@
 				)
 			)
 		)
-		(property "Value" "+0V9"
+		(property "Value" "+1V8"
 			(at 111.76 148.84 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -15699,608 +15699,6 @@
 			)
 		)
 		(pin "1"
-			(uuid "5f77bdb6-017f-446e-acf4-1447a54f66d2")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3041")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:+1V8")
-		(at 111.76 160.02 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "2fc3cbaa-5cf2-42bb-945e-f12bc93f688d")
-		(property "Reference" "#PWR3042"
-			(at 111.76 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 111.76 163.52 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 111.76 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 111.76 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 111.76 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a2d5ca6e-e2cd-4da7-aada-c237b7b2ac64")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3042")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:C")
-		(at 124.46 156.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ea7bb6ba-4dfa-5d36-b980-b24d4a85f2d6")
-		(property "Reference" "C325"
-			(at 127.00 154.94 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 127.00 157.48 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:C_0402_1005Metric"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C1525"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" "CL05B104KO5NNNC"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "spec" "X7R"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "voltage" "16V"
-			(at 127.00 159.51 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "use" "USB stitching CC: +1V8/GND north of the USB layer change"
-			(at 124.46 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2a53ca91-d1e1-4048-8705-26976cb1837e")
-		)
-		(pin "2"
-			(uuid "92ec5a8c-22f0-4206-90e9-05f9e20cc518")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "C325")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:+1V8")
-		(at 124.46 152.40 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "cc5aaefb-0702-4892-8ba9-8b9d404f4915")
-		(property "Reference" "#PWR3043"
-			(at 124.46 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 124.46 148.84 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 124.46 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "32e447d7-6f55-4a60-8636-ab25aaaa17fb")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3043")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:GND")
-		(at 124.46 160.02 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "e0f0a5d2-35af-4765-85c1-8f97ae8f8487")
-		(property "Reference" "#PWR3044"
-			(at 124.46 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 124.46 163.83 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 124.46 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 124.46 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 124.46 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "aeed8158-13ad-4cdb-b1d6-c54c39d5ed4b")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "#PWR3044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:C")
-		(at 137.16 156.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "44584fe1-9df2-54d4-85c0-3d6fafc4b4a4")
-		(property "Reference" "C326"
-			(at 139.70 154.94 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100nF"
-			(at 139.70 157.48 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:C_0402_1005Metric"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" "C1525"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" "CL05B104KO5NNNC"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" "Samsung"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "spec" "X7R"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "voltage" "16V"
-			(at 139.70 159.51 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 0.8 0.8)
-				)
-				(justify left)
-			)
-		)
-		(property "use" "USB stitching CD: +1V8/GND south of the USB layer change"
-			(at 137.16 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "82333d83-c279-4aea-8243-5b493ddb8196")
-		)
-		(pin "2"
-			(uuid "04191a45-e409-4e4a-bda6-4912e2eb28ac")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "C326")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:+1V8")
-		(at 137.16 152.40 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "024944ec-0f60-4671-af5c-1a61e5e0328f")
-		(property "Reference" "#PWR3045"
-			(at 137.16 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 137.16 148.84 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 137.16 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 137.16 152.40 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
 			(uuid "618237ae-f283-4d64-ba05-985445fe80aa")
 		)
 		(instances
@@ -16314,7 +15712,7 @@
 	)
 	(symbol
 		(lib_id "Mindspark:GND")
-		(at 137.16 160.02 0)
+		(at 111.76 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16324,7 +15722,7 @@
 		(dnp no)
 		(uuid "8b27e7cf-830e-4c0c-9943-2932295febd1")
 		(property "Reference" "#PWR3046"
-			(at 137.16 160.02 0)
+			(at 111.76 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -16335,7 +15733,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 137.16 163.83 0)
+			(at 111.76 163.83 0)
 			(show_name no)
 			(do_not_autoplace yes)
 			(effects
@@ -16345,7 +15743,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 160.02 0)
+			(at 111.76 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -16356,7 +15754,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 160.02 0)
+			(at 111.76 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -16367,7 +15765,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 137.16 160.02 0)
+			(at 111.76 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -16412,7 +15810,7 @@
 		)
 		(uuid "4a7978d7-3720-47eb-92a1-dec8c342b6e3")
 	)
-	(text "The XVF3800's USB pair leaves\non the bottom layer, over In2.\nC323/C324: +0V9 to +1V8 either\nside of the pair where it\nleaves the +0V9 island.\nC325/C326: +1V8 to GND either\nside of the vias where it goes\nup to the top layer (In1 GND)."
+	(text "The XVF3800's USB pair leaves\non the bottom layer, over In2\n+1V8 from the pins (one plane).\nC325/C326: +1V8 to GND either\nside of the vias where it goes\nup to the top layer (In1 GND)."
 		(exclude_from_sim no)
 		(at 146.05 148.59 0)
 		(effects

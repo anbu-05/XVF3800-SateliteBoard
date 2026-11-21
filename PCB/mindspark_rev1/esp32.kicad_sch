@@ -2611,7 +2611,7 @@
 		)
 		(uuid "fa3e0e1e-c04b-54c7-bd37-19f39945fc0a")
 	)
-	(text "GPIO: 0 BOOT, 1/2/4-9 2x12 header, 10-13 SPI2 to the XVF flash (CS, MOSI=DI, CLK, MISO=DO), 14 PROG switch sense, 15/16 XVF LED_R/G taps, 17 XVF\nINT_N, 18 mux ST, 19/20 USB, 21 XVF reset (Q701), 38/39 I2C SDA/SCL, 40 user LED, 41 mute LED, 42 user button, 43/44 UART0 TX/RX (J701 21/22), 47 ring\nenable, 48 ring data.\nNot connected: strapping pins 3, 45, 46 and PSRAM pins 35-37 (N16R8 = octal PSRAM). Antenna: IPEX connector on the module, antenna off board."
+	(text "GPIO: 0 BOOT, 1/2/4-9 2x12 header, 10-13 SPI2 (GPIO matrix) to the XVF flash (10 MOSI=DI, 11 CLK, 12 MISO=DO, 13 CS), 14 PROG switch sense, 15/16 XVF LED_R/G taps, 17 XVF\nINT_N, 18 mux ST, 19/20 USB, 21 XVF reset (Q701), 38/39 I2C SDA/SCL, 40 user LED, 41 mute LED, 42 user button, 43/44 UART0 TX/RX (J701 21/22), 47 ring\nenable, 48 ring data.\nNot connected: strapping pins 3, 45, 46 and PSRAM pins 35-37 (N16R8 = octal PSRAM). Antenna: IPEX connector on the module, antenna off board."
 		(exclude_from_sim no)
 		(at 14.54 143.3745 0)
 		(effects
@@ -3797,7 +3797,7 @@
 		)
 		(uuid "3fdea453-f898-58ba-b056-d3e83b7106a8")
 	)
-	(hierarchical_label "PRG_DI"
+	(hierarchical_label "PRG_CLK"
 		(shape output)
 		(at 31.75 71.12 180)
 		(effects
@@ -3852,7 +3852,7 @@
 		)
 		(uuid "6269ccbc-1232-5094-a832-7e283ee58581")
 	)
-	(hierarchical_label "PRG_CS_N"
+	(hierarchical_label "PRG_DI"
 		(shape output)
 		(at 31.75 68.58 180)
 		(effects
@@ -3896,7 +3896,7 @@
 		)
 		(uuid "78d097d6-7a6f-50eb-af15-4605e660fd1f")
 	)
-	(hierarchical_label "PRG_CLK"
+	(hierarchical_label "PRG_DO"
 		(shape output)
 		(at 31.75 73.66 180)
 		(effects
@@ -3951,7 +3951,7 @@
 		)
 		(uuid "a49b2d28-da51-5db4-9041-5905e0492cf7")
 	)
-	(hierarchical_label "PRG_DO"
+	(hierarchical_label "PRG_CS_N"
 		(shape input)
 		(at 31.75 76.2 180)
 		(effects
