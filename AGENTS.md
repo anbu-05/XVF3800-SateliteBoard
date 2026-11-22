@@ -10,7 +10,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Prototype**: thin stock is fine; don't flag low stock. Designed from datasheets; XMOS XK-VOICE-SQ66 (`incoming/xk_voice_sq66/`, XMOS licence) is the reference for mic wiring and pin roles.
 - **Report:** `docs/report/mindspeak_rev1_report.pdf` (weasyprint in `~/.local/venvs/weasyprint`). **Diagrams:** `docs/diagrams/` 01–08 (block, power tree, XVF connections, XVF pin map, audio, mics, ESP32, programming); sources in `docs/diagrams/src/`.
 - **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Groups 1–3 committed and pushed 2026-11-22. `PCB/mindspark_rev1-backups/` stays untracked.
-- **Status 2026-11-22 (evening):** schematic done (ERC 0; 11 duplicate test pads removed, TP205 last). Every link routed: **DRC 0 unconnected, parity 0, no shorts**; left only the old mic footprint items, silk, and 13 cosmetic `lib_footprint_mismatch` on the round test pads. Signals are now the user's hand routing, frozen (see Decisions); power_v2 rebuild takes ~30 s. Groups 1–3 committed; groups 4–6, user edits and LED arcs committed 2026-11-22 (7a8e60b), not pushed. Backups: committed board + sheets `mindspark_rev1-backups/pre-breakout-2026-11-22/`; the user's hand-edited board `mindspark_rev1-backups/user-hand-edits-2026-11-22/`.
+- **Status 2026-11-22 (evening):** schematic done (ERC 0; 11 duplicate test pads removed, TP205 last). Every link routed: **DRC 0 unconnected, parity 0, no shorts**; left only the old mic footprint items, silk, and 13 cosmetic `lib_footprint_mismatch` on the round test pads. Signals are now the user's hand routing, frozen (see Decisions); power_v2 rebuild takes ~30 s. Groups 1–3 committed; groups 4–6, user edits and LED arcs committed and pushed 2026-11-22 (7a8e60b). Backups: committed board + sheets `mindspark_rev1-backups/pre-breakout-2026-11-22/`; the user's hand-edited board `mindspark_rev1-backups/user-hand-edits-2026-11-22/`.
 
 ## Files and tools (`PCB/mindspark_rev1/`, KiCad 10)
 
@@ -40,6 +40,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Vias in pads** (epoxy-filled, capped): centred on the pad, count by current; a blocked pad gets one small via beside it on a stub. Detail in archives 002/003.
 - **Routing done so far** (detail word for word in archive-004): built routes (XVF main USB pair 0.25/0.15 mm, ≈92 Ω by formula, **confirm with JLC's calculator**; mics; east escape; JTAG; I2S + MCLK; flash switches; ESP32 USB pair on F.Cu, which walls the module's south side), groups 1 (`local_hookups`), 2 (`xvf_escape`, pin 6/7 user edit rebuilt), 3 (`inter_ic`, grid router). Each is a dated script in `tools/`, laid by power_v2.
 - **Low-priority routing is winged** (user 2026-11-22): no drawings or pre-agreed plans; show results per group; slow signals as parallel bundles where possible; no vias under USB pairs or mic lines; the order only sequences the work, reopening a route costs nothing.
+- **3D models** (2026-11-22, `tools/models_3d_2026_11_22.py`, board and library footprints): J301 and SW701 models turned 180°; U401 and D402 got EasyEDA models (C2999380, C601684; D402 turned 180° to match datasheet p.2). J501 checked correct. Renders in `verification/models-3d-2026-11-22/`. Pin 1 checked on U301, U503, U601, Y301, D101, Q701, SOT-23s.
 - **Test pads** (user 2026-11-22): uniform 1 mm round (`Mindspark:TestPoint_Pad_D1.0mm`), top or bottom, placed where comfortable; labels later; duplicates removed (`tools/test_pads_2026_11_22.py`: TP301–307 = J301 pins, TP201–203 = J701 rails, TP205 GND). Kept: TP204 (+0V9), TP401–412, at the user's spots (`user_edits` `PLACE`); power_v2's spot search (`tools/test_pad_place_2026_11_22.py`) only runs when there is no snapshot. UART0 stays the J701 console; IO3 may take GPIO1 (ADC1 kept); never put the J701 I²C pull-ups on IO45 or IO46.
 - **Groups 4–6** (2026-11-22, `tools/breakout_2026_11_22.py`): the grid-router batches stay in power_v2 for a board without a snapshot; with the snapshot they are empty (the user routed J701 by hand). **LED ring reversed** (`tools/led_ring_reverse_2026_11_22.py`): D802↔D812 … D806↔D808 with their caps C8xx, so each DOUT faces the next LED's DIN.
 
@@ -53,14 +54,13 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - TS5A3166 off-capacitance (18–19 pF per QSPI line) at the XVF boot clock; fallback 0 Ω/DNP split.
 - TS24CA stem protrusion (0.31 mm) and anchor pads vs `PCB/libraries/datasheets/TS24CA_C393942.pdf` p.1.
 - Fine-pitch footprints (QFN-60 0.4 mm, VQFN-HR, USON-10, TQFN-16) vs JLC rules.
-- **3D model check** (2026-11-22, read-only render of a copy): missing: U401 (stock `Winbond_USON-8-2EP_3x4mm` STEP not in KiCad 10), D402 (TOGIALED 1615, no model). Wrong: J301 JST 7-pin turned 180° (leads at edge, opening inward); J501 JST 2-pin likely tipped 90° (opening up); SW701 MSK12C02 slider faces into the board (180°). Pin 1 checked OK on U301, U503, U601, Y301, D101, Q701, SOT-23s; U103 too small to confirm. Fix after the layout session (touches the board file).
+- **Library builder drifted:** `PCB/libraries/tools/build_libraries.py` no longer reproduces the committed `Mindspark.pretty` (27 footprints differ, and it would drop `TestPoint_Pad_D1.0mm`). Never rerun it as is; edit library files from dated scripts. Bringing it back in line is open.
 - OV trip at 5.57 V could trip on a charger at the 5.5 V USB limit.
 - XTAG4 at 1.8 V (and the JST-to-XMOS adapter); ESP32-written `xflash` image boot, to verify on the first board.
 
 ## Next steps
 
-1. Push when the user asks; tidy remaining items (3D models, labels).
-2. Reference/label placement last (user's call). Recheck LCSC/JLC stock before ordering.
+1. Reference/label placement last (user's call). Recheck LCSC/JLC stock before ordering.
 
 ## Archive
 

@@ -687,7 +687,13 @@ STOCK_WITH_MODEL = [
      "-4.47 -3.65 0", "-90 0 0"),
     ("Connector_JST/JST_PH_S7B-PH-SM4-TB_1x07-1MP_P2.00mm_Horizontal",
      RAW / "easyeda_raw.3dshapes" / "CONN-SMD_PH2.00-WS-7P.step", "JST_S7B-PH-SM4-TB.step",
-     "-6.0 2.825 0.005", "0 0 -180"),
+     "6.0 -2.825 0.005", "0 0 0"),   # 2026-11-22: was "-6.0 2.825" / -180, which put the opening inward
+    # W25Q32JVUUIQ (2026-11-22): KiCad 10 ships no STEP for this stock footprint. EasyEDA's model
+    # for C2999380 (a shared 4 x 3 x 0.6 mm USON-8 body, file named after GD25Q32) is centred and
+    # its pin-1 dot lands on pad 1 as is.
+    ("Package_SON/Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
+     EASY_MODELS / "USON-8_L4.0-W3.0-H0.6-P0.80-BL_GD25Q32CNIGR.step", "Winbond_USON-8-2EP_3x4mm.step",
+     "0 0 0", "0 0 0"),
 ]
 
 
@@ -743,7 +749,10 @@ def build_side_switch_footprints():
              "SW-SMD_3P-L6.6-W2.7-LS7.8-P1.50.step", "SHOUHAN_MSK12C02.step")):
         t = rename_fp((RAW / "easyeda_raw.pretty" / (src + ".kicad_mod")).read_text(), name)
         shutil.copy(RAW / "easyeda_raw.3dshapes" / step, OUT_3D / model)
-        (OUT_FP / (name + ".kicad_mod")).write_text(replace_model(t, "%s/%s" % (MODEL_DIR, model), "0 0 0", "0 0 0"))
+        # 2026-11-22: the MSK12C02 STEP faces the other way from its footprint (lever over the
+        # pads, leads at the edge); a half turn fixes it. TS24CA left as it was.
+        rot = "0 0 180" if model == "SHOUHAN_MSK12C02.step" else "0 0 0"
+        (OUT_FP / (name + ".kicad_mod")).write_text(replace_model(t, "%s/%s" % (MODEL_DIR, model), "0 0 0", rot))
 
 
 def build_smd_header_footprint():
@@ -800,10 +809,11 @@ def build_rgb_footprint():
          '\t(fp_circle (center 1.6 -1.05) (end 1.7 -1.05) (stroke (width 0.2) (type solid)) (fill solid) (layer "F.SilkS"))']
     for n, (x, y) in pads.items():
         L.append('\t(pad "%s" smd rect (at %.3f %.3f) (size 0.85 0.5) (layers "F.Cu" "F.Mask" "F.Paste"))' % (n, x, y))
-    step = [f for f in (RAW / "easyeda_raw.3dshapes").iterdir() if "1615" in f.name and f.suffix == ".step"]
-    if step:
-        shutil.copy(step[0], OUT_3D / "LED_RGB_1615.step")
-        L.append('\t(model "%s/LED_RGB_1615.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))' % MODEL_DIR)
+    # EasyEDA's C601684 model (2026-11-22: the old search for "1615" in the name never matched it).
+    # Half turn: its polarity mark then sits between pads 1 and 4, as on datasheet p.2.
+    shutil.copy(RAW / "easyeda_raw.3dshapes" / "LED-ARRAY-SMD_4P-L1.6-W1.5-H0.6-BL-FD.step",
+                OUT_3D / "LED_RGB_1615.step")
+    L.append('\t(model "%s/LED_RGB_1615.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 180)))' % MODEL_DIR)
     L.append(")")
     (OUT_FP / (name + ".kicad_mod")).write_text("\n".join(L) + "\n")
 
@@ -834,7 +844,6 @@ def build_tps2121_footprint():
 STOCK_COPY = [
     "Package_TO_SOT_SMD/SOT-23", "Package_TO_SOT_SMD/SOT-23-5", "Package_TO_SOT_SMD/SOT-23-6",
     "Package_SON/USON-10_2.5x1.0mm_P0.5mm",
-    "Package_SON/Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
     "Diode_SMD/D_SMF",
     "Crystal/Crystal_SMD_3225-4Pin_3.2x2.5mm",
     "Inductor_SMD/L_0402_1005Metric",

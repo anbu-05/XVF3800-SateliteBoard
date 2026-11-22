@@ -13465,7 +13465,7 @@
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz 0 0 180)
 			)
 		)
 	)
@@ -17580,6 +17580,17 @@
 			(uuid "2ee35f9a-befd-4e69-8966-d6299d889d7d")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/../libraries/3dmodels/LED_RGB_1615.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 180)
+			)
+		)
 	)
 	(footprint "Mindspark:C_0402_1005Metric"
 		(layer "F.Cu")
@@ -41880,13 +41891,13 @@
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/../libraries/3dmodels/JST_S7B-PH-SM4-TB.step"
 			(offset
-				(xyz -6 2.825 0.005)
+				(xyz 6 -2.825 0.005)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 -180)
+				(xyz 0 0 0)
 			)
 		)
 	)
@@ -57393,7 +57404,7 @@
 			(uuid "ad18151d-5076-459e-b056-5be766e16ea1")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm.step"
+		(model "${KIPRJMOD}/../libraries/3dmodels/Winbond_USON-8-2EP_3x4mm.step"
 			(offset
 				(xyz 0 0 0)
 			)

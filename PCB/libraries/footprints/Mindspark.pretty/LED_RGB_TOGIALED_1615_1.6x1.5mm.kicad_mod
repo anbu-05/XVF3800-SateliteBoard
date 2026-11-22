@@ -109,4 +109,15 @@
 		(uuid "56269814-dce9-4cf2-ab1d-973a6f214701")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/../libraries/3dmodels/LED_RGB_1615.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
 )

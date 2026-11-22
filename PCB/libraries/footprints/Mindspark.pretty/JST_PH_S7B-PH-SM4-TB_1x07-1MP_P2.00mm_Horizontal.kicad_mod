@@ -500,13 +500,13 @@
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/../libraries/3dmodels/JST_S7B-PH-SM4-TB.step"
 		(offset
-			(xyz -6 2.825 0.005)
+			(xyz 6 -2.825 0.005)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz 0 0 -180)
+			(xyz 0 0 0)
 		)
 	)
 )
