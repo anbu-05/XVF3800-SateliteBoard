@@ -94,7 +94,8 @@
 			(symbol "+0V9_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -106,7 +107,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -118,7 +120,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -233,7 +236,8 @@
 			(symbol "+1V8_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -245,7 +249,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -257,7 +262,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -372,7 +378,8 @@
 			(symbol "+3V3_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -384,7 +391,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -396,7 +404,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -511,7 +520,8 @@
 			(symbol "+5V_0_1"
 				(polyline
 					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
+						(xy -0.762 1.27)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -523,7 +533,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 2.54)
+						(xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -535,7 +546,8 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 0)
+						(xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -660,7 +672,8 @@
 			(symbol "C_0_1"
 				(polyline
 					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -672,7 +685,8 @@
 				)
 				(polyline
 					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
 					)
 					(stroke
 						(width 0.508)
@@ -805,7 +819,12 @@
 			(symbol "GND_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -940,7 +959,11 @@
 			(symbol "LED_0_1"
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy -3.048 -0.762)
+						(xy -4.572 -2.286)
+						(xy -3.81 -2.286)
+						(xy -4.572 -2.286)
+						(xy -4.572 -1.524)
 					)
 					(stroke
 						(width 0)
@@ -952,7 +975,11 @@
 				)
 				(polyline
 					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+						(xy -1.778 -0.762)
+						(xy -3.302 -2.286)
+						(xy -2.54 -2.286)
+						(xy -3.302 -2.286)
+						(xy -3.302 -1.524)
 					)
 					(stroke
 						(width 0)
@@ -964,7 +991,8 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 0) (xy 1.27 0)
+						(xy -1.27 0)
+						(xy 1.27 0)
 					)
 					(stroke
 						(width 0)
@@ -976,7 +1004,8 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
+						(xy -1.27 -1.27)
+						(xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -988,7 +1017,10 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy 1.27 -1.27)
+						(xy 1.27 1.27)
+						(xy -1.27 0)
+						(xy 1.27 -1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -1141,7 +1173,12 @@
 			(symbol "PWR_FLAG_0_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27)
+						(xy 0 0)
+						(xy 0 1.27)
+						(xy -1.016 1.905)
+						(xy 0 2.54)
+						(xy 1.016 1.905)
+						(xy 0 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2264,7 +2301,8 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 69.85) (xy 171.45 72.39)
+			(xy 171.45 69.85)
+			(xy 171.45 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2274,7 +2312,8 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 40.64) (xy 179.07 43.18)
+			(xy 179.07 40.64)
+			(xy 179.07 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2284,7 +2323,8 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 48.26) (xy 132.08 50.8)
+			(xy 132.08 48.26)
+			(xy 132.08 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2294,7 +2334,8 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 62.23) (xy 107.95 59.69)
+			(xy 107.95 62.23)
+			(xy 107.95 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2304,7 +2345,8 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 72.39) (xy 35.56 72.39)
+			(xy 26.67 72.39)
+			(xy 35.56 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2314,7 +2356,8 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 38.1) (xy 59.69 40.64)
+			(xy 59.69 38.1)
+			(xy 59.69 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2324,7 +2367,8 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 72.39) (xy 107.95 72.39)
+			(xy 99.06 72.39)
+			(xy 107.95 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2334,17 +2378,8 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 40.64) (xy 238.76 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "32a32562-afd1-52ab-9958-7364013913f0")
-	)
-	(wire
-		(pts
-			(xy 52.07 30.48) (xy 54.61 30.48)
+			(xy 52.07 30.48)
+			(xy 54.61 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2354,7 +2389,8 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 40.64) (xy 132.08 40.64)
+			(xy 116.84 40.64)
+			(xy 132.08 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2364,7 +2400,8 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 33.02) (xy 96.52 33.02)
+			(xy 99.06 33.02)
+			(xy 96.52 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2374,7 +2411,8 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 48.26) (xy 59.69 50.8)
+			(xy 59.69 48.26)
+			(xy 59.69 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2384,7 +2422,8 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 59.69) (xy 121.92 59.69)
+			(xy 119.38 59.69)
+			(xy 121.92 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2394,7 +2433,8 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 69.85) (xy 107.95 72.39)
+			(xy 107.95 69.85)
+			(xy 107.95 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2404,7 +2444,8 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 62.23) (xy 99.06 59.69)
+			(xy 99.06 62.23)
+			(xy 99.06 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2414,7 +2455,8 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 30.48) (xy 67.31 30.48)
+			(xy 59.69 30.48)
+			(xy 67.31 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2424,7 +2466,8 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 30.48) (xy 127 30.48)
+			(xy 124.46 30.48)
+			(xy 127 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2434,17 +2477,8 @@
 	)
 	(wire
 		(pts
-			(xy 248.92 40.64) (xy 248.92 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64fdcbfd-526e-5e64-9a68-b3f62e12a5cd")
-	)
-	(wire
-		(pts
-			(xy 132.08 38.1) (xy 132.08 40.64)
+			(xy 132.08 38.1)
+			(xy 132.08 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2454,7 +2488,8 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 69.85) (xy 180.34 72.39)
+			(xy 180.34 69.85)
+			(xy 180.34 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2464,7 +2499,8 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 46.99) (xy 213.36 49.53)
+			(xy 213.36 46.99)
+			(xy 213.36 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2474,7 +2510,8 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 69.85) (xy 35.56 72.39)
+			(xy 35.56 69.85)
+			(xy 35.56 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2484,7 +2521,8 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 62.23) (xy 180.34 59.69)
+			(xy 180.34 62.23)
+			(xy 180.34 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2494,7 +2532,8 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 40.64) (xy 34.29 43.18)
+			(xy 34.29 40.64)
+			(xy 34.29 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2504,7 +2543,8 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 30.48) (xy 59.69 30.48)
+			(xy 54.61 30.48)
+			(xy 59.69 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2514,7 +2554,8 @@
 	)
 	(wire
 		(pts
-			(xy 24.13 30.48) (xy 24.13 33.02)
+			(xy 24.13 30.48)
+			(xy 24.13 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2524,7 +2565,8 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 30.48) (xy 24.13 30.48)
+			(xy 26.67 30.48)
+			(xy 24.13 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2534,7 +2576,8 @@
 	)
 	(wire
 		(pts
-			(xy 127 30.48) (xy 132.08 30.48)
+			(xy 127 30.48)
+			(xy 132.08 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2544,7 +2587,8 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 62.23) (xy 35.56 59.69)
+			(xy 35.56 62.23)
+			(xy 35.56 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2554,7 +2598,8 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 30.48) (xy 96.52 33.02)
+			(xy 96.52 30.48)
+			(xy 96.52 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2564,7 +2609,8 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 40.64) (xy 259.08 43.18)
+			(xy 259.08 40.64)
+			(xy 259.08 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2574,7 +2620,8 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 30.48) (xy 168.91 33.02)
+			(xy 168.91 30.48)
+			(xy 168.91 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2584,7 +2631,8 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 30.48) (xy 139.7 30.48)
+			(xy 132.08 30.48)
+			(xy 139.7 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2594,7 +2642,8 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 72.39) (xy 44.45 72.39)
+			(xy 35.56 72.39)
+			(xy 44.45 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2604,17 +2653,8 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 40.64) (xy 228.6 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fe91f2d-bd17-5080-a47d-71e121229205")
-	)
-	(wire
-		(pts
-			(xy 106.68 40.64) (xy 106.68 43.18)
+			(xy 106.68 40.64)
+			(xy 106.68 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2624,7 +2664,8 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 30.48) (xy 96.52 30.48)
+			(xy 99.06 30.48)
+			(xy 96.52 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2634,7 +2675,8 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 38.1) (xy 132.08 38.1)
+			(xy 139.7 38.1)
+			(xy 132.08 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2644,7 +2686,8 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 39.37) (xy 213.36 36.83)
+			(xy 213.36 39.37)
+			(xy 213.36 36.83)
 		)
 		(stroke
 			(width 0)
@@ -2654,17 +2697,8 @@
 	)
 	(wire
 		(pts
-			(xy 269.24 40.64) (xy 269.24 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b580bb37-4b69-5c5b-8635-2286da6dad2e")
-	)
-	(wire
-		(pts
-			(xy 114.3 30.48) (xy 116.84 30.48)
+			(xy 114.3 30.48)
+			(xy 116.84 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2674,7 +2708,8 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 30.48) (xy 168.91 30.48)
+			(xy 171.45 30.48)
+			(xy 168.91 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2684,7 +2719,8 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 33.02) (xy 24.13 33.02)
+			(xy 26.67 33.02)
+			(xy 24.13 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2694,7 +2730,8 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 33.02) (xy 116.84 33.02)
+			(xy 114.3 33.02)
+			(xy 116.84 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2704,7 +2741,8 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 38.1) (xy 59.69 38.1)
+			(xy 67.31 38.1)
+			(xy 59.69 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2714,7 +2752,8 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 62.23) (xy 26.67 59.69)
+			(xy 26.67 62.23)
+			(xy 26.67 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2724,7 +2763,8 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 72.39) (xy 180.34 72.39)
+			(xy 171.45 72.39)
+			(xy 180.34 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2734,7 +2774,8 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 33.02) (xy 116.84 40.64)
+			(xy 116.84 33.02)
+			(xy 116.84 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2744,7 +2785,8 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 69.85) (xy 44.45 72.39)
+			(xy 44.45 69.85)
+			(xy 44.45 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2754,7 +2796,8 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 30.48) (xy 44.45 30.48)
+			(xy 41.91 30.48)
+			(xy 44.45 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2764,7 +2807,8 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 59.69) (xy 44.45 59.69)
+			(xy 35.56 59.69)
+			(xy 44.45 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2774,7 +2818,8 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 33.02) (xy 44.45 40.64)
+			(xy 44.45 33.02)
+			(xy 44.45 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2784,7 +2829,8 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 69.85) (xy 26.67 72.39)
+			(xy 26.67 69.85)
+			(xy 26.67 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2794,7 +2840,8 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 59.69) (xy 58.42 59.69)
+			(xy 55.88 59.69)
+			(xy 58.42 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2804,7 +2851,8 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 30.48) (xy 189.23 30.48)
+			(xy 186.69 30.48)
+			(xy 189.23 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2814,7 +2862,8 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 62.23) (xy 171.45 59.69)
+			(xy 171.45 62.23)
+			(xy 171.45 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2824,7 +2873,8 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 62.23) (xy 44.45 59.69)
+			(xy 44.45 62.23)
+			(xy 44.45 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2834,7 +2884,8 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 33.02) (xy 44.45 33.02)
+			(xy 41.91 33.02)
+			(xy 44.45 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2844,7 +2895,8 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 33.02) (xy 168.91 33.02)
+			(xy 171.45 33.02)
+			(xy 168.91 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2854,7 +2906,8 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 69.85) (xy 99.06 72.39)
+			(xy 99.06 69.85)
+			(xy 99.06 72.39)
 		)
 		(stroke
 			(width 0)
@@ -2864,7 +2917,8 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 29.21) (xy 213.36 26.67)
+			(xy 213.36 29.21)
+			(xy 213.36 26.67)
 		)
 		(stroke
 			(width 0)
@@ -2874,7 +2928,8 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 40.64) (xy 59.69 40.64)
+			(xy 44.45 40.64)
+			(xy 59.69 40.64)
 		)
 		(stroke
 			(width 0)
@@ -3109,128 +3164,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
 					(reference "#PWR2028")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 238.76 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0cc70aad-7fcd-5ad4-be2b-f9275bb7b17f")
-		(property "Reference" "TP202"
-			(at 237.998 34.776 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 237.998 49.28 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "Rail test point"
-			(at 238.76 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "62dc6ca6-be00-5560-ae23-89bc6d3a0676")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "TP202")
 					(unit 1)
 				)
 			)
@@ -3867,7 +3800,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
+		(property "Footprint" "Mindspark:TestPoint_Pad_D1.0mm"
 			(at 259.08 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -4380,83 +4313,6 @@
 	)
 	(symbol
 		(lib_id "Mindspark:+5V")
-		(at 228.6 43.18 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "3343aa6e-1456-5192-86d1-8be7ad4d3200")
-		(property "Reference" "#PWR2025"
-			(at 228.6 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+5V"
-			(at 228.6 46.736 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 228.6 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d200494-b508-5a50-9e37-ab1513fa850d")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "#PWR2025")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:+5V")
 		(at 26.67 59.69 0)
 		(unit 1)
 		(body_style 1)
@@ -4674,205 +4530,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
 					(reference "R201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:GND")
-		(at 269.24 43.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "4bb718de-360f-5518-b93b-688bad255f69")
-		(property "Reference" "#PWR2029"
-			(at 269.24 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 269.24 46.99 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 269.24 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 269.24 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 269.24 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "390a08d2-f730-5516-b3fb-fca1e3d8ea4a")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "#PWR2029")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 228.6 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4ffb71db-5cc4-5cbf-829b-211d59a2984b")
-		(property "Reference" "TP201"
-			(at 227.838 34.776 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "+5V"
-			(at 227.838 49.28 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "Rail test point"
-			(at 228.6 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3185a81f-5054-578b-925f-add6a131a752")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "TP201")
 					(unit 1)
 				)
 			)
@@ -6754,205 +6411,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:+3V3")
-		(at 238.76 43.18 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "c2391d4a-d9e6-58b1-945d-ec240fcc559f")
-		(property "Reference" "#PWR2026"
-			(at 238.76 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 238.76 46.736 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 238.76 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 238.76 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 238.76 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b225a591-b7d1-54dd-97bf-20812eb6235e")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "#PWR2026")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 248.92 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c25971fc-1c5a-54b3-91eb-da65c1e4395f")
-		(property "Reference" "TP203"
-			(at 248.158 34.776 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 248.158 49.28 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "Rail test point"
-			(at 248.92 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7b04d2a3-5f62-5dc1-9567-dc9cb16e486c")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "TP203")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mindspark:C")
 		(at 180.34 66.04 0)
 		(unit 1)
@@ -7457,205 +6915,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
 					(reference "#PWR2023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:+1V8")
-		(at 248.92 43.18 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
-		(in_pos_files no)
-		(dnp no)
-		(uuid "d5ac425c-0301-517e-9e28-b6e1063f84f1")
-		(property "Reference" "#PWR2027"
-			(at 248.92 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Value" "+1V8"
-			(at 248.92 46.736 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 248.92 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 248.92 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 248.92 43.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d6663a6a-1def-5a8b-ae22-c8d1633fa5fc")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "#PWR2027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 269.24 40.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "d8fb5a7f-c160-55ee-b048-8e41835a380f")
-		(property "Reference" "TP205"
-			(at 268.478 34.776 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "GND"
-			(at 268.478 48.38 0)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "Rail test point"
-			(at 269.24 40.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "08504844-593e-5e15-b126-05248f5c64d9")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/86e83319-d81e-5b38-a6b2-57f60b94e69b"
-					(reference "TP205")
 					(unit 1)
 				)
 			)

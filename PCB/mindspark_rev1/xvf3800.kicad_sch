@@ -4102,12 +4102,6 @@
 		(uuid "8d4c8c2a-deef-5b28-b108-34e978aeccfb")
 	)
 	(junction
-		(at 53.34 154.94)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "929b014b-c877-5e2d-9028-4c894d15e233")
-	)
-	(junction
 		(at 91.44 34.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4160,12 +4154,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9b08b06-022b-57fd-b587-9970adfca940")
-	)
-	(junction
-		(at 53.34 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d8cb9d8f-5c6e-58cd-b203-e39e9c83c52b")
 	)
 	(junction
 		(at 144.78 41.91)
@@ -4406,17 +4394,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 139.7)
-			(xy 38.1 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1705b8c9-ebb9-5078-9749-0895e47f5771")
-	)
-	(wire
-		(pts
 			(xy 223.52 119.38)
 			(xy 223.52 116.84)
 		)
@@ -4626,7 +4603,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 149.86)
+			(xy 53.34 149.86)
 			(xy 55.88 149.86)
 		)
 		(stroke
@@ -5066,17 +5043,6 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 154.94)
-			(xy 38.1 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6044c2cf-419f-5b1b-9dcf-b321e0f12a16")
-	)
-	(wire
-		(pts
 			(xy 144.78 31.75)
 			(xy 144.78 29.21)
 		)
@@ -5253,7 +5219,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 142.24)
+			(xy 53.34 142.24)
 			(xy 55.88 142.24)
 		)
 		(stroke
@@ -5550,7 +5516,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 152.4)
+			(xy 53.34 152.4)
 			(xy 55.88 152.4)
 		)
 		(stroke
@@ -5605,7 +5571,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 147.32)
+			(xy 53.34 147.32)
 			(xy 55.88 147.32)
 		)
 		(stroke
@@ -5671,7 +5637,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 144.78)
+			(xy 53.34 144.78)
 			(xy 55.88 144.78)
 		)
 		(stroke
@@ -6819,128 +6785,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
 					(reference "C305")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 139.7 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "044b15fd-b3b1-543e-9e7a-d1f4482a46a3")
-		(property "Reference" "TP301"
-			(at 33.5 139.7 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG1"
-			(at 27.7 139.7 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 1"
-			(at 38.1 139.7 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "fa114a68-b586-5779-831f-54bf0d98a64d")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP301")
 					(unit 1)
 				)
 			)
@@ -10795,128 +10639,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 152.4 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7ea44918-5f57-55cc-b539-ff35c3f3864c")
-		(property "Reference" "TP306"
-			(at 33.5 152.4 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG6"
-			(at 27.7 152.4 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 6"
-			(at 38.1 152.4 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df7fc916-5965-547e-a1ed-adfb9e2c6eba")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP306")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mindspark:TPS3808G33DBVR")
 		(at 210.82 119.38 0)
 		(unit 1)
@@ -12425,128 +12147,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 142.24 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "a28ddd93-d650-5a50-8096-b3cd5bad623a")
-		(property "Reference" "TP302"
-			(at 33.5 142.24 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG2"
-			(at 27.7 142.24 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 2"
-			(at 38.1 142.24 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "4286d3a6-3f27-5639-a3b1-cbf3403f9e39")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP302")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mindspark:+0V9")
 		(at 91.44 107.95 270)
 		(unit 1)
@@ -13293,128 +12893,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
 					(reference "#PWR3036")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 147.32 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "b7405882-6d7a-55a5-9c95-1d6fa76ee43d")
-		(property "Reference" "TP304"
-			(at 33.5 147.32 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG4"
-			(at 27.7 147.32 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 4"
-			(at 38.1 147.32 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5fc889ca-748d-5643-a237-b272a24b3596")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP304")
 					(unit 1)
 				)
 			)
@@ -14223,128 +13701,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 144.78 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e8fdc02e-0fa3-5ee4-b0d7-eeaea4b53913")
-		(property "Reference" "TP303"
-			(at 33.5 144.78 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG3"
-			(at 27.7 144.78 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 3"
-			(at 38.1 144.78 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8564ec72-d4b6-5797-a95f-18d0d73ccd27")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP303")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mindspark:C")
 		(at 127 35.56 0)
 		(unit 1)
@@ -14710,128 +14066,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 154.94 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f9f9cd13-4e28-5b26-8952-0046add4df9f")
-		(property "Reference" "TP307"
-			(at 33.5 154.94 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG7"
-			(at 27.7 154.94 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 7"
-			(at 38.1 154.94 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a796ea17-7a75-5409-b101-33ca3284c5e2")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP307")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mindspark:PLL_AVDD")
 		(at 35.56 81.28 90)
 		(unit 1)
@@ -14904,128 +14138,6 @@
 			(project "mindspark_rev1"
 				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
 					(reference "#PWR3006")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mindspark:TestPoint")
-		(at 38.1 149.86 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fe3667e1-5284-524a-8581-3d0d82e36e7c")
-		(property "Reference" "TP305"
-			(at 33.5 149.86 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "JTAG5"
-			(at 27.7 149.86 90)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Mindspark:TestPoint_Pad_1.0x1.0mm"
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Description" "test point"
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "LCSC" ""
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "MPN" ""
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "Manufacturer" ""
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(property "use" "JTAG parallel pad 5"
-			(at 38.1 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace yes)
-			(effects
-				(font
-					(size 1 1)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "86efaebf-ca5d-53e5-8103-3eedd217cc5f")
-		)
-		(instances
-			(project "mindspark_rev1"
-				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/0d465b1a-46e7-5808-b4ad-30de9111d093"
-					(reference "TP305")
 					(unit 1)
 				)
 			)

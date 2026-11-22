@@ -50,7 +50,9 @@ TRACKS = [  # net, width, points (all B.Cu)
     # (pin 30 -> C313 -> C314 is laid by tools/east_column_2026_11_22.py)
     # ---- pin 30 / C313 / C314 (+3V3) sit over the +1V8 band: a strap from C314 south, under
     #      the ESP32's south pins, to a +3V3 via just below the module
-    ("+3V3", 0.3, [(152.48, 103.01), (151.3, 103.01), (151.0, 103.31), (151.0, 109.0)]),
+    # (user 2026-11-22: jogs east past XVF_INT_N's lane, was straight down x 151.0)
+    ("+3V3", 0.3, [(152.48, 103.01), (151.976, 103.01), (151.638, 103.348), (151.638, 105.5565),
+                   (151.183, 106.0115), (151.183, 108.817), (151.0, 109.0)]),
     # ---- C302 GND: a PRG line on the top layer runs over the pad, so its via sits just north,
     #      between the I2S LRCK and BCLK lines
     ("GND", 0.25, [(148.01, 91.72), (148.01, 91.49), (147.92, 91.4)]),

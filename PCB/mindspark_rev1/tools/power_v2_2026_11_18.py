@@ -59,6 +59,18 @@ P = {}
 for f in children(root, "footprint"):
     p = Part(f)
     P[p.ref] = p
+# Test pads (2026-11-22, user): placed by this script after everything else is routed, next to
+# their net's copper (tools/test_pad_place_2026_11_22.py), so they never get in the way of other
+# routes. Until then they are left out of every pass.
+import test_pad_place_2026_11_22 as tpp  # noqa: E402
+# Since 2026-11-22 (user's hand edits, tools/user_edits_2026_11_22.py): every signal net is frozen
+# as the user drew it (user_routing_2026_11_22.json) and laid before any power copper; the signal
+# passes below skip those nets (FROZEN). The test pads then stay at the user's spots like any part.
+import user_edits_2026_11_22 as ue  # noqa: E402
+import led_arcs_2026_11_22 as led_arcs  # noqa: E402
+SNAP = ue.load()
+FROZEN = SNAP[2] if SNAP else set()
+TP_PARTS = {} if SNAP else {r: P.pop(r) for r in tpp.TEST_PADS if r in P}
 items, report = [], []
 
 
@@ -230,15 +242,42 @@ for k, (ang, kind, c) in enumerate(junctions):
     a2 = a2 + 360 if a2 <= ang else a2
     arc(pt, on_ring((ang + a2) / 2), on_ring(a2), RING_W, "B.Cu", "+5V_LED")
 
+# ================================================================ user's signal copper (2026-11-22)
+if SNAP:
+    # two of the user's vias move inward out of the LED arcs' band (tools/led_arcs_2026_11_22.py NUDGES)
+    SNAP = led_arcs.nudge(list(SNAP[0]), list(SNAP[1])) + (SNAP[2],)
+    for kind_, net_, lay_, w_, pts_ in SNAP[0]:
+        if kind_ == "arc":
+            arc(pts_[0], pts_[1], pts_[2], w_, lay_, net_)
+        else:
+            seg(pts_[0], pts_[1], w_, lay_, net_, connect=False)
+    for net_, at_, size_ in SNAP[1]:
+        via(at_, net_, size_, connect=False)
+    report.append(f"user's signal copper: {len(SNAP[0])} tracks, {len(SNAP[1])} vias, {len(FROZEN)} nets")
+# C802 / C807 +5V_LED joins as the user drew them (bottom layer out of the cap, a top-layer hop,
+# down onto the ring), so they leave the next LED's DIN free
+for ref_, hop_ in ue.CAP_HOPS.items():
+    for lay_, pts_ in hop_["runs"]:
+        for a_, b_ in zip(pts_, pts_[1:]):
+            seg(a_, b_, 0.3, lay_, "+5V_LED")
+    for pt_ in hop_["vias"]:
+        via(pt_, "+5V_LED", VIA_SMALL, connect=True)
+    connected.setdefault("+5V_LED", []).append(pad_shape[(ref_, "1")])
+
+
 # ================================================================ fixed signal routes (laid first)
 # The XVF3800 main USB pair (tools/usb_main_route_2026_11_19.py). This script rebuilds every
 # track, so the pair is laid here, before any power copper, and the power router avoids it.
 import usb_main_route_2026_11_19 as usb_main  # noqa: E402
 
 for net, layer, pts in usb_main.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, usb_main.W, layer, net, connect=False)
 for pt, net in usb_main.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, usb_main.VIA, connect=False)
 # U101's GND pads 8 and 3 sit between D- and D+ (flow-through): a small via just west of pad 8, between
 # the two lines where they are 0.75 mm apart (0.15 mm each side), linked to pads 8 and 3
@@ -252,9 +291,13 @@ import mic_route_2026_11_20 as mic  # noqa: E402
 if not mic.TRACKS:
     sys.exit("mic routes missing: run tools/mic_route_2026_11_20.py --generate first")
 for net, layer, pts in mic.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, mic.W, layer, net, connect=False)
 for pt, net in mic.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, mic.VIA, connect=False)
 # The east-side escape (since 2026-11-21, tools/east_escape_2026_11_21.py, geometry frozen in its JSON):
 # east cap column feeds, JTAG fan-out, crystal, QSPI flash, +0V9 jumpers. Vias that land in their
@@ -264,26 +307,38 @@ import east_column_2026_11_22 as east  # noqa: E402   (east escape with the 2026
 if not east.TRACKS:
     sys.exit("east escape missing: run tools/east_escape_2026_11_21.py --generate first")
 for net, layer, w, pts in east.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, w, layer, net, connect=False)
 for pt, net in east.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, east.VIA)
 # JTAG from those lanes to J301, and RST_N to R703 (since 2026-11-21, tools/jtag_route_2026_11_21.py)
 import jtag_route_2026_11_21 as jtag  # noqa: E402
 
 for net, layer, pts in jtag.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, jtag.W, layer, net, connect=False)
 for pt, net in jtag.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, jtag.VIA, connect=False)
 # I2S XVF3800 -> U503 amp, the MCLK loop 14 <-> 41, BTN_MUTE_N's via (since 2026-11-21,
 # tools/i2s_mclk_route_2026_11_21.py); the amp's power copper below is routed round them.
 import i2s_mclk_route_2026_11_21 as i2s  # noqa: E402
 
 for net, layer, pts in i2s.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, i2s.W, layer, net, connect=False)
 for pt, net in i2s.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, i2s.VIA, connect=False)
 # Flash switches west of the module (since 2026-11-22, tools/prog_switch_route_2026_11_22.py):
 # flash branch lines, PRG_* lines (bottom-layer hops), the PRG_EN chain.
@@ -291,18 +346,26 @@ import os as _os  # noqa: E402
 if _os.path.exists(_os.path.join(_os.path.dirname(__file__), "prog_switch_route_2026_11_22.json")):
     import prog_switch_route_2026_11_22 as prog  # noqa: E402
     for net, layer, w, pts in prog.TRACKS:
+        if net in FROZEN:
+            continue
         for a, b in zip(pts, pts[1:]):
             seg(a, b, w, layer, net, connect=False)
     for pt, net in prog.VIAS:
+        if net in FROZEN:
+            continue
         via(pt, net, prog.VIA, connect=False)
 # ESP32 USB pair J102 -> U102 -> R606/R605 -> ESP32 pins 13/14 (since 2026-11-22,
 # tools/esp_usb_route_2026_11_22.py): top layer all the way, J102 A/B jumpers on the bottom layer.
 import esp_usb_route_2026_11_22 as esp_usb  # noqa: E402
 
 for net, layer, pts in esp_usb.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, esp_usb.W, layer, net, connect=False)
 for pt, net in esp_usb.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, esp_usb.VIA, connect=False)
 # U102's GND pins 3 and 8 sit between D- and D+ (flow-through, as U101): a small via just east of
 # pin 8, between the lines while they are still 1 mm apart, linked to pins 8 and 3
@@ -360,7 +423,8 @@ seg((127.6, 109.6), (127.6, 112.0), 1.8, "B.Cu", "+5V")
 FLANGES = [  # pin, net, via spots, pour outline (F.Cu)
     ("1", "+5V", [(167.75, 114.1), (167.0, 113.7)],
      [(166.3, 113.3), (167.5, 113.3), (168.35, 114.15), (169.0, 114.15), (169.0, 114.68), (166.3, 114.68)]),
-    ("2", "VBUS_ESP", [(167.85, 115.75), (167.05, 115.75), (167.45, 116.5)],
+    # (third via 0.07 mm further in since 2026-11-22: was (167.45, 116.5), 0.04 mm into the D802 LED arc's room)
+    ("2", "VBUS_ESP", [(167.85, 115.75), (167.05, 115.75), (167.4, 116.45)],
      [(169.0, 114.9), (165.8, 114.9), (165.8, 115.7), (166.3, 115.7), (166.3, 117.0), (167.1, 117.0),
       (167.8, 116.3), (168.35, 115.4), (169.0, 115.4)]),
     ("7", "VBUS_MAIN", [(171.6, 115.8), (172.4, 115.8), (172.0, 116.55)],
@@ -385,6 +449,20 @@ for pin, net, spots, outline in FLANGES:
 # other pads the pours take in (they need no route of their own)
 for ref, pin in (("C104", "1"), ("C102", "1")):
     connected.setdefault(pad(ref, pin)[1], []).append(pad_shape[(ref, pin)])
+# GND of the U103 divider bottoms (user 2026-11-22, tools/user_edits_2026_11_22.py GND_DIVIDER):
+# one top-layer run along R106 / R110 / R112 to R108's in-pad via; those three pads get no via
+if SNAP:
+    for a_, b_ in zip(ue.GND_DIVIDER["run"], ue.GND_DIVIDER["run"][1:]):
+        seg(a_, b_, 0.3, "F.Cu", "GND")
+    FLANGED |= set(ue.GND_DIVIDER["pads"])
+    # C301's GND: the via just inside the pad's north edge, clear of the TP401 stub (ue.C301_GND_VIA)
+    via(ue.C301_GND_VIA, "GND", VIA_SMALL, connect=True)
+    seg(ue.C301_GND_VIA, pad("C301", 2)[3], 0.45, "B.Cu", "GND")
+    FLANGED.add(("C301", "2"))
+    # R401's +3V3 end: one via in its pad down to In2 +3V3 (user 2026-11-22, ue.R401_VIA)
+    via(ue.R401_VIA, "+3V3", VIA_SMALL, connect=True)
+    connected.setdefault("+3V3", []).append(pad_shape[("R401", "2")])
+    FLANGED.add(("R401", "2"))
 
 # ================================================================ group 1: local hookups (2026-11-22)
 # Short part-to-neighbour links (tools/local_hookups_2026_11_22.py), routed by the jog router
@@ -405,9 +483,13 @@ def pad_k(spec):
 
 
 for net, layer, w_, pts in local.FIXED_TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, w_, layer, net)
 for pt, net, size in local.FIXED_VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, size, connect=True)
 # pads these hand-laid pieces join (so later routes may start from them)
 for ref, pin in (("R108", 1), ("R110", 1), ("R112", 1), ("R109", 2), ("R105", 2), ("U302", 3), ("U302", 2)):
@@ -415,6 +497,8 @@ for ref, pin in (("R108", 1), ("R110", 1), ("R112", 1), ("R109", 2), ("R105", 2)
 
 local_failed = []
 for net, width, clr, goal, start in local.ROUTES:
+    if net in FROZEN:
+        continue
     jog_router.CLEARANCE = clr
     gpoly, gshape = pad_k(goal)
     starts = [pad_k(start)[1]] if start else list(connected.get(net, []))
@@ -440,9 +524,13 @@ report.append(f"local hookups: {len(local.ROUTES) - len(local_failed)}/{len(loca
 import xvf_escape_2026_11_22 as xvf_esc  # noqa: E402
 
 for net, w_, pts in xvf_esc.TRACKS:
+    if net in FROZEN:
+        continue
     for a, b in zip(pts, pts[1:]):
         seg(a, b, w_, "B.Cu", net)
 for pt, net, size in xvf_esc.VIAS:
+    if net in FROZEN:
+        continue
     via(pt, net, size, connect=True)
 for ref, pin in xvf_esc.JOINED:
     connected.setdefault(pad(ref, pin)[1], []).append(pad_shape[(ref, str(pin))])
@@ -481,6 +569,8 @@ def escape_via(net, ref, pin, box):
 
 esc_failed = []
 for net, (ref, pin), box in xvf_esc.ESCAPE:
+    if net in FROZEN:
+        continue
     got = escape_via(net, ref, pin, box)
     if got is None:
         esc_failed.append(f"{ref}.{pin} {net}")
@@ -490,6 +580,49 @@ for net, (ref, pin), box in xvf_esc.ESCAPE:
         seg(a_, b_, 0.15, "B.Cu", net)
     report.append(f"escape {ref}.{pin:3s} {net:16s} via {t} ({len(path) - 1} segments)")
 report.append("escape vias: " + (f"FAILED {esc_failed}" if esc_failed else "all placed"))
+
+# ================================================================ LED chain links (2026-11-22)
+# Arcs along the +5V_LED ring (tools/led_arcs_2026_11_22.py), laid after every fixed piece and
+# before any generated power copper: each link's shape is searched to clear what is laid so far,
+# and the power routes after it (the LED caps' joins among them) go round it.
+led_bad = []
+for net_, pieces_, how_ in led_arcs.links(lambda r_, p_: pad(r_, p_)[3], router.shapes):
+    if how_ is None:
+        led_bad.append(net_)
+    for pc_ in pieces_:
+        if pc_[0] == "arc":
+            items.append(["arc", ["start", f4(pc_[1][0]), f4(pc_[1][1])], ["mid", f4(pc_[2][0]), f4(pc_[2][1])],
+                          ["end", f4(pc_[3][0]), f4(pc_[3][1])], ["width", f4(led_arcs.W)], ["layer", q("B.Cu")],
+                          ["net", q(net_)], ["uuid", uid()]])
+            # clearance stand-in for the routers: short pieces along the arc at its true width
+            pts_ = led_arcs.samples([pc_], step=0.3)
+            for s_, e_ in zip(pts_, pts_[1:]):
+                router.add(Shape(net_, {"B.Cu"}, seg=(s_, e_, led_arcs.W + 0.01)))
+        else:
+            seg(pc_[1], pc_[2], led_arcs.W, "B.Cu", net_, connect=False)
+    report.append(f"LED link {net_}: " + (f"r {how_[0]}, dive ends {how_[1]} deg before DIN, spans {how_[2]} deg"
+                                          if how_ else "NO CLEAR SHAPE (default laid)"))
+FROZEN |= {f"Net-(D8{i:02d}-DOUT)" for i in range(1, 12)}
+# Each LED's supply cap C8xx -> its VDD pad (bottom layer), routed here, before the vias in pads,
+# so the GND vias beside the LED pads go round it (C802 / C807: the user's hops, laid above).
+import jog_router  # noqa: E402
+LED_CAPS = [i for i in range(1, 13) if f"C8{i:02d}" not in ue.CAP_HOPS]
+led_cap_failed = []
+for i in LED_CAPS:
+    jog_router.CLEARANCE = 0.15
+    goal_, start_ = pad(f"D8{i:02d}", 4)[2], pad_shape[(f"C8{i:02d}", "1")]
+    w_, path_ = 0.3, None
+    while w_ >= 0.15 and path_ is None:
+        path_ = router.route("+5V_LED", "B.Cu", w_, goal_, [start_])
+        if path_ is None:
+            w_ = round(w_ * 0.7, 2)
+    if path_ is None:
+        led_cap_failed.append(f"C8{i:02d}")
+        continue
+    for a_, b_ in zip(path_, path_[1:]):
+        seg(a_, b_, w_, "B.Cu", "+5V_LED")
+    connected.setdefault("+5V_LED", []).extend([start_, pad_shape[(f"D8{i:02d}", "4")]])
+report.append("LED cap joins: " + (f"FAILED {led_cap_failed}" if led_cap_failed else "all routed"))
 
 # ================================================================ vias in pads
 # User's rules (2026-11-19):
@@ -702,7 +835,8 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     # XVF3800 pin 31 (+1V8) to its cap; pins 17-27 are fixed routes since 2026-11-21
     # (pin 31 -> C317: hand-laid in tools/xvf_escape_2026_11_22.py since 2026-11-22)
     # R401 (QSPI CS pull-up) +3V3 end: the automatic pass skips the XVF3800 area
-    ("+3V3", "B.Cu", 0.2, ("R401", 2), 0.15, None),
+    # (with the user's edits: a via in its pad instead, laid just below)
+] + ([] if SNAP else [("+3V3", "B.Cu", 0.2, ("R401", 2), 0.15, None)]) + [
     ("+3V3", "B.Cu", 0.2, ("C401", 1), 0.15, ("R401", 2)),     # flash decap, beside R401
     # amp supply
     ("+5V_AMP", "F.Cu", 0.8, ("C511", 1), 0.2, ("U502", 6)),
@@ -751,7 +885,8 @@ ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     # (VBUS_MAIN tops R109.2 / R105.2: hand-laid with the group 1 local hookups since 2026-11-22)
     ("VBUS_ESP", "F.Cu", 0.25, ("R107", 2), 0.15, None),
     # (R111.2: via in its pad since 2026-11-22; the group 1 mid links box it in)
-] + [("+5V_LED", "B.Cu", 0.3, (f"C8{i:02d}", 1), 0.15, (f"D8{i:02d}", 4)) for i in range(1, 13)]
+] + [("+5V_LED", "B.Cu", 0.3, (f"C8{i:02d}", 1), 0.15, (f"D8{i:02d}", 4)) for i in range(1, 13)
+     if not SNAP]                      # with the user's edits: routed after the LED arcs instead
 # +1V8 to J301 pin 1 and on west to HOP1 (user's hand edit 2026-11-21, no U-turn round U802 / Q701):
 # J301 now takes its +1V8 from the LDO output (U203 pin 5) past C318's pad (B.Cu north to a via
 # beside U802, then F.Cu straight up
@@ -776,6 +911,8 @@ import jog_router  # noqa: E402
 
 failed = []
 for net, layer, width, tgt, clr, start in ROUTES:
+    if net in FROZEN or (SNAP and net == "+5V_LED" and tgt[0] in ue.CAP_HOPS):
+        continue
     jog_router.CLEARANCE = clr
     if tgt[0] == "@":
         goal = circle_pts(tgt[1][0], tgt[1][1], 0.15)
@@ -886,8 +1023,10 @@ report.append(f"automatic pass: {auto_ok} pads joined ({auto_via} with a fan-out
 # Routed after all power copper (tools/inter_ic_2026_11_22.py) by tools/grid_router.py, which
 # searches both layers at once and adds a via wherever a layer change pays (user's idea: out a
 # little, then a via). The ESP32 underside keep-out for power traces does not apply to them.
+import copy  # noqa: E402
 import time as _time  # noqa: E402
 import inter_ic_2026_11_22 as inter  # noqa: E402
+import breakout_2026_11_22 as brk  # noqa: E402  (groups 4-6, same router, routed after group 3)
 from grid_router import GridRouter  # noqa: E402
 
 starts_of = {}                       # net -> [(layer, point)] laid so far by this group
@@ -954,6 +1093,23 @@ def route_group3(order):
         g_layers = {"F.Cu", "B.Cu"} if gpd[5] == "thru_hole" else {P[gref].side}
         if start is None:
             st = list(starts_of.get(net, []))
+        elif start == "*":
+            # any copper the net already has: pad centres, track ends, via centres
+            st = []
+            gx_, gy_ = gpd[3]
+            for sh in router.shapes:
+                if sh.net != net:
+                    continue
+                if sh.poly and sh.box[0] <= gx_ <= sh.box[2] and sh.box[1] <= gy_ <= sh.box[3]:
+                    continue                     # the goal pad itself is not a start
+                lays = [L_ for L_ in ("F.Cu", "B.Cu") if L_ in sh.layers]
+                if sh.seg:
+                    pts_ = [sh.seg[0], sh.seg[1]]
+                elif sh.circle:
+                    pts_ = [sh.circle[0]]
+                else:
+                    pts_ = [((sh.box[0] + sh.box[2]) / 2, (sh.box[1] + sh.box[3]) / 2)]
+                st += [(L_, p_) for L_ in lays for p_ in pts_]
         elif start[0] == "@":
             st = [(L, start[2]) for L in start[1]]
         else:
@@ -967,48 +1123,125 @@ def route_group3(order):
         laid = lay_runs(net, runs, first, gpd[3])
         starts_of.setdefault(net, []).extend(st + laid)
         connected.setdefault(net, []).append(pad_shape[(gref, str(gpin))])
-        lines.append(f"inter-IC {net:22s} -> {gref}.{gpin:3s} {' -> '.join(L_ for L_, _ in runs)} "
+        lines.append(f"routed {net:22s} -> {gref}.{gpin:3s} {' -> '.join(L_ for L_, _ in runs)} "
                      f"({len(runs) - 1} vias)")
     return failed, lines
 
 
-# Rip-up and retry: if entries fail, undo the whole group, put the failures first, route again.
-snap_items, snap_shapes, snap_vias = len(items), len(router.shapes), len(new_vias)
-snap_conn = {k: list(v) for k, v in connected.items()}
-order = list(inter.ROUTES)
-for attempt in range(3):
-    _t0 = _time.time()
-    inter_failed, lines = route_group3(order)
-    print(f"  group 3 pass {attempt + 1}: {len(order) - len(inter_failed)}/{len(order)} routed "
-          f"in {_time.time() - _t0:.0f} s; failed {[f'{e[0]}->{e[1][0]}' for e in inter_failed]}",
-          file=sys.stderr, flush=True)
-    if not inter_failed or attempt == 2:
-        break
-    del items[snap_items:]
-    del router.shapes[snap_shapes:]
-    del new_vias[snap_vias:]
-    connected.clear()
-    connected.update({k: list(v) for k, v in snap_conn.items()})
-    # failures first, each with the rest of its net's entries right behind it
-    fnets = []
-    for e in inter_failed:
-        if e[0] not in fnets:
-            fnets.append(e[0])
-    order = [e for n_ in fnets for e in order if e[0] == n_] + [e for e in order if e[0] not in fnets]
-report += lines
-inter_failed = [f"{e[0]} -> {e[1][0]}.{e[1][1]}" for e in inter_failed]
-report.append("inter-IC: " + (f"FAILED {inter_failed}" if inter_failed else "all routed"))
+# Rip-up and retry: if entries fail, undo the whole batch, put the failures first, route again.
+# Group 3 goes first as its own batch (it routes in one pass in this order); groups 4-6 follow
+# as a second batch whose retries never rip up group 3.
+def route_batch(name, entries, passes):
+    snap_items, snap_shapes, snap_vias = len(items), len(router.shapes), len(new_vias)
+    snap_conn = {k: list(v) for k, v in connected.items()}
+    order = list(entries)
+    best = None                          # (failures, order) of the best pass so far
+    for attempt in range(passes):
+        _t0 = _time.time()
+        failed, lines = route_group3(order)
+        print(f"  {name} pass {attempt + 1}: {len(order) - len(failed)}/{len(order)} routed "
+              f"in {_time.time() - _t0:.0f} s; failed {[f'{e[0]}->{e[1][0]}' for e in failed]}",
+              file=sys.stderr, flush=True)
+        if best is None or len(failed) < best[0]:
+            best = (len(failed), list(order))
+        if not failed:
+            break
+        if attempt == passes - 1:
+            if len(failed) > best[0]:            # the last pass was not the best: lay the best again
+                del items[snap_items:]
+                del router.shapes[snap_shapes:]
+                del new_vias[snap_vias:]
+                connected.clear()
+                connected.update({k: list(v) for k, v in snap_conn.items()})
+                failed, lines = route_group3(best[1])
+                print(f"  {name}: kept the best pass ({len(failed)} failed)", file=sys.stderr, flush=True)
+            break
+        del items[snap_items:]
+        del router.shapes[snap_shapes:]
+        del new_vias[snap_vias:]
+        connected.clear()
+        connected.update({k: list(v) for k, v in snap_conn.items()})
+        # failures first, each with the rest of its net's entries right behind it
+        fnets = []
+        for e in failed:
+            if e[0] not in fnets:
+                fnets.append(e[0])
+        order = [e for n_ in fnets for e in order if e[0] == n_] + [e for e in order if e[0] not in fnets]
+    report.extend(lines)
+    failed = [f"{e[0]} -> {e[1][0]}.{e[1][1]}" for e in failed]
+    report.append(f"{name}: " + (f"FAILED {failed}" if failed else "all routed"))
+
+
+route_batch("group 3", [e for e in inter.ROUTES[:7] + brk.EARLY + inter.ROUTES[7:] if e[0] not in FROZEN], 3)  # after the four hard nets
+route_batch("groups 4-6", [e for e in brk.ROUTES if e[0] not in FROZEN], 3)
+
+
+# ---------------------------------------------------------------- test pads (groups 5 and 6)
+# With everything else routed, each test pad goes to the free spot closest to its net's copper
+# (top or bottom), then joins it on a short stub. The chosen spots are also written to
+# tools/test_pad_spots_2026_11_22.json for the record.
+for r_, part in TP_PARTS.items():
+    P[r_] = part
+tp_net = {r_: pads_of(r_)[0][1] for r_ in TP_PARTS}
+for r_ in TP_PARTS:
+    del P[r_]
+spots, taken, tp_lines, tp_failed = {}, [], [], []
+for entry in (brk.TEST_PADS if TP_PARTS else []):     # none: pads frozen at the user's spots
+    r_ = entry[1][0]
+    part = TP_PARTS[r_]
+    orig_node, orig_side = copy.deepcopy(part.node), part.side   # to put it back if no spot works
+    cands = tpp.candidates(r_, tp_net[r_], router.shapes, P, (LEFT, TOP, RIGHT, BOTTOM), taken)
+    for x_, y_, lay_, score_ in cands:
+        if lay_ != str(part.side):
+            if lay_ == "B.Cu":
+                continue                          # (pads start on the bottom; never flipped back)
+            part.flip_to_top()
+            part.side = "F.Cu"
+        snap_ = (len(items), len(router.shapes), len(new_vias), {k: list(v) for k, v in connected.items()})
+        part.place(x_, y_)
+        P[r_] = part
+        for k_, (pin, net, poly, c, wh, kind) in enumerate(pads_of(r_)):
+            sh = Shape(net, {lay_}, poly=poly)
+            router.add(sh)
+            pad_shape[(r_, pin, k_)] = sh
+            pad_shape.setdefault((r_, pin), sh)
+        failed_, lines_ = route_group3([entry])
+        if not failed_:
+            spots[r_] = [x_, y_, lay_, score_]
+            taken.append((x_, y_, lay_))
+            tp_lines += lines_
+            print(f"  {r_:6s} -> ({x_:.3f}, {y_:.3f}) {lay_}  stub {score_:.2f} mm", file=sys.stderr, flush=True)
+            break
+        # the stub did not route: take the pad and anything laid back out, try the next spot
+        del items[snap_[0]:]
+        del router.shapes[snap_[1]:]
+        del new_vias[snap_[2]:]
+        connected.clear()
+        connected.update(snap_[3])
+        del P[r_]
+    else:
+        # no spot works: the pad stays where the board had it, as an obstacle, and is reported
+        tp_failed.append(r_)
+        part.node[:] = orig_node
+        part.side = orig_side
+        P[r_] = part
+        for k_, (pin, net, poly, c, wh, kind) in enumerate(pads_of(r_)):
+            router.add(Shape(net, {str(part.side)}, poly=poly))
+if TP_PARTS:
+    tpp.save(spots)
+report += tp_lines
+report.append("test pads: " + (f"NO SPOT {tp_failed}" if tp_failed else "all placed and joined"))
 
 
 def split_t_junctions():
     """A route that starts on the middle of another track of its net (the router joins on a
     track's centre line) makes a T. KiCad flags such an end as dangling, so the run it lands on
     is cut in two at that point, and every T becomes an ordinary shared end point."""
-    segs = [n for n in items if n[0] == "segment"]
+    segs = [n for n in items if n[0] == "segment" and str(child(n, "net")[1]) not in FROZEN]
     ends = [(float(child(n, e)[1]), float(child(n, e)[2]), str(child(n, "layer")[1]), str(child(n, "net")[1]))
             for n in segs for e in ("start", "end")]
     for (px, py, lay, net) in ends:
-        for n in [m for m in items if m[0] == "segment"]:
+        for n in [m for m in items if m[0] == "segment" and str(child(m, "net")[1]) not in FROZEN]:
             if str(child(n, "layer")[1]) != lay or str(child(n, "net")[1]) != net:
                 continue
             a = (float(child(n, "start")[1]), float(child(n, "start")[2]))
@@ -1032,7 +1265,7 @@ def chamfer_power():
     degree turns (jog_router.chamfer_corners), 0.2 mm from other nets. The fixed signal routes
     are left alone (the mic routes are chamfered in their own script); pad centres and vias stay."""
     fixed_nets = ({n for n, _, _ in usb_main.TRACKS} | {n for n, _, _ in mic.TRACKS}
-                  | {n for n, _, _ in esp_usb.TRACKS})
+                  | {n for n, _, _ in esp_usb.TRACKS} | FROZEN)
     keep = [n for n in items if n[0] != "segment" or str(child(n, "net")[1]) in fixed_nets]
     segs = [[str(child(n, "net")[1]), str(child(n, "layer")[1]),
              (float(child(n, "start")[1]), float(child(n, "start")[2])),
