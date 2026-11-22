@@ -10,7 +10,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - **Prototype**: thin stock is fine; don't flag low stock. Designed from datasheets; XMOS XK-VOICE-SQ66 (`incoming/xk_voice_sq66/`, XMOS licence) is the reference for mic wiring and pin roles.
 - **Report:** `docs/report/mindspeak_rev1_report.pdf` (weasyprint in `~/.local/venvs/weasyprint`). **Diagrams:** `docs/diagrams/` 01–08 (block, power tree, XVF connections, XVF pin map, audio, mics, ESP32, programming); sources in `docs/diagrams/src/`.
 - **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Groups 1–3 committed and pushed 2026-11-22. `PCB/mindspark_rev1-backups/` stays untracked.
-- **Status 2026-11-22 (evening):** schematic done (ERC 0; 11 duplicate test pads removed, TP205 last). Every link routed: **DRC 0 unconnected, parity 0, no shorts**; left only the old mic footprint items, silk, and 13 cosmetic `lib_footprint_mismatch` on the round test pads. Signals are now the user's hand routing, frozen (see Decisions); power_v2 rebuild takes ~30 s. Groups 1–3 committed; everything since (groups 4–6, user edits, LED arcs) **not committed**. Backups: committed board + sheets `mindspark_rev1-backups/pre-breakout-2026-11-22/`; the user's hand-edited board `mindspark_rev1-backups/user-hand-edits-2026-11-22/`.
+- **Status 2026-11-22 (evening):** schematic done (ERC 0; 11 duplicate test pads removed, TP205 last). Every link routed: **DRC 0 unconnected, parity 0, no shorts**; left only the old mic footprint items, silk, and 13 cosmetic `lib_footprint_mismatch` on the round test pads. Signals are now the user's hand routing, frozen (see Decisions); power_v2 rebuild takes ~30 s. Groups 1–3 committed; groups 4–6, user edits and LED arcs committed 2026-11-22 (7a8e60b), not pushed. Backups: committed board + sheets `mindspark_rev1-backups/pre-breakout-2026-11-22/`; the user's hand-edited board `mindspark_rev1-backups/user-hand-edits-2026-11-22/`.
 
 ## Files and tools (`PCB/mindspark_rev1/`, KiCad 10)
 
@@ -45,7 +45,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 
 ## To do (agreed, not yet done)
 
-- Nothing open on routing. Waiting for the user's review of the rebuilt board (renders `verification/user-edits-2026-11-22/`), then commit.
+- Nothing open on routing.
 
 ## Open questions
 
@@ -59,7 +59,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 
 ## Next steps
 
-1. User reviews the rebuilt board (LED arcs, nudges), then commit groups 4–6 + user edits + LED arcs together.
+1. Push when the user asks; tidy remaining items (3D models, labels).
 2. Reference/label placement last (user's call). Recheck LCSC/JLC stock before ordering.
 
 ## Archive
