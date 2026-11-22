@@ -32,7 +32,9 @@ import east_escape_2026_11_21 as ee  # noqa: E402
 
 W, VIA = ee.W, ee.VIA
 
-DROP_TRACKS = set(range(0, 12)) | {34, 35, 36, 37} | {23, 32}   # indices in the 2026-11-21 JSON
+DROP_TRACKS = set(range(0, 12)) | {34, 35, 36, 37} | {23, 32} | {27}   # indices in the 2026-11-21 JSON
+# 27: pin 4 -> C301, re-laid 0.1 mm further west below (user's hand edit 2026-11-22: room for the
+#     XVF SPI_CS_N escape via between it and the QSPI_CLK via)
 DROP_VIAS = [(152.495, 98.25), (152.48, 100.7), (152.48, 103.44), (149.95, 102.75), (152.48, 95.8),
              (138.05, 93.76)]
 
@@ -59,6 +61,8 @@ NEW_TRACKS = [  # net, layer, width, points
     # +0V9 caps over In2 +1V8: F.Cu jumpers between vias in their +0V9 pads
     ("+0V9", "F.Cu", W, [(152.48, 96.26), (151.85, 96.89), (151.85, 98.07), (152.49, 98.71)]),            # C303 - FB301
     ("+0V9", "F.Cu", W, [(152.49, 98.71), (151.85, 99.35), (151.85, 103.71), (152.48, 104.35)]),          # FB301 - C304
+    # pin 4 -> C301, 0.1 mm west of the pin's axis (user 2026-11-22)
+    ("+0V9", "B.Cu", W, [(144.958, 94.88), (144.958, 94.654), (144.858, 94.554), (144.858, 91.75), (144.35, 91.75)]),
     # QSPI D3 hop, 0.45 mm further north than on 2026-11-21
     ("/XVF_QSPI_D3", "F.Cu", W, [(144.06, 93.31), (143.87, 93.5), (137.8, 93.5)]),
     ("/XVF_QSPI_D3", "B.Cu", W, [(139.15, 93.76), (138.06, 93.76), (137.8, 93.5)]),

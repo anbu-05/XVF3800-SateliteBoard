@@ -111,7 +111,19 @@ ZONES = [  # net, layer, priority, polygon
     ("VBUS_ESP", "In2.Cu", 3, [(114.6, 94.8), (122.3, 94.8), (122.3, 103.5), (118.9, 103.5), (118.9, 130.5),
                                (164.6, 130.5), (164.6, 115.05), (170.7, 115.05), (170.7, 134.9), (114.6, 134.9)]),
     ("+0V9", "In2.Cu", 4, [(142.3, 94.4), (149.45, 94.4), (149.45, 103.0), (148.8, 103.0), (148.8, 113.7),
-                           (158.8, 113.7), (158.8, 121.7), (147.0, 121.7), (147.0, 103.0), (142.3, 103.0)]),
+                           (158.8, 113.7), (158.8, 121.7), (147.0, 121.7), (147.0, 103.0),
+                           # lobe under C306 (2026-11-22): its pin 42 is fenced in by the MIC_CLK and
+                           # MCLK vias, so the cap takes a via in its pad into the island instead;
+                           # wide above y 104 so the fill flows round those two vias' clearance, narrow
+                           # below so C311's +3V3 via keeps its plane
+                           (146.2, 103.0), (146.2, 104.0), (145.6, 104.0), (145.6, 105.1),
+                           (144.35, 105.1), (144.35, 103.0),
+                           (142.3, 103.0),
+                           # west lobe under C308 (2026-11-22): the cap takes a via in its pad
+                           # instead of a trace to pin 57, which frees room for the GPO escapes
+                           # (down to y 98.1 so the fill gets round below the GPO_R via's clearance;
+                           #  the slow INT_N / SQ_NLIN lines run over it)
+                           (142.3, 98.1), (140.1, 98.1), (140.1, 96.65), (142.3, 96.65)]),
     ("+1V8", "In2.Cu", 5, [(149.75, 93.9), (157.6, 93.9), (157.6, 92.5), (160.0, 92.5), (160.0, 106.3),
                            (148.9, 106.3), (148.9, 103.3), (149.75, 103.3)]),
 ]
@@ -423,6 +435,62 @@ for net, width, clr, goal, start in local.ROUTES:
 report.append(f"local hookups: {len(local.ROUTES) - len(local_failed)}/{len(local.ROUTES)} routed"
               + (f"; FAILED {local_failed}" if local_failed else ""))
 
+# ================================================================ group 2: XVF3800 escape (2026-11-22)
+# Power fan-out and the south signal lanes (tools/xvf_escape_2026_11_22.py), bottom layer.
+import xvf_escape_2026_11_22 as xvf_esc  # noqa: E402
+
+for net, w_, pts in xvf_esc.TRACKS:
+    for a, b in zip(pts, pts[1:]):
+        seg(a, b, w_, "B.Cu", net)
+for pt, net, size in xvf_esc.VIAS:
+    via(pt, net, size, connect=True)
+for ref, pin in xvf_esc.JOINED:
+    connected.setdefault(pad(ref, pin)[1], []).append(pad_shape[(ref, str(pin))])
+report.append(f"XVF escape: {len(xvf_esc.TRACKS)} hand-laid runs")
+
+
+def escape_via(net, ref, pin, box):
+    """Nearest spot in box where a 0.45/0.2 via fits (both layers clear) and the jog router
+    reaches it from the pin on the bottom layer. Returns (spot, path) or None."""
+    gpoly, gshape = pad_k((ref, pin))
+    c = pad(ref, pin)[3]
+    r = VIA_SMALL[0] / 2
+    spots = [(round(box[0] + i * 0.1, 3), round(box[1] + j * 0.1, 3))
+             for i in range(int((box[2] - box[0]) / 0.1) + 1) for j in range(int((box[3] - box[1]) / 0.1) + 1)]
+    spots.sort(key=lambda t: math.dist(t, c))
+    tried = 0
+    for t in spots:
+        if any(sh.net != net and sh.layers & {"F.Cu", "B.Cu"}
+               and sh.dist(*t) < r + (0.2 if sh.net == "~hole" else 0.15) for sh in router.shapes):
+            continue
+        tried += 1
+        if tried > 60:
+            break
+        n_items, n_shapes = len(items), len(router.shapes)
+        via(t, net, VIA_SMALL, connect=False)
+        vsh = via_shape[(round(t[0], 3), round(t[1], 3))]
+        jog_router.CLEARANCE = 0.15
+        path = router.route(net, "B.Cu", 0.15, gpoly, [vsh])
+        if path is not None:
+            return t, path, gshape
+        del items[n_items:]
+        del router.shapes[n_shapes:]
+        new_vias.pop()
+    return None
+
+
+esc_failed = []
+for net, (ref, pin), box in xvf_esc.ESCAPE:
+    got = escape_via(net, ref, pin, box)
+    if got is None:
+        esc_failed.append(f"{ref}.{pin} {net}")
+        continue
+    t, path, gshape = got
+    for a_, b_ in zip(path, path[1:]):
+        seg(a_, b_, 0.15, "B.Cu", net)
+    report.append(f"escape {ref}.{pin:3s} {net:16s} via {t} ({len(path) - 1} segments)")
+report.append("escape vias: " + (f"FAILED {esc_failed}" if esc_failed else "all placed"))
+
 # ================================================================ vias in pads
 # User's rules (2026-11-19):
 #   * vias sit on the pad centre; when a pad needs several, they form a pattern centred on the
@@ -632,7 +700,10 @@ keep.exempt = {"GND"}
 router.add(keep)
 ROUTES = [  # net, layer, width, target (ref, pin) or ("@", (x, y)), clearance
     # XVF3800 pin 31 (+1V8) to its cap; pins 17-27 are fixed routes since 2026-11-21
-    ("+1V8", "B.Cu", 0.15, ("C317", 1), 0.15, ("U301", 31)),
+    # (pin 31 -> C317: hand-laid in tools/xvf_escape_2026_11_22.py since 2026-11-22)
+    # R401 (QSPI CS pull-up) +3V3 end: the automatic pass skips the XVF3800 area
+    ("+3V3", "B.Cu", 0.2, ("R401", 2), 0.15, None),
+    ("+3V3", "B.Cu", 0.2, ("C401", 1), 0.15, ("R401", 2)),     # flash decap, beside R401
     # amp supply
     ("+5V_AMP", "F.Cu", 0.8, ("C511", 1), 0.2, ("U502", 6)),
     ("+5V_AMP", "F.Cu", 0.6, ("C510", 1), 0.2, None),
@@ -809,6 +880,124 @@ for ref, p in sorted(P.items()):
         auto_ok += 1
 report.append(f"automatic pass: {auto_ok} pads joined ({auto_via} with a fan-out via); "
               f"not joined: {auto_fail if auto_fail else 'none'}")
+
+
+# ================================================================ group 3: fixed inter-IC signals (2026-11-22)
+# Routed after all power copper (tools/inter_ic_2026_11_22.py) by tools/grid_router.py, which
+# searches both layers at once and adds a via wherever a layer change pays (user's idea: out a
+# little, then a via). The ESP32 underside keep-out for power traces does not apply to them.
+import time as _time  # noqa: E402
+import inter_ic_2026_11_22 as inter  # noqa: E402
+from grid_router import GridRouter  # noqa: E402
+
+starts_of = {}                       # net -> [(layer, point)] laid so far by this group
+
+
+def lay_runs(net, runs, first, last):
+    """Lay the router's runs (vias between consecutive runs), from the exact start point to the
+    exact goal point, and draw them into the grid."""
+    def snap(pts, exact, at_start):
+        """Move the run's end onto the exact point, sliding its neighbour so the first/last leg
+        keeps its 0/45/90 direction (the grid is 0.1 mm, the points are not on it)."""
+        if exact is None:
+            return pts
+        i, j = (0, 1) if at_start else (-1, -2)
+        if len(pts) < 2:
+            pts[i] = exact
+            return pts
+        (ax, ay), (bx, by) = pts[i], pts[j]
+        dx, dy = exact[0] - ax, exact[1] - ay
+        if abs(ay - by) < 1e-9:                   # horizontal leg: slide the neighbour in y
+            pts[j] = (bx, by + dy)
+        elif abs(ax - bx) < 1e-9:                 # vertical leg: slide it in x
+            pts[j] = (bx + dx, by)
+        else:                                     # diagonal leg: keep 45 degrees
+            sx = 1 if bx > ax else -1
+            sy = 1 if by > ay else -1
+            # move the neighbour along the other axis so the leg stays at 45 degrees
+            pts[j] = (bx + dx, by + dx * sx * sy) if abs(dx) >= abs(dy) else (bx + dy * sx * sy, by + dy)
+        pts[i] = exact
+        return pts
+
+    pts_all = []
+    for k, (L, pts) in enumerate(runs):
+        pts = list(pts)
+        if k == 0:
+            pts = snap(pts, first, True)
+        if k == len(runs) - 1:
+            pts = snap(pts, last, False)
+        n0 = len(router.shapes)
+        for a_, b_ in zip(pts, pts[1:]):
+            if math.dist(a_, b_) > 1e-6:
+                seg(a_, b_, inter.W, L, net)
+        if k < len(runs) - 1 and not any(v[2] == net and math.dist(v[0], pts[-1]) < 0.3 for v in new_vias):
+            via(pts[-1], net, VIA_SMALL, connect=False)
+        for sh in router.shapes[n0:]:
+            grid.add(sh)
+        pts_all += [(L, p_) for p_ in pts]
+        if k < len(runs) - 1:
+            pts_all += [(x, pts[-1]) for x in ("F.Cu", "B.Cu")]
+    return pts_all
+
+
+def route_group3(order):
+    """Route the entries in this order on a fresh grid; returns (failed entries, report lines)."""
+    global grid
+    grid = GridRouter((LEFT, TOP, RIGHT, BOTTOM), router.shapes, width=inter.W, via_d=VIA_SMALL[0],
+                      skip=lambda sh: sh.net == "~module")
+    starts_of.clear()
+    failed, lines = [], []
+    for entry in order:
+        net, goal, start = entry
+        gref, gpin = goal
+        gpd = pad(gref, gpin)
+        g_layers = {"F.Cu", "B.Cu"} if gpd[5] == "thru_hole" else {P[gref].side}
+        if start is None:
+            st = list(starts_of.get(net, []))
+        elif start[0] == "@":
+            st = [(L, start[2]) for L in start[1]]
+        else:
+            st = [(P[start[0]].side, pad(*start)[3])]
+        runs = grid.route(net, st, gpd[3], g_layers) if st else None
+        if runs is None:
+            failed.append(entry)
+            continue
+        first = min((p_ for L_, p_ in st if L_ == runs[0][0]), key=lambda p_: math.dist(p_, runs[0][1][0]),
+                    default=None)
+        laid = lay_runs(net, runs, first, gpd[3])
+        starts_of.setdefault(net, []).extend(st + laid)
+        connected.setdefault(net, []).append(pad_shape[(gref, str(gpin))])
+        lines.append(f"inter-IC {net:22s} -> {gref}.{gpin:3s} {' -> '.join(L_ for L_, _ in runs)} "
+                     f"({len(runs) - 1} vias)")
+    return failed, lines
+
+
+# Rip-up and retry: if entries fail, undo the whole group, put the failures first, route again.
+snap_items, snap_shapes, snap_vias = len(items), len(router.shapes), len(new_vias)
+snap_conn = {k: list(v) for k, v in connected.items()}
+order = list(inter.ROUTES)
+for attempt in range(3):
+    _t0 = _time.time()
+    inter_failed, lines = route_group3(order)
+    print(f"  group 3 pass {attempt + 1}: {len(order) - len(inter_failed)}/{len(order)} routed "
+          f"in {_time.time() - _t0:.0f} s; failed {[f'{e[0]}->{e[1][0]}' for e in inter_failed]}",
+          file=sys.stderr, flush=True)
+    if not inter_failed or attempt == 2:
+        break
+    del items[snap_items:]
+    del router.shapes[snap_shapes:]
+    del new_vias[snap_vias:]
+    connected.clear()
+    connected.update({k: list(v) for k, v in snap_conn.items()})
+    # failures first, each with the rest of its net's entries right behind it
+    fnets = []
+    for e in inter_failed:
+        if e[0] not in fnets:
+            fnets.append(e[0])
+    order = [e for n_ in fnets for e in order if e[0] == n_] + [e for e in order if e[0] not in fnets]
+report += lines
+inter_failed = [f"{e[0]} -> {e[1][0]}.{e[1][1]}" for e in inter_failed]
+report.append("inter-IC: " + (f"FAILED {inter_failed}" if inter_failed else "all routed"))
 
 
 def split_t_junctions():
