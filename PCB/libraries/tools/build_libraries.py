@@ -736,7 +736,7 @@ def rename_fp(t, name):
 
 def build_side_switch_footprints():
     """SHOU HAN side-actuated switches from easyeda2kicad, checked against the datasheets in
-    datasheets/ (2026-11-11). Copper unchanged; 3D models attached at zero offset (not yet aligned).
+    datasheets/ (2026-11-11). Copper unchanged; 3D models aligned 2026-11-22 (see below).
     - TS24CA (C393942, p.1 mounting reference): contacts 1/2 are 0.6 x 1.2 mm, 3.4 mm apart;
       L-shaped hold-down tabs 3/4 span 5.3 mm outside, 4.0 / 3.2 mm inside; two 0.7 mm locating
       holes 1.7 mm apart. The actuator points to -Y (put that edge on the board edge).
@@ -749,10 +749,12 @@ def build_side_switch_footprints():
              "SW-SMD_3P-L6.6-W2.7-LS7.8-P1.50.step", "SHOUHAN_MSK12C02.step")):
         t = rename_fp((RAW / "easyeda_raw.pretty" / (src + ".kicad_mod")).read_text(), name)
         shutil.copy(RAW / "easyeda_raw.3dshapes" / step, OUT_3D / model)
-        # 2026-11-22: the MSK12C02 STEP faces the other way from its footprint (lever over the
-        # pads, leads at the edge); a half turn fixes it. TS24CA left as it was.
-        rot = "0 0 180" if model == "SHOUHAN_MSK12C02.step" else "0 0 0"
-        (OUT_FP / (name + ".kicad_mod")).write_text(replace_model(t, "%s/%s" % (MODEL_DIR, model), "0 0 0", rot))
+        # 2026-11-22: placements solved with tools/model_align/align.py (STEP box = EasyEDA WRL box).
+        # TS24CA: 1.05 mm toward the actuator and lifted 0.865 mm (it sat sunk in the board).
+        # MSK12C02: half turn (lever over the edge, picked from a render; the box can't tell) + 0.5 mm out.
+        off, rot = {"SHOUHAN_TS24CA.step": ("0 1.049 0.865", "0 0 0"),
+                    "SHOUHAN_MSK12C02.step": ("0 -0.5 0.005", "0 0 180")}[model]
+        (OUT_FP / (name + ".kicad_mod")).write_text(replace_model(t, "%s/%s" % (MODEL_DIR, model), off, rot))
 
 
 def build_smd_header_footprint():
