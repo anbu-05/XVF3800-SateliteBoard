@@ -1295,3 +1295,10 @@ for n in items:
     counts[n[0]] = counts.get(n[0], 0) + 1
 print("\n".join(report))
 print("added", counts, "->", out)
+
+# GND pours on F.Cu / B.Cu and the 5 mm stitching-via grid (since 2026-11-22,
+# tools/gnd_pour_2026_11_22.py). It works on the written board because it needs KiCad's fill to
+# pick the via spots; this script strips every via and zone, so the pass must follow each rebuild.
+import subprocess  # noqa: E402
+subprocess.run([sys.executable, "-I", _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                                                     "gnd_pour_2026_11_22.py"), "--board", out], check=True)
