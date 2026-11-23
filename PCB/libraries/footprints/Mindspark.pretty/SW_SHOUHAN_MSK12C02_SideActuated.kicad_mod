@@ -92,7 +92,7 @@
 	)
 	(fp_line
 		(start 0.15 1.93)
-		(end 0.15 3.53)
+		(end 0.15 2.125)
 		(stroke
 			(width 0.25)
 			(type solid)
@@ -101,17 +101,7 @@
 		(uuid "bec0076d-51d8-4afe-ba70-abde343eafed")
 	)
 	(fp_line
-		(start 0.15 3.53)
-		(end 1.43 3.53)
-		(stroke
-			(width 0.25)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(uuid "2a6e9661-ce77-4410-9fdd-e6300451ece3")
-	)
-	(fp_line
-		(start 1.43 3.53)
+		(start 1.43 2.125)
 		(end 1.43 1.93)
 		(stroke
 			(width 0.25)
@@ -274,20 +264,18 @@
 			)
 		)
 	)
-	(pad "" thru_hole circle
+	(pad "" np_thru_hole circle
 		(at -1.5 0.55)
 		(size 0.9 0.9)
 		(drill 0.9)
 		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
 		(uuid "232b1e8f-217d-487d-aacd-d0596961c5e0")
 	)
-	(pad "" thru_hole circle
+	(pad "" np_thru_hole circle
 		(at 1.5 0.55)
 		(size 0.9 0.9)
 		(drill 0.9)
 		(layers "*.Cu" "*.Mask")
-		(remove_unused_layers no)
 		(uuid "e20b9c7e-bfc1-47ee-8a25-f40d167c1978")
 	)
 	(pad "1" smd rect

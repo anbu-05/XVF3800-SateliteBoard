@@ -82,6 +82,31 @@ SERIAL_BOX = (118.5, 78.5, 128.5, 82.5)       # top, north-west free area, 10 x 
 # J301 JTAG header (JST PH 7-pin): a name under each pin, read off the board nets 2026-11-22.
 J301_NAMES = {1: "1V8", 2: "TCK", 3: "TMS", 4: "RST", 5: "TDO", 6: "TDI", 7: "GND"}
 
+# Board name on the sky face. Renamed by the user 2026-11-23 (was "MindSpeak Voice Satellite").
+BOARD_NAME = "MindSpeakAI Voice Satellite v1"
+
+# Sky-face labels for the parts on the table side that a user looks for (user 2026-11-23:
+# "add the LED, USB and button labels to the back silkscreen"). The parts can't be seen from
+# the sky, so each label gets an arrow (user 2026-11-23: "arrows everywhere"): arrow and label
+# sit on the part's own centreline, perpendicular to the nearest (east or west) edge, the arrow
+# pointing out towards that edge with its tip at the edge. All arrows on one edge are lined up
+# (user 2026-11-23): same tip, same shaft length, so the labels start on one line. The label sits
+# inward of the shaft's tail on the part's line; if a line is blocked the label stacks on two
+# lines or every arrow on that edge grows together. It never leaves its line.
+# (The second field records what the part is: "edge" = touched at the edge, "part" = top button
+# or LED; both now get the same lined-up arrow.)
+SKY_LABELS = {
+    "J101": ("USB MAIN", "edge"), "J102": ("USB ESP", "edge"),
+    "SW401": ("MUTE", "edge"), "SW402": ("ACTION", "edge"), "SW603": ("USER", "edge"),
+    "SW701": ("PRG_EN", "edge"),          # side-actuated slide switch (user 2026-11-23)
+    "SW301": ("XVF RESET", "part"), "SW601": ("EN", "part"), "SW602": ("BOOT", "part"),
+    "D401": ("MUTE LED", "part"), "D402": ("XVF LED", "part"), "D201": ("PWR LED", "part"),
+    "D601": ("USER LED", "part"),
+}
+ARROW_HEAD = (0.7, 0.45)     # head length, half-width (mm)
+ARROW_SHAFT = 1.5            # shortest shaft (mm)
+ARROW_TO_TEXT = 0.3          # gap between the shaft's tail and the label (mm)
+
 MICS = {"MK501": "1", "MK502": "2", "MK503": "3", "MK504": "4"}   # MIC_DATA0..3
 RING_R, RING_W = 1.25, 0.5                     # ring 2.0 mm inside, 3.0 mm outside
 
@@ -252,7 +277,7 @@ def main(path):
         add_text("B.Cu", num, nx, ny, *BIG)
 
     # 4b. board name along the south edge of the bottom, between the mic rings
-    add_text("B.Cu", "MindSpeak Voice Satellite", CX, CY + 31.7, *NAME)
+    add_text("B.Cu", BOARD_NAME, CX, CY + 31.7, *NAME)
     add_text("B.Cu", "rev1  2026-11", CX, CY + 34.0, *BIG)
 
     # 4c. LED chain arrow: D801 -> D802, just inside the ring
@@ -420,6 +445,57 @@ def main(path):
                               ["layer", q(silk_of(side))], ["uuid", new_uuid()],
                               effects(size, thick, mirror)])
 
+    # sky-face arrows + labels, laid before the other labels so those keep clear of them.
+    # Lined up (user 2026-11-23): on each edge every arrow has its tip at the edge and the same
+    # shaft length, so the arrows form one column and the labels start on one line. The shaft
+    # length is the shortest that lets every label on that edge fit on its part's centreline.
+    def sky_try(ref, text, s, k):
+        """Arrow + label for one part with shaft step k; None if anything is blocked."""
+        py = parts[ref].at[1]
+        tip = CX + s * (SIZE / 2 - EDGE)
+        base = tip - s * ARROW_HEAD[0]                   # where the head meets the shaft
+        tail = base - s * (ARROW_SHAFT + 0.2 * k)
+        h, t = BIG
+        head_box = (min(tip, base), py - ARROW_HEAD[1], max(tip, base), py + ARROW_HEAD[1])
+        shaft_box = (min(tail, base), py - LINE, max(tail, base), py + LINE)
+        for box in (head_box, shaft_box):
+            if any(hit(box, b, 0.1) for b in pads["B.Cu"]) or any(hit(box, b) for b in placed["B.Cu"]):
+                return None
+        # one line first; stacked on two lines (centred on the same line) if that is blocked
+        for label in (text, text.replace(" ", "\n", 1)):
+            w = max(len(x) for x in label.split("\n")) * CHAR * h + t
+            lx = tail - s * (ARROW_TO_TEXT + w / 2)
+            box = text_box(lx, py, label, h, t, 0.0)
+            if free(box, "B.Cu", True):
+                return dict(text=label, py=py, tip=tip, base=base, tail=tail, lx=lx,
+                            head_box=head_box, shaft_box=shaft_box, box=box)
+        return None
+
+    for s in (1, -1):                                    # east edge, then west edge
+        refs = [r for r in SKY_LABELS if (parts[r].at[0] > CX) == (s > 0)]
+        for k in range(60):                              # shaft grows in 0.2 mm steps, <= 12 mm
+            got = [sky_try(r, SKY_LABELS[r][0], s, k) for r in refs]
+            # labels on one edge must not overlap each other either
+            boxes = [g["box"] for g in got if g]
+            if all(got) and not any(hit(a, b, GAP) for i, a in enumerate(boxes) for b in boxes[i + 1:]):
+                break
+        else:
+            report.append(f"NO COMMON SHAFT LENGTH ON THE {'EAST' if s > 0 else 'WEST'} EDGE")
+            continue
+        if k:
+            report.append(f"{'east' if s > 0 else 'west'} arrows lengthened {0.2 * k:.1f} mm to fit every label")
+        for g in got:
+            if "\n" in g["text"]:
+                report.append(f"stacked on two lines to fit: {g['text']!r}")
+            py = g["py"]
+            add_shape("B.Cu", ["gr_line", ["start", fmt(g["tail"]), fmt(py)], ["end", fmt(g["base"]), fmt(py)],
+                               ["stroke", ["width", fmt(LINE)], ["type", "solid"]]], g["shaft_box"])
+            head = [(g["tip"], py), (g["base"], py - ARROW_HEAD[1]), (g["base"], py + ARROW_HEAD[1])]
+            add_shape("B.Cu", ["gr_poly", ["pts"] + [["xy", fmt(x), fmt(y)] for x, y in head],
+                               ["stroke", ["width", fmt(LINE)], ["type", "solid"]], ["fill", "yes"]],
+                      g["head_box"])
+            add_text("B.Cu", g["text"], g["lx"], py, *BIG)
+
     # big parts first, then function labels, then the small names
     order = sorted(jobs, key=lambda j: (j[5] != "fp_text" and not j[0].ref.startswith("U"),
                                         j[1].startswith(("R", "TP")), j[0].ref))
@@ -430,7 +506,7 @@ def main(path):
 
     open(path, "w").write(dump(root) + "\n")
     print(f"silk strokes bumped to {LINE} mm: {bumped}")
-    print(f"labels laid: {len(jobs) + len(extras)}")
+    print(f"labels laid: {len(jobs) + len(extras) + len(SKY_LABELS)}")
     for line in report:
         print("  " + line)
 
