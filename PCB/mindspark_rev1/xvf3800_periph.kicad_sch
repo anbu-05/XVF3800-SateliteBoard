@@ -1542,7 +1542,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mindspark:W25Q32JVUUIQ"
+		(symbol "Mindspark:GD25Q16ENIGR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1558,7 +1558,7 @@
 					)
 				)
 			)
-			(property "Value" "W25Q32JVUUIQ"
+			(property "Value" "GD25Q16ENIGR"
 				(at 7.62 11.43 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1579,7 +1579,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q32JV"
+			(property "Datasheet" "https://download.gigadevice.com/Datasheet/DS-00473-GD25Q16E-Rev1.3.pdf"
 				(at 0 -2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1590,7 +1590,7 @@
 					)
 				)
 			)
-			(property "Description" "32 Mbit (4 MB) 3.3 V quad SPI flash, USON-8 4x3 mm (UU). Centre pads unconnected inside; leave floating"
+			(property "Description" "16 Mbit (2 MB) 3.3 V quad SPI flash, USON-8 3x4 mm. QE bit ships at 0 (set it before quad use). Centre pads not connected inside; leave floating"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1601,7 +1601,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "Winbond"
+			(property "Manufacturer" "GigaDevice"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1612,7 +1612,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C2999380"
+			(property "LCSC Part" "C5749719"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1623,7 +1623,7 @@
 					)
 				)
 			)
-			(property "MPN" "W25Q32JVUUIQ"
+			(property "MPN" "GD25Q16ENIGR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1656,7 +1656,7 @@
 					)
 				)
 			)
-			(symbol "W25Q32JVUUIQ_0_1"
+			(symbol "GD25Q16ENIGR_0_1"
 				(rectangle
 					(start -7.62 10.16)
 					(end 10.16 -10.16)
@@ -1669,7 +1669,7 @@
 					)
 				)
 			)
-			(symbol "W25Q32JVUUIQ_1_1"
+			(symbol "GD25Q16ENIGR_1_1"
 				(pin input line
 					(at -10.16 7.62 0)
 					(length 2.54)
@@ -1781,7 +1781,7 @@
 				(pin bidirectional line
 					(at -10.16 -5.08 0)
 					(length 2.54)
-					(name "~{HOLD}/~{RESET}/IO_{3}"
+					(name "~{HOLD}/IO_{3}"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5688,7 +5688,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:W25Q32JVUUIQ")
+		(lib_id "Mindspark:GD25Q16ENIGR")
 		(at 50.8 46.99 0)
 		(unit 1)
 		(body_style 1)
@@ -5709,7 +5709,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "W25Q32JVUUIQ"
+		(property "Value" "GD25Q16ENIGR"
 			(at 62.3 53.39 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -5731,7 +5731,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q32JV"
+		(property "Datasheet" "https://download.gigadevice.com/Datasheet/DS-00473-GD25Q16E-Rev1.3.pdf"
 			(at 50.8 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -5742,7 +5742,7 @@
 				)
 			)
 		)
-		(property "Description" "32 Mbit (4 MB) 3.3 V quad SPI flash, USON-8 4x3 mm (UU). Centre pads unconnected inside; leave floating"
+		(property "Description" "16 Mbit (2 MB) 3.3 V quad SPI flash, USON-8 3x4 mm. QE bit ships at 0 (set it before quad use). Centre pads not connected inside; leave floating"
 			(at 50.8 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -5753,7 +5753,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C2999380"
+		(property "LCSC" "C5749719"
 			(at 50.8 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -5764,7 +5764,7 @@
 				)
 			)
 		)
-		(property "MPN" "W25Q32JVUUIQ"
+		(property "MPN" "GD25Q16ENIGR"
 			(at 50.8 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -5775,7 +5775,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Winbond"
+		(property "Manufacturer" "GigaDevice"
 			(at 50.8 46.99 0)
 			(hide yes)
 			(show_name no)
@@ -5786,7 +5786,7 @@
 				)
 			)
 		)
-		(property "spec" "32 Mbit QSPI flash"
+		(property "spec" "16 Mbit QSPI flash"
 			(at 62.3 54.99 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -6728,5 +6728,251 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "Mindspark:R")
+		(at 73.66 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "554ea4ca-8d66-4517-bb76-fc9559367b06")
+		(property "Reference" "R407"
+			(at 75.96 66.31 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7k"
+			(at 75.96 67.81 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Mindspark:R_0402_1005Metric"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "LCSC" "C25900"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "MPN" "0402WGF4701TCE"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "tolerance" "1%"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "power" "62.5mW"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "use" "QSPI_D3 (flash HOLD#) pull-up: holds HOLD# high while the XVF is in reset (ESP32 path B)"
+			(at 73.66 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "aad84f5f-b2d2-4e69-847a-d4a1539fd913")
+		)
+		(pin "2"
+			(uuid "565cfe36-a2b8-4874-ada0-631c98df7e6e")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/1506f4ea-c525-5200-b0f1-da532c70c9fb"
+					(reference "R407")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mindspark:+3V3")
+		(at 73.66 60.96 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(in_pos_files no)
+		(dnp no)
+		(uuid "12055c29-7c63-4630-8da6-c4ef89c0e24b")
+		(property "Reference" "#PWR4012"
+			(at 73.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 73.66 57.404 0)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 73.66 60.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace yes)
+			(effects
+				(font
+					(size 1 1)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d71fd758-a629-41e7-8b3a-ed2f851be0f3")
+		)
+		(instances
+			(project "mindspark_rev1"
+				(path "/af1cbb83-54b2-47b9-8bc4-08bc42da7d01/1506f4ea-c525-5200-b0f1-da532c70c9fb"
+					(reference "#PWR4012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 73.66 60.96)
+			(xy 73.66 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04a0ed07-d322-4a63-a66c-818985562f33")
+	)
+	(hierarchical_label "XVF_QSPI_D3"
+		(shape bidirectional)
+		(at 73.66 71.12 180)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "3d05e851-9c3b-4af4-84df-0e975a3623d7")
 	)
 )

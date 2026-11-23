@@ -368,7 +368,10 @@ def main(path):
                 max(b[2] for b in boxes), max(b[3] for b in boxes))
 
     extras = [("ESP TO XVF FLASH\nCUT TO DISCONNECT", SMALL, group_box(["R706", "R707", "R708", "R709"]), "F.Cu"),
-              ("S/N", SMALL, SERIAL_BOX, "F.Cu")]
+              ("S/N", SMALL, SERIAL_BOX, "F.Cu"),
+              # JLC replaces this text with its order number (user 2026-11-23: "specify a
+              # location"), table side, next to the S/N box; 1.0 mm text like the other labels
+              ("JLCJLCJLCJLC", BIG, SERIAL_BOX, "F.Cu")]
 
     # 6. label search --------------------------------------------------------------------
     def free(box, side, loose):

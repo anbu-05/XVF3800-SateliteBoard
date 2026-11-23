@@ -1,0 +1,32 @@
+Drill report for mindspark_rev1.kicad_pcb
+Created on 2026-11-23T13:01:16
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu-GND                in1
+    L3 :  In2.Cu-PWR                in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'mindspark_rev1-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.200mm  0.0079"  (544 holes))
+    T2  0.300mm  0.0118"  (102 holes))
+    T3  0.400mm  0.0157"  (32 holes))
+    T4  0.600mm  0.0236"  (8 holes)  (with 8 slots)
+    T5  2.200mm  0.0866"  (4 holes))
+
+    Total plated holes count 690
+
+
+Drill file 'mindspark_rev1-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  0.600mm  0.0236"  (4 holes))
+    T2  0.650mm  0.0256"  (4 holes))
+    T3  0.700mm  0.0276"  (6 holes))
+    T4  0.900mm  0.0354"  (2 holes))
+
+    Total unplated holes count 16

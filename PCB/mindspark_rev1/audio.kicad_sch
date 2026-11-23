@@ -1063,7 +1063,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Mindspark:IM69D129FV01XTMA1"
+		(symbol "Mindspark:SPH0641LM4H-1"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1079,7 +1079,7 @@
 					)
 				)
 			)
-			(property "Value" "IM69D129FV01XTMA1"
+			(property "Value" "SPH0641LM4H-1"
 				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1089,7 +1089,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+			(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 				(at 0 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1100,7 +1100,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+			(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 				(at 0 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1111,7 +1111,7 @@
 					)
 				)
 			)
-			(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+			(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1122,7 +1122,7 @@
 					)
 				)
 			)
-			(property "Manufacturer" "Infineon"
+			(property "Manufacturer" "Knowles"
 				(at 0 -15.24 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1133,7 +1133,7 @@
 					)
 				)
 			)
-			(property "MPN" "IM69D129FV01XTMA1"
+			(property "MPN" "SPH0641LM4H-1"
 				(at 0 -17.78 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1144,7 +1144,7 @@
 					)
 				)
 			)
-			(property "LCSC Part" "C43314439"
+			(property "LCSC Part" "C497724"
 				(at 0 -20.32 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1155,7 +1155,7 @@
 					)
 				)
 			)
-			(symbol "IM69D129FV01XTMA1_0_1"
+			(symbol "SPH0641LM4H-1_0_1"
 				(rectangle
 					(start -6.35 3.81)
 					(end 6.35 -3.81)
@@ -5813,7 +5813,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:IM69D129FV01XTMA1")
+		(lib_id "Mindspark:SPH0641LM4H-1")
 		(at 114.3 33.02 0)
 		(unit 1)
 		(body_style 1)
@@ -5834,7 +5834,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IM69D129FV01XTMA1"
+		(property "Value" "SPH0641LM4H-1"
 			(at 105.41 40.76 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -5845,7 +5845,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5856,7 +5856,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5867,7 +5867,7 @@
 				)
 			)
 		)
-		(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+		(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5878,7 +5878,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C43314439"
+		(property "LCSC" "C497724"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5889,7 +5889,7 @@
 				)
 			)
 		)
-		(property "MPN" "IM69D129FV01XTMA1"
+		(property "MPN" "SPH0641LM4H-1"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -5900,7 +5900,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Infineon"
+		(property "Manufacturer" "Knowles"
 			(at 114.3 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -6555,7 +6555,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:IM69D129FV01XTMA1")
+		(lib_id "Mindspark:SPH0641LM4H-1")
 		(at 114.3 63.5 0)
 		(unit 1)
 		(body_style 1)
@@ -6576,7 +6576,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IM69D129FV01XTMA1"
+		(property "Value" "SPH0641LM4H-1"
 			(at 105.41 71.24 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -6587,7 +6587,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6598,7 +6598,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6609,7 +6609,7 @@
 				)
 			)
 		)
-		(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+		(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6620,7 +6620,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C43314439"
+		(property "LCSC" "C497724"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6631,7 +6631,7 @@
 				)
 			)
 		)
-		(property "MPN" "IM69D129FV01XTMA1"
+		(property "MPN" "SPH0641LM4H-1"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -6642,7 +6642,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Infineon"
+		(property "Manufacturer" "Knowles"
 			(at 114.3 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -9351,7 +9351,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:IM69D129FV01XTMA1")
+		(lib_id "Mindspark:SPH0641LM4H-1")
 		(at 172.72 33.02 0)
 		(unit 1)
 		(body_style 1)
@@ -9372,7 +9372,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IM69D129FV01XTMA1"
+		(property "Value" "SPH0641LM4H-1"
 			(at 163.83 40.76 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -9383,7 +9383,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9394,7 +9394,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9405,7 +9405,7 @@
 				)
 			)
 		)
-		(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+		(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9416,7 +9416,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C43314439"
+		(property "LCSC" "C497724"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9427,7 +9427,7 @@
 				)
 			)
 		)
-		(property "MPN" "IM69D129FV01XTMA1"
+		(property "MPN" "SPH0641LM4H-1"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -9438,7 +9438,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Infineon"
+		(property "Manufacturer" "Knowles"
 			(at 172.72 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -13121,7 +13121,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Mindspark:IM69D129FV01XTMA1")
+		(lib_id "Mindspark:SPH0641LM4H-1")
 		(at 172.72 63.5 0)
 		(unit 1)
 		(body_style 1)
@@ -13142,7 +13142,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "IM69D129FV01XTMA1"
+		(property "Value" "SPH0641LM4H-1"
 			(at 163.83 71.24 0)
 			(show_name no)
 			(do_not_autoplace yes)
@@ -13153,7 +13153,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13164,7 +13164,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13175,7 +13175,7 @@
 				)
 			)
 		)
-		(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+		(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13186,7 +13186,7 @@
 				)
 			)
 		)
-		(property "LCSC" "C43314439"
+		(property "LCSC" "C497724"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13197,7 +13197,7 @@
 				)
 			)
 		)
-		(property "MPN" "IM69D129FV01XTMA1"
+		(property "MPN" "SPH0641LM4H-1"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -13208,7 +13208,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Infineon"
+		(property "Manufacturer" "Knowles"
 			(at 172.72 63.5 0)
 			(hide yes)
 			(show_name no)

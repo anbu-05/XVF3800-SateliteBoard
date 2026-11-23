@@ -19,6 +19,10 @@ What it fixes (DRC on 2026-11-23: 61 items):
      datasheet asks for). The GND ring round the sound port: its inner diameter goes from
      0.985 to 1.01 mm (outer 1.725 mm kept), so the 0.6 mm port hole has 0.205 mm to copper
      (rule 0.2). The pad's small anchor circle now sits exactly inside the ring.
+     SUPERSEDED 2026-11-23 (tools/part_swap_2026_11_23.py): the 0.838 mm "pitch" was a misread
+     (it is centre line to pad row; rows are 1.675 mm apart), so the footprint was replaced by
+     Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm with full 0.75 mm pads on the right rows. fix_mic is
+     no longer in FIXES (it would trim the new pads again).
   3. Silk crossing the board edge on the edge parts. Every remaining silk stroke ends at
      least 0.1 mm inside the edge:
        - TS24CA, MSK12C02, USB-C (HRO): the outline of the part's overhang past the edge is
@@ -227,7 +231,7 @@ FIXES = {
     "LED_0603_1608Metric": fix_led0603,
     "LED_WS2812B-2020_PLCC4_2.0x2.0mm": fix_ws2812,
     "LED_RGB_TOGIALED_1615_1.6x1.5mm": fix_togialed,
-    "Infineon_IM69D129FV01_LGA-5_3.5x2.65mm": fix_mic,
+    # fix_mic (the pad trim) is retired: that footprint was replaced 2026-11-23 (see item 2 above)
 }
 
 

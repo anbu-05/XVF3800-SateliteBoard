@@ -117,10 +117,13 @@ ZONES = [  # net, layer, priority, polygon
                           (170.7, 114.9), (170.7, 114.75), (164.3, 114.75), (164.3, 130.2),
                           (130.5, 130.2), (130.5, 115.5), (134.3, 115.5), (134.3, 119.8), (146.2, 119.8),
                           (146.2, 122.0), (158.9, 122.0), (158.9, 113.4), (152.3, 113.4)]),
-    # VBUS_MAIN: notched for that finger; the strip below it (y 115.25-117.2) takes the pin-7 vias
+    # VBUS_MAIN: notched for that finger; the strip below it (y 115.25-117.2) takes the pin-7 vias.
+    # Since 2026-11-23 (tools/plane_necks_2026_11_23.py) the west edge runs at x 170.8 down to
+    # y 108.3 and back to x 172.8 at 45 degrees, round the row of LED-ring crossing vias.
     ("VBUS_MAIN", "In2.Cu", 2, [(170.8, 94.8), (178.6, 94.8), (178.6, 117.2), (171.0, 117.2), (171.0, 115.25),
-                                (173.3, 115.25), (173.3, 112.6), (172.8, 112.6), (172.8, 103.5), (170.8, 103.5)]),
-    ("VBUS_ESP", "In2.Cu", 3, [(114.6, 94.8), (122.3, 94.8), (122.3, 103.5), (118.9, 103.5), (118.9, 130.5),
+                                (173.3, 115.25), (173.3, 112.6), (172.8, 112.6), (172.8, 110.3), (170.8, 108.3)]),
+    # VBUS_ESP: since 2026-11-23 the step under J102 is a 45-degree chamfer (wider strip entrance)
+    ("VBUS_ESP", "In2.Cu", 3, [(114.6, 94.8), (122.3, 94.8), (122.3, 104.5), (118.9, 107.9), (118.9, 130.5),
                                (164.6, 130.5), (164.6, 115.05), (170.7, 115.05), (170.7, 134.9), (114.6, 134.9)]),
     ("+0V9", "In2.Cu", 4, [(142.3, 94.4), (149.45, 94.4), (149.45, 103.0), (148.8, 103.0), (148.8, 113.7),
                            (158.8, 113.7), (158.8, 121.7), (147.0, 121.7), (147.0, 103.0),
@@ -144,7 +147,8 @@ for net, layer, pri, pts in ZONES:
          ["hatch", "edge", "0.5"]]
     if pri:
         z.append(["priority", str(pri)])
-    z += [["connect_pads", ["clearance", "0.3"]], ["min_thickness", "0.25"], ["filled_areas_thickness", "no"],
+    # 0.2 mm to other-net copper since 2026-11-23 (was 0.3): smaller via holes, wider necks
+    z += [["connect_pads", ["clearance", "0.2"]], ["min_thickness", "0.25"], ["filled_areas_thickness", "no"],
           ["fill", "yes", ["thermal_gap", "0.5"], ["thermal_bridge_width", "0.5"], ["island_removal_mode", "0"]],
           ["polygon", ["pts"] + [["xy", f4(x), f4(y)] for x, y in pts]]]
     items.append(z)
@@ -246,6 +250,13 @@ for k, (ang, kind, c) in enumerate(junctions):
 if SNAP:
     # two of the user's vias move inward out of the LED arcs' band (tools/led_arcs_2026_11_22.py NUDGES)
     SNAP = led_arcs.nudge(list(SNAP[0]), list(SNAP[1])) + (SNAP[2],)
+    # mic pad rows moved out to +-0.8375 mm (2026-11-23, tools/mic_pads_2026_11_23.py): the user's
+    # DATA/CLK routes are re-ended on the new pad centres before they are laid
+    import mic_pads_2026_11_23 as mic_pads  # noqa: E402
+    SNAP = (mic_pads.reconnect(SNAP[0], log=report), SNAP[1], SNAP[2])
+    # R407 (flash HOLD# pull-up, 2026-11-23): the D3 via moves onto its pad 2
+    import flash_pullup_2026_11_23 as flash_pullup  # noqa: E402
+    SNAP = flash_pullup.nudge(SNAP[0], SNAP[1], log=report) + (SNAP[2],)
     for kind_, net_, lay_, w_, pts_ in SNAP[0]:
         if kind_ == "arc":
             arc(pts_[0], pts_[1], pts_[2], w_, lay_, net_)
@@ -463,6 +474,13 @@ if SNAP:
     via(ue.R401_VIA, "+3V3", VIA_SMALL, connect=True)
     connected.setdefault("+3V3", []).append(pad_shape[("R401", "2")])
     FLANGED.add(("R401", "2"))
+    # R407's +3V3 end (flash HOLD# pull-up, 2026-11-23): a short bottom-layer run into U401's
+    # VCC pad (pin 8). No via: the top layer above is the dense line field under the ESP32
+    # module. The automatic pass skips the XVF3800 area, so it is laid here.
+    for a_, b_ in zip(flash_pullup.PAD1_RUN, flash_pullup.PAD1_RUN[1:]):
+        seg(a_, b_, 0.2, "B.Cu", "+3V3")
+    connected.setdefault("+3V3", []).append(pad_shape[("R407", "1")])
+    FLANGED.add(("R407", "1"))
 
 # ================================================================ group 1: local hookups (2026-11-22)
 # Short part-to-neighbour links (tools/local_hookups_2026_11_22.py), routed by the jog router

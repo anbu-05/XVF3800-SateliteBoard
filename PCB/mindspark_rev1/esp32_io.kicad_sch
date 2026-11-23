@@ -2535,7 +2535,7 @@
 		)
 		(uuid "70ba6eed-c464-5d63-9f2f-12b6079a9cae")
 	)
-	(text "Path B (diagram 08): slide SW701 to PROG, the ESP32 holds RST_N low through Q701, writes the W25Q32 with plain SPI (SPI2), reads it back, releases the\nflash lines, then RST_N.\nEach TS5A3166 adds 18-19 pF (off) to its XVF QSPI line (TI SCDS188D). IN threshold 2.0 V at 3.3 V.\nJ701: shunts on 13-14 and 15-16 join the ESP32 and XVF I2C buses (the 4.7k pull-ups here then serve both). XVF I2C has no pull-ups of its own. 1V8\npin: low current only (shared with the XVF3800). 21/22 = ESP32 UART0 TX/RX (boot log at power-up)."
+	(text "Path B (diagram 08): slide SW701 to PROG, the ESP32 holds RST_N low through Q701, first sets the flash's QE bit (GD25Q16E ships with QE = 0;\nR407 keeps HOLD# high meanwhile), writes the image with plain SPI (SPI2), reads it back, releases the flash lines, then RST_N.\nEach TS5A3166 adds 18-19 pF (off) to its XVF QSPI line (TI SCDS188D). IN threshold 2.0 V at 3.3 V.\nJ701: shunts on 13-14 and 15-16 join the ESP32 and XVF I2C buses (the 4.7k pull-ups here then serve both). XVF I2C has no pull-ups of its own. 1V8\npin: low current only (shared with the XVF3800). 21/22 = ESP32 UART0 TX/RX (boot log at power-up)."
 		(exclude_from_sim no)
 		(at 14.54 140.9882 0)
 		(effects

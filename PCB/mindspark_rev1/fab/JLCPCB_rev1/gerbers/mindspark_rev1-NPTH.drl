@@ -1,0 +1,40 @@
+M48
+; DRILL file KiCad 10.0.8-10.0.8~ubuntu26.04.1 date 2026-11-23T13:01:16
+; FORMAT={-:-/ absolute / metric / decimal}
+; #@! TF.CreationDate,2026-11-23T13:01:16+05:30
+; #@! TF.GenerationSoftware,Kicad,Pcbnew,10.0.8-10.0.8~ubuntu26.04.1
+; #@! TF.FileFunction,NonPlated,1,4,NPTH
+FMAT,2
+METRIC
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T1C0.600
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T2C0.650
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T3C0.700
+; #@! TA.AperFunction,NonPlated,NPTH,ComponentDrill
+T4C0.900
+%
+G90
+G05
+T1
+X113.558Y-65.679
+X113.558Y-131.679
+X179.558Y-65.679
+X179.558Y-131.679
+T2
+X115.173Y-95.789
+X115.173Y-101.569
+X177.943Y-95.789
+X177.943Y-101.569
+T3
+X181.758Y-77.014
+X181.758Y-78.714
+X181.758Y-88.334
+X181.758Y-90.034
+X181.758Y-107.697
+X181.758Y-109.396
+T4
+X111.358Y-77.972
+X111.358Y-80.972
+M30

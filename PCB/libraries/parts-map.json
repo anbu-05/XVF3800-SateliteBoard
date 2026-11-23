@@ -19,12 +19,12 @@
   },
   {
     "function": "PDM mic x4",
-    "mpn": "IM69D129FV01XTMA1",
-    "lcsc": "C43314439",
-    "symbol": "Mindspark:IM69D129FV01XTMA1",
-    "footprint": "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm",
-    "symbol_source": "EasyEDA, checked",
-    "footprint_source": "drawn from Infineon Fig.14; 3D = stock InvenSense ICS-43434 MEMS mic model (same 3.5x2.65x0.98 body), rot -90"
+    "mpn": "SPH0641LM4H-1",
+    "lcsc": "C497724",
+    "symbol": "Mindspark:SPH0641LM4H-1",
+    "footprint": "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm",
+    "symbol_source": "former IM69D129 symbol renamed (same pin numbers and names), 2026-11-23",
+    "footprint_source": "former Infineon footprint, pad rows fixed to 1.675 mm apart (Knowles p.8 / Infineon p.12 Fig. 13), 2026-11-23; 3D = stock InvenSense ICS-43434 model (same 3.5x2.65x0.98 body), rot -90"
   },
   {
     "function": "Amp + LED load switch x2",
@@ -235,12 +235,12 @@
   },
   {
     "function": "QSPI flash (XVF3800 boot image)",
-    "mpn": "W25Q32JVUUIQ",
-    "lcsc": "C2999380",
-    "symbol": "Mindspark:W25Q32JVUUIQ",
+    "mpn": "GD25Q16ENIGR",
+    "lcsc": "C5749719",
+    "symbol": "Mindspark:GD25Q16ENIGR",
     "footprint": "Mindspark:Winbond_USON-8-2EP_3x4mm_P0.8mm_EP0.2x0.8mm",
-    "symbol_source": "stock W25Q32JVZP (same pinout), footprint changed",
-    "footprint_source": "stock copy, checked vs Winbond UU drawing (b 0.3, e 0.8, centre pads 0.2x0.8)"
+    "symbol_source": "former W25Q32JVUUIQ symbol renamed, pin 7 HOLD#/IO3, 2026-11-23",
+    "footprint_source": "stock copy, checked vs Winbond UU drawing and GD25Q16E USON8 3x4 p.54 (b 0.3, e 0.8, centre pads 0.2x0.8 at 0.8)"
   },
   {
     "function": "XVF flash switches x4",

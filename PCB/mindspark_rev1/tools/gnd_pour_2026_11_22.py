@@ -51,8 +51,15 @@ NUDGE = 0.3                    # how far a grid via may move to find room
 CLEAR = 0.2                    # via copper to other copper / pads
 HOLE_CLEAR = 0.25              # via copper to a plain hole (mic sound ports)
 SENSITIVE_CLEAR = 0.5          # via copper to USB pairs and mic lines
-IN2_HOLE = VIA[0] + 2 * 0.3    # the via's clearance hole in the In2 power plane (zone clearance 0.3)
+IN2_HOLE = VIA[0] + 2 * 0.2    # the via's clearance hole in the In2 power plane (zone clearance 0.2
+                               # since 2026-11-23, tools/plane_necks_2026_11_23.py; was 0.3)
 IN2_MAX_CUT = 0.30             # largest share of a strip's width that hole may take
+# No stitching via (grid or island) inside these boxes (x0, y0, x1, y1): the tightest cuts of the
+# two USB input strips on In2 (user 2026-11-23, tools/plane_necks_2026_11_23.py)
+NO_STITCH = [
+    (172.8, 104.5, 178.6, 110.5),   # VBUS_MAIN where the LED-ring crossings put a row of vias
+    (114.6, 101.5, 118.9, 110.0),   # VBUS_ESP where it leaves J102
+]
 POUR_CLEAR = 0.2
 POUR_NAMES = {"F.Cu": "GND F.Cu pour", "B.Cu": "GND B.Cu pour"}
 USB_GAP = 0.5                  # pour kept this far from USB pair copper
@@ -317,6 +324,8 @@ def clash(pt, fill_check=None):
     'in GND fill on both outer layers' test (the island pass checks its own island instead)."""
     if not (LEFT + 0.3 + R <= pt[0] <= RIGHT - 0.3 - R and TOP + 0.3 + R <= pt[1] <= BOTTOM - 0.3 - R):
         return "edge"
+    if any(b[0] <= pt[0] <= b[2] and b[1] <= pt[1] <= b[3] for b in NO_STITCH):
+        return "VBUS strip"
     for sh, gap in near:
         if sh.net == "GND" and not sh.poly and gap == CLEAR:
             # GND tracks may touch; other GND vias keep the drill spacing (centres 0.65 apart)

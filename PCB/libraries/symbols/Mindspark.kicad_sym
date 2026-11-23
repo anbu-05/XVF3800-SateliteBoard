@@ -4758,7 +4758,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "IM69D129FV01XTMA1"
+	(symbol "SPH0641LM4H-1"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -4774,7 +4774,7 @@
 				)
 			)
 		)
-		(property "Value" "IM69D129FV01XTMA1"
+		(property "Value" "SPH0641LM4H-1"
 			(at 0 -7.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4784,7 +4784,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Mindspark:Infineon_IM69D129FV01_LGA-5_3.5x2.65mm"
+		(property "Footprint" "Mindspark:Knowles_SPH0641LM4H-1_LGA-5_3.5x2.65mm"
 			(at 0 -10.16 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4795,7 +4795,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im69d129f-datasheet-en.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C497724"
 			(at 0 -12.7 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4806,7 +4806,7 @@
 				)
 			)
 		)
-		(property "Description" "Infineon XENSIV PDM MEMS microphone, -36 dBFS, bottom port"
+		(property "Description" "Knowles SiSonic PDM MEMS microphone, -26 dBFS, SNR 64.3 dB, bottom port, 1.0-4.8 MHz normal mode"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4817,7 +4817,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Infineon"
+		(property "Manufacturer" "Knowles"
 			(at 0 -15.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4828,7 +4828,7 @@
 				)
 			)
 		)
-		(property "MPN" "IM69D129FV01XTMA1"
+		(property "MPN" "SPH0641LM4H-1"
 			(at 0 -17.78 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4839,7 +4839,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C43314439"
+		(property "LCSC Part" "C497724"
 			(at 0 -20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4850,7 +4850,7 @@
 				)
 			)
 		)
-		(symbol "IM69D129FV01XTMA1_0_1"
+		(symbol "SPH0641LM4H-1_0_1"
 			(rectangle
 				(start -6.35 3.81)
 				(end 6.35 -3.81)
@@ -12518,7 +12518,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(symbol "W25Q32JVUUIQ"
+	(symbol "GD25Q16ENIGR"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -12534,7 +12534,7 @@
 				)
 			)
 		)
-		(property "Value" "W25Q32JVUUIQ"
+		(property "Value" "GD25Q16ENIGR"
 			(at 7.62 11.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12555,7 +12555,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.winbond.com/hq/product/code-storage-flash-memory/serial-nor-flash/?__locale=en&partNo=W25Q32JV"
+		(property "Datasheet" "https://download.gigadevice.com/Datasheet/DS-00473-GD25Q16E-Rev1.3.pdf"
 			(at 0 -2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12566,7 +12566,7 @@
 				)
 			)
 		)
-		(property "Description" "32 Mbit (4 MB) 3.3 V quad SPI flash, USON-8 4x3 mm (UU). Centre pads unconnected inside; leave floating"
+		(property "Description" "16 Mbit (2 MB) 3.3 V quad SPI flash, USON-8 3x4 mm. QE bit ships at 0 (set it before quad use). Centre pads not connected inside; leave floating"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12577,7 +12577,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Winbond"
+		(property "Manufacturer" "GigaDevice"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12588,7 +12588,7 @@
 				)
 			)
 		)
-		(property "LCSC Part" "C2999380"
+		(property "LCSC Part" "C5749719"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12599,7 +12599,7 @@
 				)
 			)
 		)
-		(property "MPN" "W25Q32JVUUIQ"
+		(property "MPN" "GD25Q16ENIGR"
 			(at 0 0 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12632,7 +12632,7 @@
 				)
 			)
 		)
-		(symbol "W25Q32JVUUIQ_0_1"
+		(symbol "GD25Q16ENIGR_0_1"
 			(rectangle
 				(start -7.62 10.16)
 				(end 10.16 -10.16)
@@ -12645,7 +12645,7 @@
 				)
 			)
 		)
-		(symbol "W25Q32JVUUIQ_1_1"
+		(symbol "GD25Q16ENIGR_1_1"
 			(pin input line
 				(at -10.16 7.62 0)
 				(length 2.54)
@@ -12757,7 +12757,7 @@
 			(pin bidirectional line
 				(at -10.16 -5.08 0)
 				(length 2.54)
-				(name "~{HOLD}/~{RESET}/IO_{3}"
+				(name "~{HOLD}/IO_{3}"
 					(effects
 						(font
 							(size 1.27 1.27)

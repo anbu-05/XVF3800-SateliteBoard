@@ -215,6 +215,18 @@
    "rev": "LCSC copy, fetched 2026-11-11",
    "sha256": "8edd942f30aee0bd75a4b02824b6d96ae15627ec31422c0bd4aef0a26b7ac924",
    "note": "HCTL PZ254-2-N-S SMD 2-row header drawing, recommended PCB layout (one page)"
+  },
+  "datasheets/SPH0641LM4H-1_C497724.pdf": {
+   "url": "https://jlcpcb.com/partdetail/C497724 (Datasheet link)",
+   "rev": "Rev D",
+   "downloaded": "2026-11-23",
+   "sha256": "7e2b058bc3c5b96cafd386c41d30fe2f4154d7f78d1deff08d404c6dc131beef"
+  },
+  "datasheets/GD25Q16E.pdf": {
+   "url": "https://download.gigadevice.com/Datasheet/DS-00473-GD25Q16E-Rev1.3.pdf",
+   "rev": "Rev 1.3",
+   "downloaded": "2026-11-23",
+   "sha256": "91343ed2fdd16b671de2555657a0bc5d21d045ab3ac224f725c3986d568f8fe5"
   }
  },
  "checked_online_not_saved": {
