@@ -16,8 +16,10 @@ every BOM line is in stock at LCSC or on JLC's own shelf.
 | Assembly: CPL | `assembly/mindspark_rev1_CPL_JLC.csv` (204 parts: 144 top, 60 bottom) |
 
 Not assembled on purpose: H1-H4 (mounting holes), all test pads (TP2xx/3xx/4xx round pads,
-TP501/TP502 square pads). The user checks every part's rotation in JLC's assembly preview;
-corrections go into `ROT_FIX` in the export script so a re-export keeps them.
+TP501/TP502 square pads). Rotations were checked 2026-11-23 against the user's JLC preview and
+JLC's own footprints (pad by pad, with JLC's pin names); 43 rotation fixes are in `ROT_FIX` and origin offsets (USB-C 1.57 mm, ESP32 0.63 mm, mics, J301, J501) in `POS_FIX` in the
+export script, so a re-export keeps them. JLC turns bottom parts the opposite way, so the ring
+LEDs and caps carry per-part fixes. Re-upload the CPL and look again at the preview.
 
 ## Order options
 
@@ -86,6 +88,6 @@ Both out-of-stock parts were replaced by in-stock parts that fit the same footpr
 | TS5A3166 off-capacitance on QSPI (18-19 pF per line) | can't settle without a board; R706-R709 0 ohm links can cut the switches off | verify on the first board |
 | TS24CA stem protrusion 0.31 mm | mechanical, depends on the enclosure | check with the enclosure |
 | Stock XVF firmware I2C master / GPO polarity, XTAG4 at 1.8 V, ESP-written flash boot | firmware / bring-up questions | verify on the first board |
-| Mics, flash | replaced 2026-11-23 (above); re-exported, stock rechecked | check MK501-504, U401 and R407 rotation in JLC's preview (the mic is a different JLC library part) |
+| Mics, flash | replaced 2026-11-23 (above); re-exported, stock rechecked | rotations fixed in `ROT_FIX` (mics +90); after re-upload check the preview again, U401 now +90 |
 | Mic sensitivity -26 dBFS (was -36) | 10 dB hotter into the XVF's stock tuning | check levels on the first board; lower the XVF mic gain if it clips |
 | Flash QE bit ships at 0 | XVF boot needs quad mode | XTAG4 path: xflash sets it. ESP32 path: the ESP32 must set QE (status register bit 9) before writing |

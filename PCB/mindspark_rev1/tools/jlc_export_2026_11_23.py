@@ -36,8 +36,39 @@ LAYERS = ("F.Cu,In1.Cu,In2.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,"
           "F.Mask,B.Mask,Edge.Cuts")
 
 # Rotation corrections for JLC's preview, by reference: degrees added to KiCad's angle.
-# Empty until the user has checked the preview.
-ROT_FIX = {}
+# Found 2026-11-23 from the user's JLC preview screenshots plus a pad-by-pad comparison of
+# JLC's own (EasyEDA) footprints against our pads, matching JLC's pin names (K/A, DI/DO, ...).
+# How JLC reads the CPL (worked out from the preview): top parts are its footprint turned CCW
+# by the CPL angle; bottom parts are mirrored and turned by MINUS the CPL angle, so a bottom
+# part at 0/180 comes out flipped and one at 30/60/... comes out crooked (the ring).
+ROT_FIX = {
+    # top: JLC footprint drawn with pin 1 elsewhere ("BR"/"BL" packages) -> turn 180 or 270
+    "J301": 180, "J701": 270, "Q701": 180, "D402": 180,
+    "MK501": 90, "MK502": 90, "MK503": 90, "MK504": 90,
+    "U101": 270, "U102": 270, "U103": 270, "U501": 270, "U503": 270,
+    "U701": 270, "U702": 270, "U703": 270, "U704": 270,
+    "U201": 180, "U202": 180, "U302": 180, "U502": 180, "U602": 180, "U801": 180, "U802": 180,
+    # bottom ring LEDs: JLC needs 180 - KiCad angle
+    "D802": 60, "D803": 120, "D804": 180, "D805": 240, "D806": 300,
+    "D808": 60, "D809": 120, "D810": 180, "D811": 240, "D812": 300,
+    # bottom ring caps (non-polar, so 180 apart is the same): only the crooked ones
+    "C802": 60, "C803": 120, "C805": 60, "C806": 120,
+    "C808": 60, "C809": 120, "C811": 60, "C812": 120,
+    # bottom flash: JLC's USON-8 footprint lines up pad for pad only a further 90 deg round
+    # (the user's preview showed it crossways, pin-1 dot in the wrong corner)
+    "U401": 90,
+}
+
+# Position corrections (mm, added to the CPL Mid X / Mid Y) where JLC's footprint origin is
+# not at our footprint origin. Measured 2026-11-23 from JLC's footprint pads matched to ours
+# (unique pad numbers, after ROT_FIX); the user's preview showed both USB-C sockets off the pads.
+POS_FIX = {
+    "J101": (-1.571, 0.0), "J102": (1.571, 0.0),     # USB-C: JLC origin is 1.57 mm into the body
+    "U601": (0.627, 0.0),                             # ESP32 module
+    "MK501": (-0.074, -0.074), "MK502": (0.074, -0.074),
+    "MK503": (0.074, 0.074), "MK504": (-0.074, 0.074),
+    "J301": (0.0, 0.05), "J501": (0.0, 0.075),
+}
 
 
 def run(*args):
@@ -143,7 +174,8 @@ def main():
         for ref in sorted(bom_refs, key=ref_key):
             r = placed[ref]
             rot = (float(r["Rot"]) + ROT_FIX.get(ref, 0)) % 360
-            w.writerow([ref, f"{float(r['PosX']):.4f}mm", f"{float(r['PosY']):.4f}mm",
+            dx, dy = POS_FIX.get(ref, (0.0, 0.0))
+            w.writerow([ref, f"{float(r['PosX']) + dx:.4f}mm", f"{float(r['PosY']) + dy:.4f}mm",
                         "Top" if r["Side"] == "top" else "Bottom", f"{rot:g}"])
 
     not_on_board = sorted(bom_refs - set(placed), key=ref_key)

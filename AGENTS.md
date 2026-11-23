@@ -9,7 +9,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 - USB voice front-end: **XMOS XVF3800** (stock USB firmware, square mic build), 4 × Knowles SPH0641LM4H-1 PDM mics, MAX98357A speaker amp, **ESP32-S3-WROOM-1U-N16R8** helper, two USB-C (main = XVF, ESP32), WS2812 ring. CM5 host is rev 2.
 - **Prototype**: thin stock is fine; don't flag low stock. Designed from datasheets; XMOS XK-VOICE-SQ66 (`incoming/xk_voice_sq66/`, XMOS licence) is the reference for mic wiring and pin roles.
 - **Report:** `docs/report/mindspeak_rev1_report.pdf` (weasyprint in `~/.local/venvs/weasyprint`). **Diagrams:** `docs/diagrams/` 01–08 (block, power tree, XVF connections, XVF pin map, audio, mics, ESP32, programming); sources in `docs/diagrams/src/`.
-- **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Everything through the 2026-11-23 part swap, plane necks and fab package is committed (`7d962ee`, not pushed). `PCB/mindspark_rev1-backups/` stays untracked.
+- **Git:** `git@github.com:anbu-05/XVF3800-SateliteBoard.git`, `main`. `.gitignore` leaves out KiCad backups, audio clips, `incoming/`. Everything through the 2026-11-23 JLC placement fixes is committed and pushed. `PCB/mindspark_rev1-backups/` stays untracked.
 - **Status 2026-11-23:** schematic done (ERC 0/0). Board complete: **DRC 0 violations, 0 unconnected, parity 0** after the part swap (`tools/part_swap_2026_11_23.py`, power_v2, silkscreen, kicad-cli refill); fab package re-exported, stock check clean. Backup before the swap `mindspark_rev1-backups/pre-part-swap-2026-11-23/`. Signals are the user's frozen hand routing; power_v2 rebuild takes ~2 min. Backups: before the DRC fixes `mindspark_rev1-backups/pre-drc-fixes-2026-11-23/` (board + `Mindspark.pretty`); older ones `pre-breakout-2026-11-22/`, `user-hand-edits-2026-11-22/`.
 
 ## Files and tools (`PCB/mindspark_rev1/`, KiCad 10)
@@ -64,7 +64,7 @@ Earlier history: `/home/anbu/Documents/Codex/2026-10-19/i-h/AGENTS.md` and `outp
 
 Fab package (2026-11-23): `PCB/mindspark_rev1/fab/JLCPCB_rev1/` from `tools/jlc_export_2026_11_23.py` (Gerbers + drill zip, JLC BOM one line per LCSC part, CPL of exactly the BOM parts, checks; H1–H4 and test pads not assembled; rerun after any change, `README.md` there is kept). Its README holds the order options (5 boards, 2 assembled; JLC04161H-7628; epoxy-filled capped via-in-pad; ENIG; order number at the "JLCJLCJLCJLC" text by the S/N box), the replacement candidates and the final review. Stock: `tools/stock_check_2026_11_23.py` (LCSC API) → `bom/stock-2026-11-23.md`.
 
-1. User uploads to JLC and checks every part's rotation in the preview (MK501–504 are a new JLC part); fixes go into `ROT_FIX` in the export script.
+1. Placement fixed 2026-11-23: `ROT_FIX` (43 parts incl. U401 +90; JLC turns bottom parts the opposite way, so bottom parts at angles other than 90/270 need fixes) and `POS_FIX` (JLC footprint origin offsets: USB-C 1.57 mm, ESP32 0.63, mics, J301, J501). Check: `tools/jlc_placement_check_2026_11_23.py`; **user checked the JLC preview: all good**. Next: place the order.
 2. Open review items (fab README): OV trip 5.57 V (optional 51k → 56k), top-side LEDs D401/D402/D201 facing the table.
 
 ## Archive
